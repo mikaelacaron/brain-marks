@@ -13,6 +13,7 @@
 		FFEBBB4126223F7E000F475F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEBBB4026223F7E000F475F /* Preview Assets.xcassets */; };
 		FFEBBB4C26223F7F000F475F /* brain_marksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB4B26223F7F000F475F /* brain_marksTests.swift */; };
 		FFEBBB5726223F7F000F475F /* brain_marksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB5626223F7F000F475F /* brain_marksUITests.swift */; };
+		FFEBBB7626226A39000F475F /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB7526226A39000F475F /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		FFEBBB5226223F7F000F475F /* brain-marksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "brain-marksUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEBBB5626223F7F000F475F /* brain_marksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brain_marksUITests.swift; sourceTree = "<group>"; };
 		FFEBBB5826223F7F000F475F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFEBBB7526226A39000F475F /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				FFEBBB3D26223F7E000F475F /* Assets.xcassets */,
 				FFEBBB4226223F7E000F475F /* Info.plist */,
 				FFEBBB3F26223F7E000F475F /* Preview Content */,
+				FFEBBB7526226A39000F475F /* Secrets.swift */,
 			);
 			path = "brain-marks";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFEBBB3C26223F75000F475F /* ContentView.swift in Sources */,
+				FFEBBB7626226A39000F475F /* Secrets.swift in Sources */,
 				FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
