@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB3926223F75000F475F /* brain_marksApp.swift */; };
+		FFEBBB3C26223F75000F475F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB3B26223F75000F475F /* ContentView.swift */; };
+		FFEBBB3E26223F7E000F475F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEBBB3D26223F7E000F475F /* Assets.xcassets */; };
+		FFEBBB4126223F7E000F475F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEBBB4026223F7E000F475F /* Preview Assets.xcassets */; };
+		FFEBBB4C26223F7F000F475F /* brain_marksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB4B26223F7F000F475F /* brain_marksTests.swift */; };
+		FFEBBB5726223F7F000F475F /* brain_marksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB5626223F7F000F475F /* brain_marksUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FFEBBB4826223F7F000F475F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFEBBB2E26223F75000F475F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFEBBB3526223F75000F475F;
+			remoteInfo = "brain-marks";
+		};
+		FFEBBB5326223F7F000F475F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFEBBB2E26223F75000F475F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFEBBB3526223F75000F475F;
+			remoteInfo = "brain-marks";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FFEBBB3626223F75000F475F /* brain-marks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "brain-marks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFEBBB3926223F75000F475F /* brain_marksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brain_marksApp.swift; sourceTree = "<group>"; };
+		FFEBBB3B26223F75000F475F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FFEBBB3D26223F7E000F475F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FFEBBB4026223F7E000F475F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FFEBBB4226223F7E000F475F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFEBBB4726223F7F000F475F /* brain-marksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "brain-marksTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFEBBB4B26223F7F000F475F /* brain_marksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brain_marksTests.swift; sourceTree = "<group>"; };
+		FFEBBB4D26223F7F000F475F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFEBBB5226223F7F000F475F /* brain-marksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "brain-marksUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFEBBB5626223F7F000F475F /* brain_marksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brain_marksUITests.swift; sourceTree = "<group>"; };
+		FFEBBB5826223F7F000F475F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFEBBB3326223F75000F475F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFEBBB4426223F7F000F475F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFEBBB4F26223F7F000F475F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFEBBB2D26223F75000F475F = {
+			isa = PBXGroup;
+			children = (
+				FFEBBB3826223F75000F475F /* brain-marks */,
+				FFEBBB4A26223F7F000F475F /* brain-marksTests */,
+				FFEBBB5526223F7F000F475F /* brain-marksUITests */,
+				FFEBBB3726223F75000F475F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFEBBB3726223F75000F475F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFEBBB3626223F75000F475F /* brain-marks.app */,
+				FFEBBB4726223F7F000F475F /* brain-marksTests.xctest */,
+				FFEBBB5226223F7F000F475F /* brain-marksUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFEBBB3826223F75000F475F /* brain-marks */ = {
+			isa = PBXGroup;
+			children = (
+				FFEBBB3926223F75000F475F /* brain_marksApp.swift */,
+				FFEBBB3B26223F75000F475F /* ContentView.swift */,
+				FFEBBB3D26223F7E000F475F /* Assets.xcassets */,
+				FFEBBB4226223F7E000F475F /* Info.plist */,
+				FFEBBB3F26223F7E000F475F /* Preview Content */,
+			);
+			path = "brain-marks";
+			sourceTree = "<group>";
+		};
+		FFEBBB3F26223F7E000F475F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FFEBBB4026223F7E000F475F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FFEBBB4A26223F7F000F475F /* brain-marksTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFEBBB4B26223F7F000F475F /* brain_marksTests.swift */,
+				FFEBBB4D26223F7F000F475F /* Info.plist */,
+			);
+			path = "brain-marksTests";
+			sourceTree = "<group>";
+		};
+		FFEBBB5526223F7F000F475F /* brain-marksUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FFEBBB5626223F7F000F475F /* brain_marksUITests.swift */,
+				FFEBBB5826223F7F000F475F /* Info.plist */,
+			);
+			path = "brain-marksUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFEBBB3526223F75000F475F /* brain-marks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFEBBB5B26223F7F000F475F /* Build configuration list for PBXNativeTarget "brain-marks" */;
+			buildPhases = (
+				FFEBBB3226223F75000F475F /* Sources */,
+				FFEBBB3326223F75000F475F /* Frameworks */,
+				FFEBBB3426223F75000F475F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "brain-marks";
+			productName = "brain-marks";
+			productReference = FFEBBB3626223F75000F475F /* brain-marks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FFEBBB4626223F7F000F475F /* brain-marksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFEBBB5E26223F7F000F475F /* Build configuration list for PBXNativeTarget "brain-marksTests" */;
+			buildPhases = (
+				FFEBBB4326223F7F000F475F /* Sources */,
+				FFEBBB4426223F7F000F475F /* Frameworks */,
+				FFEBBB4526223F7F000F475F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFEBBB4926223F7F000F475F /* PBXTargetDependency */,
+			);
+			name = "brain-marksTests";
+			productName = "brain-marksTests";
+			productReference = FFEBBB4726223F7F000F475F /* brain-marksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FFEBBB5126223F7F000F475F /* brain-marksUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFEBBB6126223F7F000F475F /* Build configuration list for PBXNativeTarget "brain-marksUITests" */;
+			buildPhases = (
+				FFEBBB4E26223F7F000F475F /* Sources */,
+				FFEBBB4F26223F7F000F475F /* Frameworks */,
+				FFEBBB5026223F7F000F475F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFEBBB5426223F7F000F475F /* PBXTargetDependency */,
+			);
+			name = "brain-marksUITests";
+			productName = "brain-marksUITests";
+			productReference = FFEBBB5226223F7F000F475F /* brain-marksUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFEBBB2E26223F75000F475F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					FFEBBB3526223F75000F475F = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					FFEBBB4626223F7F000F475F = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = FFEBBB3526223F75000F475F;
+					};
+					FFEBBB5126223F7F000F475F = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = FFEBBB3526223F75000F475F;
+					};
+				};
+			};
+			buildConfigurationList = FFEBBB3126223F75000F475F /* Build configuration list for PBXProject "brain-marks" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFEBBB2D26223F75000F475F;
+			productRefGroup = FFEBBB3726223F75000F475F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFEBBB3526223F75000F475F /* brain-marks */,
+				FFEBBB4626223F7F000F475F /* brain-marksTests */,
+				FFEBBB5126223F7F000F475F /* brain-marksUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFEBBB3426223F75000F475F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFEBBB4126223F7E000F475F /* Preview Assets.xcassets in Resources */,
+				FFEBBB3E26223F7E000F475F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFEBBB4526223F7F000F475F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFEBBB5026223F7F000F475F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFEBBB3226223F75000F475F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFEBBB3C26223F75000F475F /* ContentView.swift in Sources */,
+				FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFEBBB4326223F7F000F475F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFEBBB4C26223F7F000F475F /* brain_marksTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFEBBB4E26223F7F000F475F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFEBBB5726223F7F000F475F /* brain_marksUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFEBBB4926223F7F000F475F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFEBBB3526223F75000F475F /* brain-marks */;
+			targetProxy = FFEBBB4826223F7F000F475F /* PBXContainerItemProxy */;
+		};
+		FFEBBB5426223F7F000F475F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFEBBB3526223F75000F475F /* brain-marks */;
+			targetProxy = FFEBBB5326223F7F000F475F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FFEBBB5926223F7F000F475F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FFEBBB5A26223F7F000F475F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFEBBB5C26223F7F000F475F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"brain-marks/Preview Content\"";
+				DEVELOPMENT_TEAM = Y535846H6P;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "brain-marks/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mikaelacaron.brain-marks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FFEBBB5D26223F7F000F475F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"brain-marks/Preview Content\"";
+				DEVELOPMENT_TEAM = Y535846H6P;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "brain-marks/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mikaelacaron.brain-marks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FFEBBB5F26223F7F000F475F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y535846H6P;
+				INFOPLIST_FILE = "brain-marksTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mikaelacaron.brain-marksTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/brain-marks.app/brain-marks";
+			};
+			name = Debug;
+		};
+		FFEBBB6026223F7F000F475F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y535846H6P;
+				INFOPLIST_FILE = "brain-marksTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mikaelacaron.brain-marksTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/brain-marks.app/brain-marks";
+			};
+			name = Release;
+		};
+		FFEBBB6226223F7F000F475F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y535846H6P;
+				INFOPLIST_FILE = "brain-marksUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mikaelacaron.brain-marksUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "brain-marks";
+			};
+			name = Debug;
+		};
+		FFEBBB6326223F7F000F475F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y535846H6P;
+				INFOPLIST_FILE = "brain-marksUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mikaelacaron.brain-marksUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "brain-marks";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFEBBB3126223F75000F475F /* Build configuration list for PBXProject "brain-marks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFEBBB5926223F7F000F475F /* Debug */,
+				FFEBBB5A26223F7F000F475F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFEBBB5B26223F7F000F475F /* Build configuration list for PBXNativeTarget "brain-marks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFEBBB5C26223F7F000F475F /* Debug */,
+				FFEBBB5D26223F7F000F475F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFEBBB5E26223F7F000F475F /* Build configuration list for PBXNativeTarget "brain-marksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFEBBB5F26223F7F000F475F /* Debug */,
+				FFEBBB6026223F7F000F475F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFEBBB6126223F7F000F475F /* Build configuration list for PBXNativeTarget "brain-marksUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFEBBB6226223F7F000F475F /* Debug */,
+				FFEBBB6326223F7F000F475F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFEBBB2E26223F75000F475F /* Project object */;
+}
