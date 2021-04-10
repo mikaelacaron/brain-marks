@@ -1,4 +1,4 @@
-Brain Marks
+# Brain Marks
 
 Categorize your twitter bookmarks!
 
