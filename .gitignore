@@ -2,6 +2,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos,xcode,swift
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,xcode,swift
 
+# Ignore secrets
+Secrets.swift
+
 ### macOS ###
 # General
 .DS_Store
