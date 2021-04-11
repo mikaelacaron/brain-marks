@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TweetList: View {
-    var category: Category
+    var category: AWSCategory
     
     var body: some View {
         
@@ -17,7 +17,7 @@ struct TweetList: View {
         }        .toolbar {
             ToolbarItem(placement: .principal) {
                 HStack {
-                    Image(systemName: category.imageName)
+                    Image(systemName: category.imageName ?? "swift")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 25, height: 25)

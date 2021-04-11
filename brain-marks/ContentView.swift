@@ -12,10 +12,7 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            CategoryList(categories: [
-                Category(id: 0, name: "SwiftUI", numberOfTweets: 3, imageName: "swift"),
-                Category(id: 1, name: "BigBrainHacks", numberOfTweets: 5, imageName: "laptopcomputer")
-            ])
+            CategoryList()
         }
     }
 }

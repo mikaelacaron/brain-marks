@@ -21,10 +21,12 @@
 		C4392E80BFE640DAA2625F9D /* AWSTweet+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC43813A9098469FB57F5871 /* AWSTweet+Schema.swift */; };
 		CA80832580B84CB3A2D5F629 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F5BDE61EAA4A2DB9030734 /* AmplifyModels.swift */; };
 		CF16AFB9BE3F401E98C85114 /* AWSTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA54EDF3B34443CA9D530E5 /* AWSTweet.swift */; };
+		FF36B661262357F9007A6D7F /* AWSCategory+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */; };
 		FF59902B2622C1CE004DF328 /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = FF59902A2622C1CE004DF328 /* Amplify */; };
 		FF59902D2622C1CE004DF328 /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = FF59902C2622C1CE004DF328 /* AWSAPIPlugin */; };
 		FF59902F2622C1CE004DF328 /* AWSDataStorePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = FF59902E2622C1CE004DF328 /* AWSDataStorePlugin */; };
 		FF5990692622DD61004DF328 /* DataStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5990682622DD61004DF328 /* DataStoreManager.swift */; };
+		FF6DCBF22623530400EC366F /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */; };
 		FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB3926223F75000F475F /* brain_marksApp.swift */; };
 		FFEBBB3C26223F75000F475F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB3B26223F75000F475F /* ContentView.swift */; };
 		FFEBBB3E26223F7E000F475F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEBBB3D26223F7E000F475F /* Assets.xcassets */; };
@@ -68,7 +70,9 @@
 		CC43813A9098469FB57F5871 /* AWSTweet+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "AWSTweet+Schema.swift"; path = "amplify/generated/models/AWSTweet+Schema.swift"; sourceTree = "<group>"; };
 		DA7D79B731BC4ECFAAE8E817 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = awsconfiguration.json; sourceTree = "<group>"; };
 		ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AWSCategory+Extension.swift"; sourceTree = "<group>"; };
 		FF5990682622DD61004DF328 /* DataStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreManager.swift; sourceTree = "<group>"; };
+		FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
 		FFEBBB3626223F75000F475F /* brain-marks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "brain-marks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEBBB3926223F75000F475F /* brain_marksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brain_marksApp.swift; sourceTree = "<group>"; };
 		FFEBBB3B26223F75000F475F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 				FFEBBB7526226A39000F475F /* Secrets.swift */,
 				91739DEA2622D2A7000F982A /* AddURLView.swift */,
 				FF5990682622DD61004DF328 /* DataStoreManager.swift */,
+				FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */,
+				FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */,
 			);
 			path = "brain-marks";
 			sourceTree = "<group>";
@@ -387,8 +393,10 @@
 				C0DAFC52B24C456EAE5AEF21 /* AWSCategory.swift in Sources */,
 				684E2F2D3FCC4D36AC68E57D /* AWSCategory+Schema.swift in Sources */,
 				CF16AFB9BE3F401E98C85114 /* AWSTweet.swift in Sources */,
+				FF36B661262357F9007A6D7F /* AWSCategory+Extension.swift in Sources */,
 				C4392E80BFE640DAA2625F9D /* AWSTweet+Schema.swift in Sources */,
 				A205CD422622A3EB00517DB5 /* TweetList.swift in Sources */,
+				FF6DCBF22623530400EC366F /* CategoryListViewModel.swift in Sources */,
 				91739DEB2622D2A7000F982A /* AddURLView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
