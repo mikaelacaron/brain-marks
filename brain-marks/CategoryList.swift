@@ -50,7 +50,7 @@ struct CategoryList: View {
         }
         .accentColor(.black)
                 .sheet(isPresented:$showAddURLView){
-                    AddURLView()
+                    AddURLView(categories: viewModel.categories)
                 }
     }
 }
