@@ -13,7 +13,7 @@ struct TweetList: View {
     var body: some View {
         
         List {
-            Text("This is a tweet!")
+            Text("This is a tweet")
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
