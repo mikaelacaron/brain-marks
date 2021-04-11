@@ -30,14 +30,6 @@ struct TweetList: View {
     }
 }
 
-//struct TweetList_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TweetList(category: Category(id: 0,
-//                                     name: "SwiftUI",
-//                                     numberOfTweets: 3,
-//                                     imageName: "swift"))
-//    }
-//}
 extension TweetList {
     func get(url:String) {
         var count = 0
@@ -72,10 +64,7 @@ extension TweetList {
                     }
                     DispatchQueue.main.async {
                         // update UI
-                    }
-                    
-
-                    
+                    }       
                 } catch {
                     print("\(error.localizedDescription)")
                 }

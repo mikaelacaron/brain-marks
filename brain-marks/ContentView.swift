@@ -11,7 +11,7 @@ struct ContentView: View {
     @State private var showAddSheet = false
 
     var body: some View {
-        NavigationView{
+        NavigationView {
         VStack {
             CategoryList(categories: [
                 Category(id: 0, name: "SwiftUI", numberOfTweets: 3, imageName: "swift"),
@@ -21,14 +21,16 @@ struct ContentView: View {
 //                get(url: "https://twitter.com/mikaela__caron/status/1380956548042682370?s=21")
 //            })
         }.navigationBarTitle("🧠",displayMode: .inline)
-        .navigationBarItems(trailing: Button(action:{
-            self.showAddSheet = true
-        }){
-            Image(systemName: "plus.circle")
-                .font(.system(size: 30))
-                .foregroundColor(.black)
-        })
-        }.sheet(isPresented:$showAddSheet){
+        .navigationBarItems(trailing:
+                                Button {
+                                    self.showAddSheet = true
+                                } label: {
+                                    Image(systemName: "plus.circle")
+                                        .font(.system(size: 30))
+                                        .foregroundColor(.black)
+                                }
+        )
+        }.sheet(isPresented:$showAddSheet) {
             AddURLView()
         }
         
