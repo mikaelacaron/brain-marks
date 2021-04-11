@@ -36,7 +36,20 @@ struct AddURLView: View {
             } ,trailing:   Button("Save") {
                 // save tweet
                 
-                get(url: newEntry)
+                get(url: newEntry) { result in
+                    switch result {
+                    case .success(let tweet):
+                        
+                        DataStoreManger.shared.fetchCategories { (result) in
+                            if case .success(let categories) = result {
+                                DataStoreManger.shared.createTweet(tweet: tweet, category: categories.first!)
+                            }g
+                        }
+                        
+                    case .failure(let error):
+                        print("❌ Couldn't save tweet")
+                    }
+                }
                 presentationMode.wrappedValue.dismiss()
             })
         }
@@ -45,7 +58,7 @@ struct AddURLView: View {
 }
 
 extension AddURLView {
-    func get(url:String) {
+    func get(url:String, completion: @escaping (Result<TweetModel, Error>) -> Void) {
         var count = 0
         
         let id = url.components(separatedBy: "/").last!.components(separatedBy: "?")[0]
@@ -71,10 +84,8 @@ extension AddURLView {
                 do {
                     if error == nil {
                         let result = try JSONDecoder().decode(ResponseModel.self, from: data)
-                        // update UI
-                        count += 1
-                        print("\(count)\(result)")
                         
+                        completion(.success(result.data))
                     }
                     
                     DispatchQueue.main.async {
