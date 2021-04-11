@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showAddSheet = false
+
     var body: some View {
+        NavigationView{
         VStack {
             CategoryList(categories: [
                 Category(id: 0, name: "SwiftUI", numberOfTweets: 3, imageName: "swift"),
@@ -17,7 +20,17 @@ struct ContentView: View {
             Button("hey",action: {
                 get()
             })
+        }.navigationBarItems(trailing: Button(action:{
+            self.showAddSheet = true
+        }){
+            Image(systemName: "plus.circle")
+                .font(.system(size: 30))
+                .foregroundColor(.black)
+        })
+        }.sheet(isPresented:$showAddSheet){
+            AddURLView()
         }
+        
     }
 }
 

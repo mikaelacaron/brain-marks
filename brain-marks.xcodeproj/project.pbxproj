@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91739DEB2622D2A7000F982A /* AddURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91739DEA2622D2A7000F982A /* AddURLView.swift */; };
 		91C8958926228D1500689196 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8958826228D1500689196 /* Tweet.swift */; };
 		A205CD422622A3EB00517DB5 /* TweetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A205CD412622A3EB00517DB5 /* TweetList.swift */; };
 		A2F4498C2622802B00725FEA /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F4498B2622802B00725FEA /* CategoryRow.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91739DEA2622D2A7000F982A /* AddURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddURLView.swift; sourceTree = "<group>"; };
 		91C8958826228D1500689196 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		A205CD412622A3EB00517DB5 /* TweetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetList.swift; sourceTree = "<group>"; };
 		A2F4498B2622802B00725FEA /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				FFEBBB4226223F7E000F475F /* Info.plist */,
 				FFEBBB3F26223F7E000F475F /* Preview Content */,
 				FFEBBB7526226A39000F475F /* Secrets.swift */,
+				91739DEA2622D2A7000F982A /* AddURLView.swift */,
 			);
 			path = "brain-marks";
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */,
 				A2F449A22622883E00725FEA /* Category.swift in Sources */,
 				A205CD422622A3EB00517DB5 /* TweetList.swift in Sources */,
+				91739DEB2622D2A7000F982A /* AddURLView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
