@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct TweetList: View {
-    var category: AWSCategory
+    
+    let category: AWSCategory
+    
+    @StateObject var viewModel = TweetListViewModel()
     
     var body: some View {
         
-        List {
-            TweetCard()
+        List(viewModel.tweets) { tweet in
+            TweetCard(tweet: tweet)
         }        .toolbar {
             ToolbarItem(placement: .principal) {
                 HStack {
@@ -24,6 +27,9 @@ struct TweetList: View {
                     Text(category.name)
                 }
             }
+        }
+        .onAppear {
+            viewModel.fetchTweets(category: category)
         }
         
         Spacer()

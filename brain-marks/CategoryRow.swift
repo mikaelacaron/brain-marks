@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CategoryRow: View {
-    var category: AWSCategory
+    let category: AWSCategory
 
     var body: some View {
         HStack {

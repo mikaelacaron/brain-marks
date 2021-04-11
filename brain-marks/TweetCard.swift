@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct TweetCard: View {
-    //    var tweet: TweetModel
+    
+    @State var tweet: AWSTweet
     
     var body: some View {
         VStack(alignment: .leading) {
             TweetHeaderView()
-            TweetBodyView()
+            TweetBodyView(tweetBody: tweet.text!)
 //            TweetFooterView()
         }
     }
@@ -31,8 +32,9 @@ struct TweetHeaderView: View {
 }
 
 struct TweetBodyView: View {
+    let tweetBody: String
     var body: some View {
-        Text("Starship just landed on Mars for the first time")
+        Text(tweetBody)
             .font(.system(size: 24, weight: .light, design: .default))
             .lineSpacing(8.0)
             .padding(EdgeInsets(top: 0, leading: 18, bottom: 18, trailing: 18))
@@ -131,7 +133,7 @@ struct UserInfoView: View {
 
 struct TweetCard_Previews: PreviewProvider {
     static var previews: some View {
-        TweetCard()
+        TweetCard(tweet: AWSTweet(id: "123", tweetID: "234", text: "Tweet ext here"))
             .previewLayout(PreviewLayout.sizeThatFits)
     }
 }
