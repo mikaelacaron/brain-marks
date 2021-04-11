@@ -18,7 +18,7 @@ struct ContentView: View {
                 Category(id: 1, name: "BigBrainHacks", numberOfTweets: 5, imageName: "laptopcomputer")
             ])
             Button("hey",action: {
-                get()
+                get(url: "https://twitter.com/mikaela__caron/status/1380956548042682370?s=21")
             })
         }.navigationBarItems(trailing: Button(action:{
             self.showAddSheet = true
@@ -30,7 +30,6 @@ struct ContentView: View {
         }.sheet(isPresented:$showAddSheet){
             AddURLView()
         }
-        
     }
 }
 
@@ -40,8 +39,10 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 extension ContentView {
-    func get() {
-        var request = URLRequest(url: URL(string: "https://api.twitter.com/2/tweets/1380990780248973312")!,timeoutInterval: Double.infinity)
+    func get(url: String) {
+        let id = url.components(separatedBy: "/").last!.components(separatedBy: "?")[0]
+        
+        var request = URLRequest(url: URL(string: "https://api.twitter.com/2/tweets/\(id)")!,timeoutInterval: Double.infinity)
         
         request.addValue("Bearer \(Secrets.bearerToken)", forHTTPHeaderField: "Authorization")
         
