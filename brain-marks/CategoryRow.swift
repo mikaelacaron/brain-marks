@@ -25,8 +25,14 @@ struct CategoryRow: View {
 struct CategoryRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CategoryRow(category: Category(id: 0, name: "SwiftUI", numberOfTweets: 3, imageName: "swift"))
-            CategoryRow(category: Category(id: 1, name: "BigBrainHacks", numberOfTweets: 5, imageName: "laptopcomputer"))
+            CategoryRow(category: Category(id: 0,
+                                           name: "SwiftUI",
+                                           numberOfTweets: 3,
+                                           imageName: "swift"))
+            CategoryRow(category: Category(id: 1,
+                                           name: "BigBrainHacks",
+                                           numberOfTweets: 5,
+                                           imageName: "laptopcomputer"))
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }

@@ -21,8 +21,14 @@ struct CategoryList: View {
 struct CategoryList_Previews: PreviewProvider {
     static var previews: some View {
         CategoryList(categories: [
-            Category(id: 0, name: "SwiftUI", numberOfTweets: 3, imageName: "swift"),
-            Category(id: 1, name: "BigBrainHacks", numberOfTweets: 5, imageName: "laptopcomputer")
+            Category(id: 0,
+                     name: "SwiftUI",
+                     numberOfTweets: 3,
+                     imageName: "swift"),
+            Category(id: 1,
+                     name: "BigBrainHacks",
+                     numberOfTweets: 5,
+                     imageName: "laptopcomputer")
         ])
     }
 }
