@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2F4498C2622802B00725FEA /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F4498B2622802B00725FEA /* CategoryRow.swift */; };
+		A2F449912622829D00725FEA /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F449902622829D00725FEA /* CategoryList.swift */; };
 		A2F449A22622883E00725FEA /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F449A12622883E00725FEA /* Category.swift */; };
 		FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB3926223F75000F475F /* brain_marksApp.swift */; };
 		FFEBBB3C26223F75000F475F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB3B26223F75000F475F /* ContentView.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A2F4498B2622802B00725FEA /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
+		A2F449902622829D00725FEA /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		A2F449A12622883E00725FEA /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		FFEBBB3626223F75000F475F /* brain-marks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "brain-marks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEBBB3926223F75000F475F /* brain_marksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brain_marksApp.swift; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 			children = (
 				FFEBBB3926223F75000F475F /* brain_marksApp.swift */,
 				FFEBBB3B26223F75000F475F /* ContentView.swift */,
+				A2F4498B2622802B00725FEA /* CategoryRow.swift */,
+				A2F449902622829D00725FEA /* CategoryList.swift */,
 				A2F4499A2622865600725FEA /* Model */,
 				FFEBBB3D26223F7E000F475F /* Assets.xcassets */,
 				FFEBBB4226223F7E000F475F /* Info.plist */,
@@ -296,6 +302,8 @@
 			files = (
 				FFEBBB3C26223F75000F475F /* ContentView.swift in Sources */,
 				FFEBBB7626226A39000F475F /* Secrets.swift in Sources */,
+				A2F449912622829D00725FEA /* CategoryList.swift in Sources */,
+				A2F4498C2622802B00725FEA /* CategoryRow.swift in Sources */,
 				FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */,
 				A2F449A22622883E00725FEA /* Category.swift in Sources */,
 			);

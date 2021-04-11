@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        CategoryList(categories: [
+            Category(id: 0, name: "SwiftUI", numberOfTweets: 3, imageName: "swift"),
+            Category(id: 1, name: "BigBrainHacks", numberOfTweets: 5, imageName: "laptopcomputer")
+        ])
     }
 }
 
