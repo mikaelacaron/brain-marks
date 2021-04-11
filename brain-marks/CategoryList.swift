@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CategoryList: View {
-    
+    @State private var showAddURLView = false
     @StateObject var viewModel = CategoryListViewModel()
     
     @State private var showingSheet = false
@@ -34,15 +34,24 @@ struct CategoryList: View {
                     
                     Spacer()
                     
-                    Button("Add Tweet") {
+                    Button(action:{
+                        self.showAddURLView = true
+                    }){
+                        Image(systemName:"plus.circle")
+                            .font(.largeTitle)
                         
                     }
+                    
                 }
             }
         }
         .onAppear {
             viewModel.getCategories()
         }
+        .accentColor(.black)
+                .sheet(isPresented:$showAddURLView){
+                    AddURLView()
+                }
     }
 }
 
