@@ -22,6 +22,9 @@
 		CA80832580B84CB3A2D5F629 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F5BDE61EAA4A2DB9030734 /* AmplifyModels.swift */; };
 		CF16AFB9BE3F401E98C85114 /* AWSTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA54EDF3B34443CA9D530E5 /* AWSTweet.swift */; };
 		FF36B661262357F9007A6D7F /* AWSCategory+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */; };
+		FF36B66C26235FE6007A6D7F /* TweetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B66B26235FE6007A6D7F /* TweetListViewModel.swift */; };
+		FF36B6712623678D007A6D7F /* AWSTweet+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B6702623678D007A6D7F /* AWSTweet+Extension.swift */; };
+		FF36B67626236872007A6D7F /* TweetCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B67526236872007A6D7F /* TweetCardViewModel.swift */; };
 		FF59902B2622C1CE004DF328 /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = FF59902A2622C1CE004DF328 /* Amplify */; };
 		FF59902D2622C1CE004DF328 /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = FF59902C2622C1CE004DF328 /* AWSAPIPlugin */; };
 		FF59902F2622C1CE004DF328 /* AWSDataStorePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = FF59902E2622C1CE004DF328 /* AWSDataStorePlugin */; };
@@ -71,6 +74,9 @@
 		DA7D79B731BC4ECFAAE8E817 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = awsconfiguration.json; sourceTree = "<group>"; };
 		ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AWSCategory+Extension.swift"; sourceTree = "<group>"; };
+		FF36B66B26235FE6007A6D7F /* TweetListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetListViewModel.swift; sourceTree = "<group>"; };
+		FF36B6702623678D007A6D7F /* AWSTweet+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AWSTweet+Extension.swift"; sourceTree = "<group>"; };
+		FF36B67526236872007A6D7F /* TweetCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCardViewModel.swift; sourceTree = "<group>"; };
 		FF5990682622DD61004DF328 /* DataStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreManager.swift; sourceTree = "<group>"; };
 		FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
 		FFEBBB3626223F75000F475F /* brain-marks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "brain-marks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +196,9 @@
 				FF5990682622DD61004DF328 /* DataStoreManager.swift */,
 				FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */,
 				FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */,
+				FF36B66B26235FE6007A6D7F /* TweetListViewModel.swift */,
+				FF36B6702623678D007A6D7F /* AWSTweet+Extension.swift */,
+				FF36B67526236872007A6D7F /* TweetCardViewModel.swift */,
 			);
 			path = "brain-marks";
 			sourceTree = "<group>";
@@ -383,6 +392,7 @@
 				91C8958926228D1500689196 /* Tweet.swift in Sources */,
 				FFEBBB3C26223F75000F475F /* ContentView.swift in Sources */,
 				A224A9E62622BCED00AC12AF /* TweetCard.swift in Sources */,
+				FF36B6712623678D007A6D7F /* AWSTweet+Extension.swift in Sources */,
 				FFEBBB7626226A39000F475F /* Secrets.swift in Sources */,
 				A2F449912622829D00725FEA /* CategoryList.swift in Sources */,
 				A2F4498C2622802B00725FEA /* CategoryRow.swift in Sources */,
@@ -390,10 +400,12 @@
 				FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */,
 				A2F449A22622883E00725FEA /* Category.swift in Sources */,
 				CA80832580B84CB3A2D5F629 /* AmplifyModels.swift in Sources */,
+				FF36B67626236872007A6D7F /* TweetCardViewModel.swift in Sources */,
 				C0DAFC52B24C456EAE5AEF21 /* AWSCategory.swift in Sources */,
 				684E2F2D3FCC4D36AC68E57D /* AWSCategory+Schema.swift in Sources */,
 				CF16AFB9BE3F401E98C85114 /* AWSTweet.swift in Sources */,
 				FF36B661262357F9007A6D7F /* AWSCategory+Extension.swift in Sources */,
+				FF36B66C26235FE6007A6D7F /* TweetListViewModel.swift in Sources */,
 				C4392E80BFE640DAA2625F9D /* AWSTweet+Schema.swift in Sources */,
 				A205CD422622A3EB00517DB5 /* TweetList.swift in Sources */,
 				FF6DCBF22623530400EC366F /* CategoryListViewModel.swift in Sources */,
