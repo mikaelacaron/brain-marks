@@ -12,8 +12,13 @@ struct CategoryList: View {
     var categories: [Category]
 
     var body: some View {
-        List(categories) { category in
-            CategoryRow(category: category)
+        NavigationView {
+            List(categories) { category in
+                NavigationLink(destination: TweetList(category: category)) {
+                    CategoryRow(category: category)
+                }
+            }
+            .navigationTitle("Categories")
         }
     }
 }
