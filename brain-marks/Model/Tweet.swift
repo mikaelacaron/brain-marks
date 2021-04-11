@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 struct TweetModel: Codable {
     let id:String
     let text:String
