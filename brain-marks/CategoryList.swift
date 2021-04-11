@@ -14,10 +14,12 @@ struct CategoryList: View {
     var body: some View {
         NavigationView {
             List(categories) { category in
-                NavigationLink(destination: TweetList(category: category)) {
+                 NavigationLink(destination: TweetList(category: category)) {
                     CategoryRow(category: category)
                 }
-            }
+            
+            }.listStyle(InsetGroupedListStyle())
+            .environment(\.horizontalSizeClass, .regular)
             .navigationTitle("Categories")
         }
     }

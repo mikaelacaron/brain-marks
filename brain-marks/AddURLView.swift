@@ -14,7 +14,8 @@ struct AddURLView: View {
     let categories = ["SwiftUI", "BigBrainHacks"]
 
     var body: some View {
-        NavigationView{ Form{
+        NavigationView{
+            Form{
             TextField("Enter copied url", text: $newEntry)
                 .autocapitalization(.none)
             Picker(selection: $selectedCategory , label: Text("Category"), content: {
@@ -24,7 +25,8 @@ struct AddURLView: View {
             })
           
             
-        }.navigationBarItems(leading:Button(action:{
+        }.navigationBarTitle("",displayMode: .inline)
+        .navigationBarItems(leading:Button(action:{
             //create new category
         }){
             HStack{
@@ -44,11 +46,11 @@ struct AddURLView: View {
 
 }
 
-struct AddURLView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddURLView()
-    }
-}
+//struct AddURLView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddURLView()
+//    }
+//}
 extension AddURLView {
     func get(url:String) {
         var count = 0

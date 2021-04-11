@@ -12,8 +12,8 @@ struct TweetList: View {
     
     var body: some View {
         
-        List { 
-            Text("This is a tweet")
+        List {
+            Text("new tweet")
         }        .toolbar {
             ToolbarItem(placement: .principal) {
                 HStack {
@@ -30,14 +30,14 @@ struct TweetList: View {
     }
 }
 
-struct TweetList_Previews: PreviewProvider {
-    static var previews: some View {
-        TweetList(category: Category(id: 0,
-                                     name: "SwiftUI",
-                                     numberOfTweets: 3,
-                                     imageName: "swift"))
-    }
-}
+//struct TweetList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TweetList(category: Category(id: 0,
+//                                     name: "SwiftUI",
+//                                     numberOfTweets: 3,
+//                                     imageName: "swift"))
+//    }
+//}
 extension TweetList {
     func get(url:String) {
         var count = 0
@@ -64,16 +64,17 @@ extension TweetList {
                 
                 do {
                     if error == nil {
-                        let result = try JSONDecoder().decode(ResponseModel.self, from: data)
+                        let result = try JSONDecoder().decode([ResponseModel].self, from: data)
                         // update UI
                         count += 1
                         print("\(count)\(result)")
-                        
+
                     }
-                    
                     DispatchQueue.main.async {
                         // update UI
                     }
+                    
+
                     
                 } catch {
                     print("\(error.localizedDescription)")

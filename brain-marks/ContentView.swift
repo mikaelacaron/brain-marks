@@ -20,7 +20,8 @@ struct ContentView: View {
 //            Button("hey",action: {
 //                get(url: "https://twitter.com/mikaela__caron/status/1380956548042682370?s=21")
 //            })
-        }.navigationBarItems(trailing: Button(action:{
+        }.navigationBarTitle("🧠",displayMode: .inline)
+        .navigationBarItems(trailing: Button(action:{
             self.showAddSheet = true
         }){
             Image(systemName: "plus.circle")
