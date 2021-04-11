@@ -21,6 +21,19 @@ struct CategoryList: View {
             }.listStyle(InsetGroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
             .navigationTitle("Categories")
+            .toolbar {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button("New Category") {
+                        
+                    }
+                    
+                    Spacer()
+                    
+                    Button("Add Tweet") {
+                        
+                    }
+                }
+            }
         }
     }
 }
