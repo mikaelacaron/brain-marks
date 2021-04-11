@@ -68,6 +68,7 @@ struct NewCategorySheetView: View {
                     
                     Button {
                         presentationMode.wrappedValue.dismiss()
+                        DataStoreManger.shared.createCategory(category: AWSCategory(name: newCategory, imageName: "snow"))
                     } label: {
                         Text("Create")
                             .frame(width: 150, height: 50)
