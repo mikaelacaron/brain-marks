@@ -62,7 +62,7 @@ extension AddURLView {
         var count = 0
         
         let id = url.components(separatedBy: "/").last!.components(separatedBy: "?")[0]
-        var request = URLRequest(url: URL(string: "https://api.twitter.com/2/tweets/\(id)")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: "https://api.twitter.com/2/tweets/\(id)?expansions=author_id")!,timeoutInterval: Double.infinity)
         
         request.addValue("Bearer \(Secrets.bearerToken)", forHTTPHeaderField: "Authorization")
         
