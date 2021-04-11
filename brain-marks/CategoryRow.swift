@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct CategoryRow: View {
-    var category: Category
+    var category: AWSCategory
 
     var body: some View {
         HStack {
-            Image(systemName: category.imageName)
+            Image(systemName: category.imageName ?? "swift")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 40, height: 40)
@@ -22,18 +22,18 @@ struct CategoryRow: View {
     }
 }
 
-struct CategoryRow_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            CategoryRow(category: Category(id: 0,
-                                           name: "SwiftUI",
-                                           numberOfTweets: 3,
-                                           imageName: "swift"))
-            CategoryRow(category: Category(id: 1,
-                                           name: "BigBrainHacks",
-                                           numberOfTweets: 5,
-                                           imageName: "laptopcomputer"))
-        }
-        .previewLayout(.fixed(width: 300, height: 70))
-    }
-}
+//struct CategoryRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            CategoryRow(category: Category(id: 0,
+//                                           name: "SwiftUI",
+//                                           numberOfTweets: 3,
+//                                           imageName: "swift"))
+//            CategoryRow(category: Category(id: 1,
+//                                           name: "BigBrainHacks",
+//                                           numberOfTweets: 5,
+//                                           imageName: "laptopcomputer"))
+//        }
+//        .previewLayout(.fixed(width: 300, height: 70))
+//    }
+//}

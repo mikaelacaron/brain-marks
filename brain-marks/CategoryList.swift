@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct CategoryList: View {
-
-    var categories: [Category]
+    
+    @StateObject var viewModel = CategoryListViewModel()
+    
     @State private var showingSheet = false
-
+    
     var body: some View {
         NavigationView {
-            List(categories) { category in
-                 NavigationLink(destination: TweetList(category: category)) {
+            List(viewModel.categories) { category in
+                NavigationLink(destination: TweetList(category: category)) {
                     CategoryRow(category: category)
                 }
-            
+                
             }.listStyle(InsetGroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
             .navigationTitle("Categories")
@@ -38,6 +39,9 @@ struct CategoryList: View {
                     }
                 }
             }
+        }
+        .onAppear {
+            viewModel.getCategories()
         }
     }
 }
@@ -68,6 +72,7 @@ struct NewCategorySheetView: View {
                     
                     Button {
                         presentationMode.wrappedValue.dismiss()
+                        DataStoreManger.shared.createCategory(category: AWSCategory(name: newCategory, imageName: "swift"))
                     } label: {
                         Text("Create")
                             .frame(width: 150, height: 50)
@@ -86,16 +91,7 @@ struct NewCategorySheetView: View {
 
 struct CategoryList_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryList(categories: [
-            Category(id: 0,
-                     name: "SwiftUI",
-                     numberOfTweets: 3,
-                     imageName: "swift"),
-            Category(id: 1,
-                     name: "BigBrainHacks",
-                     numberOfTweets: 5,
-                     imageName: "laptopcomputer")
-        ])
+        CategoryList()
         
         NewCategorySheetView()
     }
