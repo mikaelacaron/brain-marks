@@ -8,16 +8,34 @@
 import SwiftUI
 
 struct AddURLView: View {
+    @State private var selectedCategory = "None"
     @State var newEntry = ""
     @Environment(\.presentationMode) var presentationMode
+    let categories = ["SwiftUI", "BigBrainHacks"]
+
     var body: some View {
         NavigationView{ Form{
             TextField("Enter copied url", text: $newEntry)
                 .autocapitalization(.none)
+            Picker(selection: $selectedCategory , label: Text("Category"), content: {
+                ForEach(categories, id: \.self) {
+                    Text($0)
+                }
+            })
           
             
-        }.navigationBarItems(trailing:   Button("Save"){
+        }.navigationBarItems(leading:Button(action:{
+            //create new category
+        }){
+            HStack{
+                Image(systemName: "plus.app")
+                    .font(.system( size: 25))
+                Text("Add Category")
+                    
+            }
+        } ,trailing:   Button("Save"){
             //save tweet
+            
             get(url: newEntry)
             presentationMode.wrappedValue.dismiss()
         })
@@ -33,6 +51,8 @@ struct AddURLView_Previews: PreviewProvider {
 }
 extension AddURLView {
     func get(url:String) {
+        var count = 0
+
         let id = url.components(separatedBy: "/").last!.components(separatedBy: "?")[0]
         var request = URLRequest(url: URL(string: "https://api.twitter.com/2/tweets/\(id)")!,timeoutInterval: Double.infinity)
         
@@ -57,7 +77,8 @@ extension AddURLView {
                     if error == nil {
                         let result = try JSONDecoder().decode(ResponseModel.self, from: data)
                         // update UI
-                        print(result)
+                        count += 1
+                        print("\(count)\(result)")
                         
                     }
                     
