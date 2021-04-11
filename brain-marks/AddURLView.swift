@@ -11,7 +11,7 @@ struct AddURLView: View {
     @State private var selectedCategory = "None"
     @State var newEntry = ""
     @Environment(\.presentationMode) var presentationMode
-    let categories = ["SwiftUI", "BigBrainHacks"]
+    let categories: [AWSCategory]
     
     var body: some View {
         NavigationView {
@@ -19,8 +19,8 @@ struct AddURLView: View {
                 TextField("Enter copied url", text: $newEntry)
                     .autocapitalization(.none)
                 Picker(selection: $selectedCategory , label: Text("Category"), content: {
-                    ForEach(categories, id: \.self) {
-                        Text($0)
+                    List(categories) { category in
+                        Text(category.name)
                     }
                 })
             }.navigationBarTitle("",displayMode: .inline)
