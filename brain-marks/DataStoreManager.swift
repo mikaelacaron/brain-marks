@@ -16,7 +16,6 @@ class DataStoreManger {
     
     // MARK: - Categories
     
-    // This WORKS
     func fetchCategories(completion: @escaping (Result<[AWSCategory], Error>) -> Void) {
         Amplify.DataStore.query(AWSCategory.self) { result in
             switch result {
@@ -30,11 +29,21 @@ class DataStoreManger {
         }
     }
     
-    // This WORKS
-    func createCategory(category: Category) {
-        let awsCategory = AWSCategory(name: category.name, imageName: category.imageName)
-        
-        Amplify.DataStore.save(awsCategory) { result in
+    func fetchSingleCategory(byID: String, completion: @escaping (Result<AWSCategory?, Error>) -> Void) {
+        Amplify.DataStore.query(AWSCategory.self, byId: byID) { result in
+            switch result {
+            case .success(let category):
+                print("✅ Got single category: \(category)")
+                completion(.success(category))
+            case .failure(let error):
+                print("❌ did NOT get categories: \(error)")
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func createCategory(category: AWSCategory) {
+        Amplify.DataStore.save(category) { result in
             switch result {
             case .success:
                 print("✅ saved category")
@@ -46,12 +55,11 @@ class DataStoreManger {
     
     // MARK: - Tweets
     
-    // not working yet
-    private func createTweet(tweet: TweetModel) {
+    func createTweet(tweet: TweetModel, category: AWSCategory) {
         let awsTweet = AWSTweet(id: UUID().uuidString,
                                 tweetID: tweet.id,
                                 text: tweet.text,
-                                category: nil)
+                                category: category)
         
         Amplify.DataStore.save(awsTweet) { result in
             switch result {
@@ -63,8 +71,7 @@ class DataStoreManger {
         }
     }
     
-    // not working yet
-    private func fetchSavedTweets(for category: Category, completion: @escaping (Swift.Array<AWSTweet>?) -> Void) {
+    func fetchSavedTweets(for category: AWSCategory, completion: @escaping (Swift.Array<AWSTweet>?) -> Void) {
         
         Amplify.DataStore.query(AWSCategory.self) { result in
             switch result {
@@ -78,20 +85,8 @@ class DataStoreManger {
                         }
                     }
                 }
-//                for category in categories {
-//                    print("👏 \(category.tweets)")
-//                    let counter: Int = category.tweets?.count ?? 0
-//                    if counter == 0 {
-//                        print("🚨 no tweets in this category")
-//                    } else {    
-//                        for index in 0...counter {
-//                            print("🚀 \(category.tweets?[index])")
-//                        }
-//                    }
-//                    
-//                }
             case .failure(let error):
-                print("❌ did NOT get categories: \(error)")
+                print("❌ did NOT get categories which are needed to get tweets: \(error)")
             }
         }
     }
