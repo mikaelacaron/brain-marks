@@ -16,6 +16,7 @@ struct UserModel: Codable {
     let id: String
     let name: String
     let username: String
+    let profile_image_url: String
 }
 
 struct IncludesModel: Codable {
