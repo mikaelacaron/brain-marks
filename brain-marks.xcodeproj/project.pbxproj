@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91C8958926228D1500689196 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8958826228D1500689196 /* Tweet.swift */; };
 		FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB3926223F75000F475F /* brain_marksApp.swift */; };
 		FFEBBB3C26223F75000F475F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB3B26223F75000F475F /* ContentView.swift */; };
 		FFEBBB3E26223F7E000F475F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEBBB3D26223F7E000F475F /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91C8958826228D1500689196 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		FFEBBB3626223F75000F475F /* brain-marks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "brain-marks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEBBB3926223F75000F475F /* brain_marksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brain_marksApp.swift; sourceTree = "<group>"; };
 		FFEBBB3B26223F75000F475F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		91C8958726228CF600689196 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91C8958826228D1500689196 /* Tweet.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FFEBBB2D26223F75000F475F = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +107,7 @@
 		FFEBBB3826223F75000F475F /* brain-marks */ = {
 			isa = PBXGroup;
 			children = (
+				91C8958726228CF600689196 /* Model */,
 				FFEBBB3926223F75000F475F /* brain_marksApp.swift */,
 				FFEBBB3B26223F75000F475F /* ContentView.swift */,
 				FFEBBB3D26223F7E000F475F /* Assets.xcassets */,
@@ -283,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91C8958926228D1500689196 /* Tweet.swift in Sources */,
 				FFEBBB3C26223F75000F475F /* ContentView.swift in Sources */,
 				FFEBBB7626226A39000F475F /* Secrets.swift in Sources */,
 				FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */,
@@ -444,7 +456,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"brain-marks/Preview Content\"";
-				DEVELOPMENT_TEAM = Y535846H6P;
+				DEVELOPMENT_TEAM = U23VWM3L5A;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "brain-marks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -466,7 +478,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"brain-marks/Preview Content\"";
-				DEVELOPMENT_TEAM = Y535846H6P;
+				DEVELOPMENT_TEAM = U23VWM3L5A;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "brain-marks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
