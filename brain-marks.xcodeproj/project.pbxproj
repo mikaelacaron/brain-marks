@@ -85,17 +85,10 @@
 		91C8958726228CF600689196 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A2F449A12622883E00725FEA /* Category.swift */,
 				91C8958826228D1500689196 /* Tweet.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		A2F4499A2622865600725FEA /* Model-Category */ = {
-			isa = PBXGroup;
-			children = (
-				A2F449A12622883E00725FEA /* Category.swift */,
-			);
-			path = "Model-Category";
 			sourceTree = "<group>";
 		};
 		FFEBBB2D26223F75000F475F = {
@@ -126,7 +119,6 @@
 				FFEBBB3B26223F75000F475F /* ContentView.swift */,
 				A2F4498B2622802B00725FEA /* CategoryRow.swift */,
 				A2F449902622829D00725FEA /* CategoryList.swift */,
-				A2F4499A2622865600725FEA /* Model-Category */,
 				FFEBBB3D26223F7E000F475F /* Assets.xcassets */,
 				FFEBBB4226223F7E000F475F /* Info.plist */,
 				FFEBBB3F26223F7E000F475F /* Preview Content */,

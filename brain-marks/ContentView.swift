@@ -30,7 +30,7 @@ extension ContentView{
     func get(){
             var request = URLRequest(url: URL(string: "https://api.twitter.com/2/tweets/1380990780248973312")!,timeoutInterval: Double.infinity)
             
-            request.addValue("Bearer Add_Bearer_Token", forHTTPHeaderField: "Authorization")
+            request.addValue("Bearer \(Secrets.bearerToken)", forHTTPHeaderField: "Authorization")
             
             request.httpMethod = "GET"
             
