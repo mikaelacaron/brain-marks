@@ -34,12 +34,11 @@ struct CategoryList: View {
                     
                     Spacer()
                     
-                    Button(action:{
+                    Button {
                         self.showAddURLView = true
-                    }){
+                    } label: {
                         Image(systemName:"plus.circle")
                             .font(.largeTitle)
-                        
                     }
                     
                 }
