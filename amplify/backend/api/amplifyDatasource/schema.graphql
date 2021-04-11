@@ -1,10 +1,13 @@
-type Task @model {
-  id: ID!
-  title: String!
-  description: String
-  status: String
+type AWSTweet @model {
+    id: ID!
+    tweetID: String!
+    text: String
+    category: AWSCategory @connection(name: "CategorizedTweet")
 }
-type Note @model {
-  id: ID!
-  content: String!
+
+type AWSCategory @model {
+    id: ID!
+    name: String!
+    imageName: String
+    tweets: [AWSTweet] @connection(name: "CategorizedTweet")
 }
