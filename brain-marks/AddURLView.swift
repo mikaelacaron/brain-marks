@@ -43,7 +43,7 @@ struct AddURLView: View {
                         DataStoreManger.shared.fetchCategories { (result) in
                             if case .success(let categories) = result {
                                 DataStoreManger.shared.createTweet(tweet: tweet, category: categories.first!)
-                            }g
+                            }
                         }
                         
                     case .failure(let error):
