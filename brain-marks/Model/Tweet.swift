@@ -6,14 +6,12 @@
 //
 
 import Foundation
-struct TweetModel:Codable{
+
+struct TweetModel: Codable {
     let id:String
     let text:String
-//    init(from decoder: Decoder) throws {
-//        self.id = 20
-//        self.text = "setting up"
-//    }
 }
-struct ResponseModel:Codable{
+
+struct ResponseModel: Codable {
     let data:TweetModel
 }
