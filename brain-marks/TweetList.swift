@@ -13,7 +13,7 @@ struct TweetList: View {
     var body: some View {
         
         List {
-            Text("new tweet")
+            TweetCard()
         }        .toolbar {
             ToolbarItem(placement: .principal) {
                 HStack {

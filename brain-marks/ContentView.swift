@@ -33,7 +33,6 @@ struct ContentView: View {
         }.sheet(isPresented:$showAddSheet) {
             AddURLView()
         }
-        
     }
 }
 
