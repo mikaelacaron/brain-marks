@@ -48,7 +48,7 @@ struct CategoryList: View {
             viewModel.getCategories()
         }
         .accentColor(.black)
-                .sheet(isPresented:$showAddURLView){
+                .sheet(isPresented:$showAddURLView) {
                     AddURLView(categories: viewModel.categories)
                 }
     }
@@ -80,7 +80,9 @@ struct NewCategorySheetView: View {
                     
                     Button {
                         presentationMode.wrappedValue.dismiss()
-                        DataStoreManger.shared.createCategory(category: AWSCategory(name: newCategory, imageName: "swift"))
+                        DataStoreManger.shared.createCategory(
+                            category: AWSCategory(name: newCategory,
+                                                  imageName: "swift"))
                     } label: {
                         Text("Create")
                             .frame(width: 150, height: 50)
