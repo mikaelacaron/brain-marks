@@ -143,12 +143,12 @@
 			path = .;
 			sourceTree = "<group>";
 		};
-		91C8958726228CF600689196 /* Model */ = {
+		91C8958726228CF600689196 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				91C8958826228D1500689196 /* Tweet.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FFEBBB2D26223F75000F475F = {
@@ -176,7 +176,7 @@
 		FFEBBB3826223F75000F475F /* brain-marks */ = {
 			isa = PBXGroup;
 			children = (
-				91C8958726228CF600689196 /* Model */,
+				91C8958726228CF600689196 /* Models */,
 				FFEBBB3926223F75000F475F /* brain_marksApp.swift */,
 				FFEBBB3B26223F75000F475F /* ContentView.swift */,
 				A2F4498B2622802B00725FEA /* CategoryRow.swift */,
