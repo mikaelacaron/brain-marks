@@ -154,6 +154,10 @@
 		FF3942FF262E847000A3623B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A2F449902622829D00725FEA /* CategoryList.swift */,
+				A2F4498B2622802B00725FEA /* CategoryRow.swift */,
+				A224A9E52622BCED00AC12AF /* TweetCard.swift */,
+				A205CD412622A3EB00517DB5 /* TweetList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,10 +191,6 @@
 				FF3942FF262E847000A3623B /* Views */,
 				FFEBBB3926223F75000F475F /* brain_marksApp.swift */,
 				FFEBBB3B26223F75000F475F /* ContentView.swift */,
-				A2F4498B2622802B00725FEA /* CategoryRow.swift */,
-				A224A9E52622BCED00AC12AF /* TweetCard.swift */,
-				A2F449902622829D00725FEA /* CategoryList.swift */,
-				A205CD412622A3EB00517DB5 /* TweetList.swift */,
 				FFEBBB3D26223F7E000F475F /* Assets.xcassets */,
 				FFEBBB4226223F7E000F475F /* Info.plist */,
 				FFEBBB3F26223F7E000F475F /* Preview Content */,
