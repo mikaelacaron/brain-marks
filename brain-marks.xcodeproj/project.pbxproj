@@ -151,6 +151,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		FF3942FF262E847000A3623B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FFEBBB2D26223F75000F475F = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				91C8958726228CF600689196 /* Models */,
+				FF3942FF262E847000A3623B /* Views */,
 				FFEBBB3926223F75000F475F /* brain_marksApp.swift */,
 				FFEBBB3B26223F75000F475F /* ContentView.swift */,
 				A2F4498B2622802B00725FEA /* CategoryRow.swift */,
