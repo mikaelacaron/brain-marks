@@ -154,12 +154,40 @@
 		FF3942FF262E847000A3623B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				91739DEA2622D2A7000F982A /* AddURLView.swift */,
 				A2F449902622829D00725FEA /* CategoryList.swift */,
 				A2F4498B2622802B00725FEA /* CategoryRow.swift */,
+				FFEBBB3B26223F75000F475F /* ContentView.swift */,
 				A224A9E52622BCED00AC12AF /* TweetCard.swift */,
 				A205CD412622A3EB00517DB5 /* TweetList.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FF39430C262E860E00A3623B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FF5990682622DD61004DF328 /* DataStoreManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		FF39430D262E862100A3623B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */,
+				FF36B66B26235FE6007A6D7F /* TweetListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FF39430E262E863000A3623B /* AmplifyModelExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */,
+				FF36B6702623678D007A6D7F /* AWSTweet+Extension.swift */,
+			);
+			path = AmplifyModelExtensions;
 			sourceTree = "<group>";
 		};
 		FFEBBB2D26223F75000F475F = {
@@ -187,20 +215,16 @@
 		FFEBBB3826223F75000F475F /* brain-marks */ = {
 			isa = PBXGroup;
 			children = (
+				FF39430E262E863000A3623B /* AmplifyModelExtensions */,
+				FF39430C262E860E00A3623B /* Managers */,
 				91C8958726228CF600689196 /* Models */,
 				FF3942FF262E847000A3623B /* Views */,
+				FF39430D262E862100A3623B /* ViewModels */,
 				FFEBBB3926223F75000F475F /* brain_marksApp.swift */,
-				FFEBBB3B26223F75000F475F /* ContentView.swift */,
 				FFEBBB3D26223F7E000F475F /* Assets.xcassets */,
 				FFEBBB4226223F7E000F475F /* Info.plist */,
 				FFEBBB3F26223F7E000F475F /* Preview Content */,
 				FFEBBB7526226A39000F475F /* Secrets.swift */,
-				91739DEA2622D2A7000F982A /* AddURLView.swift */,
-				FF5990682622DD61004DF328 /* DataStoreManager.swift */,
-				FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */,
-				FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */,
-				FF36B66B26235FE6007A6D7F /* TweetListViewModel.swift */,
-				FF36B6702623678D007A6D7F /* AWSTweet+Extension.swift */,
 			);
 			path = "brain-marks";
 			sourceTree = "<group>";
