@@ -20,7 +20,6 @@ class DataStoreManger {
         Amplify.DataStore.query(AWSCategory.self) { result in
             switch result {
             case .success(let categories):
-                print("✅ Got categories: \(categories)")
                 completion(.success(categories))
             case .failure(let error):
                 print("❌ did NOT get categories: \(error)")
@@ -76,7 +75,6 @@ class DataStoreManger {
         Amplify.DataStore.query(AWSCategory.self) { result in
             switch result {
             case .success(let categories):
-                print("✅ Got categories: \(categories)")
                 
                 for selectedCategory in categories {
                     if selectedCategory.name == category.name {
