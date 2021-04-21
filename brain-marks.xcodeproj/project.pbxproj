@@ -160,17 +160,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		FF3942FF262E847000A3623B /* Views */ = {
+		FF3942FF262E847000A3623B /* Add */ = {
 			isa = PBXGroup;
 			children = (
 				91739DEA2622D2A7000F982A /* AddURLView.swift */,
-				A2F449902622829D00725FEA /* CategoryList.swift */,
-				A2F4498B2622802B00725FEA /* CategoryRow.swift */,
-				FFEBBB3B26223F75000F475F /* ContentView.swift */,
-				A224A9E52622BCED00AC12AF /* TweetCard.swift */,
-				A205CD412622A3EB00517DB5 /* TweetList.swift */,
 			);
-			path = Views;
+			path = Add;
 			sourceTree = "<group>";
 		};
 		FF39430C262E860E00A3623B /* Managers */ = {
@@ -181,15 +176,6 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
-		FF39430D262E862100A3623B /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */,
-				FF36B66B26235FE6007A6D7F /* TweetListViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		FF39430E262E863000A3623B /* AmplifyModelExtensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +183,42 @@
 				FF36B6702623678D007A6D7F /* AWSTweet+Extension.swift */,
 			);
 			path = AmplifyModelExtensions;
+			sourceTree = "<group>";
+		};
+		FF39432A262FD05700A3623B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				FF39432C262FD07D00A3623B /* Views */,
+				FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		FF39432C262FD07D00A3623B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A2F449902622829D00725FEA /* CategoryList.swift */,
+				A2F4498B2622802B00725FEA /* CategoryRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FF39432D262FD0AD00A3623B /* Tweets */ = {
+			isa = PBXGroup;
+			children = (
+				FF39432E262FD0CF00A3623B /* Views */,
+				FF36B66B26235FE6007A6D7F /* TweetListViewModel.swift */,
+			);
+			path = Tweets;
+			sourceTree = "<group>";
+		};
+		FF39432E262FD0CF00A3623B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A224A9E52622BCED00AC12AF /* TweetCard.swift */,
+				A205CD412622A3EB00517DB5 /* TweetList.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FFEBBB2D26223F75000F475F = {
@@ -227,9 +249,11 @@
 				FF39430E262E863000A3623B /* AmplifyModelExtensions */,
 				FF39430C262E860E00A3623B /* Managers */,
 				91C8958726228CF600689196 /* Models */,
-				FF3942FF262E847000A3623B /* Views */,
-				FF39430D262E862100A3623B /* ViewModels */,
+				FF39432A262FD05700A3623B /* Categories */,
+				FF39432D262FD0AD00A3623B /* Tweets */,
+				FF3942FF262E847000A3623B /* Add */,
 				FFEBBB3926223F75000F475F /* brain_marksApp.swift */,
+				FFEBBB3B26223F75000F475F /* ContentView.swift */,
 				FFEBBB3D26223F7E000F475F /* Assets.xcassets */,
 				FFEBBB4226223F7E000F475F /* Info.plist */,
 				FFEBBB3F26223F7E000F475F /* Preview Content */,
