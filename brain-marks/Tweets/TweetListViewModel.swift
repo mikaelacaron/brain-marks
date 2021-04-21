@@ -15,7 +15,6 @@ final class TweetListViewModel: ObservableObject {
         DataStoreManger.shared.fetchSavedTweets(for: category) { tweets in
             if let tweets = tweets {
                 self.tweets = tweets
-                print("got the tweets!! \(tweets)")
             }
         }
     }

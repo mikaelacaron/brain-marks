@@ -24,45 +24,49 @@ struct AddURLView: View {
                     }
                 })
             }.navigationBarTitle("",displayMode: .inline)
-            .navigationBarItems(leading:Button(action: {
-                // create new category
-            }) {
-                HStack {
-                    Image(systemName: "plus.app")
-                        .font(.system( size: 25))
-                    Text("Add Category")
-                    
-                }
-            } ,trailing:   Button("Save") {
-                // save tweet
-                
-                get(url: newEntry) { result in
-                    switch result {
-                    case .success(let tweet):
-                        
-                        DataStoreManger.shared.fetchCategories { (result) in
-                            if case .success(let categories) = result {
-                                DataStoreManger.shared.createTweet(tweet: tweet, category: categories.first!)
-                            }
+            .navigationBarItems(
+                leading:
+                    Button {
+                        // create new category
+                    } label: {
+                        HStack {
+                            Image(systemName: "plus.app")
+                                .font(.system( size: 25))
+                            Text("Add Category")
                         }
-                        
-                    case .failure(let error):
-                        print("❌ Couldn't save tweet")
                     }
-                }
-                presentationMode.wrappedValue.dismiss()
-            })
+                ,trailing:   Button("Save") {
+                    // save tweet
+                    
+                    get(url: newEntry) { result in
+                        switch result {
+                        case .success(let tweet):
+                            
+                            DataStoreManger.shared.fetchCategories { (result) in
+                                if case .success(let categories) = result {
+                                    DataStoreManger.shared.createTweet(
+                                        tweet: tweet,
+                                        category: categories.first!)
+                                }
+                            }
+                            
+                        case .failure(let error):
+                            print("❌ Couldn't save tweet: \(error)")
+                        }
+                    }
+                    presentationMode.wrappedValue.dismiss()
+                })
         }
     }
     
 }
 
 extension AddURLView {
-    func get(url:String, completion: @escaping (Result<TweetModel, Error>) -> Void) {
-        var count = 0
+    func get(url:String, completion: @escaping (Result<Tweet, Error>) -> Void) {
         
         let id = url.components(separatedBy: "/").last!.components(separatedBy: "?")[0]
-        var request = URLRequest(url: URL(string: "https://api.twitter.com/2/tweets/\(id)?expansions=author_id")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: "https://api.twitter.com/2/tweets/\(id)?expansions=author_id")!,
+                                 timeoutInterval: Double.infinity)
         
         request.addValue("Bearer \(Secrets.bearerToken)", forHTTPHeaderField: "Authorization")
         
@@ -83,7 +87,7 @@ extension AddURLView {
                 
                 do {
                     if error == nil {
-                        let result = try JSONDecoder().decode(ResponseModel.self, from: data)
+                        let result = try JSONDecoder().decode(Response.self, from: data)
                         
                         completion(.success(result.data))
                     }
