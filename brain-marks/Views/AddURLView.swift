@@ -62,7 +62,7 @@ struct AddURLView: View {
 }
 
 extension AddURLView {
-    func get(url:String, completion: @escaping (Result<TweetModel, Error>) -> Void) {
+    func get(url:String, completion: @escaping (Result<Tweet, Error>) -> Void) {
         
         let id = url.components(separatedBy: "/").last!.components(separatedBy: "?")[0]
         var request = URLRequest(url: URL(string: "https://api.twitter.com/2/tweets/\(id)?expansions=author_id")!,
@@ -87,7 +87,7 @@ extension AddURLView {
                 
                 do {
                     if error == nil {
-                        let result = try JSONDecoder().decode(ResponseModel.self, from: data)
+                        let result = try JSONDecoder().decode(Response.self, from: data)
                         
                         completion(.success(result.data))
                     }

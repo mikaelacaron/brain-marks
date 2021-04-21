@@ -54,7 +54,7 @@ class DataStoreManger {
     
     // MARK: - Tweets
     
-    func createTweet(tweet: TweetModel, category: AWSCategory) {
+    func createTweet(tweet: Tweet, category: AWSCategory) {
         let awsTweet = AWSTweet(id: UUID().uuidString,
                                 tweetID: tweet.id,
                                 text: tweet.text,

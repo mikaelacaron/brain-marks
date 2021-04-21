@@ -6,23 +6,9 @@
 //
 
 import Foundation
-struct TweetModel: Codable {
+
+struct Tweet: Codable {
     let id:String
     let text:String
     
-}
-
-struct UserModel: Codable {
-    let id: String
-    let name: String
-    let username: String
-}
-
-struct IncludesModel: Codable {
-    let users: [UserModel]
-}
-
-struct ResponseModel: Codable {
-    let data:TweetModel
-    let includes: IncludesModel
 }
