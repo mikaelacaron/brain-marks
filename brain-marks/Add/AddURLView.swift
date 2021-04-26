@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct AddURLView: View {
     @State private var selectedCategory = "None"
@@ -13,9 +14,12 @@ struct AddURLView: View {
     @Environment(\.presentationMode) var presentationMode
     let categories: [AWSCategory]
     
+    let pasteBoard    = UIPasteboard.general
+
     var body: some View {
         NavigationView {
             Form {
+
                 TextField("Enter copied url", text: $newEntry)
                     .autocapitalization(.none)
                 Picker(selection: $selectedCategory , label: Text("Category"), content: {
@@ -57,7 +61,11 @@ struct AddURLView: View {
                     presentationMode.wrappedValue.dismiss()
                 })
         }
+        .onAppear{
+            newEntry = pasteBoard.string ?? ""
+        }
     }
+
     
 }
 
