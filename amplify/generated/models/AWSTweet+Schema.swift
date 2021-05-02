@@ -8,7 +8,8 @@ extension AWSTweet {
     case id
     case tweetID
     case text
-    case author
+    case authorName
+    case authorUsername
     case category
   }
   
@@ -24,7 +25,8 @@ extension AWSTweet {
       .id(),
       .field(aWSTweet.tweetID, is: .required, ofType: .string),
       .field(aWSTweet.text, is: .optional, ofType: .string),
-      .field(aWSTweet.author, is: .optional, ofType: .string),
+      .field(aWSTweet.authorName, is: .optional, ofType: .string),
+      .field(aWSTweet.authorUsername, is: .optional, ofType: .string),
       .belongsTo(aWSTweet.category, is: .optional, ofType: AWSCategory.self, targetName: "awsTweetCategoryId")
     )
     }

@@ -2,7 +2,8 @@ type AWSTweet @model {
     id: ID!
     tweetID: String!
     text: String
-    author: String
+    authorName: String
+    authorUsername: String
     category: AWSCategory @connection(name: "CategorizedTweet")
 }
 
