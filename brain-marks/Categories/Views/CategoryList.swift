@@ -63,6 +63,7 @@ struct NewCategorySheetView: View {
             VStack {
                 
                 TextField("Enter name of new category", text: $newCategory)
+                    .padding()
                 
                 Spacer()
                 
