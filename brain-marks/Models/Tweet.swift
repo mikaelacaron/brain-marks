@@ -10,5 +10,4 @@ import Foundation
 struct Tweet: Codable {
     let id:String
     let text:String
-    
 }
