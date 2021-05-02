@@ -54,10 +54,12 @@ class DataStoreManger {
     
     // MARK: - Tweets
     
-    func createTweet(tweet: Tweet, category: AWSCategory) {
+    func createTweet(tweet: ReturnedTweet, category: AWSCategory) {
         let awsTweet = AWSTweet(id: UUID().uuidString,
                                 tweetID: tweet.id,
                                 text: tweet.text,
+                                authorName: tweet.authorName,
+                                authorUsername: tweet.authorUsername,
                                 category: category)
         
         Amplify.DataStore.save(awsTweet) { result in

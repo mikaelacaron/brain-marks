@@ -13,7 +13,7 @@ struct TweetCard: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            TweetHeaderView()
+            TweetHeaderView(tweet: tweet)
             TweetBodyView(tweetBody: tweet.text!)
 //            TweetFooterView()
         }
@@ -21,10 +21,14 @@ struct TweetCard: View {
 }
 
 struct TweetHeaderView: View {
+    
+    let tweet: AWSTweet
+    
     var body: some View {
         HStack {
             UserIconView(size: 55)
-            UserInfoView()
+            UserInfoView(authorName: tweet.authorName ?? "",
+                         authorUsername: tweet.authorUsername ?? "")
             Spacer()
         }
         .padding(EdgeInsets(top: 18, leading: 18, bottom: 18, trailing: 18))
@@ -72,17 +76,20 @@ struct UserIconView: View {
 
 struct UserInfoView: View {
     
+    let authorName: String
+    let authorUsername: String
+    
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
             VStack(alignment: .leading, spacing: 0) {
                 HStack(spacing: 4) {
-                    Text("Elon Musk")
+                    Text(authorName)
                         .font(.system(size: 16, weight: .semibold, design: .default))
 //                            Image("verified")
 //                                .resizable()
 //                                .frame(width: 14, height: 14, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }
-                Text("@elonmusk")
+                Text("@\(authorUsername)")
                     .font(.callout)
                     .foregroundColor(.secondary)
             }
