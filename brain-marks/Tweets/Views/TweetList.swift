@@ -17,6 +17,11 @@ struct TweetList: View {
         
         List(viewModel.tweets) { tweet in
             TweetCard(tweet: tweet)
+                .onTapGesture {
+                    print("opening twitter for \(tweet.tweetID)\(tweet.authorUsername)")
+                    self.openTwitter(tweetID: tweet.tweetID, authorUsername: tweet.authorUsername!)
+                }
+            
         }
         .toolbar {
             ToolbarItem(placement: .principal) {
@@ -34,5 +39,18 @@ struct TweetList: View {
         }
         
         Spacer()
+    }
+    func openTwitter(tweetID:String, authorUsername:String){
+       let appURL = NSURL(string: "twitter://home")!
+       let webURL = NSURL(string: "https://twitter.com/\(authorUsername)/status/\(tweetID)?s=21")!
+
+       let application = UIApplication.shared
+
+       if application.canOpenURL(appURL as URL) {
+            application.open(appURL as URL)
+       } else {
+            application.open(webURL as URL)
+       }
+    
     }
 }

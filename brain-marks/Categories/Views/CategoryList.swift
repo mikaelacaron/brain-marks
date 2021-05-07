@@ -61,8 +61,9 @@ struct NewCategorySheetView: View {
     var body: some View {
         NavigationView {
             VStack {
-                
                 TextField("Enter name of new category", text: $newCategory)
+                    .foregroundColor(.gray)
+                
                 
                 Spacer()
                 
