@@ -2,7 +2,14 @@
 import Amplify
 import Foundation
 
-public struct AWSCategory: Model {
+public struct AWSCategory: Model,Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    public static func ==(lhs: AWSCategory, rhs: AWSCategory) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
   public let id: String
   public var name: String
   public var imageName: String?

@@ -8,21 +8,25 @@
 import SwiftUI
 
 struct TweetList: View {
+    @State var editMode = EditMode.inactive
+    @State var selection = Set<String>()
     
     let category: AWSCategory
     
     @StateObject var viewModel = TweetListViewModel()
     
     var body: some View {
-        
-        List(viewModel.tweets) { tweet in
-            TweetCard(tweet: tweet)
+//        NavigationView{
+            List(selection: $selection) { 
+                ForEach(viewModel.tweets, id: \.self){tweet in
+                TweetCard(tweet: tweet)
                 .onTapGesture {
                     print("opening twitter for \(tweet.tweetID)\(tweet.authorUsername)")
                     self.openTwitter(tweetID: tweet.tweetID, authorUsername: tweet.authorUsername!)
-                }
-            
-        }
+                }}.onDelete(perform: { indexSet in
+                    //delete method
+                })
+            }
         .toolbar {
             ToolbarItem(placement: .principal) {
                 HStack {
@@ -39,6 +43,10 @@ struct TweetList: View {
         }
         
         Spacer()
+//        }
+//        .navigationBarTitle("",displayMode: .inline)
+//        .navigationBarItems(leading: deleteButton, trailing: editButton)
+//        .environment(\.editMode, self.$editMode)
     }
     func openTwitter(tweetID:String, authorUsername:String){
        let appURL = NSURL(string: "twitter://home")!
@@ -52,5 +60,38 @@ struct TweetList: View {
             application.open(webURL as URL)
        }
     
+    }
+    //
+    private var editButton: some View {
+        if editMode == .inactive {
+            return Button(action: {
+                self.editMode = .active
+                self.selection = Set<String>()
+            }) {
+                Text("Edit")
+            }
+        }
+        else {
+            return Button(action: {
+                self.editMode = .inactive
+                self.selection = Set<String>()
+            }) {
+                Text("Done")
+            }
+        }
+    }
+    private var deleteButton: some View {
+        if editMode == .inactive {
+            return Button(action: {}) {
+                Image(systemName: "")
+            }
+        } else {
+            return Button(action: deleteTweets) {
+                Image(systemName: "trash")
+            }
+        }
+    }
+    private func deleteTweets() {
+
     }
 }

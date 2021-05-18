@@ -2,7 +2,13 @@
 import Amplify
 import Foundation
 
-public struct AWSTweet: Model {
+public struct AWSTweet: Model,Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+
+    
   public let id: String
   public var tweetID: String
   public var text: String?

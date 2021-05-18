@@ -14,7 +14,7 @@ struct AddURLView: View {
     @Environment(\.presentationMode) var presentationMode
     let categories: [AWSCategory]
     
-    let pasteBoard    = UIPasteboard.general
+    let pasteBoard = UIPasteboard.general
 
     var body: some View {
         NavigationView {
