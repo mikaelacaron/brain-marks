@@ -16,6 +16,8 @@ class DataStoreManger {
     
     // MARK: - Categories
     
+    /// Fetch all the categories
+    /// - Parameter completion: Result, array of `AWSCategory` or Error
     func fetchCategories(completion: @escaping (Result<[AWSCategory], Error>) -> Void) {
         Amplify.DataStore.query(AWSCategory.self) { result in
             switch result {
@@ -28,6 +30,10 @@ class DataStoreManger {
         }
     }
     
+    /// Fetch a single category by the ID
+    /// - Parameters:
+    ///   - byID: ID of the category to search for
+    ///   - completion: Result type containing AWSCategory or Error
     func fetchSingleCategory(byID: String, completion: @escaping (Result<AWSCategory?, Error>) -> Void) {
         Amplify.DataStore.query(AWSCategory.self, byId: byID) { result in
             switch result {
@@ -41,6 +47,8 @@ class DataStoreManger {
         }
     }
     
+    /// Create a new cateogry
+    /// - Parameter category: `AWSCategory` to create
     func createCategory(category: AWSCategory) {
         Amplify.DataStore.save(category) { result in
             switch result {
@@ -54,6 +62,10 @@ class DataStoreManger {
     
     // MARK: - Tweets
     
+    /// Create a new tweet for a specific cateogry
+    /// - Parameters:
+    ///   - tweet: `ReturnedTweet` tweet to save
+    ///   - category: `AWSCategory` category to save tweet to
     func createTweet(tweet: ReturnedTweet, category: AWSCategory) {
         let awsTweet = AWSTweet(id: UUID().uuidString,
                                 tweetID: tweet.id,
@@ -72,6 +84,10 @@ class DataStoreManger {
         }
     }
     
+    /// Fetch all the saved tweets for a specific category
+    /// - Parameters:
+    ///   - category: `AWSCategory` which category to fetch the tweets from
+    ///   - completion: Optional array of `AWSTweet` that are returned
     func fetchSavedTweets(for category: AWSCategory, completion: @escaping (Swift.Array<AWSTweet>?) -> Void) {
         
         Amplify.DataStore.query(AWSCategory.self) { result in
@@ -87,6 +103,19 @@ class DataStoreManger {
                 }
             case .failure(let error):
                 print("❌ did NOT get categories which are needed to get tweets: \(error)")
+            }
+        }
+    }
+    
+    /// Delete a specific tweet
+    /// - Parameter tweet: `AWSTweet` to delete
+    func deleteTweet(_ tweet: AWSTweet) {
+        Amplify.DataStore.delete(tweet) { result in
+            switch result {
+            case .success():
+                print("✅ Deleted tweet")
+            case .failure(let error):
+                print("❌ Could NOT delete tweet: \(error)")
             }
         }
     }
