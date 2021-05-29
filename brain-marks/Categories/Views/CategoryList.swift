@@ -25,8 +25,10 @@ struct CategoryList: View {
             .navigationTitle("Categories")
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
-                    Button("New Category") {
+                    Button {
                         showingSheet.toggle()
+                    } label: {
+                        Image(systemName: "folder.badge.plus")
                     }
                     .sheet(isPresented: $showingSheet) {
                         NewCategorySheetView()
