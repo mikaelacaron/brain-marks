@@ -39,7 +39,7 @@ struct TweetBodyView: View {
     let tweetBody: String
     var body: some View {
         Text(tweetBody)
-            .font(.system(size: 24, weight: .light, design: .default))
+            .font(.body)
             .lineSpacing(8.0)
             .padding(EdgeInsets(top: 0, leading: 18, bottom: 18, trailing: 18))
     }
@@ -67,7 +67,7 @@ struct UserIconView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: size,
                        height: size,
-                       alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                       alignment: .center)
                 .clipShape(Circle())
             
         }
@@ -84,7 +84,8 @@ struct UserInfoView: View {
             VStack(alignment: .leading, spacing: 0) {
                 HStack(spacing: 4) {
                     Text(authorName)
-                        .font(.system(size: 16, weight: .semibold, design: .default))
+                        .font(.headline)
+                        .fontWeight(.semibold)
 //                            Image("verified")
 //                                .resizable()
 //                                .frame(width: 14, height: 14, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)

@@ -48,7 +48,7 @@ struct CategoryList: View {
             viewModel.getCategories()
         }
         .accentColor(.black)
-                .sheet(isPresented:$showAddURLView) {
+         .sheet(isPresented:$showAddURLView) {
                     AddURLView(categories: viewModel.categories)
                 }
     }
@@ -96,6 +96,8 @@ struct NewCategorySheetView: View {
                 .padding(20)
             }
             .navigationBarTitle("New Category")
+            .sheet(isPresented:$showAddURLView) {
+            AddURLView(categories: viewModel.categories)
         }
     }
 }
@@ -103,7 +105,5 @@ struct NewCategorySheetView: View {
 struct CategoryList_Previews: PreviewProvider {
     static var previews: some View {
         CategoryList()
-        
-        NewCategorySheetView()
     }
 }
