@@ -12,7 +12,7 @@ struct CategoryRow: View {
 
     var body: some View {
         HStack {
-            Image(systemName: category.imageName ?? "swift")
+            Image(systemName: category.imageName ?? "folder")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 40, height: 40)
