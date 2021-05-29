@@ -61,12 +61,10 @@ struct AddURLView: View {
                     presentationMode.wrappedValue.dismiss()
                 })
         }
-        .onAppear{
+        .onAppear {
             newEntry = pasteBoard.string ?? ""
         }
     }
-
-    
 }
 
 extension AddURLView {
