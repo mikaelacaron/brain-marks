@@ -48,9 +48,14 @@ struct AddURLView: View {
                             
                             DataStoreManger.shared.fetchCategories { (result) in
                                 if case .success(let categories) = result {
-                                    DataStoreManger.shared.createTweet(
-                                        tweet: tweet,
-                                        category: categories.first!)
+                                    
+                                    for category in categories
+                                    where category.id == _selectedCategory.wrappedValue {
+                                        
+                                        DataStoreManger.shared.createTweet(
+                                            tweet: tweet,
+                                            category: category)
+                                    }
                                 }
                             }
                             
@@ -98,7 +103,10 @@ extension AddURLView {
                         let authorName = result.includes.users.first?.name ?? ""
                         let authorUsername = result.includes.users.first?.username ?? ""
                         
-                        let tweetToSave = ReturnedTweet(id: result.data.id, text: result.data.text, authorName: authorName , authorUsername: authorUsername)
+                        let tweetToSave = ReturnedTweet(id: result.data.id,
+                                                        text: result.data.text,
+                                                        authorName: authorName,
+                                                        authorUsername: authorUsername)
                         
                         completion(.success(tweetToSave))
                     }
