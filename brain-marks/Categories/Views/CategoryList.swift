@@ -30,6 +30,9 @@ struct CategoryList: View {
                     }
                     .sheet(isPresented: $showingSheet) {
                         NewCategorySheetView()
+                            .onDisappear {
+                            viewModel.getCategories()
+                        }
                     }
                     
                     Spacer()
