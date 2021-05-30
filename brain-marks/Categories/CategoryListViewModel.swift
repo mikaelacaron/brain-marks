@@ -22,6 +22,5 @@ final class CategoryListViewModel: ObservableObject {
                 print("Error fetching categories: \(error)")
             }
         }
-    }
-    
+    }    
 }

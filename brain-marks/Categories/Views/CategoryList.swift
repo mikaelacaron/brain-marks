@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct CategoryList: View {
-    @State private var showAddURLView = false
-    @StateObject var viewModel = CategoryListViewModel()
     
+    @State private var showAddURLView = false
     @State private var showingSheet = false
+    @StateObject var viewModel = CategoryListViewModel()
     
     var body: some View {
         NavigationView {
@@ -45,6 +45,9 @@ struct CategoryList: View {
                         Image(systemName:"plus.circle")
                             .font(.largeTitle)
                     }
+                    .sheet(isPresented: $showAddURLView) {
+                        AddURLView(categories: viewModel.categories)
+                    }
                     
                 }
             }
@@ -53,9 +56,6 @@ struct CategoryList: View {
             viewModel.getCategories()
         }
         .accentColor(.black)
-        .sheet(isPresented:$showAddURLView) {
-            AddURLView(categories: viewModel.categories)
-        }
     }
 }
 
