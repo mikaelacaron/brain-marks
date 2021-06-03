@@ -15,11 +15,13 @@ struct CategoryList: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.categories) { category in
-                NavigationLink(destination: TweetList(category: category)) {
-                    CategoryRow(category: category)
+            List {
+                ForEach(viewModel.categories) { category in
+                    NavigationLink(destination: TweetList(category: category)) {
+                        CategoryRow(category: category)
+                    }
                 }
-                
+                .onDelete(perform: viewModel.deleteCategory)
             }.listStyle(InsetGroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
             .navigationTitle("Categories")

@@ -60,6 +60,20 @@ class DataStoreManger {
         }
     }
     
+    
+    /// Delete a category and all it's tweets
+    /// - Parameter category: `AWSCategory` to delete
+    func deleteCategory(category: AWSCategory) {
+        Amplify.DataStore.delete(category) { result in
+            switch result {
+            case .success():
+                print("✅ Deleted category")
+            case .failure(let error):
+                print("❌ Could NOT delete category: \(error)")
+            }
+        }
+    }
+    
     // MARK: - Tweets
     
     /// Create a new tweet for a specific cateogry

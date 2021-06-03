@@ -22,5 +22,14 @@ final class CategoryListViewModel: ObservableObject {
                 print("Error fetching categories: \(error)")
             }
         }
-    }    
+    }
+    
+    func deleteCategory(at offsets: IndexSet) {
+        // TODO: Create alert action sheet, "All tweets will be deleted" "Delete / Cancel"
+        for offset in offsets {
+            let category = categories[offset]
+            DataStoreManger.shared.deleteCategory(category: category)
+        }
+        categories.remove(atOffsets: offsets)
+    }
 }
