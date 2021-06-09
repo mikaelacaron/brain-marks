@@ -102,7 +102,7 @@ class DataStoreManger {
     /// - Parameters:
     ///   - category: `AWSCategory` which category to fetch the tweets from
     ///   - completion: Optional array of `AWSTweet` that are returned
-    func fetchSavedTweets(for category: AWSCategory, completion: @escaping (Swift.Array<AWSTweet>?) -> Void) {
+    func fetchSavedTweets(for category: AWSCategory, completion: @escaping ([AWSTweet]?) -> Void) {
         
         Amplify.DataStore.query(AWSCategory.self) { result in
             switch result {
