@@ -8,18 +8,26 @@
 import SwiftUI
 
 struct CategoryList: View {
+    
     @State private var showAddURLView = false
+    @State private var showingSheet = false
+    @State private var showingDeleteActionSheet = false
     @StateObject var viewModel = CategoryListViewModel()
     
-    @State private var showingSheet = false
+    @State private var indexSetToDelete: IndexSet?
     
     var body: some View {
         NavigationView {
-            List(viewModel.categories) { category in
-                NavigationLink(destination: TweetList(category: category)) {
-                    CategoryRow(category: category)
+            List {
+                ForEach(viewModel.categories) { category in
+                    NavigationLink(destination: TweetList(category: category)) {
+                        CategoryRow(category: category)
+                    }
                 }
-                
+                .onDelete { indexSet in 
+                    showingDeleteActionSheet = true
+                    indexSetToDelete = indexSet
+                }
             }.listStyle(InsetGroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
             .navigationTitle("Categories")
@@ -45,6 +53,9 @@ struct CategoryList: View {
                         Image(systemName:"plus.circle")
                             .font(.largeTitle)
                     }
+                    .sheet(isPresented: $showAddURLView) {
+                        AddURLView(categories: viewModel.categories)
+                    }
                     
                 }
             }
@@ -52,10 +63,18 @@ struct CategoryList: View {
         .onAppear {
             viewModel.getCategories()
         }
-        .accentColor(.black)
-        .sheet(isPresented:$showAddURLView) {
-            AddURLView(categories: viewModel.categories)
+        .actionSheet(isPresented: $showingDeleteActionSheet) {
+            ActionSheet(title: Text("Category and all tweets will be deleted"), buttons: [
+                .destructive(Text("Delete"), action: {
+                    guard indexSetToDelete != nil else {
+                        return
+                    }
+                    viewModel.deleteCategory(at: indexSetToDelete!)
+                }),
+                .cancel()
+            ])
         }
+        .accentColor(.black)
     }
 }
 
