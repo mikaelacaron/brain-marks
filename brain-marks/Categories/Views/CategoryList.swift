@@ -11,7 +11,10 @@ struct CategoryList: View {
     
     @State private var showAddURLView = false
     @State private var showingSheet = false
+    @State private var showingDeleteActionSheet = false
     @StateObject var viewModel = CategoryListViewModel()
+    
+    @State private var indexSetToDelete: IndexSet?
     
     var body: some View {
         NavigationView {
@@ -21,7 +24,10 @@ struct CategoryList: View {
                         CategoryRow(category: category)
                     }
                 }
-                .onDelete(perform: viewModel.deleteCategory)
+                .onDelete { indexSet in 
+                    showingDeleteActionSheet = true
+                    indexSetToDelete = indexSet
+                }
             }.listStyle(InsetGroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
             .navigationTitle("Categories")
@@ -56,6 +62,17 @@ struct CategoryList: View {
         }
         .onAppear {
             viewModel.getCategories()
+        }
+        .actionSheet(isPresented: $showingDeleteActionSheet) {
+            ActionSheet(title: Text("Category and all tweets will be deleted"), buttons: [
+                .destructive(Text("Delete"), action: {
+                    guard indexSetToDelete != nil else {
+                        return
+                    }
+                    viewModel.deleteCategory(at: indexSetToDelete!)
+                }),
+                .cancel()
+            ])
         }
         .accentColor(.black)
     }
