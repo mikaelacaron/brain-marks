@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CategorySheetView: View {
+    
+    @Binding var categorySheetState: CategoryState
     @Environment(\.presentationMode) var presentationMode
     @State var newCategory = ""
     
@@ -55,6 +57,6 @@ struct CategorySheetView: View {
 
 struct NewCategorySheetView_Previews: PreviewProvider {
     static var previews: some View {
-        CategorySheetView()
+        CategorySheetView(categorySheetState: .constant(.new))
     }
 }

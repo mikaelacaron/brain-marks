@@ -7,8 +7,14 @@
 
 import SwiftUI
 
+enum CategoryState {
+    case edit
+    case new
+}
+
 struct CategoryList: View {
     
+    @State private var categorySheetState: CategoryState = .new
     @State private var showAddURLView = false
     @State private var showingCategorySheet = false
     @State private var showingDeleteActionSheet = false
@@ -25,7 +31,8 @@ struct CategoryList: View {
                     }
                     .contextMenu {
                         Button {
-                            showingCategorySheet = true
+                            categorySheetState = .edit
+                            showingCategorySheet.toggle()
                         } label: {
                             Text("Edit")
                         }
@@ -41,12 +48,13 @@ struct CategoryList: View {
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
                     Button {
+                        categorySheetState = .new
                         showingCategorySheet.toggle()
                     } label: {
                         Image(systemName: "folder.badge.plus")
                     }
                     .sheet(isPresented: $showingCategorySheet) {
-                        CategorySheetView()
+                        CategorySheetView(categorySheetState: $categorySheetState)
                             .onDisappear {
                             viewModel.getCategories()
                         }
