@@ -15,6 +15,7 @@ enum CategoryState {
 struct CategoryList: View {
     
     @State private var categorySheetState: CategoryState = .new
+    @State private var editCategory: AWSCategory?
     @State private var showAddURLView = false
     @State private var showingCategorySheet = false
     @State private var showingDeleteActionSheet = false
@@ -31,6 +32,7 @@ struct CategoryList: View {
                     }
                     .contextMenu {
                         Button {
+                            editCategory = category
                             categorySheetState = .edit
                             showingCategorySheet.toggle()
                         } label: {
@@ -54,7 +56,9 @@ struct CategoryList: View {
                         Image(systemName: "folder.badge.plus")
                     }
                     .sheet(isPresented: $showingCategorySheet) {
-                        CategorySheetView(categorySheetState: $categorySheetState)
+                        CategorySheetView(
+                            editCategory: $editCategory,
+                            categorySheetState: $categorySheetState)
                             .onDisappear {
                             viewModel.getCategories()
                         }
