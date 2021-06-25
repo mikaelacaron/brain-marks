@@ -10,9 +10,8 @@ import SwiftUI
 struct CategoryList: View {
     
     @State private var showAddURLView = false
-    @State private var showingSheet = false
+    @State private var showingCategorySheet = false
     @State private var showingDeleteActionSheet = false
-    @State private var showingEditCategoriesAlert = false
     @StateObject var viewModel = CategoryListViewModel()
     
     @State private var indexSetToDelete: IndexSet?
@@ -23,6 +22,13 @@ struct CategoryList: View {
                 ForEach(viewModel.categories) { category in
                     NavigationLink(destination: TweetList(category: category)) {
                         CategoryRow(category: category)
+                    }
+                    .contextMenu {
+                        Button {
+                            showingCategorySheet = true
+                        } label: {
+                            Text("Edit")
+                        }
                     }
                 }
                 .onDelete { indexSet in 
@@ -35,11 +41,11 @@ struct CategoryList: View {
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
                     Button {
-                        showingSheet.toggle()
+                        showingCategorySheet.toggle()
                     } label: {
                         Image(systemName: "folder.badge.plus")
                     }
-                    .sheet(isPresented: $showingSheet) {
+                    .sheet(isPresented: $showingCategorySheet) {
                         CategorySheetView()
                             .onDisappear {
                             viewModel.getCategories()
