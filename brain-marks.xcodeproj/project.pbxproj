@@ -31,6 +31,7 @@
 		FF59902F2622C1CE004DF328 /* AWSDataStorePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = FF59902E2622C1CE004DF328 /* AWSDataStorePlugin */; };
 		FF5990692622DD61004DF328 /* DataStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5990682622DD61004DF328 /* DataStoreManager.swift */; };
 		FF6DCBF22623530400EC366F /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */; };
+		FFC4CA7726867B4C00427C81 /* BMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4CA7626867B4C00427C81 /* BMButton.swift */; };
 		FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB1096263E31D300544309 /* ReturnedTweet.swift */; };
 		FFCB1099263E3E2D00544309 /* CategorySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB1098263E3E2D00544309 /* CategorySheetView.swift */; };
 		FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB3926223F75000F475F /* brain_marksApp.swift */; };
@@ -83,6 +84,7 @@
 		FF39431F262FCF6100A3623B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		FF5990682622DD61004DF328 /* DataStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreManager.swift; sourceTree = "<group>"; };
 		FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
+		FFC4CA7626867B4C00427C81 /* BMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMButton.swift; sourceTree = "<group>"; };
 		FFCB1096263E31D300544309 /* ReturnedTweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnedTweet.swift; sourceTree = "<group>"; };
 		FFCB1098263E3E2D00544309 /* CategorySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySheetView.swift; sourceTree = "<group>"; };
 		FFEBBB3626223F75000F475F /* brain-marks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "brain-marks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,6 +207,7 @@
 				A2F449902622829D00725FEA /* CategoryList.swift */,
 				A2F4498B2622802B00725FEA /* CategoryRow.swift */,
 				FFCB1098263E3E2D00544309 /* CategorySheetView.swift */,
+				FFC4CA7626867B4C00427C81 /* BMButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				FFEBBB3C26223F75000F475F /* ContentView.swift in Sources */,
 				A224A9E62622BCED00AC12AF /* TweetCard.swift in Sources */,
 				FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */,
+				FFC4CA7726867B4C00427C81 /* BMButton.swift in Sources */,
 				FF36B6712623678D007A6D7F /* AWSTweet+Extension.swift in Sources */,
 				FFEBBB7626226A39000F475F /* Secrets.swift in Sources */,
 				A2F449912622829D00725FEA /* CategoryList.swift in Sources */,

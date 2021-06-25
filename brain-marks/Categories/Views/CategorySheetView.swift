@@ -51,11 +51,9 @@ struct CategorySheetView: View {
                             
                             switch categorySheetState {
                             case .new:
-                                
                                 DataStoreManger.shared.createCategory(
                                     category: AWSCategory(name: category,
                                                           imageName: "folder"))
-                                
                             case .edit:
                                 guard editCategory != nil else {
                                     return
@@ -69,20 +67,8 @@ struct CategorySheetView: View {
                     } label: {
                         
                         switch categorySheetState {
-                        case .new:
-                            Text("Create")
-                                .frame(width: 150, height: 50)
-                                .foregroundColor(.white)
-                                .background(Color(UIColor(named: "twitter")!))
-                                .font(.system(size: 20, weight: .semibold, design: .default))
-                                .cornerRadius(10)
-                        case .edit:
-                            Text("Edit")
-                                .frame(width: 150, height: 50)
-                                .foregroundColor(.white)
-                                .background(Color(UIColor(named: "twitter")!))
-                                .font(.system(size: 20, weight: .semibold, design: .default))
-                                .cornerRadius(10)
+                        case .new: BMButton(text: "Create")
+                        case .edit: BMButton(text: "Edit")
                         }
                     }
                 }
