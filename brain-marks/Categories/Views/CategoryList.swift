@@ -12,6 +12,7 @@ struct CategoryList: View {
     @State private var showAddURLView = false
     @State private var showingSheet = false
     @State private var showingDeleteActionSheet = false
+    @State private var showingEditCategoriesAlert = false
     @StateObject var viewModel = CategoryListViewModel()
     
     @State private var indexSetToDelete: IndexSet?
@@ -39,7 +40,7 @@ struct CategoryList: View {
                         Image(systemName: "folder.badge.plus")
                     }
                     .sheet(isPresented: $showingSheet) {
-                        NewCategorySheetView()
+                        CategorySheetView()
                             .onDisappear {
                             viewModel.getCategories()
                         }

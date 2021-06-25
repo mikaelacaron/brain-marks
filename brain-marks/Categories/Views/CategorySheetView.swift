@@ -1,5 +1,5 @@
 //
-//  NewCategorySheetView.swift
+//  CategorySheetView.swift
 //  brain-marks
 //
 //  Created by Mikaela Caron on 5/1/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewCategorySheetView: View {
+struct CategorySheetView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var newCategory = ""
     
@@ -55,6 +55,6 @@ struct NewCategorySheetView: View {
 
 struct NewCategorySheetView_Previews: PreviewProvider {
     static var previews: some View {
-        NewCategorySheetView()
+        CategorySheetView()
     }
 }
