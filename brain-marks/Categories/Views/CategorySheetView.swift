@@ -11,9 +11,10 @@ struct CategorySheetView: View {
     
     @Binding var editCategory: AWSCategory?
     @Binding var categorySheetState: CategoryState
-    @Environment(\.presentationMode) var presentationMode
-    @State var category = ""
     
+    @Environment(\.presentationMode) var presentationMode
+    
+    @State private var category = ""
     @State private var title = ""
     
     var body: some View {
@@ -30,6 +31,7 @@ struct CategorySheetView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                 }
+                
                 Spacer()
                 
                 HStack(spacing: 25) {

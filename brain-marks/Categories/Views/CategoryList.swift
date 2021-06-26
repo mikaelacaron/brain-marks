@@ -16,12 +16,12 @@ struct CategoryList: View {
     
     @State private var categorySheetState: CategoryState = .new
     @State private var editCategory: AWSCategory?
+    @State private var indexSetToDelete: IndexSet?
     @State private var showAddURLView = false
     @State private var showingCategorySheet = false
     @State private var showingDeleteActionSheet = false
-    @StateObject var viewModel = CategoryListViewModel()
     
-    @State private var indexSetToDelete: IndexSet?
+    @StateObject var viewModel = CategoryListViewModel()
     
     var body: some View {
         NavigationView {
@@ -75,7 +75,6 @@ struct CategoryList: View {
                     .sheet(isPresented: $showAddURLView) {
                         AddURLView(categories: viewModel.categories)
                     }
-                    
                 }
             }
         }
