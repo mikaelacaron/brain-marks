@@ -32,4 +32,8 @@ final class CategoryListViewModel: ObservableObject {
         }
         categories.remove(atOffsets: offsets)
     }
+    
+    func editCategoryName(category: AWSCategory, newName: String) {
+        DataStoreManger.shared.editCategory(category: category, newName: newName)
+    }
 }

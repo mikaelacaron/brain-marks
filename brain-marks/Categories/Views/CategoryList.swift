@@ -7,14 +7,21 @@
 
 import SwiftUI
 
+enum CategoryState {
+    case edit
+    case new
+}
+
 struct CategoryList: View {
     
-    @State private var showAddURLView = false
-    @State private var showingSheet = false
-    @State private var showingDeleteActionSheet = false
-    @StateObject var viewModel = CategoryListViewModel()
-    
+    @State private var categorySheetState: CategoryState = .new
+    @State private var editCategory: AWSCategory?
     @State private var indexSetToDelete: IndexSet?
+    @State private var showAddURLView = false
+    @State private var showingCategorySheet = false
+    @State private var showingDeleteActionSheet = false
+    
+    @StateObject var viewModel = CategoryListViewModel()
     
     var body: some View {
         NavigationView {
@@ -22,6 +29,15 @@ struct CategoryList: View {
                 ForEach(viewModel.categories) { category in
                     NavigationLink(destination: TweetList(category: category)) {
                         CategoryRow(category: category)
+                    }
+                    .contextMenu {
+                        Button {
+                            editCategory = category
+                            categorySheetState = .edit
+                            showingCategorySheet.toggle()
+                        } label: {
+                            Text("Edit")
+                        }
                     }
                 }
                 .onDelete { indexSet in 
@@ -34,12 +50,15 @@ struct CategoryList: View {
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
                     Button {
-                        showingSheet.toggle()
+                        categorySheetState = .new
+                        showingCategorySheet.toggle()
                     } label: {
                         Image(systemName: "folder.badge.plus")
                     }
-                    .sheet(isPresented: $showingSheet) {
-                        NewCategorySheetView()
+                    .sheet(isPresented: $showingCategorySheet) {
+                        CategorySheetView(
+                            editCategory: $editCategory,
+                            categorySheetState: $categorySheetState)
                             .onDisappear {
                             viewModel.getCategories()
                         }
@@ -56,7 +75,6 @@ struct CategoryList: View {
                     .sheet(isPresented: $showAddURLView) {
                         AddURLView(categories: viewModel.categories)
                     }
-                    
                 }
             }
         }
