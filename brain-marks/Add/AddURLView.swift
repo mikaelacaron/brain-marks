@@ -45,36 +45,37 @@ struct AddURLView: View {
                     if selectedCategory.name == ""{
                         print("Please select a CATEGORY")
                         showingAlert = true
-                    }
-                    
-                    else{ get(url: newEntry) { result in
-                        switch result {
-                        case .success(let tweet):
-                            
-                            DataStoreManger.shared.fetchCategories { (result) in
-                                if case .success(let categories) = result {
-                                    DataStoreManger.shared.createTweet(
-                                        tweet: tweet,
-                                        category: selectedCategory)
+                    } else {
+                        get(url: newEntry) { result in
+                            switch result {
+                            case .success(let tweet):
+                                
+                                DataStoreManger.shared.fetchCategories { (result) in
+                                    if case .success(_) = result {
+                                        DataStoreManger.shared.createTweet(
+                                            tweet: tweet,
+                                            category: selectedCategory)
+                                    }
+                                    presentationMode.wrappedValue.dismiss()
                                 }
-                                presentationMode.wrappedValue.dismiss()
+                                
+                            case .failure(let error):
+                                print("❌ Couldn't save tweet: \(error)")
                             }
-                            
-                        case .failure(let error):
-                            print("❌ Couldn't save tweet: \(error)")
                         }
-                    }
                     }
                 })
         }
         .onAppear {
             newEntry = pasteBoard.string ?? ""
         }
-        .onDisappear{
+        .onDisappear {
             selectedCategory.name = ""
         }
-        .alert(isPresented: $showingAlert){
-            Alert(title: Text("Uh Oh!"), message: Text("You must select a category"), dismissButton: .default(Text("Ok")))
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Uh Oh!"),
+                  message: Text("You must select a category"),
+                  dismissButton: .default(Text("Ok")))
         }
     }
 }
