@@ -9,22 +9,23 @@ import SwiftUI
 import UIKit
 
 struct AddURLView: View {
-    @State private var selectedCategory = "None"
+    @State private var showingAlert = false
+    @State private var selectedCategory = AWSCategory(name: "")
     @State var newEntry = ""
     @Environment(\.presentationMode) var presentationMode
     let categories: [AWSCategory]
     
     let pasteBoard    = UIPasteboard.general
-
+    
     var body: some View {
         NavigationView {
             Form {
-
+                
                 TextField("Enter copied url", text: $newEntry)
                     .autocapitalization(.none)
                 Picker(selection: $selectedCategory , label: Text("Category"), content: {
-                    List(categories) { category in
-                        Text(category.name)
+                    ForEach(categories,id:\.self) { category in
+                        Text(category.name).tag(category.id)
                     }
                 })
             }.navigationBarTitle("",displayMode: .inline)
@@ -41,33 +42,39 @@ struct AddURLView: View {
                     }
                 ,trailing:   Button("Save") {
                     // save tweet
+                    if selectedCategory.name == ""{
+                        print("Please select a CATEGORY")
+                        showingAlert = true
+                    }
                     
-                    get(url: newEntry) { result in
+                    else{ get(url: newEntry) { result in
                         switch result {
                         case .success(let tweet):
                             
                             DataStoreManger.shared.fetchCategories { (result) in
                                 if case .success(let categories) = result {
-                                    
-                                    for category in categories
-                                    where category.id == _selectedCategory.wrappedValue {
-                                        
-                                        DataStoreManger.shared.createTweet(
-                                            tweet: tweet,
-                                            category: category)
-                                    }
+                                    DataStoreManger.shared.createTweet(
+                                        tweet: tweet,
+                                        category: selectedCategory)
                                 }
+                                presentationMode.wrappedValue.dismiss()
                             }
                             
                         case .failure(let error):
                             print("❌ Couldn't save tweet: \(error)")
                         }
                     }
-                    presentationMode.wrappedValue.dismiss()
+                    }
                 })
         }
         .onAppear {
             newEntry = pasteBoard.string ?? ""
+        }
+        .onDisappear{
+            selectedCategory.name = ""
+        }
+        .alert(isPresented: $showingAlert){
+            Alert(title: Text("Uh Oh!"), message: Text("You must select a category"), dismissButton: .default(Text("Ok")))
         }
     }
 }
