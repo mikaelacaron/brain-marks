@@ -7,11 +7,16 @@
 
 import Foundation
 
-// swiftlint:disable identifier_name
-
 struct User: Codable {
     let id: String
     let name: String
     let username: String
-    let profile_image_url: String
+    let profileImageURL: String
+}
+
+extension User {
+    enum CodingKeys: String, CodingKey {
+        case id, name, username
+        case profileImageURL = "profile_image_url"
+    }
 }
