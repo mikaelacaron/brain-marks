@@ -8,6 +8,6 @@
 import Foundation
 
 struct Response: Codable {
-    let data:Tweet
+    let data: [Tweet]
     let includes: Includes
 }

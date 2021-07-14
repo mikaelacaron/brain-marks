@@ -44,7 +44,7 @@ struct AddURLView: View {
                     }
                 ,trailing:   Button("Save") {
                     // save tweet
-                    if selectedCategory.name == ""{
+                    if selectedCategory.name == "" {
                         print("Please select a CATEGORY")
                         showingAlert = true
                     } else {
