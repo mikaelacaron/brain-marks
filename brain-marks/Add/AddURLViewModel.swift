@@ -20,39 +20,38 @@ final class AddURLViewModel: ObservableObject {
         request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data else {
-                print(String(describing: error))
-                
+            
+            guard error == nil else {
+                completion(.failure(error!))
                 return
             }
             
             if let response = response as? HTTPURLResponse {
                 guard (200 ... 299) ~= response.statusCode else {
-                    print("Status code :- \(response.statusCode)")
+                    completion(.failure(error!))
+                    print("❌ Status code is \(response.statusCode)")
+                    return
+                }
+                
+                guard let data = data else {
+                    completion(.failure(error!))
                     return
                 }
                 
                 do {
-                    if error == nil {
-                        let result = try JSONDecoder().decode(Response.self, from: data)
-                        
-                        let authorName = result.includes.users.first?.name ?? ""
-                        let authorUsername = result.includes.users.first?.username ?? ""
-                        
-                        let tweetToSave = ReturnedTweet(id: result.data[0].id,
-                                                        text: result.data[0].text,
-                                                        authorName: authorName,
-                                                        authorUsername: authorUsername)
-                        
-                        completion(.success(tweetToSave))
-                    }
+                    let result = try JSONDecoder().decode(Response.self, from: data)
                     
-                    DispatchQueue.main.async {
-                        // update UI
-                    }
+                    let authorName = result.includes.users.first?.name ?? ""
+                    let authorUsername = result.includes.users.first?.username ?? ""
                     
+                    let tweetToSave = ReturnedTweet(id: result.data[0].id,
+                                                    text: result.data[0].text,
+                                                    authorName: authorName,
+                                                    authorUsername: authorUsername)
+                    
+                    completion(.success(tweetToSave))
                 } catch {
-                    print("\(error.localizedDescription)")
+                    completion(.failure(error))
                 }
             }
         }
