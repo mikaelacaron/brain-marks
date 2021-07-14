@@ -25,7 +25,6 @@ final class CategoryListViewModel: ObservableObject {
     }
     
     func deleteCategory(at offsets: IndexSet) {
-        // TODO: Create alert action sheet, "All tweets will be deleted" "Delete / Cancel"
         for offset in offsets {
             let category = categories[offset]
             DataStoreManger.shared.deleteCategory(category: category)
