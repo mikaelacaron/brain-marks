@@ -110,6 +110,7 @@ class DataStoreManger {
                                 text: tweet.text,
                                 authorName: tweet.authorName,
                                 authorUsername: tweet.authorUsername,
+                                profileImageURL: tweet.profileImageURL,
                                 category: category)
         
         Amplify.DataStore.save(awsTweet) { result in

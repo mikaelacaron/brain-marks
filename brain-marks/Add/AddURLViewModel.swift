@@ -43,11 +43,13 @@ final class AddURLViewModel: ObservableObject {
                     
                     let authorName = result.includes.users.first?.name ?? ""
                     let authorUsername = result.includes.users.first?.username ?? ""
+                    let profileImageURL = result.includes.users.first?.profileImageURL ?? ""
                     
                     let tweetToSave = ReturnedTweet(id: result.data[0].id,
                                                     text: result.data[0].text,
                                                     authorName: authorName,
-                                                    authorUsername: authorUsername)
+                                                    authorUsername: authorUsername,
+                                                    profileImageURL: profileImageURL)
                     
                     completion(.success(tweetToSave))
                 } catch {
