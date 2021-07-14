@@ -79,8 +79,8 @@ struct CategorySheetView: View {
             .navigationBarTitle(title)
             .onAppear {
                 switch categorySheetState {
-                case .new: title = "NEW"
-                case .edit: title = "EDIT"
+                case .new: title = "New Category"
+                case .edit: title = "Edit Category"
                 }
             }
         }
