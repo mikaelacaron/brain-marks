@@ -26,7 +26,7 @@ struct TweetHeaderView: View {
     
     var body: some View {
         HStack {
-            UserIconView(size: 55)
+            UserIconView(url: tweet.profileImageURL ?? "", size: 55)
             UserInfoView(authorName: tweet.authorName ?? "",
                          authorUsername: tweet.authorUsername ?? "")
             Spacer()
@@ -58,17 +58,27 @@ struct TweetBodyView: View {
  }
 
 struct UserIconView: View {
+    
+    @State var url: String
     var size: CGFloat
     
     var body: some View {
         ZStack {
-            Image(systemName: "person.fill")
-                .resizable()
+            AsyncImage(url: URL(string: url)!,
+                       placeholder: { 
+                Image(systemName: "person.fill")
+            })
                 .aspectRatio(contentMode: .fit)
-                .frame(width: size,
-                       height: size,
-                       alignment: .center)
+                .frame(width: size, height: size)
                 .clipShape(Circle())
+            
+//            Image(systemName: "person.fill")
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .frame(width: size,
+//                       height: size,
+//                       alignment: .center)
+//                .clipShape(Circle())
             
         }
     }
@@ -88,7 +98,9 @@ struct UserInfoView: View {
                         .fontWeight(.semibold)
 //                            Image("verified")
 //                                .resizable()
-//                                .frame(width: 14, height: 14, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+//                                .frame(width: 14,
+//                                       height: 14,
+//                                       alignment: .center)
                 }
                 Text("@\(authorUsername)")
                     .font(.callout)

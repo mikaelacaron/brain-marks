@@ -20,6 +20,7 @@
 		C4392E80BFE640DAA2625F9D /* AWSTweet+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC43813A9098469FB57F5871 /* AWSTweet+Schema.swift */; };
 		CA80832580B84CB3A2D5F629 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F5BDE61EAA4A2DB9030734 /* AmplifyModels.swift */; };
 		CF16AFB9BE3F401E98C85114 /* AWSTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA54EDF3B34443CA9D530E5 /* AWSTweet.swift */; };
+		FF21986F269FE57D00FFB406 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21986E269FE57D00FFB406 /* AsyncImage.swift */; };
 		FF36B661262357F9007A6D7F /* AWSCategory+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */; };
 		FF36B66C26235FE6007A6D7F /* TweetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B66B26235FE6007A6D7F /* TweetListViewModel.swift */; };
 		FF36B6712623678D007A6D7F /* AWSTweet+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B6702623678D007A6D7F /* AWSTweet+Extension.swift */; };
@@ -31,6 +32,7 @@
 		FF59902F2622C1CE004DF328 /* AWSDataStorePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = FF59902E2622C1CE004DF328 /* AWSDataStorePlugin */; };
 		FF5990692622DD61004DF328 /* DataStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5990682622DD61004DF328 /* DataStoreManager.swift */; };
 		FF6DCBF22623530400EC366F /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */; };
+		FFBD2094269E7D090015131F /* AddURLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD2093269E7D090015131F /* AddURLViewModel.swift */; };
 		FFC4CA7726867B4C00427C81 /* BMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4CA7626867B4C00427C81 /* BMButton.swift */; };
 		FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB1096263E31D300544309 /* ReturnedTweet.swift */; };
 		FFCB1099263E3E2D00544309 /* CategorySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB1098263E3E2D00544309 /* CategorySheetView.swift */; };
@@ -76,6 +78,7 @@
 		CC43813A9098469FB57F5871 /* AWSTweet+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "AWSTweet+Schema.swift"; path = "amplify/generated/models/AWSTweet+Schema.swift"; sourceTree = "<group>"; };
 		DA7D79B731BC4ECFAAE8E817 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = awsconfiguration.json; sourceTree = "<group>"; };
 		ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		FF21986E269FE57D00FFB406 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AWSCategory+Extension.swift"; sourceTree = "<group>"; };
 		FF36B66B26235FE6007A6D7F /* TweetListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetListViewModel.swift; sourceTree = "<group>"; };
 		FF36B6702623678D007A6D7F /* AWSTweet+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AWSTweet+Extension.swift"; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 		FF39431F262FCF6100A3623B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		FF5990682622DD61004DF328 /* DataStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreManager.swift; sourceTree = "<group>"; };
 		FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
+		FFBD2093269E7D090015131F /* AddURLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddURLViewModel.swift; sourceTree = "<group>"; };
 		FFC4CA7626867B4C00427C81 /* BMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMButton.swift; sourceTree = "<group>"; };
 		FFCB1096263E31D300544309 /* ReturnedTweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnedTweet.swift; sourceTree = "<group>"; };
 		FFCB1098263E3E2D00544309 /* CategorySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySheetView.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				91739DEA2622D2A7000F982A /* AddURLView.swift */,
+				FFBD2093269E7D090015131F /* AddURLViewModel.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 			children = (
 				FF39432E262FD0CF00A3623B /* Views */,
 				FF36B66B26235FE6007A6D7F /* TweetListViewModel.swift */,
+				FF21986E269FE57D00FFB406 /* AsyncImage.swift */,
 			);
 			path = Tweets;
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 				A224A9E62622BCED00AC12AF /* TweetCard.swift in Sources */,
 				FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */,
 				FFC4CA7726867B4C00427C81 /* BMButton.swift in Sources */,
+				FF21986F269FE57D00FFB406 /* AsyncImage.swift in Sources */,
 				FF36B6712623678D007A6D7F /* AWSTweet+Extension.swift in Sources */,
 				FFEBBB7626226A39000F475F /* Secrets.swift in Sources */,
 				A2F449912622829D00725FEA /* CategoryList.swift in Sources */,
@@ -473,6 +480,7 @@
 				CA80832580B84CB3A2D5F629 /* AmplifyModels.swift in Sources */,
 				C0DAFC52B24C456EAE5AEF21 /* AWSCategory.swift in Sources */,
 				684E2F2D3FCC4D36AC68E57D /* AWSCategory+Schema.swift in Sources */,
+				FFBD2094269E7D090015131F /* AddURLViewModel.swift in Sources */,
 				CF16AFB9BE3F401E98C85114 /* AWSTweet.swift in Sources */,
 				FF36B661262357F9007A6D7F /* AWSCategory+Extension.swift in Sources */,
 				FF36B66C26235FE6007A6D7F /* TweetListViewModel.swift in Sources */,
@@ -640,7 +648,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"brain-marks/Preview Content\"";
-				DEVELOPMENT_TEAM = U23VWM3L5A;
+				DEVELOPMENT_TEAM = Y535846H6P;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "brain-marks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -662,7 +670,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"brain-marks/Preview Content\"";
-				DEVELOPMENT_TEAM = U23VWM3L5A;
+				DEVELOPMENT_TEAM = Y535846H6P;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "brain-marks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

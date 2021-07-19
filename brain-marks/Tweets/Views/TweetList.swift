@@ -18,7 +18,7 @@ struct TweetList: View {
         List(viewModel.tweets) { tweet in
             TweetCard(tweet: tweet)
                 .onTapGesture {
-                    self.openTwitter(tweetID: tweet.tweetID, authorUsername: tweet.authorUsername!)
+                    viewModel.openTwitter(tweetID: tweet.tweetID, authorUsername: tweet.authorUsername!)
                 }
         }
         .toolbar {
@@ -37,19 +37,5 @@ struct TweetList: View {
         }
         
         Spacer()
-    }
-    /// Opens twitter on tapping tweet card
-    func openTwitter(tweetID:String, authorUsername:String) {
-        let appURL = NSURL(string: "twitter://\(authorUsername)/status/\(tweetID)?s=21")!
-        let webURL = NSURL(string: "https://twitter.com/\(authorUsername)/status/\(tweetID)?s=21")!
-        
-        let application = UIApplication.shared
-        
-        if application.canOpenURL(appURL as URL) {
-            application.open(appURL as URL)
-        } else {
-            application.open(webURL as URL)
-        }
-        
     }
 }

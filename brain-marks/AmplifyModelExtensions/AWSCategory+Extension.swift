@@ -9,7 +9,7 @@ import Foundation
 
 extension AWSCategory: Identifiable {}
 
-extension AWSCategory: Hashable{
+extension AWSCategory: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

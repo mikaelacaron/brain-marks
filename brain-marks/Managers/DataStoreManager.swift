@@ -38,7 +38,7 @@ class DataStoreManger {
         Amplify.DataStore.query(AWSCategory.self, byId: byID) { result in
             switch result {
             case .success(let category):
-                print("✅ Got single category: \(category)")
+                print("✅ Got single category: \(String(describing: category))")
                 completion(.success(category))
             case .failure(let error):
                 print("❌ did NOT get categories: \(error)")
@@ -110,6 +110,7 @@ class DataStoreManger {
                                 text: tweet.text,
                                 authorName: tweet.authorName,
                                 authorUsername: tweet.authorUsername,
+                                profileImageURL: tweet.profileImageURL,
                                 category: category)
         
         Amplify.DataStore.save(awsTweet) { result in
@@ -133,10 +134,8 @@ class DataStoreManger {
             case .success(let categories):
                 
                 for selectedCategory in categories {
-                    if selectedCategory.name == category.name {
-                        if selectedCategory.tweets != nil {
-                            completion(Array(selectedCategory.tweets!))
-                        }
+                    if selectedCategory.name == category.name && selectedCategory.tweets != nil {
+                        completion(Array(selectedCategory.tweets!))
                     }
                 }
             case .failure(let error):

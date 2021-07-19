@@ -10,6 +10,7 @@ extension AWSTweet {
     case text
     case authorName
     case authorUsername
+    case profileImageURL
     case category
   }
   
@@ -27,6 +28,7 @@ extension AWSTweet {
       .field(aWSTweet.text, is: .optional, ofType: .string),
       .field(aWSTweet.authorName, is: .optional, ofType: .string),
       .field(aWSTweet.authorUsername, is: .optional, ofType: .string),
+      .field(aWSTweet.profileImageURL, is: .optional, ofType: .string),
       .belongsTo(aWSTweet.category, is: .optional, ofType: AWSCategory.self, targetName: "awsTweetCategoryId")
     )
     }

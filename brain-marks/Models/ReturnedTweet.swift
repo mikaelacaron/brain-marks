@@ -12,4 +12,5 @@ struct ReturnedTweet: Codable {
     let text:String
     let authorName: String
     let authorUsername: String
+    let profileImageURL: String
 }
