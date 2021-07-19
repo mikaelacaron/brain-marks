@@ -20,6 +20,7 @@
 		C4392E80BFE640DAA2625F9D /* AWSTweet+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC43813A9098469FB57F5871 /* AWSTweet+Schema.swift */; };
 		CA80832580B84CB3A2D5F629 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F5BDE61EAA4A2DB9030734 /* AmplifyModels.swift */; };
 		CF16AFB9BE3F401E98C85114 /* AWSTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA54EDF3B34443CA9D530E5 /* AWSTweet.swift */; };
+		FF21986F269FE57D00FFB406 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21986E269FE57D00FFB406 /* AsyncImage.swift */; };
 		FF36B661262357F9007A6D7F /* AWSCategory+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */; };
 		FF36B66C26235FE6007A6D7F /* TweetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B66B26235FE6007A6D7F /* TweetListViewModel.swift */; };
 		FF36B6712623678D007A6D7F /* AWSTweet+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B6702623678D007A6D7F /* AWSTweet+Extension.swift */; };
@@ -77,6 +78,7 @@
 		CC43813A9098469FB57F5871 /* AWSTweet+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "AWSTweet+Schema.swift"; path = "amplify/generated/models/AWSTweet+Schema.swift"; sourceTree = "<group>"; };
 		DA7D79B731BC4ECFAAE8E817 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = awsconfiguration.json; sourceTree = "<group>"; };
 		ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		FF21986E269FE57D00FFB406 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AWSCategory+Extension.swift"; sourceTree = "<group>"; };
 		FF36B66B26235FE6007A6D7F /* TweetListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetListViewModel.swift; sourceTree = "<group>"; };
 		FF36B6702623678D007A6D7F /* AWSTweet+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AWSTweet+Extension.swift"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				FF39432E262FD0CF00A3623B /* Views */,
 				FF36B66B26235FE6007A6D7F /* TweetListViewModel.swift */,
+				FF21986E269FE57D00FFB406 /* AsyncImage.swift */,
 			);
 			path = Tweets;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				A224A9E62622BCED00AC12AF /* TweetCard.swift in Sources */,
 				FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */,
 				FFC4CA7726867B4C00427C81 /* BMButton.swift in Sources */,
+				FF21986F269FE57D00FFB406 /* AsyncImage.swift in Sources */,
 				FF36B6712623678D007A6D7F /* AWSTweet+Extension.swift in Sources */,
 				FFEBBB7626226A39000F475F /* Secrets.swift in Sources */,
 				A2F449912622829D00725FEA /* CategoryList.swift in Sources */,
@@ -644,7 +648,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"brain-marks/Preview Content\"";
-				DEVELOPMENT_TEAM = U23VWM3L5A;
+				DEVELOPMENT_TEAM = Y535846H6P;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "brain-marks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -666,7 +670,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"brain-marks/Preview Content\"";
-				DEVELOPMENT_TEAM = U23VWM3L5A;
+				DEVELOPMENT_TEAM = Y535846H6P;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "brain-marks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

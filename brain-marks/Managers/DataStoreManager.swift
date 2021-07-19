@@ -38,7 +38,7 @@ class DataStoreManger {
         Amplify.DataStore.query(AWSCategory.self, byId: byID) { result in
             switch result {
             case .success(let category):
-                print("✅ Got single category: \(category)")
+                print("✅ Got single category: \(String(describing: category))")
                 completion(.success(category))
             case .failure(let error):
                 print("❌ did NOT get categories: \(error)")
