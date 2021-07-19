@@ -44,9 +44,13 @@ final class AddURLViewModel: ObservableObject {
                 do {
                     let result = try JSONDecoder().decode(Response.self, from: data)
                     
-                    let authorName = result.includes.users.first?.name ?? ""
-                    let authorUsername = result.includes.users.first?.username ?? ""
-                    let profileImageURL = result.includes.users.first?.profileImageURL ?? ""
+                    let user = result.includes.users.first
+                    
+                    let authorName = user?.name ?? ""
+                    let authorUsername = user?.username ?? ""
+                    let profileImageURL = user?.profileImageURL.replacingOccurrences(
+                        of: "normal",
+                        with: "bigger") ?? ""
                     
                     let tweetToSave = ReturnedTweet(id: result.data[0].id,
                                                     text: result.data[0].text,
