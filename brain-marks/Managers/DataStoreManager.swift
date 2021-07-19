@@ -134,10 +134,8 @@ class DataStoreManger {
             case .success(let categories):
                 
                 for selectedCategory in categories {
-                    if selectedCategory.name == category.name {
-                        if selectedCategory.tweets != nil {
-                            completion(Array(selectedCategory.tweets!))
-                        }
+                    if selectedCategory.name == category.name && selectedCategory.tweets != nil {
+                        completion(Array(selectedCategory.tweets!))
                     }
                 }
             case .failure(let error):

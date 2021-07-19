@@ -11,8 +11,11 @@ final class AddURLViewModel: ObservableObject {
     
     func fetchTweet(url: String, completion: @escaping (Result<ReturnedTweet, Error>) -> Void) {
         
+        let apiURL = "https://api.twitter.com/2/tweets"
+        let expansions = "author_id&user.fields=profile_image_url"
+        
         let id = url.components(separatedBy: "/").last!.components(separatedBy: "?")[0]
-        var request = URLRequest(url: URL(string: "https://api.twitter.com/2/tweets?ids=\(id)&expansions=author_id&user.fields=profile_image_url")!,
+        var request = URLRequest(url: URL(string: "\(apiURL)?ids=\(id)&expansions=\(expansions)")!,
                                  timeoutInterval: Double.infinity)
         
         request.addValue("Bearer \(Secrets.bearerToken)", forHTTPHeaderField: "Authorization")
