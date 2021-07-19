@@ -19,6 +19,16 @@ final class TweetListViewModel: ObservableObject {
         }
     }
     
+    func deleteTweet(at offsets: IndexSet) {
+        for _ in offsets {
+            offsets.sorted(by: >).forEach { index in
+                let tweet = tweets[index]
+                DataStoreManger.shared.deleteTweet(tweet)
+            }
+        }
+        tweets.remove(atOffsets: offsets)
+    }
+    
     /// Opens Twitter app when tapping on tweet card
     func openTwitter(tweetID:String, authorUsername:String) {
         let appURL = NSURL(string: "twitter://\(authorUsername)/status/\(tweetID)?s=21")!

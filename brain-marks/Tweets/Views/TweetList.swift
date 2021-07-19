@@ -14,13 +14,18 @@ struct TweetList: View {
     @StateObject var viewModel = TweetListViewModel()
     
     var body: some View {
-        
-        List(viewModel.tweets) { tweet in
-            TweetCard(tweet: tweet)
-                .onTapGesture {
-                    viewModel.openTwitter(tweetID: tweet.tweetID, authorUsername: tweet.authorUsername!)
-                }
+        List {
+            ForEach(viewModel.tweets) { tweet in
+                TweetCard(tweet: tweet)
+                    .onTapGesture {
+                        viewModel.openTwitter(tweetID: tweet.tweetID, authorUsername: tweet.authorUsername!)
+                    }
+            }
+            .onDelete { offsets in
+                viewModel.deleteTweet(at: offsets)
+            }
         }
+        
         .toolbar {
             ToolbarItem(placement: .principal) {
                 HStack {
