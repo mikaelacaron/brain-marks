@@ -32,17 +32,7 @@ struct AddURLView: View {
                 })
             }.navigationBarTitle("",displayMode: .inline)
             .navigationBarItems(
-                leading:
-                    Button {
-                        // create new category
-                    } label: {
-                        HStack {
-                            Image(systemName: "plus.app")
-                                .font(.system( size: 25))
-                            Text("Add Category")
-                        }
-                    }
-                ,trailing:   Button("Save") {
+                trailing: Button("Save") {
                     if selectedCategory.name == "" {
                         print("Please select a CATEGORY")
                         showingAlert = true

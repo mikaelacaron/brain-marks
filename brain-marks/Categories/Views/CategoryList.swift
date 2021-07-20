@@ -25,26 +25,7 @@ struct CategoryList: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(viewModel.categories) { category in
-                    NavigationLink(destination: TweetList(category: category)) {
-                        CategoryRow(category: category)
-                    }
-                    .contextMenu {
-                        Button {
-                            editCategory = category
-                            categorySheetState = .edit
-                            showingCategorySheet.toggle()
-                        } label: {
-                            Text("Edit")
-                        }
-                    }
-                }
-                .onDelete { indexSet in 
-                    showingDeleteActionSheet = true
-                    indexSetToDelete = indexSet
-                }
-            }.listStyle(InsetGroupedListStyle())
+            categoryList
             .environment(\.horizontalSizeClass, .regular)
             .navigationTitle("Categories")
             .toolbar {
@@ -93,6 +74,44 @@ struct CategoryList: View {
             ])
         }
         .accentColor(.black)
+    }
+    
+    @ViewBuilder
+    var categoryList: some View {
+        if viewModel.categories.isEmpty {
+            emptyListView
+        } else {
+            categories
+        }
+    }
+    
+    var emptyListView: some View {
+        Text("You haven't created any categories!")
+            .font(.title3)
+            .fontWeight(.medium)
+    }
+    
+    var categories: some View {
+        List {
+            ForEach(viewModel.categories) { category in
+                NavigationLink(destination: TweetList(category: category)) {
+                    CategoryRow(category: category)
+                }
+                .contextMenu {
+                    Button {
+                        editCategory = category
+                        categorySheetState = .edit
+                        showingCategorySheet.toggle()
+                    } label: {
+                        Text("Edit")
+                    }
+                }
+            }
+            .onDelete { indexSet in 
+                showingDeleteActionSheet = true
+                indexSetToDelete = indexSet
+            }
+        }.listStyle(InsetGroupedListStyle())
     }
 }
 
