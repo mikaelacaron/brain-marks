@@ -73,7 +73,7 @@ struct CategoryList: View {
                 .cancel()
             ])
         }
-        .accentColor(.black)
+        .accentColor(Color(UIColor.label))
     }
     
     @ViewBuilder

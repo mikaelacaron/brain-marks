@@ -66,20 +66,11 @@ struct UserIconView: View {
         ZStack {
             AsyncImage(url: URL(string: url)!,
                        placeholder: { 
-                Image(systemName: "person.fill")
+                        Image(systemName: "person.fill").accentColor(Color(UIColor.label))
             })
                 .aspectRatio(contentMode: .fit)
                 .frame(width: size, height: size)
                 .clipShape(Circle())
-            
-//            Image(systemName: "person.fill")
-//                .resizable()
-//                .aspectRatio(contentMode: .fit)
-//                .frame(width: size,
-//                       height: size,
-//                       alignment: .center)
-//                .clipShape(Circle())
-            
         }
     }
 }
