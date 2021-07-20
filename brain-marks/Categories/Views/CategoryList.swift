@@ -59,6 +59,7 @@ struct CategoryList: View {
                 }
             }
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
             viewModel.getCategories()
         }

@@ -11,9 +11,7 @@ struct ContentView: View {
     @State private var showAddSheet = false
 
     var body: some View {
-        VStack {
-            CategoryList()
-        }
+        CategoryList()
     }
 }
 
