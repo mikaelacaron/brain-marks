@@ -14,6 +14,40 @@ struct TweetList: View {
     @StateObject var viewModel = TweetListViewModel()
     
     var body: some View {
+        tweetList
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Image(systemName: category.imageName ?? "swift")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25, height: 25)
+                        Text(category.name)
+                    }
+                }
+            }
+            .onAppear {
+                viewModel.fetchTweets(category: category)
+            }
+    }
+    
+    @ViewBuilder
+    var tweetList: some View {
+        if viewModel.tweets.isEmpty {
+            emptyListView
+        } else {
+            tweets
+        }
+    }
+    
+    var emptyListView: some View {
+        Text("No tweets saved!")
+            .font(.title3)
+            .fontWeight(.medium)
+    }
+    
+    var tweets: some View {
         List {
             ForEach(viewModel.tweets) { tweet in
                 TweetCard(tweet: tweet)
@@ -24,21 +58,6 @@ struct TweetList: View {
             .onDelete { offsets in
                 viewModel.deleteTweet(at: offsets)
             }
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                HStack {
-                    Image(systemName: category.imageName ?? "swift")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 25, height: 25)
-                    Text(category.name)
-                }
-            }
-        }
-        .onAppear {
-            viewModel.fetchTweets(category: category)
         }
     }
 }
