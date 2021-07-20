@@ -25,7 +25,7 @@ struct TweetList: View {
                 viewModel.deleteTweet(at: offsets)
             }
         }
-        
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .principal) {
                 HStack {
@@ -40,7 +40,5 @@ struct TweetList: View {
         .onAppear {
             viewModel.fetchTweets(category: category)
         }
-        
-        Spacer()
     }
 }
