@@ -21,44 +21,46 @@ struct CategoryList: View {
     @State private var showingCategorySheet = false
     @State private var showingDeleteActionSheet = false
     
+    @State private var idToolbar = UUID()
+    
     @StateObject var viewModel = CategoryListViewModel()
     
     var body: some View {
         NavigationView {
             categoryList
-            .environment(\.horizontalSizeClass, .regular)
-            .navigationTitle("Categories")
-            .toolbar {
-                ToolbarItemGroup(placement: .bottomBar) {
-                    Button {
-                        categorySheetState = .new
-                        showingCategorySheet.toggle()
-                    } label: {
-                        Image(systemName: "folder.badge.plus")
-                    }
-                    .sheet(isPresented: $showingCategorySheet) {
-                        CategorySheetView(
-                            editCategory: $editCategory,
-                            categorySheetState: $categorySheetState)
-                            .onDisappear {
-                            viewModel.getCategories()
+                .navigationTitle("Categories")
+                .toolbar {
+                    ToolbarItemGroup(placement: .bottomBar) {
+                        Button {
+                            categorySheetState = .new
+                            showingCategorySheet.toggle()
+                        } label: {
+                            Image(systemName: "folder.badge.plus")
+                        }
+                        .sheet(isPresented: $showingCategorySheet) {
+                            CategorySheetView(
+                                editCategory: $editCategory,
+                                categorySheetState: $categorySheetState)
+                                .onDisappear {
+                                    viewModel.getCategories()
+                                }
+                        }
+                        
+                        Spacer()
+                        
+                        Button {
+                            self.showAddURLView = true
+                        } label: {
+                            Image(systemName:"plus.circle")
+                                .font(.largeTitle)
+                        }
+                        .sheet(isPresented: $showAddURLView) {
+                            AddURLView(categories: viewModel.categories)
                         }
                     }
-                    
-                    Spacer()
-                    
-                    Button {
-                        self.showAddURLView = true
-                    } label: {
-                        Image(systemName:"plus.circle")
-                            .font(.largeTitle)
-                    }
-                    .sheet(isPresented: $showAddURLView) {
-                        AddURLView(categories: viewModel.categories)
-                    }
-                }
-            }
+                }.id(idToolbar)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
             viewModel.getCategories()
         }
@@ -78,11 +80,13 @@ struct CategoryList: View {
     
     @ViewBuilder
     var categoryList: some View {
-        if viewModel.categories.isEmpty {
-            emptyListView
-        } else {
-            categories
-        }
+        categories
+        // removing for now, this makes the UI "flash" when updating a category
+//        if viewModel.categories.isEmpty {
+//            emptyListView
+//        } else {
+//            categories
+//        }
     }
     
     var emptyListView: some View {
@@ -97,6 +101,7 @@ struct CategoryList: View {
                 NavigationLink(destination: TweetList(category: category)) {
                     CategoryRow(category: category)
                 }
+                .onDisappear { idToolbar = UUID() }
                 .contextMenu {
                     Button {
                         editCategory = category

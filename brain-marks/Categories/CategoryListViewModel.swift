@@ -12,6 +12,7 @@ final class CategoryListViewModel: ObservableObject {
     @Published var categories = [AWSCategory]()
     
     func getCategories() {
+        categories = []
         DataStoreManger.shared.fetchCategories { result in
             switch result {
             case .success(let categories):

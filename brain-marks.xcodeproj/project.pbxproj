@@ -36,6 +36,7 @@
 		FFC4CA7726867B4C00427C81 /* BMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4CA7626867B4C00427C81 /* BMButton.swift */; };
 		FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB1096263E31D300544309 /* ReturnedTweet.swift */; };
 		FFCB1099263E3E2D00544309 /* CategorySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB1098263E3E2D00544309 /* CategorySheetView.swift */; };
+		FFEB1B5826A9F9C300682C37 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB1B5726A9F9C300682C37 /* Alert.swift */; };
 		FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB3926223F75000F475F /* brain_marksApp.swift */; };
 		FFEBBB3C26223F75000F475F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB3B26223F75000F475F /* ContentView.swift */; };
 		FFEBBB3E26223F7E000F475F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEBBB3D26223F7E000F475F /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 		FFC4CA7626867B4C00427C81 /* BMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMButton.swift; sourceTree = "<group>"; };
 		FFCB1096263E31D300544309 /* ReturnedTweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnedTweet.swift; sourceTree = "<group>"; };
 		FFCB1098263E3E2D00544309 /* CategorySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySheetView.swift; sourceTree = "<group>"; };
+		FFEB1B5726A9F9C300682C37 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FFEBBB3626223F75000F475F /* brain-marks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "brain-marks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEBBB3926223F75000F475F /* brain_marksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brain_marksApp.swift; sourceTree = "<group>"; };
 		FFEBBB3B26223F75000F475F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -236,6 +238,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FFEB1B5626A9F9B200682C37 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FFEB1B5726A9F9C300682C37 /* Alert.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		FFEBBB2D26223F75000F475F = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +277,7 @@
 				FF39432A262FD05700A3623B /* Categories */,
 				FF39432D262FD0AD00A3623B /* Tweets */,
 				FF3942FF262E847000A3623B /* Add */,
+				FFEB1B5626A9F9B200682C37 /* Utilities */,
 				FFEBBB3926223F75000F475F /* brain_marksApp.swift */,
 				FFEBBB3B26223F75000F475F /* ContentView.swift */,
 				FFEBBB3D26223F7E000F475F /* Assets.xcassets */,
@@ -469,6 +480,7 @@
 				FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */,
 				FFC4CA7726867B4C00427C81 /* BMButton.swift in Sources */,
 				FF21986F269FE57D00FFB406 /* AsyncImage.swift in Sources */,
+				FFEB1B5826A9F9C300682C37 /* Alert.swift in Sources */,
 				FF36B6712623678D007A6D7F /* AWSTweet+Extension.swift in Sources */,
 				FFEBBB7626226A39000F475F /* Secrets.swift in Sources */,
 				A2F449912622829D00725FEA /* CategoryList.swift in Sources */,

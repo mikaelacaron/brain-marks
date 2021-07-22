@@ -34,7 +34,7 @@ struct AddURLView: View {
             .navigationBarItems(
                 trailing: Button("Save") {
                     if selectedCategory.name == "" {
-                        print("Please select a CATEGORY")
+                        viewModel.alertItem = AlertContext.noCategory
                         showingAlert = true
                     } else {
                         viewModel.fetchTweet(url: newEntry) { result in
@@ -50,8 +50,8 @@ struct AddURLView: View {
                                     presentationMode.wrappedValue.dismiss()
                                 }
                                 
-                            case .failure(let error):
-                                print("❌ Couldn't save tweet: \(error)")
+                            case .failure(_):
+                                viewModel.alertItem = AlertContext.badURL
                             }
                         }
                     }
@@ -63,10 +63,11 @@ struct AddURLView: View {
         .onDisappear {
             selectedCategory.name = ""
         }
-        .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Uh Oh!"),
-                  message: Text("You must select a category"),
-                  dismissButton: .default(Text("Ok")))
+        .alert(item: $viewModel.alertItem) { alertItem in
+            Alert(title: Text(alertItem.title),
+                  message: Text(alertItem.message),
+                  dismissButton: alertItem.dismissButon)
+            
         }
     }
 }
