@@ -26,38 +26,37 @@ struct CategoryList: View {
     var body: some View {
         NavigationView {
             categoryList
-            .environment(\.horizontalSizeClass, .regular)
-            .navigationTitle("Categories")
-            .toolbar {
-                ToolbarItemGroup(placement: .bottomBar) {
-                    Button {
-                        categorySheetState = .new
-                        showingCategorySheet.toggle()
-                    } label: {
-                        Image(systemName: "folder.badge.plus")
-                    }
-                    .sheet(isPresented: $showingCategorySheet) {
-                        CategorySheetView(
-                            editCategory: $editCategory,
-                            categorySheetState: $categorySheetState)
-                            .onDisappear {
-                            viewModel.getCategories()
+                .navigationTitle("Categories")
+                .toolbar {
+                    ToolbarItemGroup(placement: .bottomBar) {
+                        Button {
+                            categorySheetState = .new
+                            showingCategorySheet.toggle()
+                        } label: {
+                            Image(systemName: "folder.badge.plus")
+                        }
+                        .sheet(isPresented: $showingCategorySheet) {
+                            CategorySheetView(
+                                editCategory: $editCategory,
+                                categorySheetState: $categorySheetState)
+                                .onDisappear {
+                                    viewModel.getCategories()
+                                }
+                        }
+                        
+                        Spacer()
+                        
+                        Button {
+                            self.showAddURLView = true
+                        } label: {
+                            Image(systemName:"plus.circle")
+                                .font(.largeTitle)
+                        }
+                        .sheet(isPresented: $showAddURLView) {
+                            AddURLView(categories: viewModel.categories)
                         }
                     }
-                    
-                    Spacer()
-                    
-                    Button {
-                        self.showAddURLView = true
-                    } label: {
-                        Image(systemName:"plus.circle")
-                            .font(.largeTitle)
-                    }
-                    .sheet(isPresented: $showAddURLView) {
-                        AddURLView(categories: viewModel.categories)
-                    }
                 }
-            }
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
@@ -79,11 +78,13 @@ struct CategoryList: View {
     
     @ViewBuilder
     var categoryList: some View {
-        if viewModel.categories.isEmpty {
-            emptyListView
-        } else {
-            categories
-        }
+        categories
+        // removing for now, this makes the UI "flash" when updating a category
+//        if viewModel.categories.isEmpty {
+//            emptyListView
+//        } else {
+//            categories
+//        }
     }
     
     var emptyListView: some View {
