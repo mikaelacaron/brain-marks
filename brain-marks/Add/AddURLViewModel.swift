@@ -7,12 +7,24 @@
 
 import SwiftUI
 
+enum HttpError: Error {
+    case badResponse
+    case badURL
+}
+
 final class AddURLViewModel: ObservableObject {
+    
+    @Published var alertItem: AlertItem?
     
     func fetchTweet(url: String, completion: @escaping (Result<ReturnedTweet, Error>) -> Void) {
         
         let apiURL = "https://api.twitter.com/2/tweets"
         let expansions = "author_id&user.fields=profile_image_url"
+        
+        guard url.contains("twitter.com") else {
+            completion(.failure(HttpError.badURL))
+            return
+        }
         
         let id = url.components(separatedBy: "/").last!.components(separatedBy: "?")[0]
         var request = URLRequest(url: URL(string: "\(apiURL)?ids=\(id)&expansions=\(expansions)")!,
@@ -31,7 +43,7 @@ final class AddURLViewModel: ObservableObject {
             
             if let response = response as? HTTPURLResponse {
                 guard (200 ... 299) ~= response.statusCode else {
-                    completion(.failure(error!))
+                    completion(.failure(HttpError.badResponse))
                     print("❌ Status code is \(response.statusCode)")
                     return
                 }
