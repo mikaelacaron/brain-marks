@@ -21,6 +21,8 @@ struct CategoryList: View {
     @State private var showingCategorySheet = false
     @State private var showingDeleteActionSheet = false
     
+    @State private var idToolbar = UUID()
+    
     @StateObject var viewModel = CategoryListViewModel()
     
     var body: some View {
@@ -56,7 +58,7 @@ struct CategoryList: View {
                             AddURLView(categories: viewModel.categories)
                         }
                     }
-                }
+                }.id(idToolbar)
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
@@ -99,6 +101,7 @@ struct CategoryList: View {
                 NavigationLink(destination: TweetList(category: category)) {
                     CategoryRow(category: category)
                 }
+                .onDisappear { idToolbar = UUID() }
                 .contextMenu {
                     Button {
                         editCategory = category
