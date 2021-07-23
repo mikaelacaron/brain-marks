@@ -21,8 +21,6 @@ struct CategoryList: View {
     @State private var showingCategorySheet = false
     @State private var showingDeleteActionSheet = false
     
-    @State private var idToolbar = UUID()
-    
     @StateObject var viewModel = CategoryListViewModel()
     
     var body: some View {
@@ -30,7 +28,7 @@ struct CategoryList: View {
             categoryList
                 .navigationTitle("Categories")
                 .toolbar {
-                    ToolbarItemGroup(placement: .bottomBar) {
+                    ToolbarItem(placement: .navigationBarLeading) { 
                         Button {
                             categorySheetState = .new
                             showingCategorySheet.toggle()
@@ -45,9 +43,8 @@ struct CategoryList: View {
                                     viewModel.getCategories()
                                 }
                         }
-                        
-                        Spacer()
-                        
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) { 
                         Button {
                             self.showAddURLView = true
                         } label: {
@@ -58,22 +55,11 @@ struct CategoryList: View {
                             AddURLView(categories: viewModel.categories)
                         }
                     }
-                }.id(idToolbar)
+                }
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
             viewModel.getCategories()
-        }
-        .actionSheet(isPresented: $showingDeleteActionSheet) {
-            ActionSheet(title: Text("Category and all tweets will be deleted"), buttons: [
-                .destructive(Text("Delete"), action: {
-                    guard indexSetToDelete != nil else {
-                        return
-                    }
-                    viewModel.deleteCategory(at: indexSetToDelete!)
-                }),
-                .cancel()
-            ])
         }
         .accentColor(Color(UIColor.label))
     }
@@ -101,7 +87,6 @@ struct CategoryList: View {
                 NavigationLink(destination: TweetList(category: category)) {
                     CategoryRow(category: category)
                 }
-                .onDisappear { idToolbar = UUID() }
                 .contextMenu {
                     Button {
                         editCategory = category
@@ -117,6 +102,17 @@ struct CategoryList: View {
                 indexSetToDelete = indexSet
             }
         }.listStyle(InsetGroupedListStyle())
+        .actionSheet(isPresented: $showingDeleteActionSheet) {
+            ActionSheet(title: Text("Category and all tweets will be deleted"), buttons: [
+                .destructive(Text("Delete"), action: {
+                    guard indexSetToDelete != nil else {
+                        return
+                    }
+                    viewModel.deleteCategory(at: indexSetToDelete!)
+                }),
+                .cancel()
+            ])
+        }
     }
 }
 
