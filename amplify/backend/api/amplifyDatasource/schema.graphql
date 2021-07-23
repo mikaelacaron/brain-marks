@@ -1,0 +1,16 @@
+type AWSTweet @model {
+    id: ID!
+    tweetID: String!
+    text: String
+    authorName: String
+    authorUsername: String
+    profileImageURL: String
+    category: AWSCategory @connection(name: "CategorizedTweet")
+}
+
+type AWSCategory @model {
+    id: ID!
+    name: String!
+    imageName: String
+    tweets: [AWSTweet] @connection(name: "CategorizedTweet")
+}
