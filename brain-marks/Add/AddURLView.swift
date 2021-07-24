@@ -58,7 +58,14 @@ struct AddURLView: View {
                 })
         }
         .onAppear {
-            newEntry = pasteBoard.string ?? ""
+            if let incomingURL = UserDefaults(suiteName: "group.ShareExtension101")?.value(forKey: "incomingURL") as? String {
+                newEntry = incomingURL
+                UserDefaults(suiteName: "group.ShareExtension101")?.removeObject(forKey: "incomingURL")
+            }
+            else{
+                newEntry = pasteBoard.string ?? ""
+                
+            }
         }
         .onDisappear {
             selectedCategory.name = ""
