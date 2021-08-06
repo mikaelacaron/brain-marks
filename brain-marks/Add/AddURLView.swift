@@ -58,13 +58,12 @@ struct AddURLView: View {
                 })
         }
         .onAppear {
-            if let incomingURL = UserDefaults(suiteName: "group.ShareExtension101")?.value(forKey: "incomingURL") as? String {
+            if let incomingURL = UserDefaults(suiteName: "group.brainMarksShareExtension")?.value(forKey: "incomingURL") as? String {
                 newEntry = incomingURL
-                UserDefaults(suiteName: "group.ShareExtension101")?.removeObject(forKey: "incomingURL")
+                UserDefaults(suiteName: "group.group.brainMarksShareExtension")?.removeObject(forKey: "incomingURL")
             }
             else{
                 newEntry = pasteBoard.string ?? ""
-                
             }
         }
         .onDisappear {

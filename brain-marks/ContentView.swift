@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var showAddSheet = false
-
+    
     var body: some View {
         CategoryList()
     }

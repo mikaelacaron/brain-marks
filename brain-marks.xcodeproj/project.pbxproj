@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		20636BDDDBEF4EAE9CCE9D9E /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */; };
 		684E2F2D3FCC4D36AC68E57D /* AWSCategory+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551BA45F30D640118D2F0CE2 /* AWSCategory+Schema.swift */; };
+		9141581F26B85EB7005CE599 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEBBB3D26223F7E000F475F /* Assets.xcassets */; };
 		91739DEB2622D2A7000F982A /* AddURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91739DEA2622D2A7000F982A /* AddURLView.swift */; };
 		91ACD49F26AC307F001CBF08 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ACD49E26AC307F001CBF08 /* ShareViewController.swift */; };
 		91ACD4A626AC307F001CBF08 /* ShareExtension101Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 91ACD49C26AC307F001CBF08 /* ShareExtension101Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -497,6 +498,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9141581F26B85EB7005CE599 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

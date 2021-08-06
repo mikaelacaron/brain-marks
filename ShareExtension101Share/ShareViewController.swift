@@ -14,7 +14,7 @@ class ShareViewController: UIViewController {
     private let typeText = String(kUTTypeText)
     private let typeURL = String(kUTTypeURL)
     private let appURL = "ShareExtension101://"
-    private let groupName = "group.ShareExtension101"
+    private let groupName = "group.brainMarksShareExtension"
     private let urlDefaultName = "incomingURL"
 
     override func viewDidAppear(_ animated: Bool) {
@@ -85,9 +85,7 @@ class ShareViewController: UIViewController {
         })
     }
 
-    // Courtesy: https://stackoverflow.com/a/44499222/13363449 👇🏾
-    // Function must be named exactly like this so a selector can be found by the compiler!
-    // Anyway - it's another selector in another instance that would be "performed" instead.
+
     @objc private func openURL(_ url: URL) -> Bool {
         var responder: UIResponder? = self
         while responder != nil {
