@@ -3,15 +3,21 @@
 name: CI
 
 # Controls when the workflow will run
-on: [push, pull_request]
-
-  # Allows you to run this workflow manually from the Actions tab
-  # workflow_dispatch:
+on:
+  push:
+    branches:
+    - main
+    - dev
+  pull_request:
+    branches:
+    - main
+    - dev
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
 jobs:
   SwiftLint:
-  runs-on: ubuntu-latest
-  steps:
-  - uses: actions/checkout@v1
-  - name: GitHub Action for SwiftLint
-    uses: norio-nomura/action-swiftlint@3.2.1
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: GitHub Action for SwiftLint
+      uses: norio-nomura/action-swiftlint@3.2.1
