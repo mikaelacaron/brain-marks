@@ -58,7 +58,13 @@ struct AddURLView: View {
                 })
         }
         .onAppear {
-            newEntry = pasteBoard.string ?? ""
+            if let incomingURL = UserDefaults(
+                suiteName: "group.BMShareExtension")?.value(forKey: "incomingURL") as? String {
+                newEntry = incomingURL
+                UserDefaults(suiteName: "group.group.BMShareExtension")?.removeObject(forKey: "incomingURL")
+            } else {
+                newEntry = pasteBoard.string ?? ""
+            }
         }
         .onDisappear {
             selectedCategory.name = ""
@@ -67,7 +73,6 @@ struct AddURLView: View {
             Alert(title: Text(alertItem.title),
                   message: Text(alertItem.message),
                   dismissButton: alertItem.dismissButon)
-            
         }
     }
 }
