@@ -4,6 +4,9 @@
 # Ignore secrets
 Secrets.swift
 
+# Ignore xcshareddata
+.xcodeproj/*
+
 ### macOS ###
 # General
 .DS_Store
