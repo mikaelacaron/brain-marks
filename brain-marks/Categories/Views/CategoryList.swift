@@ -49,7 +49,6 @@ struct CategoryList: View {
                             self.showAddURLView = true
                         } label: {
                             Image(systemName:"plus.circle")
-                                .font(.largeTitle)
                         }
                         .sheet(isPresented: $showAddURLView) {
                             AddURLView(categories: viewModel.categories)
