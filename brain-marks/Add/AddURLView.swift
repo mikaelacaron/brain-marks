@@ -22,7 +22,6 @@ struct AddURLView: View {
     var body: some View {
         NavigationView {
             Form {
-                
                 TextField("Enter copied url", text: $newEntry)
                     .autocapitalization(.none)
                 Picker(selection: $selectedCategory , label: Text("Category"), content: {
@@ -30,7 +29,7 @@ struct AddURLView: View {
                         Text(category.name).tag(category.id)
                     }
                 })
-            }.navigationBarTitle("",displayMode: .inline)
+            }
             .navigationBarItems(
                 trailing: Button("Save") {
                     if selectedCategory.name == "" {
@@ -58,7 +57,9 @@ struct AddURLView: View {
                 })
         }
         .onAppear {
-            newEntry = pasteBoard.string ?? ""
+            DispatchQueue.main.async {
+                newEntry = pasteBoard.string ?? ""
+            }
         }
         .onDisappear {
             selectedCategory.name = ""
