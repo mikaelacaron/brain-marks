@@ -1,7 +1,36 @@
 # Contribution Guidelines
 This document contains the rules and guidelines that developers are expected to follow, while contributing to this repository.
 
-> All contributions must **NOT** add any SwiftLint warnings or errors.
+> All contributions must **NOT** add any SwiftLint warnings or errors. There is a GitHub action setup for any PRs to dev, and Xcode will show any warnings/errors.
+
+# About the Project
+This app has always been open source! It began with the [Big Brain Hackathon](https://bigbrainhacks.com) and now during [Hacktoberfest](https://hacktoberfest.digitalocean.com). This app uses the [Twitter API](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api) (v2 where possible) and [AWS Amplify DataStore](https://docs.amplify.aws/start/q/integration/ios/).
+
+# Project Status
+This is a deployed app on the Apple [App Store](https://apps.apple.com/us/app/brain-marks/id1577423925), available for iOS 14.0 or later. After Hacktoberfest, a new version will be created and pushed to the App Store by Mikaela Caron (the maintainer).
+
+# Getting Started
+## Prerequisites
+* You will need an API key from the [Twitter API](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api)
+* If your feature/change requires changing the model you will need install [AWS Amplify DataStore](https://docs.amplify.aws/start/q/integration/ios/) tools
+## Start Here
+* Fork the repo
+* Clone to your computer
+
+`git clone https://github.com/mikaelacaron/brain-marks && cd brain-marks`
+
+* Setup the upstream remote
+
+`git remote add upstream https://github.com/mikaelacaron/brain-marks.git`
+
+* Checkout a new branch (from the `dev` branch) to work on an issue:
+
+`git checkout -b issueNumber-feature-name`
+
+* When your feature/fix is complete open a pull request, PR, from your feature branch to the `dev` branch
+  * Be sure to squash your commits into one single commit, how to do that shown [here]([here](https://www.internalpointers.com/post/squash-commits-into-one-git))
+
+* More information for beginners not familiar with git can be found [here](https://hacktoberfest.digitalocean.com/resources).
 
 # Commit Messages
 
@@ -43,7 +72,7 @@ This document contains the rules and guidelines that developers are expected to 
 
   ✅ **Examples of valid branch names:**
   * fix/8123-title-of-issue (issue number)
-  * fix/8123 (issue number)
+  * feature/8123 (issue number)
   * feature/OAuth (new features)
   
   ❌ **Examples of invalid branch names**:

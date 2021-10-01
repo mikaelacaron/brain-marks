@@ -2,9 +2,11 @@
 
 # Brain Marks
 
-This app has always been open source! It began with the [Big Brain Hackathon](https://bigbrainhacks.com) and now it's [Hacktoberfest](https://hacktoberfest.digitalocean.com). Contributing to this repo, we'll include your username in the App Store description and within the app!
+This app has always been open source! It began with the [Big Brain Hackathon](https://bigbrainhacks.com) and now during [Hacktoberfest](https://hacktoberfest.digitalocean.com). This app uses the [Twitter API](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api) (v2 where possible) and [AWS Amplify DataStore](https://docs.amplify.aws/start/q/integration/ios/).
 
 # Getting Started
+* You will need an API key from the [Twitter API](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api)
+* If your feature/change requires changing the model you will need to know [AWS Amplify DataStore](https://docs.amplify.aws/start/q/integration/ios/)
 * Fork this repo
 * Clone your repo and move into that directory:
 
@@ -16,6 +18,7 @@ This app has always been open source! It began with the [Big Brain Hackathon](ht
 
 * Open Xcode and run the app! (Shortcut ⌘ + R)
 * Open your forked repo in your browser and create a PR to the `dev` branch of this repository
+* See CONTRIBUTING.md for more in-depth instructions.
 
 # Contributing
 To start contributing, review CONTRIBUTING.md. New contributors are always welcome to support this project. Issues labeled `good-first-issue` are great for beginners.
