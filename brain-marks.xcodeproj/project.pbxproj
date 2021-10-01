@@ -36,6 +36,7 @@
 		FFC4CA7726867B4C00427C81 /* BMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4CA7626867B4C00427C81 /* BMButton.swift */; };
 		FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB1096263E31D300544309 /* ReturnedTweet.swift */; };
 		FFCB1099263E3E2D00544309 /* CategorySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB1098263E3E2D00544309 /* CategorySheetView.swift */; };
+		FFE079F627066FE30022EC61 /* Secrets-Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE079F527066FE30022EC61 /* Secrets-Example.swift */; };
 		FFEB1B5826A9F9C300682C37 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB1B5726A9F9C300682C37 /* Alert.swift */; };
 		FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB3926223F75000F475F /* brain_marksApp.swift */; };
 		FFEBBB3C26223F75000F475F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB3B26223F75000F475F /* ContentView.swift */; };
@@ -92,6 +93,7 @@
 		FFC4CA7626867B4C00427C81 /* BMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMButton.swift; sourceTree = "<group>"; };
 		FFCB1096263E31D300544309 /* ReturnedTweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnedTweet.swift; sourceTree = "<group>"; };
 		FFCB1098263E3E2D00544309 /* CategorySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySheetView.swift; sourceTree = "<group>"; };
+		FFE079F527066FE30022EC61 /* Secrets-Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Secrets-Example.swift"; sourceTree = "<group>"; };
 		FFEB1B5726A9F9C300682C37 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		FFEBBB3626223F75000F475F /* brain-marks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "brain-marks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEBBB3926223F75000F475F /* brain_marksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brain_marksApp.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				FFEBBB4226223F7E000F475F /* Info.plist */,
 				FFEBBB3F26223F7E000F475F /* Preview Content */,
 				FFEBBB7526226A39000F475F /* Secrets.swift */,
+				FFE079F527066FE30022EC61 /* Secrets-Example.swift */,
 			);
 			path = "brain-marks";
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				A205CD422622A3EB00517DB5 /* TweetList.swift in Sources */,
 				FF394320262FCF6100A3623B /* Response.swift in Sources */,
 				FF6DCBF22623530400EC366F /* CategoryListViewModel.swift in Sources */,
+				FFE079F627066FE30022EC61 /* Secrets-Example.swift in Sources */,
 				FF39431B262FCF4E00A3623B /* Includes.swift in Sources */,
 				91739DEB2622D2A7000F982A /* AddURLView.swift in Sources */,
 			);
