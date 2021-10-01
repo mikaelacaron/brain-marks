@@ -32,6 +32,11 @@ This is a deployed app on the Apple [App Store](https://apps.apple.com/us/app/br
 
 * More information for beginners not familiar with git can be found [here](https://hacktoberfest.digitalocean.com/resources).
 
+## Setting Up Secrets
+* Once you have your API key, create a new file called `Secrets.swift` in the brain-marks directory of the project, use Xcode to do this
+* Use the file `Secrets-Example.swift` as the format for your Secrets.swift file. Paste your API key into the `bearerToken` property
+* Include the comment `// swiftlint:disable line_length` in this file otherwise it will trigger a SwiftLint warning
+
 # Commit Messages
 
 * The message following the `-m` flag must be in the below format : 
