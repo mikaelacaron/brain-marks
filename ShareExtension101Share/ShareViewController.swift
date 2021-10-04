@@ -12,8 +12,8 @@ import UniformTypeIdentifiers
 
 class ShareViewController: UIViewController {
 
-    private let typeText = String(kUTTypeText)
-    private let typeURL = String(kUTTypeText)
+    private let typeText = String(UTType.text.identifier)
+    private let typeURL = String(UTType.url.identifier)
     private let appURL = "ShareExtension101://"
     private let groupName = "group.brainMarksShareExtension"
     private let urlDefaultName = "incomingURL"
