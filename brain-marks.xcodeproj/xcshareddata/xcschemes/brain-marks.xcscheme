@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FFEBBB4626223F7F000F475F"
+               BuildableName = "brain-marksTests.xctest"
+               BlueprintName = "brain-marksTests"
+               ReferencedContainer = "container:brain-marks.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FFEBBB5126223F7F000F475F"
+               BuildableName = "brain-marksUITests.xctest"
+               BlueprintName = "brain-marksUITests"
+               ReferencedContainer = "container:brain-marks.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
