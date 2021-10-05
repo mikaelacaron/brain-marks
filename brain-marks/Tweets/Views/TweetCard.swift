@@ -28,7 +28,7 @@ struct TweetHeaderView: View {
         HStack {
             UserIconView(url: tweet.profileImageURL ?? "", size: 55)
             UserInfoView(authorName: tweet.authorName ?? "",
-                         authorUsername: tweet.authorUsername ?? "")
+                         authorUsername: tweet.authorUsername ?? "", createdAt: tweet.createdAt ?? "")
             Spacer()
         }
         .padding(EdgeInsets(top: 18, leading: 18, bottom: 18, trailing: 18))
@@ -79,6 +79,7 @@ struct UserInfoView: View {
     
     let authorName: String
     let authorUsername: String
+    let createdAt: String
     
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
@@ -96,6 +97,9 @@ struct UserInfoView: View {
                 Text("@\(authorUsername)")
                     .font(.callout)
                     .foregroundColor(.secondary)
+                if createdAt != "" {
+                    Text("on \(customizeDateFrom(string: createdAt) )")
+                }
             }
             Spacer()
         }

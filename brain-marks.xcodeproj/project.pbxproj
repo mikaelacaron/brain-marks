@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20636BDDDBEF4EAE9CCE9D9E /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */; };
+		67AB93B6270CF43100436A7D /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AB93B5270CF43100436A7D /* DateHelper.swift */; };
 		684E2F2D3FCC4D36AC68E57D /* AWSCategory+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551BA45F30D640118D2F0CE2 /* AWSCategory+Schema.swift */; };
 		91739DEB2622D2A7000F982A /* AddURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91739DEA2622D2A7000F982A /* AddURLView.swift */; };
 		91C8958926228D1500689196 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8958826228D1500689196 /* Tweet.swift */; };
@@ -70,6 +71,7 @@
 		1E886624D4EE4F64B9160A75 /* amplifytools.xcconfig */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.xcconfig; path = amplifytools.xcconfig; sourceTree = "<group>"; };
 		551BA45F30D640118D2F0CE2 /* AWSCategory+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "AWSCategory+Schema.swift"; path = "amplify/generated/models/AWSCategory+Schema.swift"; sourceTree = "<group>"; };
 		63D0518628EF45A382F08352 /* AWSCategory.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AWSCategory.swift; path = amplify/generated/models/AWSCategory.swift; sourceTree = "<group>"; };
+		67AB93B5270CF43100436A7D /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		91739DEA2622D2A7000F982A /* AddURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddURLView.swift; sourceTree = "<group>"; };
 		91C8958826228D1500689196 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		A205CD412622A3EB00517DB5 /* TweetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetList.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				FFEB1B5726A9F9C300682C37 /* Alert.swift */,
+				67AB93B5270CF43100436A7D /* DateHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				FF21986F269FE57D00FFB406 /* AsyncImage.swift in Sources */,
 				FFEB1B5826A9F9C300682C37 /* Alert.swift in Sources */,
 				FF36B6712623678D007A6D7F /* AWSTweet+Extension.swift in Sources */,
+				67AB93B6270CF43100436A7D /* DateHelper.swift in Sources */,
 				FFEBBB7626226A39000F475F /* Secrets.swift in Sources */,
 				A2F449912622829D00725FEA /* CategoryList.swift in Sources */,
 				A2F4498C2622802B00725FEA /* CategoryRow.swift in Sources */,
@@ -664,7 +668,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"brain-marks/Preview Content\"";
-				DEVELOPMENT_TEAM = N7AZRND92Z;
+				DEVELOPMENT_TEAM = Y535846H6P;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "brain-marks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -673,7 +677,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vcapilladeveloper.brainmarks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -687,7 +691,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"brain-marks/Preview Content\"";
-				DEVELOPMENT_TEAM = N7AZRND92Z;
+				DEVELOPMENT_TEAM = Y535846H6P;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "brain-marks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -696,7 +700,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vcapilladeveloper.brainmarks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -68,7 +68,8 @@ final class AddURLViewModel: ObservableObject {
                                                     text: result.data[0].text,
                                                     authorName: authorName,
                                                     authorUsername: authorUsername,
-                                                    profileImageURL: profileImageURL)
+                                                    profileImageURL: profileImageURL,
+                                                    createdAt: result.data[0].createdAt)
                     
                     completion(.success(tweetToSave))
                 } catch {

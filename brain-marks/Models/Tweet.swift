@@ -10,4 +10,12 @@ import Foundation
 struct Tweet: Codable {
     let id:String
     let text:String
+    let createdAt: String
+}
+
+extension Tweet {
+    enum CodingKeys: String, CodingKey {
+        case id, text
+        case createdAt = "created_at"
+    }
 }
