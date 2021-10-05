@@ -35,16 +35,12 @@ struct TweetList: View {
     @ViewBuilder
     var tweetList: some View {
         if viewModel.tweets.isEmpty {
-            emptyListView
+            EmptyListView(
+                message: "Add your first saved tweet in the home menu!"
+            )
         } else {
             tweets
         }
-    }
-    
-    var emptyListView: some View {
-        Text("No tweets saved!")
-            .font(.title3)
-            .fontWeight(.medium)
     }
     
     var tweets: some View {

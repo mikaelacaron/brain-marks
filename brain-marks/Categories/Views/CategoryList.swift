@@ -65,19 +65,13 @@ struct CategoryList: View {
     
     @ViewBuilder
     var categoryList: some View {
-        categories
-        // removing for now, this makes the UI "flash" when updating a category
-//        if viewModel.categories.isEmpty {
-//            emptyListView
-//        } else {
-//            categories
-//        }
-    }
-    
-    var emptyListView: some View {
-        Text("You haven't created any categories!")
-            .font(.title3)
-            .fontWeight(.medium)
+        if viewModel.categories.isEmpty {
+            EmptyListView(
+                message: "Lets get started by adding your first category!"
+            )
+        } else {
+            categories
+        }
     }
     
     var categories: some View {
@@ -115,6 +109,7 @@ struct CategoryList: View {
     }
 }
 
+//MARK: - Previews
 struct CategoryList_Previews: PreviewProvider {
     static var previews: some View {
         CategoryList()
