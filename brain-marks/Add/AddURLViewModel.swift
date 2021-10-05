@@ -19,7 +19,7 @@ final class AddURLViewModel: ObservableObject {
     func fetchTweet(url: String, completion: @escaping (Result<ReturnedTweet, Error>) -> Void) {
         
         let apiURL = "https://api.twitter.com/2/tweets"
-        let expansions = "author_id&user.fields=profile_image_url"
+        let expansions = "author_id&user.fields=profile_image_url&tweet.fields=created_at"
         
         guard url.contains("twitter.com") else {
             completion(.failure(HttpError.badURL))
@@ -55,7 +55,7 @@ final class AddURLViewModel: ObservableObject {
                 
                 do {
                     let result = try JSONDecoder().decode(Response.self, from: data)
-                    
+                    print(String(data: data, encoding: .utf8))
                     let user = result.includes.users.first
                     
                     let authorName = user?.name ?? ""
