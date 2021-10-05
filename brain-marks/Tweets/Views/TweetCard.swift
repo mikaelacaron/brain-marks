@@ -18,7 +18,7 @@ struct TweetCard: View {
             if let timeStamp = tweet.timeStamp {
                 TimeStampView(timeStamp: timeStamp)
             }
-//            TweetFooterView()
+            //            TweetFooterView()
         }
     }
 }
@@ -48,17 +48,17 @@ struct TweetBodyView: View {
     }
 }
 
- struct TweetFooterView: View {
+struct TweetFooterView: View {
     var body: some View {
         VStack(alignment: .leading) {
             TweetInfoView()
-
+            
             Divider().padding(EdgeInsets(top: 0, leading: 18, bottom: 6, trailing: 18))
             InteractionsView()
             Divider().padding(EdgeInsets(top: 4, leading: 18, bottom: 0, trailing: 18))
         }
     }
- }
+}
 
 struct UserIconView: View {
     
@@ -68,8 +68,8 @@ struct UserIconView: View {
     var body: some View {
         ZStack {
             AsyncImage(url: URL(string: url)!,
-                       placeholder: { 
-                        Image(systemName: "person.fill").accentColor(Color(UIColor.label))
+                       placeholder: {
+                Image(systemName: "person.fill").accentColor(Color(UIColor.label))
             })
                 .aspectRatio(contentMode: .fit)
                 .frame(width: size, height: size)
@@ -90,11 +90,11 @@ struct UserInfoView: View {
                     Text(authorName)
                         .font(.headline)
                         .fontWeight(.semibold)
-//                            Image("verified")
-//                                .resizable()
-//                                .frame(width: 14,
-//                                       height: 14,
-//                                       alignment: .center)
+                    //                            Image("verified")
+                    //                                .resizable()
+                    //                                .frame(width: 14,
+                    //                                       height: 14,
+                    //                                       alignment: .center)
                 }
                 Text("@\(authorUsername)")
                     .font(.callout)
@@ -105,7 +105,7 @@ struct UserInfoView: View {
     }
 }
 
- struct TweetInfoView: View {
+struct TweetInfoView: View {
     var body: some View {
         HStack(spacing: 0) {
             Text("9:58 PM・9/5/20・")
@@ -117,9 +117,9 @@ struct UserInfoView: View {
         }
         .padding(EdgeInsets(top: 18, leading: 18, bottom: 6, trailing: 18))
     }
- }
+}
 
- struct InteractionsView: View {
+struct InteractionsView: View {
     var body: some View {
         HStack {
             HStack(spacing: 4) {
@@ -145,14 +145,16 @@ struct UserInfoView: View {
             }
         }.padding(.horizontal)
     }
- }
+}
 
 struct TimeStampView: View {
     let timeStamp: String
+    
     var body: some View {
-        Text("\(timeStamp)・")
+        Text(timeStamp.formatTimestamp())
             .font(.callout)
             .foregroundColor(.secondary)
+            .padding(.horizontal, 18)
     }
 }
 
@@ -162,3 +164,4 @@ struct TweetCard_Previews: PreviewProvider {
             .previewLayout(PreviewLayout.sizeThatFits)
     }
 }
+
