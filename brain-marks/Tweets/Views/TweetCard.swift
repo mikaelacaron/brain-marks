@@ -28,7 +28,8 @@ struct TweetHeaderView: View {
         HStack {
             UserIconView(url: tweet.profileImageURL ?? "", size: 55)
             UserInfoView(authorName: tweet.authorName ?? "",
-                         authorUsername: tweet.authorUsername ?? "")
+                         authorUsername: tweet.authorUsername ?? "",
+                         userVerified: tweet.userVerified ?? false)
             Spacer()
         }
         .padding(EdgeInsets(top: 18, leading: 18, bottom: 18, trailing: 18))
@@ -79,6 +80,7 @@ struct UserInfoView: View {
     
     let authorName: String
     let authorUsername: String
+    let userVerified: Bool
     
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
@@ -87,11 +89,14 @@ struct UserInfoView: View {
                     Text(authorName)
                         .font(.headline)
                         .fontWeight(.semibold)
-//                            Image("verified")
-//                                .resizable()
-//                                .frame(width: 14,
-//                                       height: 14,
-//                                       alignment: .center)
+                    if userVerified {
+                            Image("verified")
+                                .resizable()
+                                .frame(width: 14,
+                                       height: 14,
+                                       alignment: .center)
+                    }
+                                
                 }
                 Text("@\(authorUsername)")
                     .font(.callout)
