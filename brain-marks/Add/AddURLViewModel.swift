@@ -20,6 +20,7 @@ final class AddURLViewModel: ObservableObject {
         
         let apiURL = "https://api.twitter.com/2/tweets"
         let expansions = "author_id&user.fields=profile_image_url"
+        let tweetFields = "created_at"
         
         guard url.contains("twitter.com") else {
             completion(.failure(HttpError.badURL))
@@ -27,7 +28,7 @@ final class AddURLViewModel: ObservableObject {
         }
         
         let id = url.components(separatedBy: "/").last!.components(separatedBy: "?")[0]
-        var request = URLRequest(url: URL(string: "\(apiURL)?ids=\(id)&expansions=\(expansions)")!,
+        var request = URLRequest(url: URL(string: "\(apiURL)?ids=\(id)&expansions=\(expansions)&tweet.fields=\(tweetFields)")!,
                                  timeoutInterval: Double.infinity)
         
         request.addValue("Bearer \(Secrets.bearerToken)", forHTTPHeaderField: "Authorization")
@@ -64,11 +65,14 @@ final class AddURLViewModel: ObservableObject {
                         of: "normal",
                         with: "bigger") ?? ""
                     
-                    let tweetToSave = ReturnedTweet(id: result.data[0].id,
-                                                    text: result.data[0].text,
-                                                    authorName: authorName,
-                                                    authorUsername: authorUsername,
-                                                    profileImageURL: profileImageURL)
+                    let tweetToSave = ReturnedTweet(
+                        id: result.data[0].id,
+                        text: result.data[0].text,
+                        timeStamp: result.data[0].created_at,
+                        authorName: authorName,
+                        authorUsername: authorUsername,
+                        profileImageURL: profileImageURL
+                    )
                     
                     completion(.success(tweetToSave))
                 } catch {

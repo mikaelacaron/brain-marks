@@ -108,6 +108,7 @@ class DataStoreManger {
         let awsTweet = AWSTweet(id: UUID().uuidString,
                                 tweetID: tweet.id,
                                 text: tweet.text,
+                                timeStamp: tweet.timeStamp,
                                 authorName: tweet.authorName,
                                 authorUsername: tweet.authorUsername,
                                 profileImageURL: tweet.profileImageURL,

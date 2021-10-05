@@ -15,6 +15,9 @@ struct TweetCard: View {
         VStack(alignment: .leading) {
             TweetHeaderView(tweet: tweet)
             TweetBodyView(tweetBody: tweet.text!)
+            if let timeStamp = tweet.timeStamp {
+                TimeStampView(timeStamp: timeStamp)
+            }
 //            TweetFooterView()
         }
     }
@@ -143,6 +146,15 @@ struct UserInfoView: View {
         }.padding(.horizontal)
     }
  }
+
+struct TimeStampView: View {
+    let timeStamp: String
+    var body: some View {
+        Text("\(timeStamp)・")
+            .font(.callout)
+            .foregroundColor(.secondary)
+    }
+}
 
 struct TweetCard_Previews: PreviewProvider {
     static var previews: some View {
