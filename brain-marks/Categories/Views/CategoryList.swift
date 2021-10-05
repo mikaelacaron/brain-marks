@@ -18,6 +18,7 @@ struct CategoryList: View {
     @State private var editCategory: AWSCategory?
     @State private var indexSetToDelete: IndexSet?
     @State private var showAddURLView = false
+    @State private var showInfoSheet = false
     @State private var showingCategorySheet = false
     @State private var showingDeleteActionSheet = false
     
@@ -44,9 +45,19 @@ struct CategoryList: View {
                                 }
                         }
                     }
-                    ToolbarItem(placement: .navigationBarTrailing) { 
+                    ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
-                            self.showAddURLView = true
+                            showInfoSheet = true
+                        } label: {
+                            Image(systemName:"info.circle")
+                        }
+                        .sheet(isPresented: $showInfoSheet) {
+                            InfoView(viewModel: DefaultInfoViewModel())
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            showAddURLView = true
                         } label: {
                             Image(systemName:"plus.circle")
                         }

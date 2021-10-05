@@ -32,7 +32,7 @@
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIImageName</key>
-		<string>logo.png</string>
+		<string>logo</string>
 		<key>UIImageRespectsSafeAreaInsets</key>
 		<false/>
 	</dict>
