@@ -11,7 +11,7 @@ protocol InfoViewModel {
     var title: String { get }
     var message: String { get }
     var imageName: String { get }
-    var appVersion: String { get }
+    var appVersion: String? { get }
 }
 
 class DefaultInfoViewModel: InfoViewModel {
@@ -24,10 +24,14 @@ class DefaultInfoViewModel: InfoViewModel {
     let imageName: String = "logo"
     
     private var appName: String {
-        return Bundle.main.infoDictionary?[kCFBundleNameKey as String] as! String
+        return Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Brain Marks"
     }
     
-    var appVersion: String {
-        return "Version \(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String)"
+    var appVersion: String? {
+        if let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String {
+            return "Version \(version)"
+        } else {
+            return nil
+        }
     }
 }

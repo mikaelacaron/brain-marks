@@ -25,14 +25,15 @@ struct InfoView<ViewModel: InfoViewModel>: View {
             Text(viewModel.message)
                 .font(.headline)
                 .foregroundColor(Color("twitter"))
-            Text(viewModel.appVersion)
-                .font(.footnote)
-                .opacity(0.75)
+            if let appVersion = viewModel.appVersion {
+                Text(appVersion)
+                    .font(.footnote)
+                    .opacity(0.75)
+            }
         }
         .padding()
     }
 }
-
 
 // MARK: - Previews
 struct InfoView_previews: PreviewProvider {
