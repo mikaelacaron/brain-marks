@@ -28,7 +28,7 @@ struct CategoryList: View {
             categoryList
                 .navigationTitle("Categories")
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) { 
+                    ToolbarItem(placement: .navigationBarLeading) {
                         Button {
                             categorySheetState = .new
                             showingCategorySheet.toggle()
@@ -44,7 +44,7 @@ struct CategoryList: View {
                                 }
                         }
                     }
-                    ToolbarItem(placement: .navigationBarTrailing) { 
+                    ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             self.showAddURLView = true
                         } label: {
@@ -65,13 +65,24 @@ struct CategoryList: View {
     
     @ViewBuilder
     var categoryList: some View {
-        categories
+        if viewModel.categories.isEmpty {
+            ZStack {
+                Image("logo.png")
+                    .opacity(0.05)
+            VStack {
+                Text("The categories are empty, ")
+                Text("please add new categories by clicking on \(Image(systemName: "folder.badge.plus"))")
+            }
+            }
+        } else {
+            categories
+        }
         // removing for now, this makes the UI "flash" when updating a category
-//        if viewModel.categories.isEmpty {
-//            emptyListView
-//        } else {
-//            categories
-//        }
+        //        if viewModel.categories.isEmpty {
+        //            emptyListView
+        //        } else {
+        //            categories
+        //        }
     }
     
     var emptyListView: some View {
@@ -96,22 +107,22 @@ struct CategoryList: View {
                     }
                 }
             }
-            .onDelete { indexSet in 
+            .onDelete { indexSet in
                 showingDeleteActionSheet = true
                 indexSetToDelete = indexSet
             }
         }.listStyle(InsetGroupedListStyle())
-        .actionSheet(isPresented: $showingDeleteActionSheet) {
-            ActionSheet(title: Text("Category and all tweets will be deleted"), buttons: [
-                .destructive(Text("Delete"), action: {
-                    guard indexSetToDelete != nil else {
-                        return
-                    }
-                    viewModel.deleteCategory(at: indexSetToDelete!)
-                }),
-                .cancel()
-            ])
-        }
+            .actionSheet(isPresented: $showingDeleteActionSheet) {
+                ActionSheet(title: Text("Category and all tweets will be deleted"), buttons: [
+                    .destructive(Text("Delete"), action: {
+                        guard indexSetToDelete != nil else {
+                            return
+                        }
+                        viewModel.deleteCategory(at: indexSetToDelete!)
+                    }),
+                    .cancel()
+                ])
+            }
     }
 }
 
