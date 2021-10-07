@@ -49,10 +49,9 @@ struct TweetList: View {
             .fontWeight(.medium)
     }
     
-    /// This variable uses a ScrollView instead of a List to implement the pull to refresh feature while targeting iOS 14.
+    /// Using ScrollView allows us to utilize a Geometry Reader to get the amount in which the user pulls down to then allow us to set perameters of when to trigger our fetch.
     var tweets: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            // Geometry Reader
             GeometryReader { geo -> AnyView in
                 DispatchQueue.main.async {
                     if refresh.startOffset == 0 {
@@ -73,7 +72,6 @@ struct TweetList: View {
                 return AnyView(Color.white.frame(width: 0, height: 0))
             }
             .frame(width: 0, height: 0)
-            // Content
             ForEach(viewModel.tweets) { tweet in
                 VStack {
                     TweetCard(tweet: tweet)
