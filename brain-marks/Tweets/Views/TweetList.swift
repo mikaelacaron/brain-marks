@@ -28,9 +28,9 @@ struct TweetList: View {
                     }
                 }
             }
-            .onAppear {
-                viewModel.fetchTweets(category: category)
-            }
+//            .onAppear {
+//                viewModel.fetchTweets(category: category)
+//            }
     }
     
     @ViewBuilder
@@ -44,34 +44,18 @@ struct TweetList: View {
     }
     
     var emptyListView: some View {
-        Text("No tweets saved!")
-            .font(.title3)
-            .fontWeight(.medium)
+        ScrollView(.vertical, showsIndicators: false) {
+            geoReader
+                Text("No tweets saved!")
+                    .font(.title3)
+                .fontWeight(.medium)
+        }
     }
     
     /// Using ScrollView allows us to utilize a Geometry Reader to get the amount in which the user pulls down to then allow us to set perameters of when to trigger our fetch.
     var tweets: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            GeometryReader { geo -> AnyView in
-                DispatchQueue.main.async {
-                    if refresh.startOffset == 0 {
-                        refresh.startOffset = geo.frame(in: .global).minY
-                    }
-                    refresh.offset = geo.frame(in: .global).minY
-                    
-                    if refresh.offset - refresh.startOffset > 90 && !refresh.pullStart {
-                        refresh.pullStart = true
-                    }
-                    
-                    if refresh.startOffset == refresh.offset && refresh.pullStart && !refresh.pullStopped {
-                        refresh.pullStopped = true
-                        viewModel.fetchTweets(category: category)
-                        print("Fetching Tweets!")
-                    }
-                }
-                return AnyView(Color.white.frame(width: 0, height: 0))
-            }
-            .frame(width: 0, height: 0)
+            geoReader
             ForEach(viewModel.tweets) { tweet in
                 VStack {
                     TweetCard(tweet: tweet)
@@ -85,6 +69,29 @@ struct TweetList: View {
                 viewModel.deleteTweet(at: offsets)
             }
         }
+    }
+    
+    var geoReader: some View {
+        GeometryReader { geo -> AnyView in
+            DispatchQueue.main.async {
+                if refresh.startOffset == 0 {
+                    refresh.startOffset = geo.frame(in: .global).minY
+                }
+                refresh.offset = geo.frame(in: .global).minY
+                
+                if refresh.offset - refresh.startOffset > 90 && !refresh.pullStart {
+                    refresh.pullStart = true
+                }
+                
+                if refresh.startOffset == refresh.offset && refresh.pullStart && !refresh.pullStopped {
+                    refresh.pullStopped = true
+                    viewModel.fetchTweets(category: category)
+                    print("Fetching Tweets!")
+                }
+            }
+            return AnyView(Color.white.frame(width: 0, height: 0))
+        }
+        .frame(width: 0, height: 0)
     }
 }
 
