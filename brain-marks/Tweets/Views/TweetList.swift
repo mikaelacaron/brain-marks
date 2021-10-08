@@ -13,7 +13,7 @@ struct TweetList: View {
     
     @StateObject var viewModel = TweetListViewModel()
     @State var refresh = RefreshPull(pullStart: false, pullStopped: false)
-    
+
     var body: some View {
         tweetList
             .navigationBarTitleDisplayMode(.inline)
@@ -46,22 +46,22 @@ struct TweetList: View {
     var emptyListView: some View {
         ScrollView(.vertical, showsIndicators: false) {
             geoReader
-                Text("No tweets saved!")
-                    .font(.title3)
+            Text("No tweets saved!")
+                .font(.title3)
                 .fontWeight(.medium)
         }
     }
     
+    
     /// Using ScrollView allows us to utilize a Geometry Reader to get the amount in which the user pulls down to then allow us to set perameters of when to trigger our fetch.
     var tweets: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            geoReader
+        List {
             ForEach(viewModel.tweets) { tweet in
                 VStack {
                     TweetCard(tweet: tweet)
                         .onTapGesture {
                             viewModel.openTwitter(tweetID: tweet.tweetID, authorUsername: tweet.authorUsername!)
-                    }
+                        }
                 }
                 Divider()
             }
@@ -72,26 +72,31 @@ struct TweetList: View {
     }
     
     var geoReader: some View {
-        GeometryReader { geo -> AnyView in
-            DispatchQueue.main.async {
-                if refresh.startOffset == 0 {
-                    refresh.startOffset = geo.frame(in: .global).minY
+        ZStack {
+            Image(systemName: "arrow.down")
+                .opacity(refresh.pullStart ? 1 : 0)
+                .rotationEffect(Angle(degrees: refresh.startOffset > 90 ? 180 : 0))
+            GeometryReader { geo -> AnyView in
+                DispatchQueue.main.async {
+                    if refresh.startOffset == 0 {
+                        refresh.startOffset = geo.frame(in: .global).minY
+                    }
+                    refresh.offset = geo.frame(in: .global).minY
+                    
+                    if refresh.offset - refresh.startOffset > 90 && !refresh.pullStart {
+                        refresh.pullStart = true
+                    }
+                    
+                    if refresh.startOffset == refresh.offset && refresh.pullStart && !refresh.pullStopped {
+                        refresh.pullStopped = true
+                        viewModel.fetchTweets(category: category)
+                        print("Fetching Tweets!")
+                    }
                 }
-                refresh.offset = geo.frame(in: .global).minY
-                
-                if refresh.offset - refresh.startOffset > 90 && !refresh.pullStart {
-                    refresh.pullStart = true
-                }
-                
-                if refresh.startOffset == refresh.offset && refresh.pullStart && !refresh.pullStopped {
-                    refresh.pullStopped = true
-                    viewModel.fetchTweets(category: category)
-                    print("Fetching Tweets!")
-                }
+                return AnyView(Color.white.frame(width: 0, height: 0))
             }
-            return AnyView(Color.white.frame(width: 0, height: 0))
+            .frame(width: 0, height: 0)
         }
-        .frame(width: 0, height: 0)
     }
 }
 
