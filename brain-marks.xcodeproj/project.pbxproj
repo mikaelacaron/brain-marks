@@ -17,7 +17,6 @@
 		A2F4498C2622802B00725FEA /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F4498B2622802B00725FEA /* CategoryRow.swift */; };
 		A2F449912622829D00725FEA /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F449902622829D00725FEA /* CategoryList.swift */; };
 		B2B04D17270E3A2100E7DC01 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B04D16270E3A2100E7DC01 /* Secrets.swift */; };
-		B2B04D19270E418100E7DC01 /* PullRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B04D18270E418100E7DC01 /* PullRefresh.swift */; };
 		C0DAFC52B24C456EAE5AEF21 /* AWSCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D0518628EF45A382F08352 /* AWSCategory.swift */; };
 		C4392E80BFE640DAA2625F9D /* AWSTweet+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC43813A9098469FB57F5871 /* AWSTweet+Schema.swift */; };
 		CA80832580B84CB3A2D5F629 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F5BDE61EAA4A2DB9030734 /* AmplifyModels.swift */; };
@@ -78,7 +77,6 @@
 		A2F4498B2622802B00725FEA /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		A2F449902622829D00725FEA /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		B2B04D16270E3A2100E7DC01 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
-		B2B04D18270E418100E7DC01 /* PullRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRefresh.swift; sourceTree = "<group>"; };
 		C952B4BEC598452A8FAD1731 /* schema.graphql */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text; name = schema.graphql; path = amplify/backend/api/amplifyDatasource/schema.graphql; sourceTree = "<group>"; };
 		CC43813A9098469FB57F5871 /* AWSTweet+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "AWSTweet+Schema.swift"; path = "amplify/generated/models/AWSTweet+Schema.swift"; sourceTree = "<group>"; };
 		DA7D79B731BC4ECFAAE8E817 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = awsconfiguration.json; sourceTree = "<group>"; };
@@ -246,7 +244,6 @@
 			isa = PBXGroup;
 			children = (
 				FFEB1B5726A9F9C300682C37 /* Alert.swift */,
-				B2B04D18270E418100E7DC01 /* PullRefresh.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -488,7 +485,6 @@
 				FF21986F269FE57D00FFB406 /* AsyncImage.swift in Sources */,
 				FFEB1B5826A9F9C300682C37 /* Alert.swift in Sources */,
 				FF36B6712623678D007A6D7F /* AWSTweet+Extension.swift in Sources */,
-				B2B04D19270E418100E7DC01 /* PullRefresh.swift in Sources */,
 				A2F449912622829D00725FEA /* CategoryList.swift in Sources */,
 				A2F4498C2622802B00725FEA /* CategoryRow.swift in Sources */,
 				FF5990692622DD61004DF328 /* DataStoreManager.swift in Sources */,
