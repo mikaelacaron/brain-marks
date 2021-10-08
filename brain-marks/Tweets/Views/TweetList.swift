@@ -102,48 +102,4 @@ struct RefreshPull {
     var pullStopped : Bool
 }
 
-/*
- var body: some View {
-     tweetList
-         .navigationBarTitleDisplayMode(.inline)
-         .toolbar {
-             ToolbarItem(placement: .principal) {
-                 HStack {
-                     Image(systemName: category.imageName ?? "swift")
-                         .resizable()
-                         .aspectRatio(contentMode: .fit)
-                         .frame(width: 25, height: 25)
-                     Text(category.name)
-                 }
-             }
-         }
-         .onAppear {
-             viewModel.fetchTweets(category: category)
-         }
- }
- */
-/*
- 
- ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
-     Image(systemName: "arrow.down")
-         .font(.system(size: 16, weight: .heavy))
-         .foregroundColor(.gray)
-         .offset(y: -25)
-     tweetList
-         .navigationBarTitleDisplayMode(.inline)
-         .toolbar {
-             ToolbarItem(placement: .principal) {
-                 HStack {
-                     Image(systemName: category.imageName ?? "swift")
-                         .resizable()
-                         .aspectRatio(contentMode: .fit)
-                         .frame(width: 25, height: 25)
-                     Text(category.name)
-                 }
-             }
-         }
-         .onAppear {
-             viewModel.fetchTweets(category: category)
-     }
- }
- */
+
