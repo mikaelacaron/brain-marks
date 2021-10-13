@@ -12,11 +12,12 @@ struct User: Codable {
     let name: String
     let username: String
     let profileImageURL: String
+    let verified: Bool
 }
 
 extension User {
     enum CodingKeys: String, CodingKey {
-        case id, name, username
+        case id, name, username, verified
         case profileImageURL = "profile_image_url"
     }
 }
