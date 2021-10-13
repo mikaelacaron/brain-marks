@@ -164,4 +164,3 @@ struct TweetCard_Previews: PreviewProvider {
             .previewLayout(PreviewLayout.sizeThatFits)
     }
 }
-

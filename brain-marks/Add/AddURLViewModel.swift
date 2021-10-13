@@ -28,8 +28,9 @@ final class AddURLViewModel: ObservableObject {
         }
         
         let id = url.components(separatedBy: "/").last!.components(separatedBy: "?")[0]
-        var request = URLRequest(url: URL(string: "\(apiURL)?ids=\(id)&expansions=\(expansions)&tweet.fields=\(tweetFields)")!,
-                                 timeoutInterval: Double.infinity)
+        var request = URLRequest(
+            url: URL(string: "\(apiURL)?ids=\(id)&expansions=\(expansions)&tweet.fields=\(tweetFields)")!,
+            timeoutInterval: Double.infinity)
         
         request.addValue("Bearer \(Secrets.bearerToken)", forHTTPHeaderField: "Authorization")
         

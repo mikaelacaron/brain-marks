@@ -1,8 +1,8 @@
 //
-//  String + DateFormat.swift
-//  String + DateFormat
+//  String+Ext.swift
+//  brain-marks
 //
-//  Created by Niklas Oemler on 05.10.21.
+//  Created by Niklas Oemler on 13.10.21.
 //
 
 import Foundation
