@@ -28,9 +28,9 @@ struct TweetList: View {
                     }
                 }
             }
-//            .onAppear {
-//                viewModel.fetchTweets(category: category)
-//            }
+            .onAppear {
+                viewModel.fetchTweets(category: category)
+            }
     }
     
     @ViewBuilder
