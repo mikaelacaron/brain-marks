@@ -20,6 +20,8 @@
 		C4392E80BFE640DAA2625F9D /* AWSTweet+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC43813A9098469FB57F5871 /* AWSTweet+Schema.swift */; };
 		CA80832580B84CB3A2D5F629 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F5BDE61EAA4A2DB9030734 /* AmplifyModels.swift */; };
 		CF16AFB9BE3F401E98C85114 /* AWSTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA54EDF3B34443CA9D530E5 /* AWSTweet.swift */; };
+		D3E1A540270CCB5F0061ED8C /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1A53F270CCB5F0061ED8C /* InfoView.swift */; };
+		D3E1A542270CCC4C0061ED8C /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1A541270CCC4C0061ED8C /* InfoViewModel.swift */; };
 		FF21986F269FE57D00FFB406 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21986E269FE57D00FFB406 /* AsyncImage.swift */; };
 		FF36B661262357F9007A6D7F /* AWSCategory+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */; };
 		FF36B66C26235FE6007A6D7F /* TweetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B66B26235FE6007A6D7F /* TweetListViewModel.swift */; };
@@ -78,6 +80,8 @@
 		A2F449902622829D00725FEA /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		C952B4BEC598452A8FAD1731 /* schema.graphql */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text; name = schema.graphql; path = amplify/backend/api/amplifyDatasource/schema.graphql; sourceTree = "<group>"; };
 		CC43813A9098469FB57F5871 /* AWSTweet+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "AWSTweet+Schema.swift"; path = "amplify/generated/models/AWSTweet+Schema.swift"; sourceTree = "<group>"; };
+		D3E1A53F270CCB5F0061ED8C /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		D3E1A541270CCC4C0061ED8C /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
 		DA7D79B731BC4ECFAAE8E817 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = awsconfiguration.json; sourceTree = "<group>"; };
 		ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		FF21986E269FE57D00FFB406 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
@@ -173,6 +177,15 @@
 				FFCB1096263E31D300544309 /* ReturnedTweet.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D3E1A53E270CCB4F0061ED8C /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				D3E1A53F270CCB5F0061ED8C /* InfoView.swift */,
+				D3E1A541270CCC4C0061ED8C /* InfoViewModel.swift */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 		FF3942FF262E847000A3623B /* Add */ = {
@@ -273,6 +286,7 @@
 		FFEBBB3826223F75000F475F /* brain-marks */ = {
 			isa = PBXGroup;
 			children = (
+				D3E1A53E270CCB4F0061ED8C /* Info */,
 				FF39430E262E863000A3623B /* AmplifyModelExtensions */,
 				FF39430C262E860E00A3623B /* Managers */,
 				91C8958726228CF600689196 /* Models */,
@@ -488,6 +502,7 @@
 				FFEBBB7626226A39000F475F /* Secrets.swift in Sources */,
 				A2F449912622829D00725FEA /* CategoryList.swift in Sources */,
 				A2F4498C2622802B00725FEA /* CategoryRow.swift in Sources */,
+				D3E1A542270CCC4C0061ED8C /* InfoViewModel.swift in Sources */,
 				FF5990692622DD61004DF328 /* DataStoreManager.swift in Sources */,
 				FFCB1099263E3E2D00544309 /* CategorySheetView.swift in Sources */,
 				FF394316262FCF3900A3623B /* User.swift in Sources */,
@@ -505,6 +520,7 @@
 				FF6DCBF22623530400EC366F /* CategoryListViewModel.swift in Sources */,
 				FFE079F627066FE30022EC61 /* Secrets-Example.swift in Sources */,
 				FF39431B262FCF4E00A3623B /* Includes.swift in Sources */,
+				D3E1A540270CCB5F0061ED8C /* InfoView.swift in Sources */,
 				91739DEB2622D2A7000F982A /* AddURLView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
