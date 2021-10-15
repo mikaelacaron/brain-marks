@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		20636BDDDBEF4EAE9CCE9D9E /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */; };
 		684E2F2D3FCC4D36AC68E57D /* AWSCategory+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551BA45F30D640118D2F0CE2 /* AWSCategory+Schema.swift */; };
+		912EADF7270AD2E500F4072F /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912EADF6270AD2E500F4072F /* ShareViewController.swift */; };
+		912EADFE270AD2E500F4072F /* ShareExtension101Share.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 912EADF4270AD2E500F4072F /* ShareExtension101Share.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		91739DEB2622D2A7000F982A /* AddURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91739DEA2622D2A7000F982A /* AddURLView.swift */; };
 		91C8958926228D1500689196 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8958826228D1500689196 /* Tweet.swift */; };
 		9C9314E5631F4C39AA06BF35 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = DA7D79B731BC4ECFAAE8E817 /* awsconfiguration.json */; };
@@ -48,6 +50,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		912EADFC270AD2E500F4072F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFEBBB2E26223F75000F475F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 912EADF3270AD2E500F4072F;
+			remoteInfo = ShareExtension101Share;
+		};
 		FFEBBB4826223F7F000F475F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FFEBBB2E26223F75000F475F /* Project object */;
@@ -64,12 +73,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		912EADFF270AD2E500F4072F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				912EADFE270AD2E500F4072F /* ShareExtension101Share.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0AA54EDF3B34443CA9D530E5 /* AWSTweet.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AWSTweet.swift; path = amplify/generated/models/AWSTweet.swift; sourceTree = "<group>"; };
 		14F5BDE61EAA4A2DB9030734 /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
 		1E886624D4EE4F64B9160A75 /* amplifytools.xcconfig */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.xcconfig; path = amplifytools.xcconfig; sourceTree = "<group>"; };
 		551BA45F30D640118D2F0CE2 /* AWSCategory+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "AWSCategory+Schema.swift"; path = "amplify/generated/models/AWSCategory+Schema.swift"; sourceTree = "<group>"; };
 		63D0518628EF45A382F08352 /* AWSCategory.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AWSCategory.swift; path = amplify/generated/models/AWSCategory.swift; sourceTree = "<group>"; };
+		912EADF4270AD2E500F4072F /* ShareExtension101Share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension101Share.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		912EADF6270AD2E500F4072F /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		912EADFB270AD2E500F4072F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		912EAE03270AD8F200F4072F /* brain-marks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "brain-marks.entitlements"; sourceTree = "<group>"; };
+		912EAE04270AD97200F4072F /* ShareExtension101Share.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension101Share.entitlements; sourceTree = "<group>"; };
 		91739DEA2622D2A7000F982A /* AddURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddURLView.swift; sourceTree = "<group>"; };
 		91C8958826228D1500689196 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		A205CD412622A3EB00517DB5 /* TweetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetList.swift; sourceTree = "<group>"; };
@@ -111,6 +139,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		912EADF1270AD2E500F4072F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFEBBB3326223F75000F475F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -161,6 +196,16 @@
 			);
 			name = AmplifyConfig;
 			path = .;
+			sourceTree = "<group>";
+		};
+		912EADF5270AD2E500F4072F /* ShareExtension101Share */ = {
+			isa = PBXGroup;
+			children = (
+				912EAE04270AD97200F4072F /* ShareExtension101Share.entitlements */,
+				912EADF6270AD2E500F4072F /* ShareViewController.swift */,
+				912EADFB270AD2E500F4072F /* Info.plist */,
+			);
+			path = ShareExtension101Share;
 			sourceTree = "<group>";
 		};
 		91C8958726228CF600689196 /* Models */ = {
@@ -256,6 +301,7 @@
 				FFEBBB3826223F75000F475F /* brain-marks */,
 				FFEBBB4A26223F7F000F475F /* brain-marksTests */,
 				FFEBBB5526223F7F000F475F /* brain-marksUITests */,
+				912EADF5270AD2E500F4072F /* ShareExtension101Share */,
 				FFEBBB3726223F75000F475F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -266,6 +312,7 @@
 				FFEBBB3626223F75000F475F /* brain-marks.app */,
 				FFEBBB4726223F7F000F475F /* brain-marksTests.xctest */,
 				FFEBBB5226223F7F000F475F /* brain-marksUITests.xctest */,
+				912EADF4270AD2E500F4072F /* ShareExtension101Share.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -273,6 +320,7 @@
 		FFEBBB3826223F75000F475F /* brain-marks */ = {
 			isa = PBXGroup;
 			children = (
+				912EAE03270AD8F200F4072F /* brain-marks.entitlements */,
 				FF39430E262E863000A3623B /* AmplifyModelExtensions */,
 				FF39430C262E860E00A3623B /* Managers */,
 				91C8958726228CF600689196 /* Models */,
@@ -320,6 +368,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		912EADF3270AD2E500F4072F /* ShareExtension101Share */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 912EAE02270AD2E500F4072F /* Build configuration list for PBXNativeTarget "ShareExtension101Share" */;
+			buildPhases = (
+				912EADF0270AD2E500F4072F /* Sources */,
+				912EADF1270AD2E500F4072F /* Frameworks */,
+				912EADF2270AD2E500F4072F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareExtension101Share;
+			productName = ShareExtension101Share;
+			productReference = 912EADF4270AD2E500F4072F /* ShareExtension101Share.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FFEBBB3526223F75000F475F /* brain-marks */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFEBBB5B26223F7F000F475F /* Build configuration list for PBXNativeTarget "brain-marks" */;
@@ -328,10 +393,12 @@
 				FFEBBB3326223F75000F475F /* Frameworks */,
 				FFEBBB3426223F75000F475F /* Resources */,
 				FFEBBB802622755F000F475F /* ShellScript */,
+				912EADFF270AD2E500F4072F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				912EADFD270AD2E500F4072F /* PBXTargetDependency */,
 			);
 			name = "brain-marks";
 			packageProductDependencies = (
@@ -385,9 +452,12 @@
 		FFEBBB2E26223F75000F475F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					912EADF3270AD2E500F4072F = {
+						CreatedOnToolsVersion = 13.0;
+					};
 					FFEBBB3526223F75000F475F = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -420,11 +490,19 @@
 				FFEBBB3526223F75000F475F /* brain-marks */,
 				FFEBBB4626223F7F000F475F /* brain-marksTests */,
 				FFEBBB5126223F7F000F475F /* brain-marksUITests */,
+				912EADF3270AD2E500F4072F /* ShareExtension101Share */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		912EADF2270AD2E500F4072F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFEBBB3426223F75000F475F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -473,6 +551,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		912EADF0270AD2E500F4072F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				912EADF7270AD2E500F4072F /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFEBBB3226223F75000F475F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -528,6 +614,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		912EADFD270AD2E500F4072F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 912EADF3270AD2E500F4072F /* ShareExtension101Share */;
+			targetProxy = 912EADFC270AD2E500F4072F /* PBXContainerItemProxy */;
+		};
 		FFEBBB4926223F7F000F475F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FFEBBB3526223F75000F475F /* brain-marks */;
@@ -541,6 +632,62 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		912EAE00270AD2E500F4072F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = ShareExtension101Share/ShareExtension101Share.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U23VWM3L5A;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShareExtension101Share/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ShareExtension101Share;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarksPbjTest.ShareExtension101Share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		912EAE01270AD2E500F4072F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_ENTITLEMENTS = ShareExtension101Share/ShareExtension101Share.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U23VWM3L5A;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShareExtension101Share/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ShareExtension101Share;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarksPbjTest.ShareExtension101Share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FFEBBB5926223F7F000F475F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -660,11 +807,13 @@
 		FFEBBB5C26223F7F000F475F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "brain-marks/brain-marks.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"brain-marks/Preview Content\"";
-				DEVELOPMENT_TEAM = Y535846H6P;
+				DEVELOPMENT_TEAM = U23VWM3L5A;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "brain-marks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -673,7 +822,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarksPbjTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -683,11 +832,13 @@
 		FFEBBB5D26223F7F000F475F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "brain-marks/brain-marks.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"brain-marks/Preview Content\"";
-				DEVELOPMENT_TEAM = Y535846H6P;
+				DEVELOPMENT_TEAM = U23VWM3L5A;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "brain-marks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -696,7 +847,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarksPbjTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -790,6 +941,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		912EAE02270AD2E500F4072F /* Build configuration list for PBXNativeTarget "ShareExtension101Share" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				912EAE00270AD2E500F4072F /* Debug */,
+				912EAE01270AD2E500F4072F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FFEBBB3126223F75000F475F /* Build configuration list for PBXProject "brain-marks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
