@@ -78,7 +78,7 @@ struct CategoryList: View {
     var categoryList: some View {
         if viewModel.categories.isEmpty {
             ZStack {
-                Image("logo.png")
+                Image("logo")
                     .opacity(0.05)
             VStack {
                 Text("The categories are empty, ")
