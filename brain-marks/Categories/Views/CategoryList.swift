@@ -18,6 +18,7 @@ struct CategoryList: View {
     @State private var editCategory: AWSCategory?
     @State private var indexSetToDelete: IndexSet?
     @State private var showAddURLView = false
+    @State private var showInfoSheet = false
     @State private var showingCategorySheet = false
     @State private var showingDeleteActionSheet = false
     
@@ -28,7 +29,7 @@ struct CategoryList: View {
             categoryList
                 .navigationTitle("Categories")
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) { 
+                    ToolbarItem(placement: .navigationBarLeading) {
                         Button {
                             categorySheetState = .new
                             showingCategorySheet.toggle()
@@ -44,9 +45,19 @@ struct CategoryList: View {
                                 }
                         }
                     }
-                    ToolbarItem(placement: .navigationBarTrailing) { 
+                    ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
-                            self.showAddURLView = true
+                            showInfoSheet = true
+                        } label: {
+                            Image(systemName:"info.circle")
+                        }
+                        .sheet(isPresented: $showInfoSheet) {
+                            InfoView(viewModel: DefaultInfoViewModel())
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            showAddURLView = true
                         } label: {
                             Image(systemName:"plus.circle")
                         }
@@ -65,13 +76,24 @@ struct CategoryList: View {
     
     @ViewBuilder
     var categoryList: some View {
-        categories
+        if viewModel.categories.isEmpty {
+            ZStack {
+                Image("logo")
+                    .opacity(0.05)
+            VStack {
+                Text("The categories are empty, ")
+                Text("please add new categories by clicking on \(Image(systemName: "folder.badge.plus"))")
+            }
+            }
+        } else {
+            categories
+        }
         // removing for now, this makes the UI "flash" when updating a category
-//        if viewModel.categories.isEmpty {
-//            emptyListView
-//        } else {
-//            categories
-//        }
+        //        if viewModel.categories.isEmpty {
+        //            emptyListView
+        //        } else {
+        //            categories
+        //        }
     }
     
     var emptyListView: some View {
@@ -96,22 +118,22 @@ struct CategoryList: View {
                     }
                 }
             }
-            .onDelete { indexSet in 
+            .onDelete { indexSet in
                 showingDeleteActionSheet = true
                 indexSetToDelete = indexSet
             }
         }.listStyle(InsetGroupedListStyle())
-        .actionSheet(isPresented: $showingDeleteActionSheet) {
-            ActionSheet(title: Text("Category and all tweets will be deleted"), buttons: [
-                .destructive(Text("Delete"), action: {
-                    guard indexSetToDelete != nil else {
-                        return
-                    }
-                    viewModel.deleteCategory(at: indexSetToDelete!)
-                }),
-                .cancel()
-            ])
-        }
+            .actionSheet(isPresented: $showingDeleteActionSheet) {
+                ActionSheet(title: Text("Category and all tweets will be deleted"), buttons: [
+                    .destructive(Text("Delete"), action: {
+                        guard indexSetToDelete != nil else {
+                            return
+                        }
+                        viewModel.deleteCategory(at: indexSetToDelete!)
+                    }),
+                    .cancel()
+                ])
+            }
     }
 }
 

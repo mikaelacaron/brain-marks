@@ -21,11 +21,11 @@ This app has always been open source! It began with the [Big Brain Hackathon](ht
 * See CONTRIBUTING.md for more in-depth instructions.
 
 # Contributing
-To start contributing, review CONTRIBUTING.md. New contributors are always welcome to support this project. Issues labeled `good-first-issue` are great for beginners.
+To start contributing, review [CONTRIBUTING.md](https://github.com/mikaelacaron/brain-marks/blob/dev/CONTRIBUTING.md). New contributors are always welcome to support this project. Issues labeled `good-first-issue` are great for beginners.
 
-> Checkout any issue labeled `hacktoberfest` to start contributing
+> Please be sure to comment on an issue you'd like to work on and the maintainers will assign it to you!
 
-Comment that you'd like to work on an issue and the maintainers will assign it to you!
+Checkout any issue labeled `hacktoberfest` to start contributing
 
 # Contributors
 

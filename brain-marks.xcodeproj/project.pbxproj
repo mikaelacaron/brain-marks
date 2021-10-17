@@ -20,6 +20,8 @@
 		C4392E80BFE640DAA2625F9D /* AWSTweet+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC43813A9098469FB57F5871 /* AWSTweet+Schema.swift */; };
 		CA80832580B84CB3A2D5F629 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F5BDE61EAA4A2DB9030734 /* AmplifyModels.swift */; };
 		CF16AFB9BE3F401E98C85114 /* AWSTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA54EDF3B34443CA9D530E5 /* AWSTweet.swift */; };
+		D3D5E0E5271C811E00752DCD /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D5E0E4271C811E00752DCD /* InfoViewModel.swift */; };
+		D3D5E0E7271C812200752DCD /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D5E0E6271C812200752DCD /* InfoView.swift */; };
 		D3F7C2EB27173EAC00DB87D9 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7C2EA27173EAC00DB87D9 /* String+Ext.swift */; };
 		FF21986F269FE57D00FFB406 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21986E269FE57D00FFB406 /* AsyncImage.swift */; };
 		FF36B661262357F9007A6D7F /* AWSCategory+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */; };
@@ -79,6 +81,8 @@
 		A2F449902622829D00725FEA /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		C952B4BEC598452A8FAD1731 /* schema.graphql */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text; name = schema.graphql; path = amplify/backend/api/amplifyDatasource/schema.graphql; sourceTree = "<group>"; };
 		CC43813A9098469FB57F5871 /* AWSTweet+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "AWSTweet+Schema.swift"; path = "amplify/generated/models/AWSTweet+Schema.swift"; sourceTree = "<group>"; };
+		D3D5E0E4271C811E00752DCD /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
+		D3D5E0E6271C812200752DCD /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		D3F7C2EA27173EAC00DB87D9 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		DA7D79B731BC4ECFAAE8E817 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = awsconfiguration.json; sourceTree = "<group>"; };
 		ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = amplifyconfiguration.json; sourceTree = "<group>"; };
@@ -175,6 +179,15 @@
 				FFCB1096263E31D300544309 /* ReturnedTweet.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D3D5E0E3271C811500752DCD /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				D3D5E0E4271C811E00752DCD /* InfoViewModel.swift */,
+				D3D5E0E6271C812200752DCD /* InfoView.swift */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 		D3E1A543270CEE340061ED8C /* Extensions */ = {
@@ -287,6 +300,7 @@
 				FF39430E262E863000A3623B /* AmplifyModelExtensions */,
 				FF39432A262FD05700A3623B /* Categories */,
 				D3E1A543270CEE340061ED8C /* Extensions */,
+				D3D5E0E3271C811500752DCD /* Info */,
 				FF39430C262E860E00A3623B /* Managers */,
 				91C8958726228CF600689196 /* Models */,
 				FF39432D262FD0AD00A3623B /* Tweets */,
@@ -489,11 +503,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				91C8958926228D1500689196 /* Tweet.swift in Sources */,
+				D3D5E0E7271C812200752DCD /* InfoView.swift in Sources */,
 				FFEBBB3C26223F75000F475F /* ContentView.swift in Sources */,
 				A224A9E62622BCED00AC12AF /* TweetCard.swift in Sources */,
 				FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */,
 				FFC4CA7726867B4C00427C81 /* BMButton.swift in Sources */,
 				FF21986F269FE57D00FFB406 /* AsyncImage.swift in Sources */,
+				D3D5E0E5271C811E00752DCD /* InfoViewModel.swift in Sources */,
 				FFEB1B5826A9F9C300682C37 /* Alert.swift in Sources */,
 				FF36B6712623678D007A6D7F /* AWSTweet+Extension.swift in Sources */,
 				D3F7C2EB27173EAC00DB87D9 /* String+Ext.swift in Sources */,
@@ -710,6 +726,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

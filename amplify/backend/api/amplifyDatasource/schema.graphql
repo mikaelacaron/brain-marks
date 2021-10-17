@@ -7,6 +7,7 @@ type AWSTweet @model {
     authorUsername: String
     profileImageURL: String
     category: AWSCategory @connection(name: "CategorizedTweet")
+    userVerified: Boolean
 }
 
 type AWSCategory @model {
