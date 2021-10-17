@@ -22,6 +22,8 @@
 		CF16AFB9BE3F401E98C85114 /* AWSTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA54EDF3B34443CA9D530E5 /* AWSTweet.swift */; };
 		D3E1A540270CCB5F0061ED8C /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1A53F270CCB5F0061ED8C /* InfoView.swift */; };
 		D3E1A542270CCC4C0061ED8C /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E1A541270CCC4C0061ED8C /* InfoViewModel.swift */; };
+		D607AE40271FF6F300F2638A /* Text+ShorthandOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D607AE3F271FF6F300F2638A /* Text+ShorthandOperators.swift */; };
+		D62976F8271C460000EC355E /* TweetText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62976F7271C45FF00EC355E /* TweetText.swift */; };
 		FF21986F269FE57D00FFB406 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21986E269FE57D00FFB406 /* AsyncImage.swift */; };
 		FF36B661262357F9007A6D7F /* AWSCategory+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */; };
 		FF36B66C26235FE6007A6D7F /* TweetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B66B26235FE6007A6D7F /* TweetListViewModel.swift */; };
@@ -82,6 +84,8 @@
 		CC43813A9098469FB57F5871 /* AWSTweet+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "AWSTweet+Schema.swift"; path = "amplify/generated/models/AWSTweet+Schema.swift"; sourceTree = "<group>"; };
 		D3E1A53F270CCB5F0061ED8C /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		D3E1A541270CCC4C0061ED8C /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
+		D607AE3F271FF6F300F2638A /* Text+ShorthandOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+ShorthandOperators.swift"; sourceTree = "<group>"; };
+		D62976F7271C45FF00EC355E /* TweetText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetText.swift; sourceTree = "<group>"; };
 		DA7D79B731BC4ECFAAE8E817 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = awsconfiguration.json; sourceTree = "<group>"; };
 		ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		FF21986E269FE57D00FFB406 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
@@ -188,6 +192,14 @@
 			path = Info;
 			sourceTree = "<group>";
 		};
+		D607AE3E271FF69F00F2638A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D607AE3F271FF6F300F2638A /* Text+ShorthandOperators.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		FF3942FF262E847000A3623B /* Add */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +261,7 @@
 			children = (
 				A224A9E52622BCED00AC12AF /* TweetCard.swift */,
 				A205CD412622A3EB00517DB5 /* TweetList.swift */,
+				D62976F7271C45FF00EC355E /* TweetText.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -294,6 +307,7 @@
 				FF39432D262FD0AD00A3623B /* Tweets */,
 				FF3942FF262E847000A3623B /* Add */,
 				FFEB1B5626A9F9B200682C37 /* Utilities */,
+				D607AE3E271FF69F00F2638A /* Extensions */,
 				FFEBBB3926223F75000F475F /* brain_marksApp.swift */,
 				FFEBBB3B26223F75000F475F /* ContentView.swift */,
 				FFEBBB3D26223F7E000F475F /* Assets.xcassets */,
@@ -500,6 +514,7 @@
 				FFEB1B5826A9F9C300682C37 /* Alert.swift in Sources */,
 				FF36B6712623678D007A6D7F /* AWSTweet+Extension.swift in Sources */,
 				FFEBBB7626226A39000F475F /* Secrets.swift in Sources */,
+				D607AE40271FF6F300F2638A /* Text+ShorthandOperators.swift in Sources */,
 				A2F449912622829D00725FEA /* CategoryList.swift in Sources */,
 				A2F4498C2622802B00725FEA /* CategoryRow.swift in Sources */,
 				D3E1A542270CCC4C0061ED8C /* InfoViewModel.swift in Sources */,
@@ -515,6 +530,7 @@
 				FF36B661262357F9007A6D7F /* AWSCategory+Extension.swift in Sources */,
 				FF36B66C26235FE6007A6D7F /* TweetListViewModel.swift in Sources */,
 				C4392E80BFE640DAA2625F9D /* AWSTweet+Schema.swift in Sources */,
+				D62976F8271C460000EC355E /* TweetText.swift in Sources */,
 				A205CD422622A3EB00517DB5 /* TweetList.swift in Sources */,
 				FF394320262FCF6100A3623B /* Response.swift in Sources */,
 				FF6DCBF22623530400EC366F /* CategoryListViewModel.swift in Sources */,
