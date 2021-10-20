@@ -8,6 +8,7 @@
 import Foundation
 
 struct Tweet: Codable {
-    let id:String
-    let text:String
+    let id: String
+    let text: String
+    let created_at: String
 }

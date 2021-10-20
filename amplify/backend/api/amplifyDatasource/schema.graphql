@@ -2,10 +2,12 @@ type AWSTweet @model {
     id: ID!
     tweetID: String!
     text: String
+    timeStamp: String
     authorName: String
     authorUsername: String
     profileImageURL: String
     category: AWSCategory @connection(name: "CategorizedTweet")
+    userVerified: Boolean
 }
 
 type AWSCategory @model {
