@@ -6,6 +6,7 @@ public struct AWSTweet: Model {
   public let id: String
   public var tweetID: String
   public var text: String?
+  public var timeStamp: String?
   public var authorName: String?
   public var authorUsername: String?
   public var profileImageURL: String?
@@ -15,6 +16,7 @@ public struct AWSTweet: Model {
   public init(id: String = UUID().uuidString,
       tweetID: String,
       text: String? = nil,
+      timeStamp: String? = nil,
       authorName: String? = nil,
       authorUsername: String? = nil,
       profileImageURL: String? = nil,
@@ -23,6 +25,7 @@ public struct AWSTweet: Model {
       self.id = id
       self.tweetID = tweetID
       self.text = text
+      self.timeStamp = timeStamp
       self.authorName = authorName
       self.authorUsername = authorUsername
       self.profileImageURL = profileImageURL

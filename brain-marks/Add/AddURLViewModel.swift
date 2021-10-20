@@ -18,8 +18,7 @@ final class AddURLViewModel: ObservableObject {
     
     func fetchTweet(url: String, completion: @escaping (Result<ReturnedTweet, Error>) -> Void) {
         do {
-            let completeURL = try createURL(url: url)
-            var request = URLRequest(url: completeURL,
+            var request = URLRequest(url: try createURL(url: url),
                                      timeoutInterval: Double.infinity)
             
             request.addValue("Bearer \(Secrets.bearerToken)", forHTTPHeaderField: "Authorization")
@@ -47,7 +46,6 @@ final class AddURLViewModel: ObservableObject {
                     
                     do {
                         let result = try JSONDecoder().decode(Response.self, from: data)
-                        
                         let user = result.includes.users.first
                         
                         let authorName = user?.name ?? ""
@@ -57,12 +55,14 @@ final class AddURLViewModel: ObservableObject {
                             of: "normal",
                             with: "bigger") ?? ""
                         
-                        let tweetToSave = ReturnedTweet(id: result.data[0].id,
-                                                        text: result.data[0].text,
-                                                        authorName: authorName,
-                                                        authorUsername: authorUsername,
-                                                        profileImageURL: profileImageURL,
-                                                        userVerified: userVerified)
+                        let tweetToSave = ReturnedTweet(
+                            id: result.data[0].id,
+                            text: result.data[0].text,
+                            timeStamp: result.data[0].created_at,
+                            authorName: authorName,
+                            authorUsername: authorUsername,
+                            profileImageURL: profileImageURL,
+                            userVerified: userVerified)
                         
                         completion(.success(tweetToSave))
                     } catch {
@@ -79,6 +79,7 @@ final class AddURLViewModel: ObservableObject {
     private func createURL(url: String) throws -> URL {
         let apiURL = "https://api.twitter.com/2/tweets"
         let expansions = "author_id&user.fields=profile_image_url,verified"
+        let tweetFields = "created_at"
         
         guard url.contains("twitter.com") else {
             throw HttpError.badURL
@@ -86,9 +87,9 @@ final class AddURLViewModel: ObservableObject {
         
         let id = url.components(separatedBy: "/").last!.components(separatedBy: "?")[0]
         
-        guard let completeURL = URL(string: "\(apiURL)?ids=\(id)&expansions=\(expansions)") else {
+        guard let completeURL = URL(string: "\(apiURL)?ids=\(id)&expansions=\(expansions)&tweet.fields=\(tweetFields)") else {
             throw HttpError.badURL
         }
         return completeURL
-    }
+    }    
 }

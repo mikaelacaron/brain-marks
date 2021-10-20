@@ -8,8 +8,10 @@
 import Foundation
 
 struct ReturnedTweet: Codable {
-    let id:String
-    let text:String
+    let id: String
+    let text: String
+    let timeStamp: String
+    
     let authorName: String
     let authorUsername: String
     let profileImageURL: String

@@ -8,6 +8,7 @@ extension AWSTweet {
     case id
     case tweetID
     case text
+    case timeStamp
     case authorName
     case authorUsername
     case profileImageURL
@@ -27,6 +28,7 @@ extension AWSTweet {
       .id(),
       .field(aWSTweet.tweetID, is: .required, ofType: .string),
       .field(aWSTweet.text, is: .optional, ofType: .string),
+      .field(aWSTweet.timeStamp, is: .optional, ofType: .string),
       .field(aWSTweet.authorName, is: .optional, ofType: .string),
       .field(aWSTweet.authorUsername, is: .optional, ofType: .string),
       .field(aWSTweet.profileImageURL, is: .optional, ofType: .string),
