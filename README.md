@@ -18,12 +18,12 @@ This app has always been open source! It began with the [Big Brain Hackathon](ht
 
 * Open Xcode and run the app! (Shortcut ⌘ + R)
 * Open your forked repo in your browser and create a PR to the `dev` branch of this repository
-* See CONTRIBUTING.md for more in-depth instructions.
+* See [CONTRIBUTING.md](https://github.com/mikaelacaron/brain-marks/blob/dev/CONTRIBUTING.md) for more in-depth instructions.
 
 # Contributing
 To start contributing, review [CONTRIBUTING.md](https://github.com/mikaelacaron/brain-marks/blob/dev/CONTRIBUTING.md). New contributors are always welcome to support this project. Issues labeled `good-first-issue` are great for beginners.
 
-> Please be sure to comment on an issue you'd like to work on and the maintainers will assign it to you!
+> **Please be sure to comment on an issue you'd like to work on and the maintainers will assign it to you!**
 
 Checkout any issue labeled `hacktoberfest` to start contributing
 

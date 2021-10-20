@@ -18,8 +18,7 @@ final class AddURLViewModel: ObservableObject {
     
     func fetchTweet(url: String, completion: @escaping (Result<ReturnedTweet, Error>) -> Void) {
         do {
-            let completeURL = try createURL(url: url)
-            var request = URLRequest(url: completeURL,
+            var request = URLRequest(url: try createURL(url: url),
                                      timeoutInterval: Double.infinity)
             
             request.addValue("Bearer \(Secrets.bearerToken)", forHTTPHeaderField: "Authorization")
@@ -72,8 +71,7 @@ final class AddURLViewModel: ObservableObject {
                 }
             }
             task.resume()
-        }
-        catch {
+        } catch {
             completion(.failure(HttpError.badURL))
         }
     }
@@ -95,4 +93,3 @@ final class AddURLViewModel: ObservableObject {
         return completeURL
     }    
 }
-
