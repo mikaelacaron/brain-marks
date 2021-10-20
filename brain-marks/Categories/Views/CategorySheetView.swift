@@ -31,8 +31,24 @@ struct CategorySheetView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                 }
+                Text("👀")
+                
+                LazyVGrid(columns: columnStyle) {
+                    ForEach(choosableSFSymbols, id: \.self){ sfSymbol in
+                        // Two approaches in mind:
+                        // 1: Have the images the normal size without modification, renders a pretty small sf symbol
+                        // 2: Make them .resizable and make them an appropriate size
+                        Image(systemName: sfSymbol)
+                            
+                            .padding()
+                            .background(Color.blue.opacity(0.5))
+                            .cornerRadius(10)
+                    }
+                }
                 
                 Spacer()
+                
+                
                 
                 HStack(spacing: 25) {
                     Button {
@@ -85,6 +101,8 @@ struct CategorySheetView: View {
             }
         }
     }
+    let columnStyle = [GridItem(), GridItem(), GridItem(), GridItem()]
+    let choosableSFSymbols = ["book", "house", "person", "house.fill", "book.fill", "person.fill", "star", "xmark"]
 }
 
 struct NewCategorySheetView_Previews: PreviewProvider {
