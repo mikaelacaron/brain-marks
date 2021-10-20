@@ -13,8 +13,12 @@ This is a deployed app on the Apple [App Store](https://apps.apple.com/us/app/br
 ## Prerequisites
 * You will need an API key from the [Twitter API](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api)
 * If your feature/change requires changing the model you will need install [AWS Amplify DataStore](https://docs.amplify.aws/start/q/integration/ios/) tools
+* Install [SwiftLint](https://github.com/realm/SwiftLint)
+   * This is not a requirement, but is preferred.
+
+
 ## Start Here
-* Fork the repo
+* Fork the repo to your profile
 * Clone to your computer
 
 `git clone https://github.com/mikaelacaron/brain-marks && cd brain-marks`
@@ -78,7 +82,6 @@ This is a deployed app on the Apple [App Store](https://apps.apple.com/us/app/br
   ✅ **Examples of valid branch names:**
   * fix/8123-title-of-issue (issue number)
   * feature/8123 (issue number)
-  * feature/OAuth (new features)
   
   ❌ **Examples of invalid branch names**:
   * username-testing
@@ -100,4 +103,5 @@ This is a deployed app on the Apple [App Store](https://apps.apple.com/us/app/br
 # Coding Style Guidelines
 
 Developers should aim to write clean, maintainable, scalable and testable code. If your code is not testable, that means, it's time to refactor it. The following guidelines might come in handy for this:
-    * Swift: [Swift Best Practices](https://github.com/Lickability/swift-best-practices), by [Lickability](https://github.com/Lickability)
+
+* Swift: [Swift Best Practices](https://github.com/Lickability/swift-best-practices), by [Lickability](https://github.com/Lickability)
