@@ -38,6 +38,8 @@ struct CategorySheetView: View {
                         // Two approaches in mind:
                         // 1: Have the images the normal size without modification, renders a pretty small sf symbol
                         // 2: Make them .resizable and make them an appropriate size
+                        
+                        // Any color schemes to be aware of?
                         Image(systemName: sfSymbol)
                             
                             .padding()
