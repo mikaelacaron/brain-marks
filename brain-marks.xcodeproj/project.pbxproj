@@ -23,6 +23,7 @@
 		D3D5E0E5271C811E00752DCD /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D5E0E4271C811E00752DCD /* InfoViewModel.swift */; };
 		D3D5E0E7271C812200752DCD /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D5E0E6271C812200752DCD /* InfoView.swift */; };
 		D3F7C2EB27173EAC00DB87D9 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7C2EA27173EAC00DB87D9 /* String+Ext.swift */; };
+		DB2B67062721B209003DE763 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B67052721B209003DE763 /* Secrets.swift */; };
 		FF21986F269FE57D00FFB406 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF21986E269FE57D00FFB406 /* AsyncImage.swift */; };
 		FF36B661262357F9007A6D7F /* AWSCategory+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */; };
 		FF36B66C26235FE6007A6D7F /* TweetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36B66B26235FE6007A6D7F /* TweetListViewModel.swift */; };
@@ -47,7 +48,6 @@
 		FFEBBB4126223F7E000F475F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEBBB4026223F7E000F475F /* Preview Assets.xcassets */; };
 		FFEBBB4C26223F7F000F475F /* brain_marksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB4B26223F7F000F475F /* brain_marksTests.swift */; };
 		FFEBBB5726223F7F000F475F /* brain_marksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB5626223F7F000F475F /* brain_marksUITests.swift */; };
-		FFEBBB7626226A39000F475F /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBBB7526226A39000F475F /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +85,7 @@
 		D3D5E0E6271C812200752DCD /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		D3F7C2EA27173EAC00DB87D9 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		DA7D79B731BC4ECFAAE8E817 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = awsconfiguration.json; sourceTree = "<group>"; };
+		DB2B67052721B209003DE763 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		FF21986E269FE57D00FFB406 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AWSCategory+Extension.swift"; sourceTree = "<group>"; };
@@ -113,7 +114,6 @@
 		FFEBBB5226223F7F000F475F /* brain-marksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "brain-marksUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEBBB5626223F7F000F475F /* brain_marksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brain_marksUITests.swift; sourceTree = "<group>"; };
 		FFEBBB5826223F7F000F475F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFEBBB7526226A39000F475F /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,7 +310,7 @@
 				FFEBBB3D26223F7E000F475F /* Assets.xcassets */,
 				FFEBBB4226223F7E000F475F /* Info.plist */,
 				FFEBBB3F26223F7E000F475F /* Preview Content */,
-				FFEBBB7526226A39000F475F /* Secrets.swift */,
+				DB2B67052721B209003DE763 /* Secrets.swift */,
 				FFE079F527066FE30022EC61 /* Secrets-Example.swift */,
 			);
 			path = "brain-marks";
@@ -503,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91C8958926228D1500689196 /* Tweet.swift in Sources */,
+				DB2B67062721B209003DE763 /* Secrets.swift in Sources */,
 				D3D5E0E7271C812200752DCD /* InfoView.swift in Sources */,
 				FFEBBB3C26223F75000F475F /* ContentView.swift in Sources */,
 				A224A9E62622BCED00AC12AF /* TweetCard.swift in Sources */,
@@ -513,7 +514,6 @@
 				FFEB1B5826A9F9C300682C37 /* Alert.swift in Sources */,
 				FF36B6712623678D007A6D7F /* AWSTweet+Extension.swift in Sources */,
 				D3F7C2EB27173EAC00DB87D9 /* String+Ext.swift in Sources */,
-				FFEBBB7626226A39000F475F /* Secrets.swift in Sources */,
 				A2F449912622829D00725FEA /* CategoryList.swift in Sources */,
 				A2F4498C2622802B00725FEA /* CategoryRow.swift in Sources */,
 				FF5990692622DD61004DF328 /* DataStoreManager.swift in Sources */,
