@@ -19,16 +19,39 @@ struct TweetText: View {
 	}
 
 	var body: some View {
-		text.components(separatedBy: " ")
-			.reduce(into: Text("")) { tweetText, word in
-				let textColor: Color = word.hasPrefix("#") ? .blue : .black
-				tweetText += Text("\(word) ").foregroundColor(textColor)
+		formattedTweetText()
+	}
+
+	private func formattedTweetText() -> Text {
+		var finalText = Text("")
+		var currentWord = [Character]()
+
+		/// Create a Text from currentWord, set color, add to texts, clear currentWord.
+		func appendCurrentWordToTexts() {
+			let textColor: Color = currentWord.first == "#" ? .blue : .black
+			let text = String(currentWord)
+			finalText += Text(text).foregroundColor(textColor)
+			currentWord.removeAll()
+		}
+
+		text.forEach { character in
+			if !character.isLetter && !currentWord.isEmpty {
+				appendCurrentWordToTexts()
 			}
+			currentWord.append(character)
+		}
+		// Append the last current word
+		appendCurrentWordToTexts()
+
+		return finalText
 	}
 }
 
 struct TweetText_Previews: PreviewProvider {
     static var previews: some View {
-        TweetText("🎃 Have you created a pull request yet? #hacktoberfest 🍂")
+		VStack {
+			TweetText("🎃 Have you created a pull request yet? #hacktoberfest 🍂")
+			TweetText("So excited!\nMultiline #tweet... Highlighting test")
+		}
     }
 }
