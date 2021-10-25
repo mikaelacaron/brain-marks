@@ -85,7 +85,7 @@ final class AddURLViewModel: ObservableObject {
             throw HttpError.badURL
         }
         
-        let id = url.components(separatedBy: "/").last!.components(separatedBy: "?")[0]
+         let id = url.components(separatedBy: "/").last!.components(separatedBy: "?")[0]
         
         guard let completeURL = URL(string: "\(apiURL)?ids=\(id)&expansions=\(expansions)&tweet.fields=\(tweetFields)") else {
             throw HttpError.badURL

@@ -14,40 +14,21 @@ struct CategorySheetView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
+    @Namespace var categoryThumbnailID
     @State private var category = ""
     @State private var title = ""
+    @State private var categoryThumbnail = "folder"
+    @State private var showCategoryGrid = false
+    @StateObject private var viewModel = CategorySheetViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
+                    textEntryView()
                 
-                switch categorySheetState {
-                case .new: TextField("Enter name of new category",
-                                     text: $category)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                case .edit: TextField("\(editCategory?.name ?? "")",
-                                      text: $category)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                }
                 Text("👀")
-                
-                LazyVGrid(columns: columnStyle) {
-                    ForEach(choosableSFSymbols, id: \.self){ sfSymbol in
-                        // Two approaches in mind:
-                        // 1: Have the images the normal size without modification, renders a pretty small sf symbol
-                        // 2: Make them .resizable and make them an appropriate size
-                        
-                        // Any color schemes to be aware of?
-                        Image(systemName: sfSymbol)
-                            
-                            .padding()
-                            .background(Color.blue.opacity(0.5))
-                            .cornerRadius(10)
-                    }
-                }
-                
+                toggableThumbnailGridView()
+
                 Spacer()
                 
                 
@@ -103,8 +84,72 @@ struct CategorySheetView: View {
             }
         }
     }
+    @ViewBuilder private func textEntryView() -> some View {
+        switch categorySheetState {
+            
+        case .new:
+            HStack {
+                Menu {
+                    Button(action: {
+                        withAnimation {
+                            self.showCategoryGrid.toggle()
+                        }
+                    }){
+                        Text("Change icon")
+                    }
+                    
+                } label: {
+                    Image(systemName: "folder")
+                }
+
+            TextField("Enter name of new category",
+                             text: $category)
+                    
+            }
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .padding()
+        case .edit: TextField("\(editCategory?.name ?? "")",
+                              text: $category)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .padding()
+        }
+    }
+    
+    
     let columnStyle = [GridItem(), GridItem(), GridItem(), GridItem()]
-    let choosableSFSymbols = ["book", "house", "person", "house.fill", "book.fill", "person.fill", "star", "xmark"]
+    let  choosableSFSymbols = ["folder", "book", "person", "house.fill", "book.fill", "person.fill", "star", "xmark"]
+    
+    @ViewBuilder private func toggableThumbnailGridView() -> some View {
+        if showCategoryGrid {
+            VStack {
+                LazyVGrid(columns: columnStyle) {
+                    ForEach(choosableSFSymbols, id: \.self){ sfSymbol in
+                        // Two approaches in mind:
+                        // 1: Have the images the normal size without modification, renders a pretty small sf symbol
+                        // 2: Make them .resizable and make them an appropriate size
+                        
+                        // Any color schemes to be aware of?
+                        
+                        Button(action: {viewModel.selectThumbnail(sfSymbol) }) {
+                            Image(systemName: sfSymbol)
+                                .padding()
+                                .background(viewModel.thumbnail == sfSymbol
+                                            ? Color.blue.opacity(0.4)
+                                            : .clear)
+                                .matchedGeometryEffect(id: sfSymbol, in: categoryThumbnailID)
+                                
+                                .cornerRadius(10)
+                        }
+                    }
+                }.transition(.scale)
+                HStack {
+                    Button(action: { }){ Text("Cancel")}
+                    Button(action: { }){ Text("Ok")}
+                }
+            }
+            
+        }
+    }
 }
 
 struct NewCategorySheetView_Previews: PreviewProvider {

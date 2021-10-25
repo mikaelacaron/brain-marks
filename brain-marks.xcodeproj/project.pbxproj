@@ -11,6 +11,7 @@
 		684E2F2D3FCC4D36AC68E57D /* AWSCategory+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551BA45F30D640118D2F0CE2 /* AWSCategory+Schema.swift */; };
 		91739DEB2622D2A7000F982A /* AddURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91739DEA2622D2A7000F982A /* AddURLView.swift */; };
 		91C8958926228D1500689196 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8958826228D1500689196 /* Tweet.swift */; };
+		940E3C62272648310038D6AC /* CategorySheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940E3C61272648310038D6AC /* CategorySheetViewModel.swift */; };
 		9C9314E5631F4C39AA06BF35 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = DA7D79B731BC4ECFAAE8E817 /* awsconfiguration.json */; };
 		A205CD422622A3EB00517DB5 /* TweetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A205CD412622A3EB00517DB5 /* TweetList.swift */; };
 		A224A9E62622BCED00AC12AF /* TweetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A224A9E52622BCED00AC12AF /* TweetCard.swift */; };
@@ -75,6 +76,7 @@
 		63D0518628EF45A382F08352 /* AWSCategory.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AWSCategory.swift; path = amplify/generated/models/AWSCategory.swift; sourceTree = "<group>"; };
 		91739DEA2622D2A7000F982A /* AddURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddURLView.swift; sourceTree = "<group>"; };
 		91C8958826228D1500689196 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		940E3C61272648310038D6AC /* CategorySheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySheetViewModel.swift; sourceTree = "<group>"; };
 		A205CD412622A3EB00517DB5 /* TweetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetList.swift; sourceTree = "<group>"; };
 		A224A9E52622BCED00AC12AF /* TweetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCard.swift; sourceTree = "<group>"; };
 		A2F4498B2622802B00725FEA /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				FF39432C262FD07D00A3623B /* Views */,
 				FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */,
+				940E3C61272648310038D6AC /* CategorySheetViewModel.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				CF16AFB9BE3F401E98C85114 /* AWSTweet.swift in Sources */,
 				FF36B661262357F9007A6D7F /* AWSCategory+Extension.swift in Sources */,
 				FF36B66C26235FE6007A6D7F /* TweetListViewModel.swift in Sources */,
+				940E3C62272648310038D6AC /* CategorySheetViewModel.swift in Sources */,
 				C4392E80BFE640DAA2625F9D /* AWSTweet+Schema.swift in Sources */,
 				A205CD422622A3EB00517DB5 /* TweetList.swift in Sources */,
 				FF394320262FCF6100A3623B /* Response.swift in Sources */,
