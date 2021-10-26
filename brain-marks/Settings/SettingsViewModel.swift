@@ -49,7 +49,6 @@ class SettingsViewModel: ObservableObject {
                 let data = try JSONDecoder().decode([Contributor].self, from: urlData!)
                 
                 self.contributors = data
-                print("✅ Recieved Contributor Data")
                 
             } catch {
                 print(error)

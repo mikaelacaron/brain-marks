@@ -40,7 +40,7 @@ class DefaultInfoViewModel: InfoViewModel {
     }
     
     var infoText: String {
-        return "Brain-marks has always been open source! It began with the Big Brain Hackathon and during Hacktoberfest 2021, work has continued."
+        return "Brain-marks is an open source project! It was created for the Big Brain Hackathon and during Hacktoberfest 2021, work has continued."
     }
     
     var openSourceRemark: String {
