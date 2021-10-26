@@ -95,6 +95,7 @@ struct SettingsView<ViewModel: InfoViewModel>: View {
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.automatic)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
