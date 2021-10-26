@@ -24,15 +24,9 @@ struct CategorySheetView: View {
     var body: some View {
         NavigationView {
             VStack {
-                    textEntryView()
-                
-                Text("👀")
+                textEntryView()
                 toggableThumbnailGridView()
-
                 Spacer()
-                
-                
-                
                 HStack(spacing: 25) {
                     Button {
                         presentationMode.wrappedValue.dismiss()
@@ -99,7 +93,7 @@ struct CategorySheetView: View {
                     }
                     
                 } label: {
-                    Image(systemName: "folder")
+                    Image(systemName: viewModel.thumbnail)
                 }
 
             TextField("Enter name of new category",
@@ -143,11 +137,22 @@ struct CategorySheetView: View {
                     }
                 }.transition(.scale)
                 HStack {
-                    Button(action: { }){ Text("Cancel")}
-                    Button(action: { }){ Text("Ok")}
-                }
+                    //TODO: - NAMING OF FUNC - CONFIRM SELECTION?
+                    Button(action: confirmSelection){
+                        Text("Ok")
+                            .padding(.vertical, 8)
+                            .frame(width: UIScreen.main.bounds.width * 0.45)
+                            .background(Color.green)
+                            .cornerRadius(10)
+                    }
+                }.buttonStyle(.plain)
             }
             
+        }
+    }
+    private func confirmSelection() {
+        withAnimation {
+            showCategoryGrid = false
         }
     }
 }
