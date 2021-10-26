@@ -47,16 +47,6 @@ struct CategoryList: View {
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
-                            showInfoSheet = true
-                        } label: {
-                            Image(systemName:"info.circle")
-                        }
-                        .sheet(isPresented: $showInfoSheet) {
-                            InfoView(viewModel: DefaultInfoViewModel())
-                        }
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
                             showAddURLView = true
                         } label: {
                             Image(systemName:"plus.circle")
