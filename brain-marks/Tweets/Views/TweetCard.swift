@@ -42,7 +42,7 @@ struct TweetHeaderView: View {
 struct TweetBodyView: View {
     let tweetBody: String
     var body: some View {
-        Text(tweetBody)
+        TweetText(tweetBody)
             .font(.body)
             .lineSpacing(8.0)
             .padding(EdgeInsets(top: 0, leading: 18, bottom: 18, trailing: 18))
@@ -166,7 +166,7 @@ struct TimeStampView: View {
 
 struct TweetCard_Previews: PreviewProvider {
     static var previews: some View {
-        TweetCard(tweet: AWSTweet(id: "123", tweetID: "234", text: "Tweet ext here"))
+        TweetCard(tweet: AWSTweet(id: "123", tweetID: "234", text: "Tweet #text here"))
             .previewLayout(PreviewLayout.sizeThatFits)
     }
 }
