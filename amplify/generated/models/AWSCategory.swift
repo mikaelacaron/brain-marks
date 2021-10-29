@@ -11,14 +11,12 @@ public struct AWSCategory: Model {
   
   public init(id: String = UUID().uuidString,
       name: String,
-      imageName: String? = nil,
-      tweets: List<AWSTweet>? = [],
-      categoryThumbnail: String = "folder"
+      imageName: String? = "folder",
+      tweets: List<AWSTweet>? = []
   ) {
       self.id = id
       self.name = name
       self.imageName = imageName
       self.tweets = tweets
-      self.categoryThumbnail = categoryThumbnail
   }
 }

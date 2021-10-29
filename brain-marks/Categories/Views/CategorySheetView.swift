@@ -17,7 +17,7 @@ struct CategorySheetView: View {
     @Namespace var categoryThumbnailID
     @State private var category = ""
     @State private var title = ""
-    @State private var categoryThumbnail = "folder"
+    @State private var categoryThumbnail = "book"
     @State private var showCategoryGrid = false
     @StateObject private var viewModel = CategorySheetViewModel()
     
@@ -48,7 +48,7 @@ struct CategorySheetView: View {
                             case .new:
                                 DataStoreManger.shared.createCategory(
                                     category: AWSCategory(name: category,
-                                                          imageName: "folder"))
+                                                          imageName: viewModel.thumbnail))
                             case .edit:
                                 guard editCategory != nil else {
                                     return
@@ -152,6 +152,7 @@ struct CategorySheetView: View {
     }
     private func confirmSelection() {
         withAnimation {
+            self.categoryThumbnail = viewModel.thumbnail
             showCategoryGrid = false
         }
     }
