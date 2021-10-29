@@ -9,16 +9,16 @@ import SwiftUI
 
 struct AlertItem: Identifiable {
     let id = UUID()
-    let title: String
-    let message: String
+    let title: LocalizedStringKey
+    let message: LocalizedStringKey
     let dismissButon: Alert.Button
 }
 
 struct AlertContext {
     static let badURL = AlertItem(title: "❌",
-                                  message: "The link you entered isn't valid.",
+                                  message: "EnteredLinkIsNotValid",
                                   dismissButon: .default(Text("OK")))
-    static let noCategory = AlertItem(title: "Uh oh!",
-                                      message: "You must select a category",
+    static let noCategory = AlertItem(title: "UhOh",
+                                      message: "YouMustSelectCategory",
                                       dismissButon: .default(Text("OK")))
 }

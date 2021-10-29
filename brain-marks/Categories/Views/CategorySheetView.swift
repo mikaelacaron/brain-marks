@@ -14,26 +14,19 @@ struct CategorySheetView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
+    @Namespace var categoryThumbnailID
     @State private var category = ""
     @State private var title = ""
+    @State private var categoryThumbnail = "folder"
+    @State private var showCategoryGrid = false
+    @StateObject private var viewModel = CategorySheetViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
-                
-                switch categorySheetState {
-                case .new: TextField("Enter name of new category",
-                                     text: $category)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                case .edit: TextField("\(editCategory?.name ?? "")",
-                                      text: $category)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                }
-                
+                textEntryView()
+                thumbnailGridView()
                 Spacer()
-                
                 HStack(spacing: 25) {
                     Button {
                         presentationMode.wrappedValue.dismiss()
@@ -79,8 +72,8 @@ struct CategorySheetView: View {
             .navigationBarTitle(title)
             .onAppear {
                 switch categorySheetState {
-                case .new: title = "New Category"
-                case .edit: title = "Edit Category"
+                case .new: title = "NewCategory"
+                case .edit: title = "EditCategory"
                 }
             }
         }

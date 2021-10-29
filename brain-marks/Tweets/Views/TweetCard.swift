@@ -117,7 +117,7 @@ struct TweetInfoView: View {
             Text("9:58 PM・9/5/20・")
                 .font(.callout)
                 .foregroundColor(.secondary)
-            Text("Twitter for iPhone")
+            Text("TwitterForIphone")
                 .font(.callout)
                 .foregroundColor(Color(UIColor(named: "twitter")!))
         }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BMButton: View {
     
-    var text: String
+    var text: LocalizedStringKey
     
     var body: some View {
         Text(text)

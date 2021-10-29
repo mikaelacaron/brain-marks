@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  brain-marks
+
+  Created by AC Richter on 28.10.21.
+  
+*/
+
+// CategoryViews
+"Categories" = "Kategorien";
+"CategoriesAreEmpty" = "Es gibt noch keine Kategorien, ";
+"PleaseAddNewCategories" = "bitte drück das Datein symbol in der Ecke";
+"YouHaventCreatedCategories" = "Du hast noch keine Kategorien erstellt!";
+"Edit" = "Bearbeiten";
+"AllCategoriesWillBeDeleted" = "Diese Kategorie und alle enthaltenen Tweets werden gelöscht.";
+"EnterCategoryName" = "Name der neuen Kategorie";
+"Cancel" = "Abbrechen";
+"NewCategory" = "Neue Kategorie";
+"EditCategory" = "Kategorie bearbeiten";
+"Create" = "Erstellen";
+
+// TweetViews
+"9:58 PM・9/5/20・" = "21:58・5/9/20・";
+"TwitterForIphone" = "Twitter for iPhone";
+"Likes" = "‟Gefällt mir-angaben”";
+"NoSavedTweets" = "Keine gespeicherten Tweets!";
+
+// AlertView
+"EnteredLinkIsNotValid" = "Dieser Link ist ungültig";
+"UhOh" = "Oh oh!";
+"YouMustSelectCategory" = "Du musst eine Kategorie auswählen!";
+
+// AddURLView
+"EnterCopiedURL" = "Kopierte URL eingeben";
+"Category" = "Kategorie";
+"Save" = "Speichern";
