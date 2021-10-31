@@ -46,6 +46,7 @@ struct TweetBodyView: View {
             .font(.body)
             .lineSpacing(8.0)
             .padding(EdgeInsets(top: 0, leading: 18, bottom: 18, trailing: 18))
+            .fixedSize(horizontal: false, vertical: true)
     }
 }
 

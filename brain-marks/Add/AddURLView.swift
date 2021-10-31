@@ -31,6 +31,9 @@ struct AddURLView: View {
                 })
             }
             .navigationBarItems(
+                leading: Button("Cancel") {
+                    presentationMode.wrappedValue.dismiss()
+                },
                 trailing: Button("Save") {
                     if selectedCategory.name == "" {
                         viewModel.alertItem = AlertContext.noCategory
