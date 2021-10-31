@@ -84,14 +84,11 @@ struct CategorySheetView: View {
         case .new:
             HStack {
                 Menu {
-                    Button(action: {
-                        withAnimation {
-                            self.showCategoryGrid.toggle()
-                        }
-                    }){
+                    Button {
+                        showCategoryGrid.toggle()
+                    } label: {
                         Text("Change icon")
                     }
-                    
                 } label: {
                     Image(systemName: viewModel.thumbnail)
                 }
@@ -109,36 +106,35 @@ struct CategorySheetView: View {
         }
     }
     
-    
     let columnStyle = [GridItem(), GridItem(), GridItem(), GridItem()]
-    let  choosableSFSymbols = ["folder", "book", "person", "house.fill", "book.fill", "person.fill", "star", "xmark"]
+    let  choosableSFSymbols = ["folder", "book", "cross",
+                               "star.bubble", "leaf", "brain.head.profile",
+                               "star", "hands.clap"]
     
     @ViewBuilder private func toggableThumbnailGridView() -> some View {
         if showCategoryGrid {
             VStack {
                 LazyVGrid(columns: columnStyle) {
-                    ForEach(choosableSFSymbols, id: \.self){ sfSymbol in
-                        // Two approaches in mind:
-                        // 1: Have the images the normal size without modification, renders a pretty small sf symbol
-                        // 2: Make them .resizable and make them an appropriate size
-                        
-                        // Any color schemes to be aware of?
-                        
-                        Button(action: {viewModel.selectThumbnail(sfSymbol) }) {
+                    ForEach(choosableSFSymbols, id: \.self) { sfSymbol in
+                        Button {
+                            viewModel.selectThumbnail(sfSymbol)
+                        } label: {
                             Image(systemName: sfSymbol)
+                                .foregroundColor(viewModel.thumbnail == sfSymbol
+                                                 ? Color.black
+                                                 : Color.blue
+                                )
                                 .padding()
                                 .background(viewModel.thumbnail == sfSymbol
                                             ? Color.blue.opacity(0.4)
                                             : .clear)
-                                .matchedGeometryEffect(id: sfSymbol, in: categoryThumbnailID)
                                 
                                 .cornerRadius(10)
                         }
                     }
                 }.transition(.scale)
                 HStack {
-                    //TODO: - NAMING OF FUNC - CONFIRM SELECTION?
-                    Button(action: confirmSelection){
+                    Button(action: confirmSelection) {
                         Text("Ok")
                             .padding(.vertical, 8)
                             .frame(width: UIScreen.main.bounds.width * 0.45)
@@ -147,12 +143,12 @@ struct CategorySheetView: View {
                     }
                 }.buttonStyle(.plain)
             }
-            
         }
     }
     private func confirmSelection() {
-        withAnimation {
+            // Did not include this in animation because it causes a janky transition.
             self.categoryThumbnail = viewModel.thumbnail
+        withAnimation {
             showCategoryGrid = false
         }
     }
