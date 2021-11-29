@@ -112,6 +112,7 @@ class DataStoreManger {
                                 authorName: tweet.authorName,
                                 authorUsername: tweet.authorUsername,
                                 profileImageURL: tweet.profileImageURL,
+                                photosURL: tweet.photosUrl,
                                 category: category,
                                 userVerified: tweet.userVerified)
         

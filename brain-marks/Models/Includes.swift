@@ -9,4 +9,5 @@ import Foundation
 
 struct Includes: Codable {
     let users: [User]
+    let media: [Media]?
 }
