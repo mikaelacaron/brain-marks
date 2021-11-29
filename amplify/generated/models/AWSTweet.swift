@@ -10,6 +10,7 @@ public struct AWSTweet: Model {
   public var authorName: String?
   public var authorUsername: String?
   public var profileImageURL: String?
+  public var photosURL: [String]?
   public var category: AWSCategory?
   public var userVerified: Bool?
   
@@ -20,6 +21,7 @@ public struct AWSTweet: Model {
       authorName: String? = nil,
       authorUsername: String? = nil,
       profileImageURL: String? = nil,
+      photosURL: [String]? = [],
       category: AWSCategory? = nil,
       userVerified: Bool? = nil) {
       self.id = id
@@ -29,6 +31,7 @@ public struct AWSTweet: Model {
       self.authorName = authorName
       self.authorUsername = authorUsername
       self.profileImageURL = profileImageURL
+      self.photosURL = photosURL
       self.category = category
       self.userVerified = userVerified
   }
