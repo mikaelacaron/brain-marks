@@ -44,7 +44,7 @@ struct AddURLView: View {
                             case .success(let tweet):
                                 
                                 DataStoreManger.shared.fetchCategories { (result) in
-                                    if case .success(_) = result {
+                                    if case .success = result {
                                         DataStoreManger.shared.createTweet(
                                             tweet: tweet,
                                             category: selectedCategory)
@@ -52,7 +52,7 @@ struct AddURLView: View {
                                     presentationMode.wrappedValue.dismiss()
                                 }
                                 
-                            case .failure(_):
+                            case .failure:
                                 viewModel.alertItem = AlertContext.badURL
                             }
                         }
