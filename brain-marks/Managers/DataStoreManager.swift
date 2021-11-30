@@ -151,7 +151,7 @@ class DataStoreManger {
     func deleteTweet(_ tweet: AWSTweet) {
         Amplify.DataStore.delete(tweet) { result in
             switch result {
-            case .success():
+            case .success:
                 print("✅ Deleted tweet")
             case .failure(let error):
                 print("❌ Could NOT delete tweet: \(error)")
