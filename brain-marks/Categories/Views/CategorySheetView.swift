@@ -25,7 +25,7 @@ struct CategorySheetView: View {
         NavigationView {
             VStack {
                 textEntryView()
-                toggableThumbnailGridView()
+                thumbnailGridView()
                 Spacer()
                 HStack(spacing: 25) {
                     Button {
@@ -83,19 +83,14 @@ struct CategorySheetView: View {
             
         case .new:
             HStack {
-                Menu {
-                    Button {
-                        showCategoryGrid.toggle()
-                    } label: {
-                        Text("Change icon")
-                    }
+                Button {
+                    showCategoryGrid.toggle()
                 } label: {
                     Image(systemName: viewModel.thumbnail)
                 }
-
+                
             TextField("Enter name of new category",
                              text: $category)
-                    
             }
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
@@ -107,59 +102,50 @@ struct CategorySheetView: View {
     }
     
     let columnStyle = [GridItem(), GridItem(), GridItem(), GridItem()]
-    let  choosableSFSymbols = ["folder", "book", "cross",
+    let  categorySFSymbols = ["folder", "book", "cross",
                                "star.bubble", "leaf", "brain.head.profile",
                                "star", "hands.clap"]
     
-    @ViewBuilder private func toggableThumbnailGridView() -> some View {
-        if showCategoryGrid {
+    @ViewBuilder private func thumbnailGridView() -> some View {
             VStack {
                 LazyVGrid(columns: columnStyle) {
-                    ForEach(choosableSFSymbols, id: \.self) { sfSymbol in
+                    ForEach(categorySFSymbols, id: \.self) { sfSymbol in
                         Button {
                             viewModel.selectThumbnail(sfSymbol)
+                            self.categoryThumbnail = viewModel.thumbnail
                         } label: {
                             Image(systemName: sfSymbol)
                                 .foregroundColor(viewModel.thumbnail == sfSymbol
-                                                 ? Color.black
+                                                 ? Color.primary
                                                  : Color.blue
                                 )
                                 .padding()
                                 .background(viewModel.thumbnail == sfSymbol
                                             ? Color.blue.opacity(0.4)
                                             : .clear)
-                                
                                 .cornerRadius(10)
                         }
                     }
-                }.transition(.scale)
-                HStack {
-                    Button(action: confirmSelection) {
-                        Text("Ok")
-                            .padding(.vertical, 8)
-                            .frame(width: UIScreen.main.bounds.width * 0.45)
-                            .background(Color.green)
-                            .cornerRadius(10)
-                    }
-                }.buttonStyle(.plain)
+                }
             }
-        }
-    }
-    private func confirmSelection() {
-            // Did not include this in animation because it causes a janky transition.
-            self.categoryThumbnail = viewModel.thumbnail
-        withAnimation {
-            showCategoryGrid = false
-        }
     }
 }
 
 struct NewCategorySheetView_Previews: PreviewProvider {
     static var previews: some View {
-        CategorySheetView(
-            editCategory: .constant(AWSCategory(id: "1",
-                                                name: "CategoryName",
-                                                imageName: "swift")),
-            categorySheetState: .constant(.new))
+        Group {
+            CategorySheetView(
+                editCategory: .constant(AWSCategory(id: "1",
+                                                    name: "CategoryName",
+                                                    imageName: "swift")),
+                categorySheetState: .constant(.new))
+                .preferredColorScheme(.light)
+            CategorySheetView(
+                editCategory: .constant(AWSCategory(id: "1",
+                                                    name: "CategoryName",
+                                                    imageName: "swift")),
+                categorySheetState: .constant(.new))
+                .preferredColorScheme(.dark)
+        }
     }
 }
