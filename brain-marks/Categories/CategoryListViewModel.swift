@@ -36,4 +36,23 @@ final class CategoryListViewModel: ObservableObject {
     func editCategoryName(category: AWSCategory, newName: String) {
         DataStoreManger.shared.editCategory(category: category, newName: newName)
     }
+    
+    func pinCategory(category: AWSCategory){
+        var categoryIndex = -1;
+        for (index, each) in categories.enumerated() {
+            if(each.id == category.id){
+                categoryIndex = index
+            }
+        }
+        if(categoryIndex != -1){
+            categories.remove(at: categoryIndex)
+            categories.insert(category, at: 0)
+            for category in categories {
+                DataStoreManger.shared.deleteCategory(category: category)
+            }
+            for category in categories {
+                DataStoreManger.shared.createCategory(category: category)
+            }
+        }
+    }
 }

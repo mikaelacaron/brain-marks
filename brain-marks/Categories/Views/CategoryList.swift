@@ -106,6 +106,11 @@ struct CategoryList: View {
                     } label: {
                         Text("Edit")
                     }
+                    Button {
+                        viewModel.pinCategory(category: category)
+                    } label: {
+                        Text("Pin to top")
+                    }
                 }
             }
             .onDelete { indexSet in
