@@ -25,6 +25,7 @@ struct CategoryList: View {
     @StateObject var viewModel = CategoryListViewModel()
     
     var body: some View {
+        
         NavigationView {
             categoryList
                 .navigationTitle("Categories")
@@ -39,10 +40,20 @@ struct CategoryList: View {
                         .sheet(isPresented: $showingCategorySheet) {
                             CategorySheetView(
                                 editCategory: $editCategory,
-                                categorySheetState: $categorySheetState)
+                                categorySheetState: $categorySheetState, parentVM: viewModel)
                                 .onDisappear {
                                     viewModel.getCategories()
                                 }
+                        }.onDisappear {
+                            DataStoreManger.shared.fetchSingleCategory(byID: viewModel.lastEditedCategoryID) { result in
+                                switch result {
+                                    
+                                case .success(let newEditCategory):
+                                    editCategory = newEditCategory
+                                case .failure(let error):
+                                    print("❌ Error setting editCategory: \(error)")
+                                }
+                            }
                         }
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {

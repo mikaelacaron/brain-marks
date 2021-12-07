@@ -11,6 +11,9 @@ final class CategoryListViewModel: ObservableObject {
     
     @Published var categories = [AWSCategory]()
     
+    /// Without this property state of data after dismissing the modal (on editing) will be stale until the app restarts.
+    var lastEditedCategoryID = ""
+    
     func getCategories() {
         categories = []
         DataStoreManger.shared.fetchCategories { result in
@@ -33,7 +36,7 @@ final class CategoryListViewModel: ObservableObject {
         categories.remove(atOffsets: offsets)
     }
     
-    func editCategoryName(category: AWSCategory, newName: String) {
-        DataStoreManger.shared.editCategory(category: category, newName: newName)
-    }
+//    func editCategoryName(category: AWSCategory, newName: String) {
+//        DataStoreManger.shared.editCategory(category: category, newName: newName, newThumbnail: <#String#>)
+//    }
 }

@@ -15,7 +15,6 @@ final class CategorySheetViewModel: ObservableObject {
             self.thumbnail = thumbnail
         }
     }
-    
-    
+
 }
 

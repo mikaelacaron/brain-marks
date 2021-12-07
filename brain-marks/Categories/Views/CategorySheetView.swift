@@ -11,13 +11,14 @@ struct CategorySheetView: View {
     
     @Binding var editCategory: AWSCategory?
     @Binding var categorySheetState: CategoryState
+    @ObservedObject var parentVM: CategoryListViewModel
     
     @Environment(\.presentationMode) var presentationMode
     
     @Namespace var categoryThumbnailID
     @State private var category = ""
     @State private var title = ""
-    @State private var categoryThumbnail = "book"
+    @State private var categoryThumbnail = "folder"
     @State private var showCategoryGrid = false
     @StateObject private var viewModel = CategorySheetViewModel()
     
@@ -41,24 +42,23 @@ struct CategorySheetView: View {
                     
                     Button {
                         presentationMode.wrappedValue.dismiss()
-                        
-                        if !category.isEmpty {
-                            
                             switch categorySheetState {
                             case .new:
+                                if !category.isEmpty {
                                 DataStoreManger.shared.createCategory(
                                     category: AWSCategory(name: category,
                                                           imageName: viewModel.thumbnail))
+                                }
                             case .edit:
                                 guard editCategory != nil else {
                                     return
                                 }
-                                
+                                parentVM.lastEditedCategoryID = categoryThumbnail
                                 DataStoreManger.shared.editCategory(
                                     category: editCategory!,
-                                    newName: category)
+                                    newName: category, newThumbnail: categoryThumbnail)
                             }
-                        }
+                        
                     } label: {
                         
                         switch categorySheetState {
@@ -98,6 +98,10 @@ struct CategorySheetView: View {
                               text: $category)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
+            .onAppear {
+                category = editCategory!.name
+            }
+            
         }
     }
     
@@ -107,27 +111,63 @@ struct CategorySheetView: View {
                                "star", "hands.clap"]
     
     @ViewBuilder private func thumbnailGridView() -> some View {
-            VStack {
-                LazyVGrid(columns: columnStyle) {
-                    ForEach(categorySFSymbols, id: \.self) { sfSymbol in
-                        Button {
-                            viewModel.selectThumbnail(sfSymbol)
-                            self.categoryThumbnail = viewModel.thumbnail
-                        } label: {
-                            Image(systemName: sfSymbol)
-                                .foregroundColor(viewModel.thumbnail == sfSymbol
-                                                 ? Color.primary
-                                                 : Color.blue
-                                )
-                                .padding()
-                                .background(viewModel.thumbnail == sfSymbol
-                                            ? Color.blue.opacity(0.4)
-                                            : .clear)
-                                .cornerRadius(10)
-                        }
+        switch categorySheetState {
+        case .new:
+            newCategoryThumbnailGridView()
+        case .edit:
+            editCategoryThumbnailGridView()
+        }
+    }
+    
+    @ViewBuilder private func newCategoryThumbnailGridView() -> some View {
+        VStack {
+            LazyVGrid(columns: columnStyle) {
+                ForEach(categorySFSymbols, id: \.self) { sfSymbol in
+                    Button {
+                        viewModel.selectThumbnail(sfSymbol)
+                        self.categoryThumbnail = viewModel.thumbnail
+                    } label: {
+                        Image(systemName: sfSymbol)
+                            .foregroundColor(viewModel.thumbnail == sfSymbol
+                                             ? Color.primary
+                                             : Color.blue
+                            )
+                            .padding()
+                            .background(viewModel.thumbnail == sfSymbol
+                                        ? Color.blue.opacity(0.4)
+                                        : .clear)
+                            .cornerRadius(10)
                     }
                 }
             }
+        }
+    }
+    
+    @ViewBuilder private func editCategoryThumbnailGridView() -> some View {
+        VStack {
+            LazyVGrid(columns: columnStyle) {
+                ForEach(categorySFSymbols, id: \.self) { sfSymbol in
+                    Button {
+                        categoryThumbnail = sfSymbol
+                        editCategory?.imageName = sfSymbol
+                        
+                    } label: {
+                        Image(systemName: sfSymbol)
+                            .foregroundColor(categoryThumbnail == sfSymbol
+                                             ? Color.primary
+                                             : Color.blue
+                            )
+                            .padding()
+                            .background(categoryThumbnail == sfSymbol
+                                        ? Color.blue.opacity(0.4)
+                                        : .clear)
+                            .cornerRadius(10)
+                    }
+                }
+            }
+        }.onAppear {
+            categoryThumbnail = editCategory!.imageName!
+        }
     }
 }
 
@@ -138,13 +178,13 @@ struct NewCategorySheetView_Previews: PreviewProvider {
                 editCategory: .constant(AWSCategory(id: "1",
                                                     name: "CategoryName",
                                                     imageName: "swift")),
-                categorySheetState: .constant(.new))
+                categorySheetState: .constant(.new), parentVM: CategoryListViewModel())
                 .preferredColorScheme(.light)
             CategorySheetView(
                 editCategory: .constant(AWSCategory(id: "1",
                                                     name: "CategoryName",
                                                     imageName: "swift")),
-                categorySheetState: .constant(.new))
+                categorySheetState: .constant(.new), parentVM: CategoryListViewModel())
                 .preferredColorScheme(.dark)
         }
     }
