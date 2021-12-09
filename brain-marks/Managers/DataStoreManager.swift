@@ -65,7 +65,7 @@ class DataStoreManger {
     func deleteCategory(category: AWSCategory) {
         Amplify.DataStore.delete(category) { result in
             switch result {
-            case .success():
+            case .success:
                 print("✅ Deleted category")
             case .failure(let error):
                 print("❌ Could NOT delete category: \(error)")

@@ -11,7 +11,6 @@ final class CategoryListViewModel: ObservableObject {
     
     @Published var categories = [AWSCategory]()
     
-    /// Without this property state of data after dismissing the modal (on editing) will be stale until the app restarts.
     var lastEditedCategoryID = ""
     
     func getCategories() {

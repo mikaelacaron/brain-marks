@@ -45,7 +45,8 @@ struct CategoryList: View {
                                     viewModel.getCategories()
                                 }
                         }.onDisappear {
-                            DataStoreManger.shared.fetchSingleCategory(byID: viewModel.lastEditedCategoryID) { result in
+                            DataStoreManger
+                                .shared.fetchSingleCategory(byID: viewModel.lastEditedCategoryID) { result in
                                 switch result {
                                     
                                 case .success(let newEditCategory):
