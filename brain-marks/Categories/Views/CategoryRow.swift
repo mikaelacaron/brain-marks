@@ -15,7 +15,8 @@ struct CategoryRow: View {
             Image(systemName: category.imageName ?? "folder")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 40, height: 40)
+                .frame(width: 30, height: 30)
+                .font(Font.title.weight(.light))
             Text(category.name)
             Spacer()
         }

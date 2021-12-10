@@ -65,7 +65,7 @@ class DataStoreManger {
     func deleteCategory(category: AWSCategory) {
         Amplify.DataStore.delete(category) { result in
             switch result {
-            case .success():
+            case .success:
                 print("✅ Deleted category")
             case .failure(let error):
                 print("❌ Could NOT delete category: \(error)")
@@ -75,7 +75,7 @@ class DataStoreManger {
     
     /// Edit a category's name
     /// - Parameter category: `AWSCategory` to edit
-    func editCategory(category: AWSCategory, newName: String) {
+    func editCategory(category: AWSCategory, newName: String, newThumbnail: String) {
         Amplify.DataStore.query(AWSCategory.self, where: AWSCategory.keys.id.eq(category.id)) { result in
             switch result {
             case .success(let categories):
@@ -84,6 +84,7 @@ class DataStoreManger {
                     return
                 }
                 updatedCategory.name = newName
+                updatedCategory.imageName = newThumbnail
                 Amplify.DataStore.save(updatedCategory) { result in
                     switch result {
                     case .success(let savedCategory):
