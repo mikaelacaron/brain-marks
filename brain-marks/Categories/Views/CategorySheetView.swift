@@ -106,9 +106,11 @@ struct CategorySheetView: View {
     }
     
     let columnStyle = [GridItem(), GridItem(), GridItem(), GridItem()]
-    let  categorySFSymbols = ["folder", "book", "cross",
-                               "star.bubble", "leaf", "brain.head.profile",
-                               "star", "hands.clap"]
+    let  categorySFSymbols = ["folder", "book", "music.note",
+                              "list.bullet", "gamecontroller", "brain.head.profile",
+                              "star", "hands.clap", "bookmark",
+                              "dollarsign.circle", "shippingbox", "laptopcomputer",
+                              "chart.bar", "gift", "suit.heart", "pin"]
     
     @ViewBuilder private func thumbnailGridView() -> some View {
         switch categorySheetState {
