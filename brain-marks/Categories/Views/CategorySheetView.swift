@@ -14,18 +14,24 @@ struct CategorySheetView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @Namespace var categoryThumbnailID
     @State private var category = ""
     @State private var title = ""
-    @State private var categoryThumbnail = "folder"
-    @State private var showCategoryGrid = false
-    @StateObject private var viewModel = CategorySheetViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
-                textEntryView()
-                thumbnailGridView()
+                
+                 switch categorySheetState {
+                case .new: TextField("Enter name of new category",
+                                     text: $category)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                case .edit: TextField("\(editCategory?.name ?? "")",
+                                      text: $category)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                }
+                
                 Spacer()
                 HStack(spacing: 25) {
                     Button {
