@@ -11,19 +11,19 @@ import SwiftUI
 
 protocol InfoViewModel {
     var title: String { get }
-    var message: String { get }
+    var message: LocalizedStringKey { get }
     var imageName: String { get }
     var appVersion: String? { get }
-    var infoText: String { get }
-    var openSourceRemark: String { get }
+    var infoText: LocalizedStringKey { get }
+    var openSourceRemark: LocalizedStringKey { get }
 }
 
 class DefaultInfoViewModel: InfoViewModel {
     var title: String {
         return appName
     }
-    var message: String {
-        return "❤️ Thank you for using ❤️"
+    var message: LocalizedStringKey {
+        return "ThanksForUsing"
     }
     let imageName: String = "logo"
     
@@ -33,18 +33,18 @@ class DefaultInfoViewModel: InfoViewModel {
     
     var appVersion: String? {
         if let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String {
-            return "Version \(version)"
+            return /*"Version \(*/version//)"
         } else {
             return nil
         }
     }
     
-    var infoText: String {
-        return "Brain-marks is an open source project! It was created for the Big Brain Hackathon and during Hacktoberfest 2021, work has continued."
+    var infoText: LocalizedStringKey {
+        return "BrainMarksIsOpenSource..."
     }
     
-    var openSourceRemark: String {
-        return "If you are interested in contributing yourself, visit the GitHub Repo for more information. Below a list of all contributors can be found. \nYour name could be there!"
+    var openSourceRemark: LocalizedStringKey {
+        return "IfYouWantToContribute"
     }
 }
 

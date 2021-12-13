@@ -22,7 +22,7 @@ struct AddURLView: View {
     var body: some View {
         NavigationView {
             Form {
-                TextField("Enter copied url", text: $newEntry)
+                TextField("EnterCopiedURL", text: $newEntry)
                     .autocapitalization(.none)
                 Picker(selection: $selectedCategory , label: Text("Category"), content: {
                     ForEach(categories,id:\.self) { category in

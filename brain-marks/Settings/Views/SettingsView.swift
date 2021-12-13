@@ -33,7 +33,7 @@ struct SettingsView<ViewModel: InfoViewModel>: View {
                         } label: {
                             HStack {
                                 Image(systemName: "person.3.fill")
-                                Text("List of Contributors")
+                                Text("ListOfContributors")
                             }
                         }
                     }
@@ -47,7 +47,7 @@ struct SettingsView<ViewModel: InfoViewModel>: View {
                             HStack {
                                 Image(systemName: "exclamationmark.triangle")
                                     .font(Font.body.weight(.bold))
-                                Text("Report a Bug")
+                                Text("ReportABug")
                             }
                         }
                         
@@ -67,23 +67,30 @@ struct SettingsView<ViewModel: InfoViewModel>: View {
                                     .frame(width: 18, height: 18)
                                     .padding(.leading, 2)
                                 
-                                Text("GitHub Repository")
+                                Text("GitHubRepo")
                                     .frame(maxWidth: .infinity, alignment: .leading)
                             }
                         }
                     }
                     
                     VStack(alignment: .center) {
-                        Text(infoViewModel.message)
+                        HStack(spacing: 0) {
+                            Text("❤️ ")
+                            Text(infoViewModel.message)
+                            Text(" ❤️")
+                        }
                             .font(.title3)
-                        .foregroundColor(.blue)
+                            .foregroundColor(.blue)
                         
                         Text(infoViewModel.title)
                             .font(.title)
                             .bold()
                         
                         if let appVersion = infoViewModel.appVersion {
-                            Text(appVersion)
+                            HStack(spacing: 0) {
+                                Text("Version ")
+                                Text(appVersion)
+                            }
                                 .font(.caption)
                                 .foregroundColor(.gray)
                         }

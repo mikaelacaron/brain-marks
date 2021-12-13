@@ -17,7 +17,7 @@ struct CategorySheetView: View {
     
     @Namespace var categoryThumbnailID
     @State private var category = ""
-    @State private var title = ""
+    @State private var title: LocalizedStringKey = ""
     @State private var categoryThumbnail = "folder"
     @State private var showCategoryGrid = false
     @StateObject private var viewModel = CategorySheetViewModel()
@@ -72,8 +72,8 @@ struct CategorySheetView: View {
             .navigationBarTitle(title)
             .onAppear {
                 switch categorySheetState {
-                case .new: title = "New Category"
-                case .edit: title = "Edit Category"
+                case .new: title = "NewCategory"
+                case .edit: title = "EditCategory"
                 }
             }
         }
@@ -89,7 +89,7 @@ struct CategorySheetView: View {
                     Image(systemName: viewModel.thumbnail)
                 }
                 
-            TextField("Enter name of new category",
+            TextField(LocalizedStringKey("EnterCategoryName"),
                              text: $category)
             }
             .textFieldStyle(RoundedBorderTextFieldStyle())
