@@ -1,0 +1,53 @@
+/* 
+  Localizable.strings
+  brain-marks
+
+  Created by AC Richter on 13.12.21.
+  
+*/
+
+// TabView
+"Tweets" = "Tweets";
+"Settings" = "Einstellungen";
+
+// CategoryViews
+"Categories" = "Kategorien";
+"CategoriesAreEmpty" = "Deine Kategorien sind leer, ";
+"PleaseAddNewCategories" = "um neue hinzu zu fügen, drücke ";
+"YouHaventCreatedCategories" = "Du hast noch keine Kategorien erstellt";
+"Edit" = "Bearbeiten";
+"AllCategoriesWillBeDeleted" = "Diese Kategorie sowie alle enthaltenen Tweets werden gelöscht";
+"EnterCategoryName" = "Name der Kategorie";
+"Cancel" = "Abbrechen";
+"NewCategory" = "Neue Kategorie";
+"EditCategory" = "Kategorie bearbeiten";
+"Create" = "Erstellen";
+"Delete" = "Löschen";
+
+// TweetViews
+"9:58 PM・9/5/20・" = "21:58・5.9.20・";
+"TwitterForIphone" = "Twitter für iPhone";
+"Likes" = "Gefällt-mir";
+"NoSavedTweets" = "Keine gespeicherten Tweets!";
+"EnteredLinkIsNotValid" = "Dieser Link ist ungültig!";
+"UhOh" = "Oh oh!";
+"YouMustSelectCategory" = "Du musst erst eine Kategorie auswählen";
+
+// AddURLView
+"EnterCopiedURL" = "Gib eine kopierte URL an";
+"Category" = "Kategorie";
+"Save" = "Speichern";
+
+// SettingsView
+"Settings" = "Einstellungen";
+"BrainMarksIsOpenSource..." = "Brain-marks ist ein open source Projekt! Es wurde wärend dem \"Big Brain Hackathon\" erstellt, und wärend dem \"Hacktoberfest\" 2021 wurde es von verschiedenen Personen weiterentwickelt.";
+"IfYouWantToContribute" = "Falls du auch einen Beitrag zu brain-marks leisten möchtest, besuch das GitHub Repo für weitere Informationen. Unten findest du eine Liste aller, die bei diesem Projekt mitgewirkt haben. \nDein Name könnte dort stehen!";
+"ListOfContributors" = "Liste aller Mitwirkenden";
+"Links" = "Links";
+"ReportABug" = "Melde einen Fehler";
+"GitHubRepo" = "GitHub Repository";
+"ThanksForUsing" = "Danke für die Nutzung von";
+"Version" = "Version";
+
+// ContributorListView
+"Contributors" = "Mitwirkende";

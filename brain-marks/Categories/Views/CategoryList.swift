@@ -83,8 +83,11 @@ struct CategoryList: View {
                 Image("logo")
                     .opacity(0.05)
             VStack {
-                Text("The categories are empty, ")
-                Text("please add new categories by clicking on \(Image(systemName: "folder.badge.plus"))")
+                Text("CategoriesAreEmpty")
+                HStack(spacing: 0) {
+                    Text("PleaseAddNewCategories")
+                    Image(systemName: "folder.badge.plus")
+                }
             }
             }
         } else {
@@ -99,7 +102,7 @@ struct CategoryList: View {
     }
     
     var emptyListView: some View {
-        Text("You haven't created any categories!")
+        Text("YouHaventCreatedCategories")
             .font(.title3)
             .fontWeight(.medium)
     }
@@ -126,7 +129,7 @@ struct CategoryList: View {
             }
         }.listStyle(InsetGroupedListStyle())
             .actionSheet(isPresented: $showingDeleteActionSheet) {
-                ActionSheet(title: Text("Category and all tweets will be deleted"), buttons: [
+                ActionSheet(title: Text("AllCategoriesWillBeDeleted"), buttons: [
                     .destructive(Text("Delete"), action: {
                         guard indexSetToDelete != nil else {
                             return

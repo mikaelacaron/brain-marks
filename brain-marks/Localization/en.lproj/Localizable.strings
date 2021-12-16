@@ -1,0 +1,53 @@
+/* 
+  Localizable.strings
+  brain-marks
+
+  Created by AC Richter on 13.12.21.
+  
+*/
+
+// TabView
+"Tweets" = "Tweets";
+"Settings" = "Settings";
+
+// CategoryViews
+"Categories" = "Categories";
+"CategoriesAreEmpty" = "The categories are empty, ";
+"PleaseAddNewCategories" = "please add new categories by clicking on";
+"YouHaventCreatedCategories" = "You haven't created any categories!";
+"Edit" = "Edit";
+"AllCategoriesWillBeDeleted" = "Category and all tweets will be deleted";
+"EnterCategoryName" = "Enter name of new category";
+"Cancel" = "Cancel";
+"NewCategory" = "New Category";
+"EditCategory" = "Edit Category";
+"Create" = "Create";
+"Delete" = "Delete";
+
+// TweetViews
+"9:58 PM・9/5/20・" = "9:58 PM・9/5/20・";
+"TwitterForIphone" = "Twitter for iPhone";
+"Likes" = "Likes";
+"NoSavedTweets" = "No tweets saved!";
+"EnteredLinkIsNotValid" = "The link you entered isn't valid.";
+"UhOh" = "Uh oh!";
+"YouMustSelectCategory" = "You must select a category";
+
+// AddURLView
+"EnterCopiedURL" = "Enter copied url";
+"Category" = "Category";
+"Save" = "Save";
+
+// SettingsView
+"Settings" = "Settings";
+"BrainMarksIsOpenSource..." = "Brain-marks is an open source project! It was created for the Big Brain Hackathon and during Hacktoberfest 2021, work has continued.";
+"IfYouWantToContribute" = "If you are interested in contributing yourself, visit the GitHub Repo for more information. Below a list of all contributors can be found. \nYour name could be there!";
+"ListOfContributors" = "List of Contributors";
+"Links" = "Links";
+"ReportABug" = "Report a bug";
+"GitHubRepo" = "GitHub Repository";
+"ThanksForUsing" = "Thank you for using";
+"Version" = "Version";
+
+// ContributorListView
+"Contributors" = "Contributors";
