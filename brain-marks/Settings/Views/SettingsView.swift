@@ -52,11 +52,7 @@ struct SettingsView<ViewModel: InfoViewModel>: View {
                         }
                         
                         Link(destination: viewModel.urls["mikaelacaronProfile"]!) {
-                            HStack {
-                                Image(systemName: "person")
-                                    .font(Font.body.weight(.bold))
-                                Text("Mikaela Caron")
-                            }
+                                Text("🦄  Mikaela Caron")
                         }
                         
                         Link(destination: viewModel.urls["brain-marksRepo"]!) {

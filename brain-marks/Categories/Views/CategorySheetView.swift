@@ -110,7 +110,8 @@ struct CategorySheetView: View {
                               "list.bullet", "gamecontroller", "brain.head.profile",
                               "star", "hands.clap", "bookmark",
                               "dollarsign.circle", "shippingbox", "laptopcomputer",
-                              "chart.bar", "gift", "suit.heart", "pin"]
+                              "chart.bar", "gift", "suit.heart", "pin",
+                              "headphones", "moon", "crown", "person"]
     
     @ViewBuilder private func thumbnailGridView() -> some View {
         switch categorySheetState {
