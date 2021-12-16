@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// swiftlint:disable line_length
-
 protocol InfoViewModel {
     var title: String { get }
     var message: LocalizedStringKey { get }
@@ -33,7 +31,7 @@ class DefaultInfoViewModel: InfoViewModel {
     
     var appVersion: String? {
         if let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String {
-            return /*"Version \(*/version//)"
+            return "\(version)"
         } else {
             return nil
         }
