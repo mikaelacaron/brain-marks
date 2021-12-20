@@ -5,13 +5,20 @@
 //  Created by Mikaela Caron on 4/11/21.
 //
 
+// swiftlint:disable line_length
+
 import SwiftUI
 
 final class CategoryListViewModel: ObservableObject {
     
     @Published var categories = [AWSCategory]()
     
+    @Published var categoryOrder: [String] = [String]()
     var lastEditedCategoryID = ""
+    
+    init() {
+        getCategoryOrder()
+    }
     
     func getCategories() {
         categories = []
@@ -19,7 +26,7 @@ final class CategoryListViewModel: ObservableObject {
             switch result {
             case .success(let categories):
                 DispatchQueue.main.async {
-                    self.categories = categories
+                    self.categories = self.sortCategories(categories)
                 }
             case .failure(let error):
                 print("Error fetching categories: \(error)")
@@ -33,6 +40,47 @@ final class CategoryListViewModel: ObservableObject {
             DataStoreManger.shared.deleteCategory(category: category)
         }
         categories.remove(atOffsets: offsets)
+    }
+    
+    func sortCategories(_ categories: [AWSCategory]) -> [AWSCategory] {
+        // Match Arrays order the the one stored in UserDefaults
+        var orderedCategories = [AWSCategory]()
+        
+        guard !categoryOrder.isEmpty else {
+            setCategoryOrder(with: categories)
+            return categories
+        }
+        
+        for id in categoryOrder {
+            orderedCategories.append(
+                categories.first(where: { awsCategory in
+                    return awsCategory.id == id
+                }) ?? AWSCategory(name: "Error loading Category"))
+        }
+        
+        if categoryOrder.count < categories.count && categories.last != nil {
+            orderedCategories.append(categories.last!)
+        }
+        
+        setCategoryOrder(with: orderedCategories)
+        
+        return orderedCategories
+    }
+    
+    func setCategoryOrder(with categories: [AWSCategory]) {
+        categoryOrder = [String]()
+        for category in categories {
+            categoryOrder.append(category.id)
+        }
+        saveCategoryOrder()
+    }
+    
+    func saveCategoryOrder() {
+        UserDefaults.standard.set(categoryOrder, forKey: "categoryOrder")
+    }
+    
+    func getCategoryOrder() {
+        categoryOrder = (UserDefaults.standard.array(forKey: "categoryOrder")) as? [String] ?? [String]()
     }
     
 //    func editCategoryName(category: AWSCategory, newName: String) {

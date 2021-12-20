@@ -21,7 +21,7 @@ struct CategoryList: View {
     @State private var showInfoSheet = false
     @State private var showingCategorySheet = false
     @State private var showingDeleteActionSheet = false
-    
+    @State private var editMode: EditMode = .inactive
     @StateObject var viewModel = CategoryListViewModel()
     
     var body: some View {
@@ -34,6 +34,7 @@ struct CategoryList: View {
                         Button {
                             categorySheetState = .new
                             showingCategorySheet.toggle()
+                            endEditMode()
                         } label: {
                             Image(systemName: "folder.badge.plus")
                         }
@@ -60,6 +61,7 @@ struct CategoryList: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             showAddURLView = true
+                            endEditMode()
                         } label: {
                             Image(systemName:"plus.circle")
                         }
@@ -67,7 +69,25 @@ struct CategoryList: View {
                             AddURLView(categories: viewModel.categories)
                         }
                     }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            if editMode == .inactive {
+                                withAnimation(.linear.speed(1.3)) {
+                                    editMode = .active
+                                }
+                            } else {
+                                endEditMode()
+                            }
+                        } label: {
+                            Text(editMode == .inactive ? "Edit" : "Done")
+                                .animation(nil)
+                                .onDisappear {
+                                    endEditMode()
+                                }
+                        }
+                    }
                 }
+                .environment(\.editMode, $editMode)
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
@@ -124,6 +144,13 @@ struct CategoryList: View {
                 showingDeleteActionSheet = true
                 indexSetToDelete = indexSet
             }
+            .onChange(of: viewModel.categories) { newValue in
+                viewModel.setCategoryOrder(with: newValue)
+            }
+            .onAppear {
+                viewModel.getCategoryOrder()
+                print("Current Category order: \(viewModel.categoryOrder)")
+            }
         }.listStyle(InsetGroupedListStyle())
             .actionSheet(isPresented: $showingDeleteActionSheet) {
                 ActionSheet(title: Text("Category and all tweets will be deleted"), buttons: [
@@ -136,6 +163,12 @@ struct CategoryList: View {
                     .cancel()
                 ])
             }
+    }
+    
+    func endEditMode() {
+        withAnimation(.linear.speed(1.3)) {
+            editMode = .inactive
+        }
     }
 }
 
