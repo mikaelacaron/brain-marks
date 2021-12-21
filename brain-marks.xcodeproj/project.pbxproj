@@ -348,6 +348,7 @@
 				FFEBBB4226223F7E000F475F /* Info.plist */,
 				FFEBBB3F26223F7E000F475F /* Preview Content */,
 				FFEBBB7526226A39000F475F /* Secrets.swift */,
+				75C999B0274E74BD000B0FF8 /* Secrets.swift */,
 				FFE079F527066FE30022EC61 /* Secrets-Example.swift */,
 			);
 			path = "brain-marks";
@@ -559,6 +560,7 @@
 				FF5990692622DD61004DF328 /* DataStoreManager.swift in Sources */,
 				FFCB1099263E3E2D00544309 /* CategorySheetView.swift in Sources */,
 				FF394316262FCF3900A3623B /* User.swift in Sources */,
+				75C999B1274E74BD000B0FF8 /* Secrets.swift in Sources */,
 				FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */,
 				CA80832580B84CB3A2D5F629 /* AmplifyModels.swift in Sources */,
 				DBF50B56272467CF000D8B25 /* SettingsViewModel.swift in Sources */,
