@@ -26,48 +26,50 @@ struct CategorySheetView: View {
         NavigationView {
             VStack {
                 textEntryView()
-                thumbnailGridView()
-                Spacer()
-                HStack(spacing: 25) {
-                    Button {
-                        presentationMode.wrappedValue.dismiss()
-                    } label: {
-                        Text("Cancel")
-                            .frame(width: 150, height: 50)
-                            .foregroundColor(.white)
-                            .background(Color(UIColor(named: "twitter")!))
-                            .font(.system(size: 20, weight: .semibold, design: .default))
-                            .cornerRadius(10)
-                    }
-                    
-                    Button {
-                        presentationMode.wrappedValue.dismiss()
+                AdaptiveStack(direction: .vertical) {
+                    thumbnailGridView()
+                    Spacer()
+                    HStack(spacing: 25) {
+                        Button {
+                            presentationMode.wrappedValue.dismiss()
+                        } label: {
+                            Text("Cancel")
+                                .frame(width: 150, height: 50)
+                                .foregroundColor(.white)
+                                .background(Color(UIColor(named: "twitter")!))
+                                .font(.system(size: 20, weight: .semibold, design: .default))
+                                .cornerRadius(10)
+                        }
+                        
+                        Button {
+                            presentationMode.wrappedValue.dismiss()
+                                switch categorySheetState {
+                                case .new:
+                                    if !category.isEmpty {
+                                    DataStoreManger.shared.createCategory(
+                                        category: AWSCategory(name: category,
+                                                              imageName: viewModel.thumbnail))
+                                    }
+                                case .edit:
+                                    guard editCategory != nil else {
+                                        return
+                                    }
+                                    parentVM.lastEditedCategoryID = categoryThumbnail
+                                    DataStoreManger.shared.editCategory(
+                                        category: editCategory!,
+                                        newName: category, newThumbnail: categoryThumbnail)
+                                }
+                            
+                        } label: {
+                            
                             switch categorySheetState {
-                            case .new:
-                                if !category.isEmpty {
-                                DataStoreManger.shared.createCategory(
-                                    category: AWSCategory(name: category,
-                                                          imageName: viewModel.thumbnail))
-                                }
-                            case .edit:
-                                guard editCategory != nil else {
-                                    return
-                                }
-                                parentVM.lastEditedCategoryID = categoryThumbnail
-                                DataStoreManger.shared.editCategory(
-                                    category: editCategory!,
-                                    newName: category, newThumbnail: categoryThumbnail)
+                            case .new: BMButton(text: "Create")
+                            case .edit: BMButton(text: "Edit")
                             }
-                        
-                    } label: {
-                        
-                        switch categorySheetState {
-                        case .new: BMButton(text: "Create")
-                        case .edit: BMButton(text: "Edit")
                         }
                     }
+                    .padding(20)
                 }
-                .padding(20)
             }
             .navigationBarTitle(title)
             .onAppear {
@@ -123,7 +125,7 @@ struct CategorySheetView: View {
     }
     
     @ViewBuilder private func newCategoryThumbnailGridView() -> some View {
-        VStack {
+        ScrollView {
             LazyVGrid(columns: columnStyle) {
                 ForEach(categorySFSymbols, id: \.self) { sfSymbol in
                     Button {
@@ -147,7 +149,7 @@ struct CategorySheetView: View {
     }
     
     @ViewBuilder private func editCategoryThumbnailGridView() -> some View {
-        VStack {
+        ScrollView {
             LazyVGrid(columns: columnStyle) {
                 ForEach(categorySFSymbols, id: \.self) { sfSymbol in
                     Button {
