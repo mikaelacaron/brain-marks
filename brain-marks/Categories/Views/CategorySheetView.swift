@@ -26,20 +26,20 @@ struct CategorySheetView: View {
         NavigationView {
             VStack {
                 textEntryView()
+                
                 thumbnailGridView()
-                Spacer()
-                HStack(spacing: 25) {
+            }
+            .navigationBarTitle(title)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) { 
                     Button {
                         presentationMode.wrappedValue.dismiss()
                     } label: {
                         Text("Cancel")
-                            .frame(width: 150, height: 50)
-                            .foregroundColor(.white)
-                            .background(Color(UIColor(named: "twitter")!))
-                            .font(.system(size: 20, weight: .semibold, design: .default))
-                            .cornerRadius(10)
                     }
-                    
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) { 
                     Button {
                         presentationMode.wrappedValue.dismiss()
                             switch categorySheetState {
@@ -62,14 +62,12 @@ struct CategorySheetView: View {
                     } label: {
                         
                         switch categorySheetState {
-                        case .new: BMButton(text: "Create")
-                        case .edit: BMButton(text: "Edit")
+                        case .new: Text("Create")
+                        case .edit: Text("Edit")
                         }
                     }
                 }
-                .padding(20)
             }
-            .navigationBarTitle(title)
             .onAppear {
                 switch categorySheetState {
                 case .new: title = "NewCategory"
@@ -123,7 +121,7 @@ struct CategorySheetView: View {
     }
     
     @ViewBuilder private func newCategoryThumbnailGridView() -> some View {
-        VStack {
+        ScrollView {
             LazyVGrid(columns: columnStyle) {
                 ForEach(categorySFSymbols, id: \.self) { sfSymbol in
                     Button {
@@ -147,7 +145,7 @@ struct CategorySheetView: View {
     }
     
     @ViewBuilder private func editCategoryThumbnailGridView() -> some View {
-        VStack {
+        ScrollView {
             LazyVGrid(columns: columnStyle) {
                 ForEach(categorySFSymbols, id: \.self) { sfSymbol in
                     Button {
