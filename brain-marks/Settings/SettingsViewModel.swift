@@ -16,7 +16,7 @@ class SettingsViewModel: ObservableObject {
     let urls: [String:URL] = [
         "mikaelacaronProfile": URL(string: "https://github.com/mikaelacaron")!,
         "brain-marksRepo": URL(string: "https://github.com/mikaelacaron/brain-marks")!,
-        "bugReport": URL(string: "https://github.com/mikaelacaron/brain-marks/issues/new?assignees=&labels=bug&template=bug-report.md&title=BUG")!
+        "bugReport": URL(string: "https://github.com/mikaelacaron/brain-marks/issues")!
         
     ]
     
