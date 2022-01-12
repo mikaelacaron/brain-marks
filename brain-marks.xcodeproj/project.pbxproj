@@ -45,7 +45,6 @@
 		FF6DCBF22623530400EC366F /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */; };
 		FF77CEB0278F966C00AF26C8 /* AdaptiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF77CEAF278F966C00AF26C8 /* AdaptiveStack.swift */; };
 		FFBD2094269E7D090015131F /* AddURLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD2093269E7D090015131F /* AddURLViewModel.swift */; };
-		FFC4CA7726867B4C00427C81 /* BMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4CA7626867B4C00427C81 /* BMButton.swift */; };
 		FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB1096263E31D300544309 /* ReturnedTweet.swift */; };
 		FFCB1099263E3E2D00544309 /* CategorySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB1098263E3E2D00544309 /* CategorySheetView.swift */; };
 		FFE079F627066FE30022EC61 /* Secrets-Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE079F527066FE30022EC61 /* Secrets-Example.swift */; };
@@ -114,7 +113,6 @@
 		FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
 		FF77CEAF278F966C00AF26C8 /* AdaptiveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveStack.swift; sourceTree = "<group>"; };
 		FFBD2093269E7D090015131F /* AddURLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddURLViewModel.swift; sourceTree = "<group>"; };
-		FFC4CA7626867B4C00427C81 /* BMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMButton.swift; sourceTree = "<group>"; };
 		FFCB1096263E31D300544309 /* ReturnedTweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnedTweet.swift; sourceTree = "<group>"; };
 		FFCB1098263E3E2D00544309 /* CategorySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySheetView.swift; sourceTree = "<group>"; };
 		FFE079F527066FE30022EC61 /* Secrets-Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Secrets-Example.swift"; sourceTree = "<group>"; };
@@ -288,7 +286,6 @@
 				A2F449902622829D00725FEA /* CategoryList.swift */,
 				A2F4498B2622802B00725FEA /* CategoryRow.swift */,
 				FFCB1098263E3E2D00544309 /* CategorySheetView.swift */,
-				FFC4CA7626867B4C00427C81 /* BMButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -562,7 +559,6 @@
 				A224A9E62622BCED00AC12AF /* TweetCard.swift in Sources */,
 				FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */,
 				DBF50B55272467CF000D8B25 /* SettingsView.swift in Sources */,
-				FFC4CA7726867B4C00427C81 /* BMButton.swift in Sources */,
 				FF21986F269FE57D00FFB406 /* AsyncImage.swift in Sources */,
 				D3D5E0E5271C811E00752DCD /* InfoViewModel.swift in Sources */,
 				FFEB1B5826A9F9C300682C37 /* Alert.swift in Sources */,
