@@ -27,10 +27,7 @@ struct CategorySheetView: View {
             VStack {
                 textEntryView()
                 
-                AdaptiveStack(direction: .vertical) { 
-                    thumbnailGridView()
-                }
-                .padding(20)
+                thumbnailGridView()
             }
             .navigationBarTitle(title)
             .toolbar {
