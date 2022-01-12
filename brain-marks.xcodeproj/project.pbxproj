@@ -43,6 +43,7 @@
 		FF59902F2622C1CE004DF328 /* AWSDataStorePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = FF59902E2622C1CE004DF328 /* AWSDataStorePlugin */; };
 		FF5990692622DD61004DF328 /* DataStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5990682622DD61004DF328 /* DataStoreManager.swift */; };
 		FF6DCBF22623530400EC366F /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */; };
+		FF77CEB0278F966C00AF26C8 /* AdaptiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF77CEAF278F966C00AF26C8 /* AdaptiveStack.swift */; };
 		FFBD2094269E7D090015131F /* AddURLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD2093269E7D090015131F /* AddURLViewModel.swift */; };
 		FFC4CA7726867B4C00427C81 /* BMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4CA7626867B4C00427C81 /* BMButton.swift */; };
 		FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB1096263E31D300544309 /* ReturnedTweet.swift */; };
@@ -111,6 +112,7 @@
 		FF39431F262FCF6100A3623B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		FF5990682622DD61004DF328 /* DataStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreManager.swift; sourceTree = "<group>"; };
 		FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
+		FF77CEAF278F966C00AF26C8 /* AdaptiveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveStack.swift; sourceTree = "<group>"; };
 		FFBD2093269E7D090015131F /* AddURLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddURLViewModel.swift; sourceTree = "<group>"; };
 		FFC4CA7626867B4C00427C81 /* BMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMButton.swift; sourceTree = "<group>"; };
 		FFCB1096263E31D300544309 /* ReturnedTweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnedTweet.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 		FF39432C262FD07D00A3623B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FF77CEAF278F966C00AF26C8 /* AdaptiveStack.swift */,
 				A2F449902622829D00725FEA /* CategoryList.swift */,
 				A2F4498B2622802B00725FEA /* CategoryRow.swift */,
 				FFCB1098263E3E2D00544309 /* CategorySheetView.swift */,
@@ -591,6 +594,7 @@
 				DB64F8A727270A9B00361E86 /* ContributorProfileView.swift in Sources */,
 				FF39431B262FCF4E00A3623B /* Includes.swift in Sources */,
 				91739DEB2622D2A7000F982A /* AddURLView.swift in Sources */,
+				FF77CEB0278F966C00AF26C8 /* AdaptiveStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
