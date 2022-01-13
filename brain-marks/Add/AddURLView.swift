@@ -30,6 +30,8 @@ struct AddURLView: View {
                     }
                 })
             }
+            .navigationTitle(Text("Add Tweet URL"))
+            .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(
                 leading: Button("Cancel") {
                     presentationMode.wrappedValue.dismiss()
