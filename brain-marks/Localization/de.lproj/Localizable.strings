@@ -17,7 +17,7 @@
 "YouHaventCreatedCategories" = "Du hast noch keine Kategorien erstellt";
 "Edit" = "Bearbeiten";
 "AllCategoriesWillBeDeleted" = "Diese Kategorie sowie alle enthaltenen Tweets werden gelöscht";
-"EnterCategoryName" = "Name der Kategorie";
+"EnterCategoryName" = "Gib den neuen Kategorienamen ein";
 "Cancel" = "Abbrechen";
 "NewCategory" = "Neue Kategorie";
 "EditCategory" = "Kategorie bearbeiten";
@@ -37,6 +37,7 @@
 "EnterCopiedURL" = "Gib eine kopierte URL an";
 "Category" = "Kategorie";
 "Save" = "Speichern";
+"AddTweetURL" = "Add Tweet URL";
 
 // SettingsView
 "Settings" = "Einstellungen";
@@ -47,7 +48,7 @@
 "ReportABug" = "Melde einen Fehler";
 "GitHubRepo" = "GitHub Repository";
 "ThanksForUsing" = "Danke für die Nutzung von";
-"Version" = "Version";
+"Version " = "Version ";
 
 // ContributorListView
 "Contributors" = "Mitwirkende";

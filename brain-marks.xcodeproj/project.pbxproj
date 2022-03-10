@@ -768,7 +768,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"brain-marks/Preview Content\"";
-				DEVELOPMENT_TEAM = Y535846H6P;
+				DEVELOPMENT_TEAM = TR86MT7AT8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "brain-marks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -777,7 +777,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andystefani.brainmarks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -791,7 +791,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"brain-marks/Preview Content\"";
-				DEVELOPMENT_TEAM = Y535846H6P;
+				DEVELOPMENT_TEAM = TR86MT7AT8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "brain-marks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -800,7 +800,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andystefani.brainmarks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
