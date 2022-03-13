@@ -48,7 +48,7 @@
 "ReportABug" = "Melde einen Fehler";
 "GitHubRepo" = "GitHub Repository";
 "ThanksForUsing" = "Danke für die Nutzung von";
-"Version " = "Version ";
+"Version" = "Version";
 
 // ContributorListView
 "Contributors" = "Mitwirkende";
