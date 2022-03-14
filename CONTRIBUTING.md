@@ -13,7 +13,7 @@ This is a deployed app on the Apple [App Store](https://apps.apple.com/us/app/br
 ## Prerequisites
 * You will need an API key from the [Twitter API](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api)
 * If your feature/change requires changing the model you will need install [AWS Amplify DataStore](https://docs.amplify.aws/start/q/integration/ios/) tools
-* Install [SwiftLint](https://github.com/realm/SwiftLint)
+* Install [SwiftLint](https://github.com/realm/SwiftLint) onto your machine via homebrew
    * This is not a requirement, but is preferred.
 
 
@@ -27,6 +27,8 @@ This is a deployed app on the Apple [App Store](https://apps.apple.com/us/app/br
 
 `git remote add upstream https://github.com/mikaelacaron/brain-marks.git`
 
+* Setup the [Secrets.swift file](#setting-up-secrets)
+
 * Checkout a new branch (from the `dev` branch) to work on an issue:
 
 `git checkout -b issueNumber-feature-name`
@@ -37,7 +39,7 @@ This is a deployed app on the Apple [App Store](https://apps.apple.com/us/app/br
 * More information for beginners not familiar with git can be found [here](https://hacktoberfest.digitalocean.com/resources).
 
 ## Setting Up Secrets
-* Once you have your API key, create a new file called `Secrets.swift` in the brain-marks directory of the project, use Xcode to do this
+* Once you have your API key, create a new file called `Secrets.swift` in the brain-marks directory of the project, by typing `touch Secrets.swift` in Terminal
 * Use the file `Secrets-Example.swift` as the format for your Secrets.swift file. Paste your API key into the `bearerToken` property
 * Include the comment `// swiftlint:disable line_length` in this file otherwise it will trigger a SwiftLint warning
 
