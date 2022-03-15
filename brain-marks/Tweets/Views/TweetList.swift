@@ -42,7 +42,7 @@ struct TweetList: View {
     }
     
     var emptyListView: some View {
-        Text("No tweets saved!")
+        Text("NoSavedTweets")
             .font(.title3)
             .fontWeight(.medium)
     }

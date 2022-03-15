@@ -2,7 +2,7 @@
   Localizable.strings
   brain-marks
 
-  Created by AC Richter on 13.12.21.
+  Created by AC Richter on 13.12.21. 
   
 */
 
@@ -37,6 +37,7 @@
 "EnterCopiedURL" = "Enter copied url";
 "Category" = "Category";
 "Save" = "Save";
+"AddTweetURL" = "Add Tweet URL";
 
 // SettingsView
 "Settings" = "Settings";
