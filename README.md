@@ -16,9 +16,8 @@ This app has always been open source! It began with the [Big Brain Hackathon](ht
 
 `git checkout -b issueNumber-feature-name`
 
-* Open Xcode and run the app! (Shortcut ⌘ + R)
-* Open your forked repo in your browser and create a PR to the `dev` branch of this repository
-* See [CONTRIBUTING.md](https://github.com/mikaelacaron/brain-marks/blob/dev/CONTRIBUTING.md) for more in-depth instructions.
+* Follow [CONTRIBUTING.md](https://github.com/mikaelacaron/brain-marks/blob/dev/CONTRIBUTING.md#getting-started) to setup the project.
+* Once you complete an issue: Open your forked repo in your browser and create a PR to the `dev` branch of this repository.
 
 # Contributing
 To start contributing, review [CONTRIBUTING.md](https://github.com/mikaelacaron/brain-marks/blob/dev/CONTRIBUTING.md). New contributors are always welcome to support this project. Issues labeled `good-first-issue` are great for beginners.
