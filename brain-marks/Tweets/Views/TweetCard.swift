@@ -40,14 +40,49 @@ struct TweetHeaderView: View {
 }
 
 struct TweetBodyView: View {
-    let tweetBody: String
+    @State var tweetBody: String
     var body: some View {
-        Text(tweetBody)
+        hilightedText(str: tweetBody, searched: tweetBody.components(separatedBy: " ").first(where: { str in
+            str.contains("#")
+        }) ?? "#nil")
+            .multilineTextAlignment(.leading)
             .font(.body)
             .lineSpacing(8.0)
             .padding(EdgeInsets(top: 0, leading: 18, bottom: 18, trailing: 18))
             .fixedSize(horizontal: false, vertical: true)
     }
+    
+    func hilightedText(str: String, searched: String) -> Text {
+        guard !str.isEmpty && !searched.isEmpty else { return Text(str) }
+        
+        var result: Text!
+        let parts = str.components(separatedBy: searched)
+        for i in parts.indices {
+            result = (result == nil ? Text(parts[i]) : result + Text(parts[i]))
+            if i != parts.count - 1 {
+                result = result + Text(searched)
+                    .bold()
+                    .foregroundColor(.blue)
+            }
+        }
+        return result ?? Text(str)
+    }
+//    var body: some View {
+//        HStack {
+//            Text(tweetBody)
+//        }
+//            .font(.body)
+//            .lineSpacing(8.0)
+//            .padding(EdgeInsets(top: 0, leading: 18, bottom: 18, trailing: 18))
+//            .fixedSize(horizontal: false, vertical: true)
+//            .onAppear {
+//                for word in tweetBody.components(separatedBy: " ") {
+//                    if word.first == "#" {
+//                        tweetBody = tweetBody.replacingOccurrences(of: word, with: "[\(word)](https://twitter.com/search?q=%23\(word)&src=typeahead_click)")
+//                    }
+//                }
+//            }
+//    }
 }
 
 struct TweetFooterView: View {
