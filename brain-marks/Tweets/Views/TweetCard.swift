@@ -42,9 +42,10 @@ struct TweetHeaderView: View {
 struct TweetBodyView: View {
     @State var tweetBody: String
     var body: some View {
-        hilightedText(str: tweetBody, searched: tweetBody.components(separatedBy: " ").first(where: { str in
-            str.contains("#")
-        }) ?? "#nil")
+//        hilightedText(str: tweetBody, searched: tweetBody.components(separatedBy: " ").first(where: { str in
+//            str.contains("#")
+//        }) ?? "#nil")
+        hilightedText(str: tweetBody, searched: "#")
             .multilineTextAlignment(.leading)
             .font(.body)
             .lineSpacing(8.0)
@@ -60,7 +61,12 @@ struct TweetBodyView: View {
         for i in parts.indices {
             result = (result == nil ? Text(parts[i]) : result + Text(parts[i]))
             if i != parts.count - 1 {
-                result = result + Text(searched)
+                let range = str.replacingOccurrences(of: "\n", with: " ").components(separatedBy: " ").filter({ stri in
+                    stri.contains(searched)
+                })
+                print("preresult = \(result), range = \(range)")
+                print("tex = \(range[i])")
+                result = result + Text(range[i])
                     .bold()
                     .foregroundColor(.blue)
             }
