@@ -59,10 +59,23 @@ struct TweetBodyView: View {
         print("parts: \(parts)")
         for part in parts {
             if part.contains("#") {
-                
-                let newResult = result + Text(" \(part)")
-                    .bold()
-                    .foregroundColor(.blue)
+                var newResult: Text = result + Text(" ")
+                var completed = ""
+                let possibleCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#_"
+                let apostrophe = ["'", "’"]
+                for character in part {
+                    if possibleCharacters.contains(character) && !apostrophe.contains(completed.last?.description ?? "") {
+                        completed.append(character)
+                        let add = newResult + Text(character.description)
+                            .bold()
+                            .foregroundColor(.blue)
+                        newResult = add
+                    } else {
+                        completed.append(character)
+                        let add = newResult + Text(character.description)
+                        newResult = add
+                    }
+                }
                 result = newResult
             } else {
                 let newResult = result + Text(" \(part)")
