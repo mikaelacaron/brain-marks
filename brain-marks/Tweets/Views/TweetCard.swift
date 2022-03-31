@@ -45,7 +45,7 @@ struct TweetBodyView: View {
 //        hilightedText(str: tweetBody, searched: tweetBody.components(separatedBy: " ").first(where: { str in
 //            str.contains("#")
 //        }) ?? "#nil")
-        hilightedText(str: tweetBody, searched: "#")
+        hilightedText(str: tweetBody)
             .multilineTextAlignment(.leading)
             .font(.body)
             .lineSpacing(8.0)
@@ -53,42 +53,24 @@ struct TweetBodyView: View {
             .fixedSize(horizontal: false, vertical: true)
     }
     
-    func hilightedText(str: String, searched: String) -> Text {
-        guard !str.isEmpty && !searched.isEmpty else { return Text(str) }
-        
-        var result: Text!
-        let parts = str.components(separatedBy: searched)
-        for i in parts.indices {
-            result = (result == nil ? Text(parts[i]) : result + Text(parts[i]))
-            if i != parts.count - 1 {
-                let range = str.replacingOccurrences(of: "\n", with: " ").components(separatedBy: " ").filter({ stri in
-                    stri.contains(searched)
-                })
-                print("preresult = \(result), range = \(range)")
-                print("tex = \(range[i])")
-                result = result + Text(range[i])
+    func hilightedText(str: String) -> Text {
+        var result = Text("")
+        let parts = str.components(separatedBy: " ")
+        print("parts: \(parts)")
+        for part in parts {
+            if part.contains("#") {
+                
+                let newResult = result + Text(" \(part)")
                     .bold()
                     .foregroundColor(.blue)
+                result = newResult
+            } else {
+                let newResult = result + Text(" \(part)")
+                result = newResult
             }
         }
-        return result ?? Text(str)
+        return result
     }
-//    var body: some View {
-//        HStack {
-//            Text(tweetBody)
-//        }
-//            .font(.body)
-//            .lineSpacing(8.0)
-//            .padding(EdgeInsets(top: 0, leading: 18, bottom: 18, trailing: 18))
-//            .fixedSize(horizontal: false, vertical: true)
-//            .onAppear {
-//                for word in tweetBody.components(separatedBy: " ") {
-//                    if word.first == "#" {
-//                        tweetBody = tweetBody.replacingOccurrences(of: word, with: "[\(word)](https://twitter.com/search?q=%23\(word)&src=typeahead_click)")
-//                    }
-//                }
-//            }
-//    }
 }
 
 struct TweetFooterView: View {
