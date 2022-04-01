@@ -40,12 +40,9 @@ struct TweetHeaderView: View {
 }
 
 struct TweetBodyView: View {
-    @State var tweetBody: String
+    let tweetBody: String
     var body: some View {
-//        hilightedText(str: tweetBody, searched: tweetBody.components(separatedBy: " ").first(where: { str in
-//            str.contains("#")
-//        }) ?? "#nil")
-        hilightedText(str: tweetBody)
+        formattedText(str: tweetBody)
             .multilineTextAlignment(.leading)
             .font(.body)
             .lineSpacing(8.0)
@@ -53,10 +50,9 @@ struct TweetBodyView: View {
             .fixedSize(horizontal: false, vertical: true)
     }
     
-    func hilightedText(str: String) -> Text {
+    private func formattedText(str: String) -> Text {
         var result = Text("")
         let parts = str.components(separatedBy: " ")
-        print("parts: \(parts)")
         for part in parts {
             if part.contains("#") {
                 
