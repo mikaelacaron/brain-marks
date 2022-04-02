@@ -64,7 +64,7 @@ struct CategoryList: View {
                             Image(systemName:"plus.circle")
                         }
                         .sheet(isPresented: $showAddURLView) {
-                            AddURLView(categories: viewModel.categories)
+                            AddURLView(categories: viewModel.categories, sender: .catList)
                         }
                     }
                 }

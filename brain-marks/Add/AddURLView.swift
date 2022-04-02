@@ -15,6 +15,13 @@ struct AddURLView: View {
     @Environment(\.presentationMode) var presentationMode
     let categories: [AWSCategory]
     
+    let sender: sending
+    
+    enum sending: Equatable {
+        case catList
+        case category(category: AWSCategory)
+    }
+    
     @StateObject var viewModel = AddURLViewModel()
     
     let pasteBoard = UIPasteboard.general
@@ -24,11 +31,13 @@ struct AddURLView: View {
             Form {
                 TextField("EnterCopiedURL", text: $newEntry)
                     .autocapitalization(.none)
-                Picker(selection: $selectedCategory , label: Text("Category"), content: {
-                    ForEach(categories,id:\.self) { category in
-                        Text(category.name).tag(category.id)
-                    }
-                })
+                if sender == .catList {
+                    Picker(selection: $selectedCategory , label: Text("Category"), content: {
+                        ForEach(categories,id:\.self) { category in
+                            Text(category.name).tag(category.id)
+                        }
+                    })
+                }
             }
             .navigationTitle(Text("Add Tweet URL"))
             .navigationBarTitleDisplayMode(.inline)
@@ -62,6 +71,12 @@ struct AddURLView: View {
                 })
         }
         .onAppear {
+            switch sender {
+            case .catList:
+                break
+            case .category(let category):
+                selectedCategory = category
+            }
             DispatchQueue.main.async {
                 newEntry = pasteBoard.string ?? ""
             }
