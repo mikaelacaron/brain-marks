@@ -8,6 +8,11 @@
 import SwiftUI
 import UIKit
 
+enum AddURLViewSender: Equatable {
+    case categoryList
+    case category(category: AWSCategory)
+}
+
 struct AddURLView: View {
     @State private var showingAlert = false
     @State private var selectedCategory = AWSCategory(name: "")
@@ -15,12 +20,8 @@ struct AddURLView: View {
     @Environment(\.presentationMode) var presentationMode
     let categories: [AWSCategory]
     
-    let sender: sending
+    let sender: AddURLViewSender //Gets where AddURLView is being shown to decide what to show
     
-    enum sending: Equatable {
-        case catList
-        case category(category: AWSCategory)
-    }
     
     @StateObject var viewModel = AddURLViewModel()
     
@@ -31,7 +32,7 @@ struct AddURLView: View {
             Form {
                 TextField("EnterCopiedURL", text: $newEntry)
                     .autocapitalization(.none)
-                if sender == .catList {
+                if sender == .categoryList {
                     Picker(selection: $selectedCategory , label: Text("Category"), content: {
                         ForEach(categories,id:\.self) { category in
                             Text(category.name).tag(category.id)
@@ -72,10 +73,10 @@ struct AddURLView: View {
         }
         .onAppear {
             switch sender {
-            case .catList:
+            case .categoryList:
                 break
             case .category(let category):
-                selectedCategory = category
+                selectedCategory = category //Set category to current category
             }
             DispatchQueue.main.async {
                 newEntry = pasteBoard.string ?? ""
