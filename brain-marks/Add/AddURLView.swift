@@ -20,8 +20,7 @@ struct AddURLView: View {
     @Environment(\.presentationMode) var presentationMode
     let categories: [AWSCategory]
     
-    let sender: AddURLViewSender //Gets where AddURLView is being shown to decide what to show
-    
+    let sender: AddURLViewSender // Gets where AddURLView is being shown to decide what to show
     
     @StateObject var viewModel = AddURLViewModel()
     
@@ -76,7 +75,7 @@ struct AddURLView: View {
             case .categoryList:
                 break
             case .category(let category):
-                selectedCategory = category //Set category to current category
+                selectedCategory = category // Set category to current category
             }
             DispatchQueue.main.async {
                 newEntry = pasteBoard.string ?? ""
