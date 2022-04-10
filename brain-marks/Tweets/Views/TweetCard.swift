@@ -55,10 +55,25 @@ struct TweetBodyView: View {
         let parts = str.components(separatedBy: " ")
         for part in parts {
             if part.contains("#") {
-                let newResult: Text = result + Text(" \(part)")
-                    .bold()
-                    .foregroundColor(.blue)
-                result = newResult
+                if part.contains("\n") {
+                    let subParts = part.components(separatedBy: "\n")
+                    for subPart in subParts {
+                        if subPart.contains("#") {
+                            let newResult: Text = result + Text(" \(subPart)")
+                                .bold()
+                                .foregroundColor(.blue)
+                            result = newResult
+                        } else {
+                            let newResult = result + Text(" \(subPart)\n")
+                            result = newResult
+                        }
+                    }
+                } else {
+                    let newResult: Text = result + Text(" \(part)")
+                        .bold()
+                        .foregroundColor(.blue)
+                    result = newResult
+                }
             } else {
                 let newResult = result + Text(" \(part)")
                 result = newResult
