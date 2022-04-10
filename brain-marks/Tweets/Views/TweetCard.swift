@@ -40,13 +40,49 @@ struct TweetHeaderView: View {
 }
 
 struct TweetBodyView: View {
-    let tweetBody: String
+    @State var tweetBody: String
     var body: some View {
-        Text(tweetBody)
+//        hilightedText(str: tweetBody, searched: tweetBody.components(separatedBy: " ").first(where: { str in
+//            str.contains("#")
+//        }) ?? "#nil")
+        hilightedText(str: tweetBody)
+            .multilineTextAlignment(.leading)
             .font(.body)
             .lineSpacing(8.0)
             .padding(EdgeInsets(top: 0, leading: 18, bottom: 18, trailing: 18))
             .fixedSize(horizontal: false, vertical: true)
+    }
+    
+    func hilightedText(str: String) -> Text {
+        var result = Text("")
+        let parts = str.components(separatedBy: " ")
+        print("parts: \(parts)")
+        for part in parts {
+            if part.contains("#") {
+                var newResult: Text = result + Text(" ")
+                var completed = ""
+                let possibleCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#_"
+                let apostrophe = ["'", "’"]
+                for character in part {
+                    if possibleCharacters.contains(character) && !apostrophe.contains(completed.last?.description ?? "") {
+                        completed.append(character)
+                        let add = newResult + Text(character.description)
+                            .bold()
+                            .foregroundColor(.blue)
+                        newResult = add
+                    } else {
+                        completed.append(character)
+                        let add = newResult + Text(character.description)
+                        newResult = add
+                    }
+                }
+                result = newResult
+            } else {
+                let newResult = result + Text(" \(part)")
+                result = newResult
+            }
+        }
+        return result
     }
 }
 
