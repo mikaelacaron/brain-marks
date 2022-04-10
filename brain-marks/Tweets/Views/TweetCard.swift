@@ -42,11 +42,44 @@ struct TweetHeaderView: View {
 struct TweetBodyView: View {
     let tweetBody: String
     var body: some View {
-        Text(tweetBody)
+        formattedText(str: tweetBody)
+            .multilineTextAlignment(.leading)
             .font(.body)
             .lineSpacing(8.0)
             .padding(EdgeInsets(top: 0, leading: 18, bottom: 18, trailing: 18))
             .fixedSize(horizontal: false, vertical: true)
+    }
+    
+    private func formattedText(str: String) -> Text {
+        var result = Text("")
+        let parts = str.components(separatedBy: " ")
+        for part in parts {
+            if part.contains("#") {
+                if part.contains("\n") {
+                    let subParts = part.components(separatedBy: "\n")
+                    for subPart in subParts {
+                        if subPart.contains("#") {
+                            let newResult: Text = result + Text(" \(subPart)")
+                                .bold()
+                                .foregroundColor(.blue)
+                            result = newResult
+                        } else {
+                            let newResult = result + Text(" \(subPart)\n")
+                            result = newResult
+                        }
+                    }
+                } else {
+                    let newResult: Text = result + Text(" \(part)")
+                        .bold()
+                        .foregroundColor(.blue)
+                    result = newResult
+                }
+            } else {
+                let newResult = result + Text(" \(part)")
+                result = newResult
+            }
+        }
+        return result
     }
 }
 
