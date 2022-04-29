@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20636BDDDBEF4EAE9CCE9D9E /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */; };
+		372FE062281B778E00489F97 /* TweetCategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372FE061281B778E00489F97 /* TweetCategoryList.swift */; };
 		684E2F2D3FCC4D36AC68E57D /* AWSCategory+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551BA45F30D640118D2F0CE2 /* AWSCategory+Schema.swift */; };
 		91739DEB2622D2A7000F982A /* AddURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91739DEA2622D2A7000F982A /* AddURLView.swift */; };
 		91C8958926228D1500689196 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8958826228D1500689196 /* Tweet.swift */; };
@@ -78,6 +79,7 @@
 		0AA54EDF3B34443CA9D530E5 /* AWSTweet.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AWSTweet.swift; path = amplify/generated/models/AWSTweet.swift; sourceTree = "<group>"; };
 		14F5BDE61EAA4A2DB9030734 /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
 		1E886624D4EE4F64B9160A75 /* amplifytools.xcconfig */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.xcconfig; path = amplifytools.xcconfig; sourceTree = "<group>"; };
+		372FE061281B778E00489F97 /* TweetCategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCategoryList.swift; sourceTree = "<group>"; };
 		551BA45F30D640118D2F0CE2 /* AWSCategory+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "AWSCategory+Schema.swift"; path = "amplify/generated/models/AWSCategory+Schema.swift"; sourceTree = "<group>"; };
 		63D0518628EF45A382F08352 /* AWSCategory.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AWSCategory.swift; path = amplify/generated/models/AWSCategory.swift; sourceTree = "<group>"; };
 		91739DEA2622D2A7000F982A /* AddURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddURLView.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 			children = (
 				A224A9E52622BCED00AC12AF /* TweetCard.swift */,
 				A205CD412622A3EB00517DB5 /* TweetList.swift */,
+				372FE061281B778E00489F97 /* TweetCategoryList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				FF36B6712623678D007A6D7F /* AWSTweet+Extension.swift in Sources */,
 				D3F7C2EB27173EAC00DB87D9 /* String+Ext.swift in Sources */,
 				FFEBBB7626226A39000F475F /* Secrets.swift in Sources */,
+				372FE062281B778E00489F97 /* TweetCategoryList.swift in Sources */,
 				DB64F8A52726BD5D00361E86 /* Contributor.swift in Sources */,
 				A2F449912622829D00725FEA /* CategoryList.swift in Sources */,
 				A2F4498C2622802B00725FEA /* CategoryRow.swift in Sources */,

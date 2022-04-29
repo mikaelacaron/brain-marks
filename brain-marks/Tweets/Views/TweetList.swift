@@ -12,6 +12,7 @@ struct TweetList: View {
     let category: AWSCategory
     
     @StateObject var viewModel = TweetListViewModel()
+    @State private var selectedTweet: AWSTweet?
     
     var body: some View {
         tweetList
@@ -49,15 +50,44 @@ struct TweetList: View {
     
     var tweets: some View {
         List {
-            ForEach(viewModel.tweets) { tweet in
-                TweetCard(tweet: tweet)
-                    .onTapGesture {
-                        viewModel.openTwitter(tweetID: tweet.tweetID, authorUsername: tweet.authorUsername!)
-                    }
-            }
-            .onDelete { offsets in
-                viewModel.deleteTweet(at: offsets)
+            if #available(iOS 15, *) {
+                ForEach(viewModel.tweets) { tweet in
+                    TweetCard(tweet: tweet)
+                        .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                            Button {
+                                selectedTweet = tweet
+                            } label: {
+                                Label("Move", systemImage: "folder")
+                            }
+                            .tint(.blue)
+                        }
+                        .swipeActions(allowsFullSwipe: true) {
+                            Button(role: .destructive) {
+                                viewModel.delete(tweet)
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
+                        }
+                        .onTapGesture {
+                            viewModel.openTwitter(
+                                tweetID: tweet.tweetID,
+                                authorUsername: tweet.authorUsername ?? ""
+                            )
+                        }
+                        .sheet(item: $selectedTweet, content: { tweet in
+                            TweetCategoryList(tweet: tweet, viewModel: viewModel)
+                                .tint(.primary)
+                        })
+                }
+            } else {
+                ForEach(viewModel.tweets) { tweet in
+                    TweetCard(tweet: tweet)
+                }
+                .onDelete { indexSet in
+                    viewModel.deleteTweet(at: indexSet)
+                }
             }
         }
+        .listStyle(.plain)
     }
 }
