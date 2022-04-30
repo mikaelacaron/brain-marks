@@ -23,7 +23,6 @@ struct TweetCategoryList: View {
     init(tweet: AWSTweet, viewModel: TweetListViewModel) {
         self.tweet = tweet
         self.viewModel = viewModel
-        viewModel.excludedCategory = tweet.category
     }
 
     // MARK: - Body
@@ -41,7 +40,7 @@ struct TweetCategoryList: View {
                     }
                 }
         }
-        .onAppear { viewModel.getCategories() }
+        .onAppear { viewModel.getCategories(whileExcluding: tweet.category) }
     }
 
     // MARK: - Views

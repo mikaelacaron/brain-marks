@@ -12,21 +12,16 @@ final class TweetListViewModel: ObservableObject {
     @Published var tweets = [AWSTweet]()
     @Published var categories: [AWSCategory] = []
 
-    /// When moving a tweet to another category, set this property
-    /// with the tweet's category that is being moved so it is excluded
-    /// from the list of categories the tweet can be moved to.
-    var excludedCategory: AWSCategory?
-
-    /// Retrieves all categories.
+    /// Retrieves all categories with option to filter out a category.
     ///
-    /// If a value has been provided for the property `excludedCategory`, then
-    /// the categories list will not include that category.
-    func getCategories() {
+    /// - Parameters:
+    ///     - category: The category to excluded from the list of retrieved categories
+    func getCategories(whileExcluding category: AWSCategory? = nil) {
         categories = []
         DataStoreManger.shared.fetchCategories { [weak self] result in
             switch result {
             case .success(let categories):
-                let filteredCategories = categories.filter { $0 != self?.excludedCategory }
+                let filteredCategories = categories.filter { $0 != category }
 
                 DispatchQueue.main.async {
                     self?.categories = filteredCategories
