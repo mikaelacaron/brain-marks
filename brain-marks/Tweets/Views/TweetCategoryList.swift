@@ -35,7 +35,7 @@ struct TweetCategoryList: View {
                         Button("Cancel", action: dismiss)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("Save", action: saveToTweetToCategory)
+                        Button("Save", action: saveTweetToCategory)
                             .disabled(selectedCategory == nil)
                     }
                 }
@@ -65,7 +65,7 @@ struct TweetCategoryList: View {
         presentationMode.wrappedValue.dismiss()
     }
 
-    private func saveToTweetToCategory() {
+    private func saveTweetToCategory() {
         guard let selectedCategory = selectedCategory else { return }
         viewModel.move(tweet, to: selectedCategory) { result in
             switch result {
