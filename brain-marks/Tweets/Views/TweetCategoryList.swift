@@ -14,9 +14,12 @@ struct TweetCategoryList: View {
 
     @State private var selectedCategory: AWSCategory?
     @State private var moveAlertMessage = ""
+    @State private var showingCategorySheet = false
+    @State private(set) var newCategoryCreated = false
 
     @ObservedObject private var viewModel: TweetListViewModel
 
+    @EnvironmentObject var categoryListViewModel: CategoryListViewModel
     @Environment(\.presentationMode) private var presentationMode
 
     // MARK: - Init
@@ -28,17 +31,58 @@ struct TweetCategoryList: View {
     // MARK: - Body
     var body: some View {
         NavigationView {
-            List { ForEach(viewModel.categories, content: categoryRow) }
-                .navigationTitle("Categories")
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button("Cancel", action: dismiss)
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("Save", action: saveTweetToCategory)
-                            .disabled(selectedCategory == nil)
+            List {
+                Section {
+                    ForEach(viewModel.categories, content: categoryRow)
+                } footer: {
+                    if let category = tweet.category {
+                        HStack {
+                            Text("Currently in: ")
+                            Label(category.name, systemImage: category.imageName ?? "folder")
+                                .foregroundColor(.accentColor)
+                                .padding(.all, 4)
+                                .background(Color.accentColor.opacity(0.1))
+                                .cornerRadius(3)
+                            Spacer()
+                        }
                     }
                 }
+
+                Section {
+                    Button {
+                        showingCategorySheet = true
+                    } label: {
+                        Label("New Category", systemImage: "plus")
+                            .foregroundColor(.accentColor)
+                    }
+                    .sheet(isPresented: $showingCategorySheet) {
+                        CategorySheetView(
+                            newCategoryCreated: $newCategoryCreated,
+                            editCategory: .constant(nil),
+                            categorySheetState: .constant(.new),
+                            parentVM: categoryListViewModel
+                        )
+                    }
+                    .onChange(of: showingCategorySheet) { showing in
+                        if !showing {
+                            if newCategoryCreated {
+                                viewModel.updateNewCategoryCreated(newCategoryCreated)
+                                viewModel.getCategories(whileExcluding: tweet.category)
+                            }
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Categories")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel", action: dismiss)
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Save", action: saveTweetToCategory)
+                        .disabled(selectedCategory == nil)
+                }
+            }
         }
         .onAppear { viewModel.getCategories(whileExcluding: tweet.category) }
     }

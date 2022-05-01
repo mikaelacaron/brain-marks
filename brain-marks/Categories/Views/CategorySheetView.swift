@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CategorySheetView: View {
-    
+    @Binding var newCategoryCreated: Bool
     @Binding var editCategory: AWSCategory?
     @Binding var categorySheetState: CategoryState
     @ObservedObject var parentVM: CategoryListViewModel
@@ -21,6 +21,18 @@ struct CategorySheetView: View {
     @State private var categoryThumbnail = "folder"
     @State private var showCategoryGrid = false
     @StateObject private var viewModel = CategorySheetViewModel()
+
+    init(
+        newCategoryCreated: Binding<Bool> = .constant(false),
+        editCategory: Binding<AWSCategory?> = .constant(nil),
+        categorySheetState: Binding<CategoryState>,
+        parentVM: CategoryListViewModel
+    ) {
+        self._newCategoryCreated = newCategoryCreated
+        self._editCategory = editCategory
+        self._categorySheetState = categorySheetState
+        self.parentVM = parentVM
+    }
     
     var body: some View {
         NavigationView {
@@ -49,6 +61,7 @@ struct CategorySheetView: View {
                                     category: AWSCategory(name: category,
                                                           imageName: viewModel.thumbnail))
                                 }
+                                newCategoryCreated = true
                             case .edit:
                                 guard editCategory != nil else {
                                     return
@@ -58,9 +71,7 @@ struct CategorySheetView: View {
                                     category: editCategory!,
                                     newName: category, newThumbnail: categoryThumbnail)
                             }
-                        
                     } label: {
-                        
                         switch categorySheetState {
                         case .new: Text("Create")
                         case .edit: Text("Edit")

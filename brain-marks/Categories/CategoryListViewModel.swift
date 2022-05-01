@@ -14,12 +14,13 @@ final class CategoryListViewModel: ObservableObject {
     var lastEditedCategoryID = ""
     
     func getCategories() {
-        categories = []
         DataStoreManger.shared.fetchCategories { result in
             switch result {
             case .success(let categories):
                 DispatchQueue.main.async {
-                    self.categories = categories
+                    withAnimation {
+                        self.categories = categories
+                    }
                 }
             case .failure(let error):
                 print("Error fetching categories: \(error)")

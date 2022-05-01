@@ -12,6 +12,8 @@ final class TweetListViewModel: ObservableObject {
     @Published var tweets = [AWSTweet]()
     @Published var categories: [AWSCategory] = []
 
+    private(set) var newCategoryCreated = false
+
     /// Retrieves all categories with option to filter out a category.
     ///
     /// - Parameters:
@@ -29,6 +31,10 @@ final class TweetListViewModel: ObservableObject {
                 print("Error fetching categories: \(error)")
             }
         }
+    }
+
+    func updateNewCategoryCreated(_ update: Bool) {
+        newCategoryCreated = update
     }
     
     func fetchTweets(category: AWSCategory) {

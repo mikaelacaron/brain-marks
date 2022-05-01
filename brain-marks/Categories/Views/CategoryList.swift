@@ -110,7 +110,7 @@ struct CategoryList: View {
     var categories: some View {
         List {
             ForEach(viewModel.categories) { category in
-                NavigationLink(destination: TweetList(category: category)) {
+                NavigationLink(destination: TweetList(category: category).environmentObject(viewModel)) {
                     CategoryRow(category: category)
                 }
                 .contextMenu {

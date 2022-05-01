@@ -13,6 +13,8 @@ struct TweetList: View {
     
     @StateObject var viewModel = TweetListViewModel()
     @State private var selectedTweet: AWSTweet?
+
+    @EnvironmentObject var categoryListViewModel: CategoryListViewModel
     
     var body: some View {
         tweetList
@@ -30,6 +32,11 @@ struct TweetList: View {
             }
             .onAppear {
                 viewModel.fetchTweets(category: category)
+            }
+            .onDisappear {
+                if viewModel.newCategoryCreated {
+                    categoryListViewModel.getCategories()
+                }
             }
     }
     
