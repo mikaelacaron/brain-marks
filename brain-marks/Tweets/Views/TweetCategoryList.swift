@@ -82,6 +82,8 @@ struct TweetCategoryList: View {
                     .cornerRadius(3)
                 Spacer()
             }
+        } else {
+            Text("This tweet currently doesn't belong to any category.")
         }
     }
 
