@@ -17,7 +17,6 @@ final class TweetListViewModel: ObservableObject {
     /// - Parameters:
     ///     - category: The category to excluded from the list of retrieved categories
     func getCategories(whileExcluding category: AWSCategory? = nil) {
-        categories = []
         DataStoreManger.shared.fetchCategories { [weak self] result in
             switch result {
             case .success(let categories):
