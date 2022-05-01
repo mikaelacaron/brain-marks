@@ -110,8 +110,9 @@ class DataStoreManger {
     /// Moves tweet to a new category.
     ///
     /// - Parameters:
-    ///   - tweet: `AWSTweet` tweet to move
-    ///   - category: `AWSCategory` category to save tweet to
+    ///   - tweet: The tweet to be moved to another category
+    ///   - category: The category to move the tweet to
+    ///   - completion: A handler for when the code finishes
     func moveTweet(
         _ tweet: AWSTweet,
         to category: AWSCategory,
