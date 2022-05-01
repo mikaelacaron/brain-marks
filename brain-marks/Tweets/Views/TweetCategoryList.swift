@@ -32,46 +32,8 @@ struct TweetCategoryList: View {
     var body: some View {
         NavigationView {
             List {
-                Section {
-                    ForEach(viewModel.categories, content: categoryRow)
-                } footer: {
-                    if let category = tweet.category {
-                        HStack {
-                            Text("Currently in: ")
-                            Label(category.name, systemImage: category.imageName ?? "folder")
-                                .foregroundColor(.accentColor)
-                                .padding(.all, 4)
-                                .background(Color.accentColor.opacity(0.1))
-                                .cornerRadius(3)
-                            Spacer()
-                        }
-                    }
-                }
-
-                Section {
-                    Button {
-                        showingCategorySheet = true
-                    } label: {
-                        Label("New Category", systemImage: "plus")
-                            .foregroundColor(.accentColor)
-                    }
-                    .sheet(isPresented: $showingCategorySheet) {
-                        CategorySheetView(
-                            newCategoryCreated: $newCategoryCreated,
-                            editCategory: .constant(nil),
-                            categorySheetState: .constant(.new),
-                            parentVM: categoryListViewModel
-                        )
-                    }
-                    .onChange(of: showingCategorySheet) { showing in
-                        if !showing {
-                            if newCategoryCreated {
-                                viewModel.updateNewCategoryCreated(newCategoryCreated)
-                                viewModel.getCategories(whileExcluding: tweet.category)
-                            }
-                        }
-                    }
-                }
+                Section(content: categoryList, footer: categoryFooterView)
+                Section(content: newCategoryButton)
             }
             .navigationTitle("Categories")
             .toolbar {
@@ -88,6 +50,10 @@ struct TweetCategoryList: View {
     }
 
     // MARK: - Views
+    private func categoryList() -> some View {
+        ForEach(viewModel.categories, content: categoryRow)
+    }
+
     private func categoryRow(category: AWSCategory) -> some View {
         HStack {
             Label(category.name, systemImage: category.imageName ?? "folder")
@@ -101,6 +67,48 @@ struct TweetCategoryList: View {
         .contentShape(Rectangle())
         .onTapGesture {
             selectedCategory = category
+        }
+    }
+
+    @ViewBuilder
+    private func categoryFooterView() -> some View {
+        if let category = tweet.category {
+            HStack {
+                Text("Currently in: ")
+                Label(category.name, systemImage: category.imageName ?? "folder")
+                    .foregroundColor(.accentColor)
+                    .padding(.all, 4)
+                    .background(Color.accentColor.opacity(0.1))
+                    .cornerRadius(3)
+                Spacer()
+            }
+        }
+    }
+
+    private func createSheetView() -> CategorySheetView {
+        CategorySheetView(
+            newCategoryCreated: $newCategoryCreated,
+            editCategory: .constant(nil),
+            categorySheetState: .constant(.new),
+            parentVM: categoryListViewModel
+        )
+    }
+
+    private func newCategoryButton() -> some View {
+        Button {
+            showingCategorySheet = true
+        } label: {
+            Label("New Category", systemImage: "plus")
+                .foregroundColor(.accentColor)
+        }
+        .sheet(isPresented: $showingCategorySheet, content: createSheetView)
+        .onChange(of: showingCategorySheet) { showing in
+            if !showing {
+                if newCategoryCreated {
+                    viewModel.updateNewCategoryCreated(newCategoryCreated)
+                    viewModel.getCategories(whileExcluding: tweet.category)
+                }
+            }
         }
     }
 
