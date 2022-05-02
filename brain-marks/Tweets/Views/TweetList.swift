@@ -12,6 +12,9 @@ struct TweetList: View {
     let category: AWSCategory
     
     @StateObject var viewModel = TweetListViewModel()
+    @State var showAddURLView = false
+    @State private var editCategory: AWSCategory?
+    @State private var categorySheetState: CategoryState = .new
     
     var body: some View {
         tweetList
@@ -24,6 +27,19 @@ struct TweetList: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 25, height: 25)
                         Text(category.name)
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showAddURLView = true
+                    } label: {
+                        Image(systemName:"plus.circle")
+                    }
+                    .sheet(isPresented: $showAddURLView) {
+                        AddURLView(categories: [], sender: .category(category: category))
+                            .onDisappear {
+                                viewModel.fetchTweets(category: category)
+                            }
                     }
                 }
             }
