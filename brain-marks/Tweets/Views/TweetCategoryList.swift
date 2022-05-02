@@ -79,7 +79,8 @@ struct TweetCategoryList: View {
                     .foregroundColor(.accentColor)
                     .padding(.all, 4)
                     .background(Color.accentColor.opacity(0.1))
-                    .cornerRadius(3)
+                    .cornerRadius(4)
+                    .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color.accentColor, lineWidth: 0.3))
                 Spacer()
             }
         } else {
