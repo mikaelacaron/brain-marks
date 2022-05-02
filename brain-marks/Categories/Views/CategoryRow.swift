@@ -11,15 +11,7 @@ struct CategoryRow: View {
     let category: AWSCategory
 
     var body: some View {
-        HStack {
-            Image(systemName: category.imageName ?? "folder")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 30, height: 30)
-                .font(Font.title.weight(.light))
-            Text(category.name)
-            Spacer()
-        }
+        Label(category.name, systemImage: category.imageName ?? "folder")
     }
 }
 

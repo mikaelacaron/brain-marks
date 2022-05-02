@@ -10,16 +10,16 @@ import SwiftUI
 struct TweetCard: View {
     
     @State var tweet: AWSTweet
-    
+
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 18) {
             TweetHeaderView(tweet: tweet)
             TweetBodyView(tweetBody: tweet.text!)
             if let timeStamp = tweet.timeStamp {
                 TimeStampView(timeStamp: timeStamp)
             }
-            //            TweetFooterView()
         }
+        .padding(.vertical)
     }
 }
 
@@ -35,7 +35,6 @@ struct TweetHeaderView: View {
                          userVerified: tweet.userVerified ?? false)
             Spacer()
         }
-        .padding(EdgeInsets(top: 18, leading: 18, bottom: 18, trailing: 18))
     }
 }
 
@@ -45,7 +44,6 @@ struct TweetBodyView: View {
         Text(tweetBody)
             .font(.body)
             .lineSpacing(8.0)
-            .padding(EdgeInsets(top: 0, leading: 18, bottom: 18, trailing: 18))
             .fixedSize(horizontal: false, vertical: true)
     }
 }
@@ -160,7 +158,6 @@ struct TimeStampView: View {
         Text(timeStamp.formatTimestamp())
             .font(.callout)
             .foregroundColor(.secondary)
-            .padding(.horizontal, 18)
     }
 }
 

@@ -100,6 +100,51 @@ class DataStoreManger {
     }
     
     // MARK: - Tweets
+
+    enum TweetError: Error {
+        case queryFailure
+        case updateFailure
+        case noTweetMatchForUpdate
+    }
+
+    /// Moves tweet to a new category.
+    ///
+    /// - Parameters:
+    ///   - tweet: The tweet to be moved to another category
+    ///   - category: The category to move the tweet to
+    ///   - completion: A handler for when the code finishes
+    func moveTweet(
+        _ tweet: AWSTweet,
+        to category: AWSCategory,
+        completion: @escaping (Result<AWSTweet, TweetError>) -> Void
+    ) {
+        Amplify.DataStore.query(AWSTweet.self, where: AWSTweet.keys.id.eq(tweet.id)) { result in
+            switch result {
+            case .success(let tweets):
+                guard tweets.count == 1, var updatedTweet = tweets.first else {
+                    print("Couldn't find exact tweet to edit")
+                    completion(.failure(.noTweetMatchForUpdate))
+                    return
+                }
+
+                updatedTweet.category = category
+
+                Amplify.DataStore.save(updatedTweet) { result in
+                    switch result {
+                    case .success(let savedTweet):
+                        print("✅ Updated tweet: \(savedTweet) | Moved to category: \(category.name)")
+                        completion(.success(savedTweet))
+                    case .failure(let error):
+                        print("❌ Failed to update tweet \(updatedTweet) because: \(error)")
+                        completion(.failure(.updateFailure))
+                    }
+                }
+            case .failure(let error):
+                print("❌ Could NOT query DataStore for tweet: \(error)")
+                completion(.failure(.queryFailure))
+            }
+        }
+    }
     
     /// Create a new tweet for a specific cateogry
     /// - Parameters:
