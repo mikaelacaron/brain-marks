@@ -27,6 +27,7 @@
 		FF394316262FCF3900A3623B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF394315262FCF3900A3623B /* User.swift */; };
 		FF39431B262FCF4E00A3623B /* Includes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39431A262FCF4E00A3623B /* Includes.swift */; };
 		FF394320262FCF6100A3623B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF39431F262FCF6100A3623B /* Response.swift */; };
+		FF554149282E9609002AEBED /* JSONDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF554148282E9609002AEBED /* JSONDataManager.swift */; };
 		FF59902B2622C1CE004DF328 /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = FF59902A2622C1CE004DF328 /* Amplify */; };
 		FF59902D2622C1CE004DF328 /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = FF59902C2622C1CE004DF328 /* AWSAPIPlugin */; };
 		FF59902F2622C1CE004DF328 /* AWSDataStorePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = FF59902E2622C1CE004DF328 /* AWSDataStorePlugin */; };
@@ -86,6 +87,7 @@
 		FF394315262FCF3900A3623B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FF39431A262FCF4E00A3623B /* Includes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Includes.swift; sourceTree = "<group>"; };
 		FF39431F262FCF6100A3623B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		FF554148282E9609002AEBED /* JSONDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataManager.swift; sourceTree = "<group>"; };
 		FF5990682622DD61004DF328 /* DataStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreManager.swift; sourceTree = "<group>"; };
 		FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
 		FFBD2093269E7D090015131F /* AddURLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddURLViewModel.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				FF5990682622DD61004DF328 /* DataStoreManager.swift */,
+				FF554148282E9609002AEBED /* JSONDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 			files = (
 				91C8958926228D1500689196 /* Tweet.swift in Sources */,
 				FFEBBB3C26223F75000F475F /* ContentView.swift in Sources */,
+				FF554149282E9609002AEBED /* JSONDataManager.swift in Sources */,
 				A224A9E62622BCED00AC12AF /* TweetCard.swift in Sources */,
 				FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */,
 				FFC4CA7726867B4C00427C81 /* BMButton.swift in Sources */,
