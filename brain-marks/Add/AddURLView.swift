@@ -36,25 +36,12 @@ struct AddURLView: View {
                         viewModel.alertItem = AlertContext.noCategory
                         showingAlert = true
                     } else {
-                        viewModel.fetchTweet(url: newEntry) { result in
-                            switch result {
-                            case .success(let tweet):
-                                
-                                DataStoreManger.shared.fetchCategories { (result) in
-                                    if case .success(_) = result {
-                                        DataStoreManger.shared.createTweet(
-                                            tweet: tweet,
-                                            category: selectedCategory)
-                                    }
-                                    presentationMode.wrappedValue.dismiss()
-                                }
-                                
-                            case .failure(_):
-                                viewModel.alertItem = AlertContext.badURL
-                            }
+                        viewModel.saveTweet(url: newEntry, to: selectedCategory) {
+                            presentationMode.wrappedValue.dismiss()
                         }
                     }
-                })
+                }
+            )
         }
         .onAppear {
             DispatchQueue.main.async {

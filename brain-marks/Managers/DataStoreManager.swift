@@ -65,7 +65,7 @@ class DataStoreManger {
     func deleteCategory(category: AWSCategory) {
         Amplify.DataStore.delete(category) { result in
             switch result {
-            case .success():
+            case .success:
                 print("✅ Deleted category")
             case .failure(let error):
                 print("❌ Could NOT delete category: \(error)")
@@ -111,7 +111,9 @@ class DataStoreManger {
                                 authorName: tweet.authorName,
                                 authorUsername: tweet.authorUsername,
                                 profileImageURL: tweet.profileImageURL,
-                                category: category)
+                                category: category,
+                                imageURL: tweet.imageURL
+        )
         
         Amplify.DataStore.save(awsTweet) { result in
             switch result {
@@ -134,8 +136,8 @@ class DataStoreManger {
             case .success(let categories):
                 
                 for selectedCategory in categories {
-                    if selectedCategory.name == category.name && selectedCategory.tweets != nil {
-                        completion(Array(selectedCategory.tweets!))
+                    if selectedCategory.name == category.name, let categoryTweets = selectedCategory.tweets {
+                        completion(Array(categoryTweets))
                     }
                 }
             case .failure(let error):
@@ -149,7 +151,7 @@ class DataStoreManger {
     func deleteTweet(_ tweet: AWSTweet) {
         Amplify.DataStore.delete(tweet) { result in
             switch result {
-            case .success():
+            case .success:
                 print("✅ Deleted tweet")
             case .failure(let error):
                 print("❌ Could NOT delete tweet: \(error)")

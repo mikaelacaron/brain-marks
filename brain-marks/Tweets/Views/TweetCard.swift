@@ -14,7 +14,7 @@ struct TweetCard: View {
     var body: some View {
         VStack(alignment: .leading) {
             TweetHeaderView(tweet: tweet)
-            TweetBodyView(tweetBody: tweet.text!)
+            TweetBodyView(tweetBody: tweet.text!, imageURLString: tweet.imageURL)
 //            TweetFooterView()
         }
     }
@@ -37,11 +37,33 @@ struct TweetHeaderView: View {
 
 struct TweetBodyView: View {
     let tweetBody: String
+    let imageURLString: String?
+    var imageURL: URL? {
+        guard let imageURLString = imageURLString else {
+            return nil
+        }
+
+        return URL(string: imageURLString)
+    }
+
     var body: some View {
-        Text(tweetBody)
-            .font(.body)
-            .lineSpacing(8.0)
-            .padding(EdgeInsets(top: 0, leading: 18, bottom: 18, trailing: 18))
+        VStack {
+            Text(tweetBody)
+                .font(.body)
+                .lineSpacing(8.0)
+                .padding(EdgeInsets(top: 0, leading: 18, bottom: 18, trailing: 18))
+            if let imageURL = imageURL {
+                AsyncImage(
+                    url: imageURL,
+                    placeholder: {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                            .padding(64)
+                    }
+                )
+                    .padding(.horizontal)
+            }
+        }
     }
 }
 
@@ -146,7 +168,15 @@ struct UserInfoView: View {
 
 struct TweetCard_Previews: PreviewProvider {
     static var previews: some View {
-        TweetCard(tweet: AWSTweet(id: "123", tweetID: "234", text: "Tweet ext here"))
+        TweetCard(tweet: AWSTweet(
+            id: UUID().uuidString,
+            tweetID: "1450158883088093189",
+            text: "🍁 Apple Event October 2021 #sketchnote #AppleEvent",
+            authorName: "Feli #DieHimmelstraeumerin",
+            authorUsername: "felibe444",
+            profileImageURL: "https://pbs.twimg.com/profile_images/998112961666437120/_N6Pur3r_normal.jpg",
+            imageURL: "https://pbs.twimg.com/media/FB__0I6XMAIfx1Q.jpg"
+        ))
             .previewLayout(PreviewLayout.sizeThatFits)
     }
 }

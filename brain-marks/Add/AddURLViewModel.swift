@@ -7,75 +7,34 @@
 
 import SwiftUI
 
-enum HttpError: Error {
-    case badResponse
-    case badURL
-}
-
 final class AddURLViewModel: ObservableObject {
     
     @Published var alertItem: AlertItem?
     
-    func fetchTweet(url: String, completion: @escaping (Result<ReturnedTweet, Error>) -> Void) {
-        
-        let apiURL = "https://api.twitter.com/2/tweets"
-        let expansions = "author_id&user.fields=profile_image_url"
-        
-        guard url.contains("twitter.com") else {
-            completion(.failure(HttpError.badURL))
-            return
-        }
-        
-        let id = url.components(separatedBy: "/").last!.components(separatedBy: "?")[0]
-        var request = URLRequest(url: URL(string: "\(apiURL)?ids=\(id)&expansions=\(expansions)")!,
-                                 timeoutInterval: Double.infinity)
-        
-        request.addValue("Bearer \(Secrets.bearerToken)", forHTTPHeaderField: "Authorization")
-        
-        request.httpMethod = "GET"
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            
-            guard error == nil else {
-                completion(.failure(error!))
-                return
-            }
-            
-            if let response = response as? HTTPURLResponse {
-                guard (200 ... 299) ~= response.statusCode else {
-                    completion(.failure(HttpError.badResponse))
-                    print("❌ Status code is \(response.statusCode)")
-                    return
-                }
-                
-                guard let data = data else {
-                    completion(.failure(error!))
-                    return
-                }
-                
-                do {
-                    let result = try JSONDecoder().decode(Response.self, from: data)
-                    
-                    let user = result.includes.users.first
-                    
-                    let authorName = user?.name ?? ""
-                    let authorUsername = user?.username ?? ""
-                    let profileImageURL = user?.profileImageURL.replacingOccurrences(
-                        of: "normal",
-                        with: "bigger") ?? ""
-                    
-                    let tweetToSave = ReturnedTweet(id: result.data[0].id,
-                                                    text: result.data[0].text,
-                                                    authorName: authorName,
-                                                    authorUsername: authorUsername,
-                                                    profileImageURL: profileImageURL)
-                    
-                    completion(.success(tweetToSave))
-                } catch {
-                    completion(.failure(error))
-                }
+    func saveTweet(url: String, to category: AWSCategory, onSuccess: @escaping () -> Void) {
+        TwitterAPI.fetchTweet(url: url) { result in
+            switch result {
+            case .success(let tweet):
+                DataStoreManger.shared.createTweet(
+                    tweet: tweet,
+                    category: category)
+                onSuccess()
+            case .failure(let error):
+                self.alertItem = self.alertItem(for: error)
             }
         }
-        task.resume()
+    }
+
+    private func alertItem(for error: Error) -> AlertItem {
+        if let httpError = error as? HttpError {
+            switch httpError {
+            case .badResponse, .badRequest:
+                return AlertContext.somethingWentWrong
+            case .badURL:
+                return AlertContext.badURL
+            }
+        } else {
+            return AlertContext.somethingWentWrong
+        }
     }
 }
