@@ -12,9 +12,10 @@ extension AWSTweet {
     case authorName
     case authorUsername
     case profileImageURL
+    case photosURL
     case category
     case userVerified
-}
+  }
   
   public static let keys = CodingKeys.self
   //  MARK: - ModelSchema 
@@ -32,6 +33,7 @@ extension AWSTweet {
       .field(aWSTweet.authorName, is: .optional, ofType: .string),
       .field(aWSTweet.authorUsername, is: .optional, ofType: .string),
       .field(aWSTweet.profileImageURL, is: .optional, ofType: .string),
+      .field(aWSTweet.photosURL, is: .optional, ofType: .embeddedCollection(of: String.self)),
       .belongsTo(aWSTweet.category, is: .optional, ofType: AWSCategory.self, targetName: "awsTweetCategoryId"),
       .field(aWSTweet.userVerified, is: .optional, ofType: .bool)
     )

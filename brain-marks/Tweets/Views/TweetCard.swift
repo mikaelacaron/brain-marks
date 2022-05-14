@@ -12,9 +12,15 @@ struct TweetCard: View {
     @State var tweet: AWSTweet
     
     var body: some View {
+
         VStack(alignment: .leading) {
             TweetHeaderView(tweet: tweet)
-            TweetBodyView(tweetBody: tweet.text!)
+            
+            if (tweet.text!.removingUrls() != "") {
+                TweetBodyView(tweetBody: tweet.text!.removingUrls())
+            }
+            TweetPhotosView(width: 60, maxWidth: 400, photosURL: tweet.photosURL ?? [String]())
+                .border(.blue)
             if let timeStamp = tweet.timeStamp {
                 TimeStampView(timeStamp: timeStamp)
             }

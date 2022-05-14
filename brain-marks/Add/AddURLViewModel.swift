@@ -54,7 +54,13 @@ final class AddURLViewModel: ObservableObject {
                         let profileImageURL = user?.profileImageURL.replacingOccurrences(
                             of: "normal",
                             with: "bigger") ?? ""
+                        var photoUrl = [String]()
                         
+                        if let media = result.includes.media {
+                            for item in media where (item.type == "photo") {
+                                photoUrl.append(item.url)
+                            }
+                        }
                         let tweetToSave = ReturnedTweet(
                             id: result.data[0].id,
                             text: result.data[0].text,
@@ -62,7 +68,8 @@ final class AddURLViewModel: ObservableObject {
                             authorName: authorName,
                             authorUsername: authorUsername,
                             profileImageURL: profileImageURL,
-                            userVerified: userVerified)
+                            userVerified: userVerified,
+                            photosUrl: photoUrl)
                         
                         completion(.success(tweetToSave))
                     } catch {
@@ -77,19 +84,34 @@ final class AddURLViewModel: ObservableObject {
     }
     
     private func createURL(url: String) throws -> URL {
-        let apiURL = "https://api.twitter.com/2/tweets"
-        let expansions = "author_id&user.fields=profile_image_url,verified"
-        let tweetFields = "created_at"
-        
+
         guard url.contains("twitter.com") else {
             throw HttpError.badURL
         }
         
          let id = url.components(separatedBy: "/").last!.components(separatedBy: "?")[0]
         
-        guard let completeURL = URL(string: "\(apiURL)?ids=\(id)&expansions=\(expansions)&tweet.fields=\(tweetFields)") else {
+        var components = URLComponents()
+            components.scheme = "https"
+            components.host = "api.twitter.com"
+            components.path = "/2/tweets"
+            components.queryItems = [
+                URLQueryItem(name: "ids", value: id),
+                URLQueryItem(name: "expansions", value: "author_id,attachments.media_keys"),
+                URLQueryItem(name: "tweet.fields", value: "created_at"),
+                URLQueryItem(name: "user.fields", value: "profile_image_url,verified"),
+                URLQueryItem(name: "media.fields", value: "preview_image_url,public_metrics,type,url")
+            ]
+
+            // Getting a URL from our components is as simple as
+            // accessing the 'url' property.
+        let componentsUrl = components.url
+        
+        guard let completeURL = componentsUrl
+            else {
             throw HttpError.badURL
         }
+        
         return completeURL
     }    
 }

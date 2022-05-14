@@ -29,4 +29,14 @@ extension String {
             return self
         }
     }
+
+    func removingUrls() -> String {
+        guard let detector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue) else {
+            return self
+        }
+        return detector.stringByReplacingMatches(in: self,
+                                                    options: [],
+                                                    range: NSRange(location: 0, length: self.utf16.count),
+                                                    withTemplate: "")
+    }
 }
