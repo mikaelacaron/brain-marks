@@ -8,11 +8,22 @@
 import Amplify
 import SwiftUI
 
-class DataStoreManger {
+protocol DataStoreManager {
+    func fetchCategories(completion: @escaping (Result<[AWSCategory], Error>) -> Void)
+    func fetchSingleCategory(byID: String, completion: @escaping (Result<AWSCategory?, Error>) -> Void)
+    func createCategory(category: AWSCategory)
+    func deleteCategory(category: AWSCategory)
+    func editCategory(category: AWSCategory, newName: String, newThumbnail: String)
+    func createTweet(tweet: ReturnedTweet, category: AWSCategory)
+    func fetchSavedTweets(for category: AWSCategory, completion: @escaping ([AWSTweet]?) -> Void)
+    func deleteTweet(_ tweek: AWSTweet)
+}
+
+final class AmplifyDataStoreManger: DataStoreManager {
     
     private init() {}
     
-    static let shared = DataStoreManger()
+    static var shared = AmplifyDataStoreManger()
     
     // MARK: - Categories
     
