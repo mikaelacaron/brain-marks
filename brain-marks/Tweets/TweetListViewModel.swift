@@ -10,9 +10,10 @@ import SwiftUI
 final class TweetListViewModel: ObservableObject {
     
     @Published var tweets = [AWSTweet]()
+    var dataStoreManager: DataStoreManager = AmplifyDataStoreManger.shared
     
     func fetchTweets(category: AWSCategory) {
-        DataStoreManger.shared.fetchSavedTweets(for: category) { tweets in
+        dataStoreManager.fetchSavedTweets(for: category) { tweets in
             if let tweets = tweets {
                 self.tweets = tweets
             }
@@ -23,7 +24,7 @@ final class TweetListViewModel: ObservableObject {
         for _ in offsets {
             offsets.sorted(by: >).forEach { index in
                 let tweet = tweets[index]
-                DataStoreManger.shared.deleteTweet(tweet)
+                dataStoreManager.deleteTweet(tweet)
             }
         }
         tweets.remove(atOffsets: offsets)

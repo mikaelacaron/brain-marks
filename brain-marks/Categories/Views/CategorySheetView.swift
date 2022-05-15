@@ -11,7 +11,7 @@ struct CategorySheetView: View {
     
     @Binding var editCategory: AWSCategory?
     @Binding var categorySheetState: CategoryState
-    @ObservedObject var parentVM: CategoryListViewModel
+    @Binding var lastEditedCategoryID: String
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -21,6 +21,8 @@ struct CategorySheetView: View {
     @State private var categoryThumbnail = "folder"
     @State private var showCategoryGrid = false
     @StateObject private var viewModel = CategorySheetViewModel()
+
+    var dataStoreManager: DataStoreManager = AmplifyDataStoreManger.shared
     
     var body: some View {
         NavigationView {
@@ -45,7 +47,7 @@ struct CategorySheetView: View {
                             switch categorySheetState {
                             case .new:
                                 if !category.isEmpty {
-                                DataStoreManger.shared.createCategory(
+                                    dataStoreManager.createCategory(
                                     category: AWSCategory(name: category,
                                                           imageName: viewModel.thumbnail))
                                 }
@@ -53,8 +55,8 @@ struct CategorySheetView: View {
                                 guard editCategory != nil else {
                                     return
                                 }
-                                parentVM.lastEditedCategoryID = categoryThumbnail
-                                DataStoreManger.shared.editCategory(
+                                lastEditedCategoryID = editCategory?.id ?? ""
+                                dataStoreManager.editCategory(
                                     category: editCategory!,
                                     newName: category, newThumbnail: categoryThumbnail)
                             }
@@ -179,13 +181,17 @@ struct NewCategorySheetView_Previews: PreviewProvider {
                 editCategory: .constant(AWSCategory(id: "1",
                                                     name: "CategoryName",
                                                     imageName: "swift")),
-                categorySheetState: .constant(.new), parentVM: CategoryListViewModel())
+                categorySheetState: .constant(.new),
+                lastEditedCategoryID: .constant("")
+            )
                 .preferredColorScheme(.light)
             CategorySheetView(
                 editCategory: .constant(AWSCategory(id: "1",
                                                     name: "CategoryName",
                                                     imageName: "swift")),
-                categorySheetState: .constant(.new), parentVM: CategoryListViewModel())
+                categorySheetState: .constant(.new),
+                lastEditedCategoryID: .constant("")
+            )
                 .preferredColorScheme(.dark)
         }
     }

@@ -18,6 +18,7 @@ struct AddURLView: View {
     @StateObject var viewModel = AddURLViewModel()
     
     let pasteBoard = UIPasteboard.general
+    var dataStoreManager: DataStoreManager = AmplifyDataStoreManger.shared
     
     var body: some View {
         NavigationView {
@@ -45,9 +46,9 @@ struct AddURLView: View {
                             switch result {
                             case .success(let tweet):
                                 
-                                DataStoreManger.shared.fetchCategories { (result) in
+                                dataStoreManager.fetchCategories { (result) in
                                     if case .success = result {
-                                        DataStoreManger.shared.createTweet(
+                                        dataStoreManager.createTweet(
                                             tweet: tweet,
                                             category: selectedCategory)
                                     }
