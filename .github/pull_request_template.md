@@ -1,4 +1,4 @@
-Progress on issue #
+Progress / Closed on issue #
 
 ## What it Does
 * Describe what your change does
