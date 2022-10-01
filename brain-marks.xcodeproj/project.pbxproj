@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		20636BDDDBEF4EAE9CCE9D9E /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */; };
 		684E2F2D3FCC4D36AC68E57D /* AWSCategory+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551BA45F30D640118D2F0CE2 /* AWSCategory+Schema.swift */; };
+		75C999F627518708000B0FF8 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C999F527518708000B0FF8 /* Media.swift */; };
+		75C999F8275504FE000B0FF8 /* TweetPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C999F7275504FE000B0FF8 /* TweetPhotosView.swift */; };
 		91739DEB2622D2A7000F982A /* AddURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91739DEA2622D2A7000F982A /* AddURLView.swift */; };
 		91C8958926228D1500689196 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8958826228D1500689196 /* Tweet.swift */; };
 		940E3C62272648310038D6AC /* CategorySheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940E3C61272648310038D6AC /* CategorySheetViewModel.swift */; };
@@ -80,6 +82,8 @@
 		1E886624D4EE4F64B9160A75 /* amplifytools.xcconfig */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.xcconfig; path = amplifytools.xcconfig; sourceTree = "<group>"; };
 		551BA45F30D640118D2F0CE2 /* AWSCategory+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "AWSCategory+Schema.swift"; path = "amplify/generated/models/AWSCategory+Schema.swift"; sourceTree = "<group>"; };
 		63D0518628EF45A382F08352 /* AWSCategory.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AWSCategory.swift; path = amplify/generated/models/AWSCategory.swift; sourceTree = "<group>"; };
+		75C999F527518708000B0FF8 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		75C999F7275504FE000B0FF8 /* TweetPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetPhotosView.swift; sourceTree = "<group>"; };
 		91739DEA2622D2A7000F982A /* AddURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddURLView.swift; sourceTree = "<group>"; };
 		91C8958826228D1500689196 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		940E3C61272648310038D6AC /* CategorySheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySheetViewModel.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				FF394315262FCF3900A3623B /* User.swift */,
 				FFCB1096263E31D300544309 /* ReturnedTweet.swift */,
 				DB64F8A42726BD5D00361E86 /* Contributor.swift */,
+				75C999F527518708000B0FF8 /* Media.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 			children = (
 				A224A9E52622BCED00AC12AF /* TweetCard.swift */,
 				A205CD412622A3EB00517DB5 /* TweetList.swift */,
+				75C999F7275504FE000B0FF8 /* TweetPhotosView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -551,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91C8958926228D1500689196 /* Tweet.swift in Sources */,
+				75C999F8275504FE000B0FF8 /* TweetPhotosView.swift in Sources */,
 				D3D5E0E7271C812200752DCD /* InfoView.swift in Sources */,
 				FFEBBB3C26223F75000F475F /* ContentView.swift in Sources */,
 				A224A9E62622BCED00AC12AF /* TweetCard.swift in Sources */,
@@ -571,6 +578,7 @@
 				FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */,
 				CA80832580B84CB3A2D5F629 /* AmplifyModels.swift in Sources */,
 				DBF50B56272467CF000D8B25 /* SettingsViewModel.swift in Sources */,
+				75C999F627518708000B0FF8 /* Media.swift in Sources */,
 				C0DAFC52B24C456EAE5AEF21 /* AWSCategory.swift in Sources */,
 				684E2F2D3FCC4D36AC68E57D /* AWSCategory+Schema.swift in Sources */,
 				DBF50B54272467CF000D8B25 /* ContributorsListView.swift in Sources */,
