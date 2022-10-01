@@ -52,7 +52,7 @@ struct SettingsView<ViewModel: InfoViewModel>: View {
                         }
                         
                         Link(destination: viewModel.urls["mikaelacaronProfile"]!) {
-                                Text("🦄  Mikaela Caron")
+                                Text("🦄  Mikaela Caron - Maintainer")
                         }
                         
                         Link(destination: viewModel.urls["brain-marksRepo"]!) {

@@ -5,8 +5,6 @@
 //  Created by Mikaela Caron on 4/11/21.
 //
 
-// swiftlint:disable line_length
-
 import SwiftUI
 
 final class CategoryListViewModel: ObservableObject {
