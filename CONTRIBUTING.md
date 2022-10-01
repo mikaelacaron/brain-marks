@@ -4,25 +4,22 @@ This document contains the rules and guidelines that developers are expected to 
 > All contributions must **NOT** add any SwiftLint warnings or errors. There is a GitHub action setup for any PRs to dev, and Xcode will show any warnings/errors.
 
 # About the Project
-This app has always been open source! It began with the [Big Brain Hackathon](https://bigbrainhacks.com) and now during [Hacktoberfest](https://hacktoberfest.digitalocean.com). This app uses the [Twitter API](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api) (v2 where possible) and [AWS Amplify DataStore](https://docs.amplify.aws/start/q/integration/ios/).
+This app has always been open source! It began with the [Big Brain Hackathon](https://bigbrainhacks.com) and now during [Hacktoberfest](https://hacktoberfest.digitalocean.com). This app uses the [Twitter API](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api) (v2 where possible) and [AWS Amplify DataStore](https://docs.amplify.aws/start/q/integration/ios/). AWS Amplify DataSore will soon be depreciated.
 
-# Project Status
-This is a deployed app on the Apple [App Store](https://apps.apple.com/us/app/brain-marks/id1577423925), available for iOS 14.0 or later. After Hacktoberfest, a new version will be created and pushed to the App Store by Mikaela Caron (the maintainer).
+### Project Status
+This is a deployed app on the [Apple App Store](https://apps.apple.com/us/app/brain-marks/id1577423925), available for iOS 14.0 or later. After Hacktoberfest, a new version will be created and pushed to the App Store by Mikaela Caron (the maintainer).
 
 # Getting Started
 ## Prerequisites
 * You will need an API key from the [Twitter API](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api)
-* If your feature/change requires changing the model you will need install [AWS Amplify DataStore](https://docs.amplify.aws/start/q/integration/ios/) tools
-* Install [SwiftLint](https://github.com/realm/SwiftLint) onto your machine via homebrew
+* If your feature/change requires changing the model you will need install [AWS Amplify DataStore](https://docs.amplify.aws/start/q/integration/ios/) tools - soon to be depreciated
+* Install [SwiftLint](https://github.com/realm/SwiftLint) onto your machine via [Homebrew](https://brew.sh/)
    * This is not a requirement, but is preferred.
 
 
 ## Start Here
 * Fork the repo to your profile
 * Clone to your computer
-
-`git clone https://github.com/mikaelacaron/brain-marks && cd brain-marks`
-
 * Setup the upstream remote
 
 `git remote add upstream https://github.com/mikaelacaron/brain-marks.git`
@@ -36,23 +33,29 @@ This is a deployed app on the Apple [App Store](https://apps.apple.com/us/app/br
 * When your feature/fix is complete open a pull request, PR, from your feature branch to the `dev` branch
   * Be sure to squash your commits into one single commit, how to do that shown [here]([here](https://www.internalpointers.com/post/squash-commits-into-one-git))
 
-* More information for beginners not familiar with git can be found [here](https://hacktoberfest.digitalocean.com/resources).
+* More information for beginners not familiar with git can be found [here](https://hacktoberfest.com/participation/#beginner-resources).
 
 ## Setting Up Secrets
-* Once you have your API key, create a new file called `Secrets.swift` in the brain-marks directory of the project, by typing `touch Secrets.swift` in Terminal
-* Use the file `Secrets-Example.swift` as the format for your Secrets.swift file. Paste your API key into the `bearerToken` property
+* Once you have your API key, 
+* Open the Xcode project (the Secrets.swift file will be red)
+* Open Terminal and navigate to the project directory
+* cd into `brain-marks` ensure you are in the directory showing `Secrets-Example.swift` NOT the `.xcodeproj` file
+* Create a new file called `Secrets.swift` in the brain-marks directory, by typing `touch Secrets.swift` in Terminal
+* Copy the contents of `Secrets-Example.swift` as the format for your `Secrets.swift` file
+* Paste your API key into the `bearerToken` property
 * Include the comment `// swiftlint:disable line_length` in this file otherwise it will trigger a SwiftLint warning
+* Build the project!
 
 # Commit Messages
 
-* The message following the `-m` flag must be in the below format : 
+* The commit message must be in the below format : 
   > `<Verb in present tense> <Action>`
   
   ✅ **Examples of valid messages:**
-  * Add serialisers.py for users app
-  * Updated utils/validator.js file
-  * Changed functionality of authentication process
-  
+  * Add NewView.swift for users app
+  * Update DataStoreManger.swift file
+  * Change functionality of authentication process
+
   ❌ **Examples of invalid messages:**
   * Idk why this is not working
   * Only ui bug fixes left
@@ -72,7 +75,7 @@ This is a deployed app on the Apple [App Store](https://apps.apple.com/us/app/br
     * Test coverage should be increased
 * **Open issues with the given template only:**
     * Feel free to label the issues appropriately
-    * Do not remove the headings (questions in bold) while opening an issue with the given template. Simply append to it
+    * Do not remove the headings while opening an issue with the given template. Simply append to it
 
 # Branches and PRs
 
@@ -82,8 +85,8 @@ This is a deployed app on the Apple [App Store](https://apps.apple.com/us/app/br
 * Use kebab-case for branch names
 
   ✅ **Examples of valid branch names:**
-  * fix/8123-title-of-issue (issue number)
-  * feature/8123 (issue number)
+  * fix-8123-title-of-issue (issue number)
+  * feature-8123 (issue number)
   
   ❌ **Examples of invalid branch names**:
   * username-testing
@@ -104,6 +107,6 @@ This is a deployed app on the Apple [App Store](https://apps.apple.com/us/app/br
 
 # Coding Style Guidelines
 
-Developers should aim to write clean, maintainable, scalable and testable code. If your code is not testable, that means, it's time to refactor it. The following guidelines might come in handy for this:
+Developers should aim to write clean, maintainable, scalable and testable code. The following guidelines might come in handy for this:
 
-* Swift: [Swift Best Practices](https://github.com/Lickability/swift-best-practices), by [Lickability](https://github.com/Lickability)
+* Swift: [Swift Best Practices](https://github.com/Lickability/swift-best-practices), by [Lickability](https://lickability.com)
