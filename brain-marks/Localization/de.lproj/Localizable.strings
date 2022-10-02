@@ -17,6 +17,7 @@
 "PleaseAddNewCategories" = "um neue hinzu zu fügen, drücke ";
 "YouHaventCreatedCategories" = "Du hast noch keine Kategorien erstellt";
 "Edit" = "Bearbeiten";
+"Done" = "Fertig";
 "AllCategoriesWillBeDeleted" = "Diese Kategorie sowie alle enthaltenen Tweets werden gelöscht";
 "EnterCategoryName" = "Gib den neuen Kategorienamen ein";
 "Cancel" = "Abbrechen";

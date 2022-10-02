@@ -1,0 +1,55 @@
+/*
+ Localizable.strings
+ brain-marks
+
+ Created by Yash Shah on 01/10/22
+
+ */
+
+// TabView
+"Tweets" = "Tweets";
+"Settings" = "Paramètres";
+
+// CategoryViews
+"Categories" = "Catégories";
+"CategoriesAreEmpty" = "Vous n'avez pas encore créé de catégories, ";
+"PleaseAddNewCategories" = "veuillez ajouter de nouvelles catégories en cliquant sur";
+"YouHaventCreatedCategories" = "Vous n'avez pas encore créé de catégories !";
+"Edit" = "Modifier";
+"Done" = "Terminé";
+"AllCategoriesWillBeDeleted" = "Cette catégorie et tous les tweets qu'elle contient seront supprimés.";
+"EnterCategoryName" = "Entrez le nom de la nouvelle catégorie";
+"Cancel" = "Annuler";
+"NewCategory" = "Nouvelle catégorie";
+"EditCategory" = "Modifier la catégorie";
+"Create" = "Créer";
+"Delete" = "Supprimer";
+
+// TweetViews
+"9:58 PM・9/5/20・" = "21:58・5/9/20・";
+"TwitterForIphone" = "Twitter pour iPhone";
+"Likes" = "J'aime";
+"NoSavedTweets" = "Vous n'avez pas sauvegardé de tweets !";
+"EnteredLinkIsNotValid" = "Le lien que vous avez entré n'est pas valide.";
+"UhOh" = "Oh oh !";
+"YouMustSelectCategory" = "Veuillez sélectionner une catégorie";
+
+// AddURLView
+"EnterCopiedURL" = "Entrez l'URL copié";
+"Category" = "Catégorie";
+"Save" = "Sauvegarder";
+"AddTweetURL" = "Ajouter l'URL d'un Tweet";
+
+// SettingsView
+"Settings" = "Paramètres";
+"BrainMarksIsOpenSource..." = "Brain-marks est un projet à code source ouvert ! Il a été créé pour le Big Brain Hackathon et pendant le Hacktoberfest 2021, le travail a continué.";
+"IfYouWantToContribute" = "Si vous souhaitez contribuer, visitez le dépôt GitHub pour plus d'informations. Une liste de tous les contributeurs se trouve ci-dessous. \nVotre nom pourrait y figurer !";
+"ListOfContributors" = "Liste des contributeurs";
+"Links" = "Liens";
+"ReportABug" = "Signaler un bogue";
+"GitHubRepo" = "Dépôt GitHub";
+"ThanksForUsing" = "Merci d'utiliser";
+"Version" = "Version";
+
+// ContributorListView
+"Contributors" = "Contributeurs";
