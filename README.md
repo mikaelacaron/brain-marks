@@ -9,6 +9,7 @@ This app has always been open source! It began with the [Big Brain Hackathon](ht
 * If your feature/change requires changing the model you will need to know [AWS Amplify DataStore](https://docs.amplify.aws/start/q/integration/ios/) - soon to be depreciated
 * Browse the open [issues](https://github.com/mikaelacaron/brain-marks/issues) and comment which you would like to work on
    * A maintainer will assign that issue to you to indicate to others this issue is being worked on, to prevent overlapping work
+   * You can only be assigned **ONE** issue at a time
 * Fork this repo
 * Clone your repo and move into that directory
 * Checkout a new branch (from the `dev` branch) to work on an issue:
