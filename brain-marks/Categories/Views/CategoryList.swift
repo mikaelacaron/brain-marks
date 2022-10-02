@@ -113,12 +113,6 @@ struct CategoryList: View {
         } else {
             categories
         }
-        // removing for now, this makes the UI "flash" when updating a category
-        //        if viewModel.categories.isEmpty {
-        //            emptyListView
-        //        } else {
-        //            categories
-        //        }
     }
     
     var emptyListView: some View {

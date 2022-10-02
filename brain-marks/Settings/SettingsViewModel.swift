@@ -28,9 +28,6 @@ class SettingsViewModel: ObservableObject {
         "vcapilladeveloper"
     ]
     
-    init() {
-        
-    }
     func getContributors() {
         
         guard let url = URL(string: "https://api.github.com/repos/mikaelacaron/brain-marks/contributors") else { return }

@@ -80,8 +80,4 @@ final class CategoryListViewModel: ObservableObject {
     func getCategoryOrder() {
         categoryOrder = (UserDefaults.standard.array(forKey: "categoryOrder")) as? [String] ?? [String]()
     }
-    
-//    func editCategoryName(category: AWSCategory, newName: String) {
-//        DataStoreManger.shared.editCategory(category: category, newName: newName, newThumbnail: <#String#>)
-//    }
 }

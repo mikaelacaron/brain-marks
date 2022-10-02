@@ -15,7 +15,6 @@ struct SettingsView<ViewModel: InfoViewModel>: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        
         NavigationView {
             VStack {
                 Form {
@@ -111,6 +110,5 @@ struct SettingsView_Previews_1: PreviewProvider {
                     Text("Settings")
                 }
         }
-        
     }
 }

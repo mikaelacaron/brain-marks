@@ -20,9 +20,11 @@ class DefaultInfoViewModel: InfoViewModel {
     var title: String {
         return appName
     }
+    
     var message: LocalizedStringKey {
         return "ThanksForUsing"
     }
+    
     let imageName: String = "logo"
     
     private var appName: String {

@@ -14,7 +14,6 @@ struct ContributorsListView: View {
     @StateObject var viewModel: SettingsViewModel
     
     var body: some View {
-        
         List {
             if (viewModel.contributors?.isEmpty) != nil {
                 ForEach(viewModel.contributors!, id: \.self) { contributor in

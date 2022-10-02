@@ -10,6 +10,7 @@ import SwiftUI
 enum HttpError: Error {
     case badResponse
     case badURL
+    case cantDecode
 }
 
 final class AddURLViewModel: ObservableObject {
@@ -18,14 +19,9 @@ final class AddURLViewModel: ObservableObject {
     
     func fetchTweet(url: String, completion: @escaping (Result<ReturnedTweet, Error>) -> Void) {
         do {
-            var request = URLRequest(url: try createURL(url: url),
-                                     timeoutInterval: Double.infinity)
+            let request = try createRequest(with: url)
             
-            request.addValue("Bearer \(Secrets.bearerToken)", forHTTPHeaderField: "Authorization")
-            
-            request.httpMethod = "GET"
-            
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
                 
                 guard error == nil else {
                     completion(.failure(error!))
@@ -46,30 +42,11 @@ final class AddURLViewModel: ObservableObject {
                     
                     do {
                         let result = try JSONDecoder().decode(Response.self, from: data)
-                        let user = result.includes.users.first
                         
-                        let authorName = user?.name ?? ""
-                        let authorUsername = user?.username ?? ""
-                        let userVerified = user?.verified ?? false
-                        let profileImageURL = user?.profileImageURL.replacingOccurrences(
-                            of: "normal",
-                            with: "bigger") ?? ""
-                        var photoUrl = [String]()
-                        
-                        if let media = result.includes.media {
-                            for item in media where (item.type == "photo") {
-                                photoUrl.append(item.url)
-                            }
+                        guard let tweetToSave = self?.createTweet(result) else {
+                            completion(.failure(HttpError.cantDecode))
+                            return
                         }
-                        let tweetToSave = ReturnedTweet(
-                            id: result.data[0].id,
-                            text: result.data[0].text,
-                            timeStamp: result.data[0].created_at,
-                            authorName: authorName,
-                            authorUsername: authorUsername,
-                            profileImageURL: profileImageURL,
-                            userVerified: userVerified,
-                            photosUrl: photoUrl)
                         
                         completion(.success(tweetToSave))
                     } catch {
@@ -81,6 +58,16 @@ final class AddURLViewModel: ObservableObject {
         } catch {
             completion(.failure(HttpError.badURL))
         }
+    }
+    
+    private func createRequest(with url: String) throws -> URLRequest {
+        var request = URLRequest(url: try createURL(url: url),
+                                 timeoutInterval: Double.infinity)
+        
+        request.addValue("Bearer \(Secrets.bearerToken)", forHTTPHeaderField: "Authorization")
+        
+        request.httpMethod = "GET"
+        return request
     }
     
     private func createURL(url: String) throws -> URL {
@@ -102,16 +89,41 @@ final class AddURLViewModel: ObservableObject {
                 URLQueryItem(name: "user.fields", value: "profile_image_url,verified"),
                 URLQueryItem(name: "media.fields", value: "preview_image_url,public_metrics,type,url")
             ]
-
-            // Getting a URL from our components is as simple as
-            // accessing the 'url' property.
-        let componentsUrl = components.url
         
-        guard let completeURL = componentsUrl
-            else {
+        guard let completeURL = components.url else {
             throw HttpError.badURL
         }
         
         return completeURL
-    }    
+    }
+    
+    private func createTweet (_ result: Response) -> ReturnedTweet {
+        let user = result.includes.users.first
+        
+        let authorName = user?.name ?? ""
+        let authorUsername = user?.username ?? ""
+        let userVerified = user?.verified ?? false
+        let profileImageURL = user?.profileImageURL.replacingOccurrences(
+            of: "normal",
+            with: "bigger") ?? ""
+        var photoUrl = [String]()
+        
+        if let media = result.includes.media {
+            for item in media where (item.type == "photo") {
+                photoUrl.append(item.url)
+            }
+        }
+        
+        let tweetToSave = ReturnedTweet(
+            id: result.data[0].id,
+            text: result.data[0].text,
+            timeStamp: result.data[0].created_at,
+            authorName: authorName,
+            authorUsername: authorUsername,
+            profileImageURL: profileImageURL,
+            userVerified: userVerified,
+            photosUrl: photoUrl)
+        
+        return tweetToSave
+    }
 }

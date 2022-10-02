@@ -31,12 +31,7 @@ struct TweetPhotosView: View {
             Image(systemName: "photo")
                 .accentColor(Color(UIColor.label))
         })
-            .scaledToFill()
-//            .frame(minWidth: width * 2,
-//                   maxWidth: maxWidth * 2,
-//                   minHeight: width * 0.8 * 2,
-//                   maxHeight: maxWidth * 0.8 * 2)
-//            .clipped()
+        .scaledToFill()
     }
     
     var multiplePhotos: some View {
@@ -50,10 +45,7 @@ struct TweetPhotosView: View {
                     Image(systemName: "photo")
                         .accentColor(Color(UIColor.label))
                 })
-                    .scaledToFill()
-//                    .frame(maxWidth: maxWidth,
-//                           minHeight: width)
-//                    .clipped()
+                .scaledToFill()
             }
         }
     }

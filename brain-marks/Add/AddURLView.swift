@@ -24,11 +24,11 @@ struct AddURLView: View {
             Form {
                 TextField("EnterCopiedURL", text: $newEntry)
                     .autocapitalization(.none)
-                Picker(selection: $selectedCategory , label: Text("Category"), content: {
+                Picker(selection: $selectedCategory , label: Text("Category")) {
                     ForEach(categories,id:\.self) { category in
                         Text(category.name).tag(category.id)
                     }
-                })
+                }
             }
             .navigationTitle(Text("Add Tweet URL"))
             .navigationBarTitleDisplayMode(.inline)

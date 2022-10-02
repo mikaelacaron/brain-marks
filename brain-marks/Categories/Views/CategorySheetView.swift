@@ -76,9 +76,9 @@ struct CategorySheetView: View {
             }
         }
     }
+    
     @ViewBuilder private func textEntryView() -> some View {
         switch categorySheetState {
-            
         case .new:
             HStack {
                 Button {
@@ -99,7 +99,6 @@ struct CategorySheetView: View {
             .onAppear {
                 category = editCategory!.name
             }
-            
         }
     }
     
@@ -166,7 +165,8 @@ struct CategorySheetView: View {
                     }
                 }
             }
-        }.onAppear {
+        }
+        .onAppear {
             categoryThumbnail = editCategory!.imageName!
         }
     }

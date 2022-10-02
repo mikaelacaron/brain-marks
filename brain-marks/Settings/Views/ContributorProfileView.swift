@@ -11,20 +11,17 @@ struct ContributorProfileView: View {
     
     var name: String
     var imgUrl: String
+    private let imgFrame: CGFloat = 30
     
     init(name: String, url: String) {
-        
         self.name = name
         self.imgUrl = url
-        
         self.name = (name.first?.uppercased())! + name.dropFirst()
     }
     
-    private let imgFrame: CGFloat = 30
+    
     var body: some View {
-        
         HStack {
-            
             AsyncImage(url: URL(string: imgUrl)!, placeholder: {
                 Circle()
                     .frame(width: imgFrame, height: imgFrame)
@@ -41,7 +38,6 @@ struct ContributorProfileView: View {
                 .clipShape(Circle())
             
             Text(name)
-            
         }
     }
 }

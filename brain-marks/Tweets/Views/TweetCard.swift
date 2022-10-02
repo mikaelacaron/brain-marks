@@ -23,7 +23,6 @@ struct TweetCard: View {
             if let timeStamp = tweet.timeStamp {
                 TimeStampView(timeStamp: timeStamp)
             }
-            //            TweetFooterView()
         }
     }
 }
@@ -105,7 +104,6 @@ struct UserInfoView: View {
                                        height: 14,
                                        alignment: .center)
                     }
-                                
                 }
                 Text("@\(authorUsername)")
                     .font(.callout)
