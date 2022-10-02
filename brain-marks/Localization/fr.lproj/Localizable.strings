@@ -16,6 +16,7 @@
 "PleaseAddNewCategories" = "veuillez ajouter de nouvelles catégories en cliquant sur";
 "YouHaventCreatedCategories" = "Vous n'avez pas encore créé de catégories !";
 "Edit" = "Modifier";
+"Done" = "Terminé";
 "AllCategoriesWillBeDeleted" = "Cette catégorie et tous les tweets qu'elle contient seront supprimés.";
 "EnterCategoryName" = "Entrez le nom de la nouvelle catégorie";
 "Cancel" = "Annuler";
