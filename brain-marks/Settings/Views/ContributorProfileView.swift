@@ -19,7 +19,6 @@ struct ContributorProfileView: View {
         self.name = (name.first?.uppercased())! + name.dropFirst()
     }
     
-    
     var body: some View {
         HStack {
             AsyncImage(url: URL(string: imgUrl)!, placeholder: {
