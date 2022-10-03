@@ -42,7 +42,7 @@
 
 // SettingsView
 "Settings" = "Paramètres";
-"BrainMarksIsOpenSource..." = "Brain-marks est un projet à code source ouvert ! Il a été créé pour le Big Brain Hackathon et pendant le Hacktoberfest 2021, le travail a continué.";
+"BrainMarksIsOpenSource" = "Brain-marks est un projet à code source ouvert ! Il a été créé pour le Big Brain Hackathon et pendant le Hacktoberfest 2021 et 2022, le travail a continué.";
 "IfYouWantToContribute" = "Si vous souhaitez contribuer, visitez le dépôt GitHub pour plus d'informations. Une liste de tous les contributeurs se trouve ci-dessous. \nVotre nom pourrait y figurer !";
 "ListOfContributors" = "Liste des contributeurs";
 "Links" = "Liens";
