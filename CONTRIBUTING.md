@@ -85,8 +85,8 @@ This is a deployed app on the [Apple App Store](https://apps.apple.com/us/app/br
 * Use kebab-case for branch names
 
   ✅ **Examples of valid branch names:**
-  * fix-8123-title-of-issue (issue number)
-  * feature-8123 (issue number)
+  * 8123-fix-title-of-issue (issue number)
+  * 8123-feature-name (issue number)
   
   ❌ **Examples of invalid branch names**:
   * username-testing
