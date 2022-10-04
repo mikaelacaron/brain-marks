@@ -41,7 +41,7 @@ struct AddURLView: View {
                         viewModel.alertItem = AlertContext.noCategory
                         showingAlert = true
                     } else {
-                        viewModel.fetchTweet(url: newEntry) { result in
+                        viewModel.fetchTweet.async(url: newEntry) { result in
                             switch result {
                             case .success(let tweet):
                                 
