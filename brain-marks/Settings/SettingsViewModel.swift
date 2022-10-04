@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import os.log
 
 // swiftlint:disable line_length
 
@@ -35,7 +36,7 @@ class SettingsViewModel: ObservableObject {
         URLSession.shared.dataTask(with: url) { urlData, _, urlError in
             
             guard urlError == nil else {
-                print(urlError?.localizedDescription ?? "No localized description in urlError")
+                Logger.network.error("\(urlError?.localizedDescription ?? "No localized description in urlError")")
                 return
             }
             
@@ -48,7 +49,7 @@ class SettingsViewModel: ObservableObject {
                 self.contributors = data
                 
             } catch {
-                print(error)
+                Logger.network.error("\(error)")
             }
         }
         .resume()

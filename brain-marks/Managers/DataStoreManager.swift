@@ -7,6 +7,7 @@
 
 import Amplify
 import SwiftUI
+import os.log
 
 class DataStoreManger {
     
@@ -24,7 +25,7 @@ class DataStoreManger {
             case .success(let categories):
                 completion(.success(categories))
             case .failure(let error):
-                print("❌ did NOT get categories: \(error)")
+                Logger.dataStore.error("❌ did NOT get categories: \(error)")
                 completion(.failure(error))
             }
         }
@@ -38,10 +39,10 @@ class DataStoreManger {
         Amplify.DataStore.query(AWSCategory.self, byId: byID) { result in
             switch result {
             case .success(let category):
-                print("✅ Got single category: \(String(describing: category))")
+                Logger.dataStore.debug("✅ Got single category: \(String(describing: category))")
                 completion(.success(category))
             case .failure(let error):
-                print("❌ did NOT get categories: \(error)")
+                Logger.dataStore.error("❌ did NOT get categories: \(error)")
                 completion(.failure(error))
             }
         }
@@ -53,9 +54,9 @@ class DataStoreManger {
         Amplify.DataStore.save(category) { result in
             switch result {
             case .success:
-                print("✅ saved category")
+                Logger.dataStore.debug("✅ saved category")
             case .failure(let error):
-                print("❌ did NOT save category: \(error)")
+                Logger.dataStore.error("❌ did NOT save category: \(error)")
             }
         }
     }
@@ -66,9 +67,9 @@ class DataStoreManger {
         Amplify.DataStore.delete(category) { result in
             switch result {
             case .success:
-                print("✅ Deleted category")
+                Logger.dataStore.debug("✅ Deleted category")
             case .failure(let error):
-                print("❌ Could NOT delete category: \(error)")
+                Logger.dataStore.error("❌ Could NOT delete category: \(error)")
             }
         }
     }
@@ -80,7 +81,7 @@ class DataStoreManger {
             switch result {
             case .success(let categories):
                 guard categories.count == 1, var updatedCategory = categories.first else {
-                    print("Couldn't find exact category to edit")
+                    Logger.dataStore.debug("Couldn't find exact category to edit")
                     return
                 }
                 updatedCategory.name = newName
@@ -88,13 +89,15 @@ class DataStoreManger {
                 Amplify.DataStore.save(updatedCategory) { result in
                     switch result {
                     case .success(let savedCategory):
-                        print("✅ Updated Category: \(savedCategory)")
+                        Logger.dataStore.debug("✅ Updated Category: \(savedCategory.name)")
                     case .failure(let error):
-                        print("❌ Failed to update category \(updatedCategory) because: \(error)")
+                        // swiftlint:disable line_length
+                        Logger.dataStore.error("❌ Failed to update category \(updatedCategory.name) because: \(error)")
+                        // swiftlint:enable line_length
                     }
                 }
             case .failure(let error):
-                print("❌ Could NOT query DataStore: \(error)")
+                Logger.dataStore.error("❌ Could NOT query DataStore: \(error)")
             }
         }
     }
@@ -120,9 +123,9 @@ class DataStoreManger {
         Amplify.DataStore.save(awsTweet) { result in
             switch result {
             case .success:
-                print("✅ saved tweet")
+                Logger.dataStore.debug("✅ saved tweet")
             case .failure(let error):
-                print("❌ did NOT save tweet: \(error)")
+                Logger.dataStore.error("❌ did NOT save tweet: \(error)")
             }
         }
     }
@@ -143,7 +146,7 @@ class DataStoreManger {
                     }
                 }
             case .failure(let error):
-                print("❌ did NOT get categories which are needed to get tweets: \(error)")
+                Logger.dataStore.error("❌ did NOT get categories which are needed to get tweets: \(error)")
             }
         }
     }
@@ -154,9 +157,9 @@ class DataStoreManger {
         Amplify.DataStore.delete(tweet) { result in
             switch result {
             case .success:
-                print("✅ Deleted tweet")
+                Logger.dataStore.debug("✅ Deleted tweet")
             case .failure(let error):
-                print("❌ Could NOT delete tweet: \(error)")
+                Logger.dataStore.error("❌ Could NOT delete tweet: \(error)")
             }
         }
     }
