@@ -29,7 +29,6 @@
 		DB64F8A52726BD5D00361E86 /* Contributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64F8A42726BD5D00361E86 /* Contributor.swift */; };
 		DB64F8A727270A9B00361E86 /* ContributorProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB64F8A627270A9B00361E86 /* ContributorProfileView.swift */; };
 		DB8D63F92767B83B0065A429 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB8D63FB2767B83B0065A429 /* Localizable.strings */; };
-		DB8D63FE2767C3D20065A429 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB8D64002767C3D20065A429 /* Localizable.strings */; };
 		DBF50B54272467CF000D8B25 /* ContributorsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF50B51272467CF000D8B25 /* ContributorsListView.swift */; };
 		DBF50B55272467CF000D8B25 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF50B52272467CF000D8B25 /* SettingsView.swift */; };
 		DBF50B56272467CF000D8B25 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF50B53272467CF000D8B25 /* SettingsViewModel.swift */; };
@@ -87,6 +86,7 @@
 		91739DEA2622D2A7000F982A /* AddURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddURLView.swift; sourceTree = "<group>"; };
 		91C8958826228D1500689196 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		940E3C61272648310038D6AC /* CategorySheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySheetViewModel.swift; sourceTree = "<group>"; };
+		9FD3920B28EC242800C70DDB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A205CD412622A3EB00517DB5 /* TweetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetList.swift; sourceTree = "<group>"; };
 		A224A9E52622BCED00AC12AF /* TweetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCard.swift; sourceTree = "<group>"; };
 		A2F4498B2622802B00725FEA /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
@@ -101,7 +101,6 @@
 		DB64F8A42726BD5D00361E86 /* Contributor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contributor.swift; sourceTree = "<group>"; };
 		DB64F8A627270A9B00361E86 /* ContributorProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributorProfileView.swift; sourceTree = "<group>"; };
 		DB8D63FA2767B83B0065A429 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		DB8D63FF2767C3D20065A429 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DBF50B51272467CF000D8B25 /* ContributorsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributorsListView.swift; sourceTree = "<group>"; };
 		DBF50B52272467CF000D8B25 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DBF50B53272467CF000D8B25 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -223,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				DB8D63FB2767B83B0065A429 /* Localizable.strings */,
-				DB8D64002767C3D20065A429 /* Localizable.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -509,7 +507,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB8D63F92767B83B0065A429 /* Localizable.strings in Resources */,
-				DB8D63FE2767C3D20065A429 /* Localizable.strings in Resources */,
 				FFEBBB4126223F7E000F475F /* Preview Assets.xcassets in Resources */,
 				FFEBBB3E26223F7E000F475F /* Assets.xcassets in Resources */,
 				20636BDDDBEF4EAE9CCE9D9E /* amplifyconfiguration.json in Resources */,
@@ -638,14 +635,7 @@
 			children = (
 				DB8D63FA2767B83B0065A429 /* en */,
 				D3CD6EE028E92BD700F5EC76 /* fr */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		DB8D64002767C3D20065A429 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB8D63FF2767C3D20065A429 /* de */,
+				9FD3920B28EC242800C70DDB /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
