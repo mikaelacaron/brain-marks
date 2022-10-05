@@ -8,6 +8,7 @@
 import Amplify
 import AWSDataStorePlugin
 import SwiftUI
+import os.log
 
 @main
 struct brain_marksApp: App {
@@ -28,10 +29,10 @@ struct brain_marksApp: App {
         do {
             try Amplify.add(plugin: dataStorePlugin)
             try Amplify.configure()
-            print("✅ Initialized Amplify!")
+            Logger.amplify.debug("✅ Initialized Amplify!")
         } catch {
             // simplified error handling for tutorial
-            print("❌ Could not initalize Amplify: \(error)")
+            Logger.amplify.error("❌ Could not initalize Amplify: \(error)")
         }
     }
 }
