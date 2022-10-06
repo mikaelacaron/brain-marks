@@ -41,10 +41,10 @@ struct AddURLView: View {
                         viewModel.alertItem = AlertContext.noCategory
                         showingAlert = true
                     } else {
-                        viewModel.fetchTweet(url: newEntry) { result in
-                            switch result {
-                            case .success(let tweet):
-                                
+                        Task(priority: .userInitiated) {
+                            do {
+                                let tweet = try await self.viewModel.fetchTweet(url: newEntry)
+
                                 DataStoreManger.shared.fetchCategories { (result) in
                                     if case .success = result {
                                         DataStoreManger.shared.createTweet(
@@ -53,9 +53,8 @@ struct AddURLView: View {
                                     }
                                     presentationMode.wrappedValue.dismiss()
                                 }
-                                
-                            case .failure:
-                                viewModel.alertItem = AlertContext.badURL
+                            } catch {
+                                self.viewModel.alertItem = AlertContext.badURL
                             }
                         }
                     }
