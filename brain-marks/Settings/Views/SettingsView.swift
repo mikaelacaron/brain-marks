@@ -11,6 +11,7 @@ struct SettingsView<ViewModel: InfoViewModel>: View {
     let infoViewModel: ViewModel
     
     @StateObject var viewModel = SettingsViewModel()
+    @StateObject var appIconSettings = AppIconSettings()
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -19,11 +20,25 @@ struct SettingsView<ViewModel: InfoViewModel>: View {
             VStack {
                 Form {
                     
-                    Section {
+                    Section(header: Text("Appearance")) {
+                        NavigationLink {
+                            AppIconListView()
+                                .environmentObject(appIconSettings)
+                        } label: {
+                            HStack {
+                                Text("App Icon")
+                                Spacer()
+                                Text(appIconSettings.currentIconName ?? "Default")
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                    }
+                    
+                    Section(header: Text("About")) {
                         Text(infoViewModel.infoText)
                     }
                     
-                    Section {
+                    Section(header: Text("Contributions")) {
                         
                         Text(infoViewModel.openSourceRemark)
                         

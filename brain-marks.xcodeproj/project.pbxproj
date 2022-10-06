@@ -8,6 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		20636BDDDBEF4EAE9CCE9D9E /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */; };
+		45B4425428EF5AC800FB0B27 /* AppIconSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4425328EF5AC800FB0B27 /* AppIconSettings.swift */; };
+		45B4426628EF5EA300FB0B27 /* 8 Rainbow.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425628EF5EA300FB0B27 /* 8 Rainbow.png */; };
+		45B4426828EF5EA300FB0B27 /* 4 Beach.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425828EF5EA300FB0B27 /* 4 Beach.png */; };
+		45B4426928EF5EA300FB0B27 /* 5 Instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425928EF5EA300FB0B27 /* 5 Instagram.png */; };
+		45B4426A28EF5EA300FB0B27 /* 2 Halloween.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425A28EF5EA300FB0B27 /* 2 Halloween.png */; };
+		45B4426B28EF5EA300FB0B27 /* 6 Instagram Black.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425B28EF5EA300FB0B27 /* 6 Instagram Black.png */; };
+		45B4426C28EF5EA300FB0B27 /* 3 Halloween Black.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425C28EF5EA300FB0B27 /* 3 Halloween Black.png */; };
+		45B4426D28EF5EA300FB0B27 /* 10 Rainbow White.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425D28EF5EA300FB0B27 /* 10 Rainbow White.png */; };
+		45B4426E28EF5EA300FB0B27 /* 1 Dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425E28EF5EA300FB0B27 /* 1 Dark.png */; };
+		45B4426F28EF5EA300FB0B27 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425F28EF5EA300FB0B27 /* Default.png */; };
+		45B4427028EF5EA300FB0B27 /* 11 Rainbow Alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4426028EF5EA300FB0B27 /* 11 Rainbow Alt.png */; };
+		45B4427128EF5EA300FB0B27 /* 7 Miami Vice.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4426128EF5EA300FB0B27 /* 7 Miami Vice.png */; };
+		45B4427228EF5EA300FB0B27 /* 9 Rainbow Black.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4426228EF5EA300FB0B27 /* 9 Rainbow Black.png */; };
+		45B4427328EF5EA300FB0B27 /* 13 Sunset.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4426328EF5EA300FB0B27 /* 13 Sunset.png */; };
+		45B4427428EF5EA300FB0B27 /* 15 Xcode.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4426428EF5EA300FB0B27 /* 15 Xcode.png */; };
+		45B4427528EF5EA300FB0B27 /* 14 Watermelon.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4426528EF5EA300FB0B27 /* 14 Watermelon.png */; };
+		45B4427728EF601600FB0B27 /* AppIconListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4427628EF601600FB0B27 /* AppIconListView.swift */; };
 		684E2F2D3FCC4D36AC68E57D /* AWSCategory+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551BA45F30D640118D2F0CE2 /* AWSCategory+Schema.swift */; };
 		75C999F627518708000B0FF8 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C999F527518708000B0FF8 /* Media.swift */; };
 		75C999F8275504FE000B0FF8 /* TweetPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C999F7275504FE000B0FF8 /* TweetPhotosView.swift */; };
@@ -80,6 +97,23 @@
 		0AA54EDF3B34443CA9D530E5 /* AWSTweet.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AWSTweet.swift; path = amplify/generated/models/AWSTweet.swift; sourceTree = "<group>"; };
 		14F5BDE61EAA4A2DB9030734 /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
 		1E886624D4EE4F64B9160A75 /* amplifytools.xcconfig */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.xcconfig; path = amplifytools.xcconfig; sourceTree = "<group>"; };
+		45B4425328EF5AC800FB0B27 /* AppIconSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSettings.swift; sourceTree = "<group>"; };
+		45B4425628EF5EA300FB0B27 /* 8 Rainbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "8 Rainbow.png"; sourceTree = "<group>"; };
+		45B4425828EF5EA300FB0B27 /* 4 Beach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4 Beach.png"; sourceTree = "<group>"; };
+		45B4425928EF5EA300FB0B27 /* 5 Instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5 Instagram.png"; sourceTree = "<group>"; };
+		45B4425A28EF5EA300FB0B27 /* 2 Halloween.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2 Halloween.png"; sourceTree = "<group>"; };
+		45B4425B28EF5EA300FB0B27 /* 6 Instagram Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6 Instagram Black.png"; sourceTree = "<group>"; };
+		45B4425C28EF5EA300FB0B27 /* 3 Halloween Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3 Halloween Black.png"; sourceTree = "<group>"; };
+		45B4425D28EF5EA300FB0B27 /* 10 Rainbow White.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "10 Rainbow White.png"; sourceTree = "<group>"; };
+		45B4425E28EF5EA300FB0B27 /* 1 Dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1 Dark.png"; sourceTree = "<group>"; };
+		45B4425F28EF5EA300FB0B27 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		45B4426028EF5EA300FB0B27 /* 11 Rainbow Alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "11 Rainbow Alt.png"; sourceTree = "<group>"; };
+		45B4426128EF5EA300FB0B27 /* 7 Miami Vice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7 Miami Vice.png"; sourceTree = "<group>"; };
+		45B4426228EF5EA300FB0B27 /* 9 Rainbow Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "9 Rainbow Black.png"; sourceTree = "<group>"; };
+		45B4426328EF5EA300FB0B27 /* 13 Sunset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "13 Sunset.png"; sourceTree = "<group>"; };
+		45B4426428EF5EA300FB0B27 /* 15 Xcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "15 Xcode.png"; sourceTree = "<group>"; };
+		45B4426528EF5EA300FB0B27 /* 14 Watermelon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "14 Watermelon.png"; sourceTree = "<group>"; };
+		45B4427628EF601600FB0B27 /* AppIconListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconListView.swift; sourceTree = "<group>"; };
 		551BA45F30D640118D2F0CE2 /* AWSCategory+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "AWSCategory+Schema.swift"; path = "amplify/generated/models/AWSCategory+Schema.swift"; sourceTree = "<group>"; };
 		63D0518628EF45A382F08352 /* AWSCategory.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AWSCategory.swift; path = amplify/generated/models/AWSCategory.swift; sourceTree = "<group>"; };
 		75C999F527518708000B0FF8 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
@@ -163,6 +197,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45B4425528EF5E8000FB0B27 /* Icon Assets */ = {
+			isa = PBXGroup;
+			children = (
+				45B4425828EF5EA300FB0B27 /* 4 Beach.png */,
+				45B4425E28EF5EA300FB0B27 /* 1 Dark.png */,
+				45B4425F28EF5EA300FB0B27 /* Default.png */,
+				45B4425C28EF5EA300FB0B27 /* 3 Halloween Black.png */,
+				45B4425A28EF5EA300FB0B27 /* 2 Halloween.png */,
+				45B4425B28EF5EA300FB0B27 /* 6 Instagram Black.png */,
+				45B4425928EF5EA300FB0B27 /* 5 Instagram.png */,
+				45B4426128EF5EA300FB0B27 /* 7 Miami Vice.png */,
+				45B4426028EF5EA300FB0B27 /* 11 Rainbow Alt.png */,
+				45B4426228EF5EA300FB0B27 /* 9 Rainbow Black.png */,
+				45B4425D28EF5EA300FB0B27 /* 10 Rainbow White.png */,
+				45B4425628EF5EA300FB0B27 /* 8 Rainbow.png */,
+				45B4426328EF5EA300FB0B27 /* 13 Sunset.png */,
+				45B4426528EF5EA300FB0B27 /* 14 Watermelon.png */,
+				45B4426428EF5EA300FB0B27 /* 15 Xcode.png */,
+			);
+			path = "Icon Assets";
+			sourceTree = "<group>";
+		};
 		6940242370A54E53B82BF75C /* AmplifyModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +289,7 @@
 			children = (
 				DBF50B58272467F0000D8B25 /* Views */,
 				DBF50B53272467CF000D8B25 /* SettingsViewModel.swift */,
+				45B4425328EF5AC800FB0B27 /* AppIconSettings.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -243,6 +300,7 @@
 				DBF50B52272467CF000D8B25 /* SettingsView.swift */,
 				DBF50B51272467CF000D8B25 /* ContributorsListView.swift */,
 				DB64F8A627270A9B00361E86 /* ContributorProfileView.swift */,
+				45B4427628EF601600FB0B27 /* AppIconListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -360,6 +418,7 @@
 				FFEBBB3926223F75000F475F /* brain_marksApp.swift */,
 				FFEBBB3B26223F75000F475F /* ContentView.swift */,
 				FFEBBB3D26223F7E000F475F /* Assets.xcassets */,
+				45B4425528EF5E8000FB0B27 /* Icon Assets */,
 				FFEBBB4226223F7E000F475F /* Info.plist */,
 				FFEBBB3F26223F7E000F475F /* Preview Content */,
 				FFEBBB7526226A39000F475F /* Secrets.swift */,
@@ -508,12 +567,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45B4426C28EF5EA300FB0B27 /* 3 Halloween Black.png in Resources */,
 				DB8D63F92767B83B0065A429 /* Localizable.strings in Resources */,
+				45B4426F28EF5EA300FB0B27 /* Default.png in Resources */,
 				DB8D63FE2767C3D20065A429 /* Localizable.strings in Resources */,
 				FFEBBB4126223F7E000F475F /* Preview Assets.xcassets in Resources */,
 				FFEBBB3E26223F7E000F475F /* Assets.xcassets in Resources */,
+				45B4426B28EF5EA300FB0B27 /* 6 Instagram Black.png in Resources */,
+				45B4427028EF5EA300FB0B27 /* 11 Rainbow Alt.png in Resources */,
+				45B4426A28EF5EA300FB0B27 /* 2 Halloween.png in Resources */,
 				20636BDDDBEF4EAE9CCE9D9E /* amplifyconfiguration.json in Resources */,
+				45B4426928EF5EA300FB0B27 /* 5 Instagram.png in Resources */,
+				45B4426628EF5EA300FB0B27 /* 8 Rainbow.png in Resources */,
+				45B4427428EF5EA300FB0B27 /* 15 Xcode.png in Resources */,
+				45B4426828EF5EA300FB0B27 /* 4 Beach.png in Resources */,
+				45B4426E28EF5EA300FB0B27 /* 1 Dark.png in Resources */,
+				45B4427328EF5EA300FB0B27 /* 13 Sunset.png in Resources */,
+				45B4427528EF5EA300FB0B27 /* 14 Watermelon.png in Resources */,
+				45B4427228EF5EA300FB0B27 /* 9 Rainbow Black.png in Resources */,
 				9C9314E5631F4C39AA06BF35 /* awsconfiguration.json in Resources */,
+				45B4426D28EF5EA300FB0B27 /* 10 Rainbow White.png in Resources */,
+				45B4427128EF5EA300FB0B27 /* 7 Miami Vice.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +637,7 @@
 				75C999F8275504FE000B0FF8 /* TweetPhotosView.swift in Sources */,
 				D3D5E0E7271C812200752DCD /* InfoView.swift in Sources */,
 				FFEBBB3C26223F75000F475F /* ContentView.swift in Sources */,
+				45B4427728EF601600FB0B27 /* AppIconListView.swift in Sources */,
 				A224A9E62622BCED00AC12AF /* TweetCard.swift in Sources */,
 				FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */,
 				DBF50B55272467CF000D8B25 /* SettingsView.swift in Sources */,
@@ -586,6 +661,7 @@
 				684E2F2D3FCC4D36AC68E57D /* AWSCategory+Schema.swift in Sources */,
 				DBF50B54272467CF000D8B25 /* ContributorsListView.swift in Sources */,
 				FFBD2094269E7D090015131F /* AddURLViewModel.swift in Sources */,
+				45B4425428EF5AC800FB0B27 /* AppIconSettings.swift in Sources */,
 				CF16AFB9BE3F401E98C85114 /* AWSTweet.swift in Sources */,
 				FF36B661262357F9007A6D7F /* AWSCategory+Extension.swift in Sources */,
 				FF36B66C26235FE6007A6D7F /* TweetListViewModel.swift in Sources */,
