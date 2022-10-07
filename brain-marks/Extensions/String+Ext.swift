@@ -31,7 +31,8 @@ extension String {
     }
 
     func removingUrls() -> String {
-        guard let detector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue) else {
+        guard let detector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
+      else {
             return self
         }
         return detector.stringByReplacingMatches(in: self,

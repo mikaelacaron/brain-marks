@@ -13,7 +13,7 @@ enum CategoryState {
 }
 
 struct CategoryList: View {
-    
+    @Binding var activeTab: Int
     @State private var categorySheetState: CategoryState = .new
     @State private var editCategory: AWSCategory?
     @State private var indexSetToDelete: IndexSet?
@@ -40,6 +40,7 @@ struct CategoryList: View {
                         }
                         .sheet(isPresented: $showingCategorySheet) {
                             CategorySheetView(
+                                activeTab: $activeTab, 
                                 editCategory: $editCategory,
                                 categorySheetState: $categorySheetState, parentVM: viewModel)
                                 .onDisappear {
@@ -94,6 +95,14 @@ struct CategoryList: View {
             viewModel.getCategories()
         }
         .accentColor(Color(UIColor.label))
+        .onOpenURL { url in
+          guard let action = url.host else {
+            return
+          }
+          if action == "addCategory" {
+            showingCategorySheet = true
+          }
+        }
     }
     
     @ViewBuilder
@@ -174,6 +183,6 @@ struct CategoryList: View {
 
 struct CategoryList_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryList()
+        CategoryList(activeTab: .constant(0))
     }
 }
