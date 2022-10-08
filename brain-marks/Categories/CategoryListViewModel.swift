@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import os.log
 
 final class CategoryListViewModel: ObservableObject {
     
@@ -27,7 +28,7 @@ final class CategoryListViewModel: ObservableObject {
                     self.categories = self.sortCategories(categories)
                 }
             case .failure(let error):
-                print("Error fetching categories: \(error)")
+                Logger.dataStore.error("Error fetching categories: \(error)")
             }
         }
     }
