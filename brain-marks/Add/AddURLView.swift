@@ -28,12 +28,17 @@ struct AddURLView: View {
                         Text(category.name).tag(category.id)
                     }
                 }
-            }.toolbar {
-                ToolbarItemGroup {
+            }
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Add Tweet URL").bold()
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
                         if selectedCategory.name == "" {
                             viewModel.alertItem = AlertContext.noCategory
                             showingAlert = true
+                            
                         } else {
                             viewModel.fetchTweet(url: newEntry) { result in
                                 switch result {
@@ -45,6 +50,7 @@ struct AddURLView: View {
                                                 category: selectedCategory)
                                         }
                                         presentationMode.wrappedValue.dismiss()
+                                        
                                     }
                                 case .failure:
                                     viewModel.alertItem = AlertContext.badURL
@@ -52,17 +58,18 @@ struct AddURLView: View {
                             }
                         }
                     }
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {
                         presentationMode.wrappedValue.dismiss()
                     }
                 }
-            }.navigationTitle(Text("Add Tweet URL"))
+            }
         }.onAppear {
             DispatchQueue.main.async {
                 newEntry = pasteBoard.string ?? ""
             }
-        }
-        .onDisappear {
+        }.onDisappear {
             selectedCategory.name = ""
         }
         .alert(item: $viewModel.alertItem) { alertItem in
