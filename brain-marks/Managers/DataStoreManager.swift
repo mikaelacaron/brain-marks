@@ -92,7 +92,6 @@ class DataStoreManger {
                         Logger.dataStore.debug("✅ Updated Category: \(savedCategory.name)")
                     case .failure(let error):
                         Logger.dataStore.error("❌ Failed to update category \(updatedCategory.name) because: \(error)")
-                        // swiftlint:enable line_length
                     }
                 }
             case .failure(let error):
