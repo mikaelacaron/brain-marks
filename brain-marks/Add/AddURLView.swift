@@ -62,6 +62,10 @@ struct AddURLView: View {
                 })
         }
         .onAppear {
+            if let firstCategory = categories.first {
+                selectedCategory = firstCategory
+            }
+
             DispatchQueue.main.async {
                 newEntry = pasteBoard.string ?? ""
             }
