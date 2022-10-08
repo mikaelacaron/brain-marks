@@ -12,7 +12,7 @@ extension Logger {
     private static var subsystem = Bundle.main.bundleIdentifier!
     
     /// Logs the view cycles like viewDidLoad.
-    static let dataStore = Logger(subsystem: subsystem, category: "dataStore")
+    static let dataStore = Logger(subsystem: subsystem, category: "DataStore")
     static let amplify = Logger(subsystem: subsystem, category: "Amplify")
     static let network = Logger(subsystem: subsystem, category: "Networking")
 }
