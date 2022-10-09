@@ -16,9 +16,8 @@ struct AddURLView: View {
     let categories: [AWSCategory]
     
     @StateObject var viewModel = AddURLViewModel()
-    
     let pasteBoard = UIPasteboard.general
-    
+
     var body: some View {
         NavigationView {
             Form {
@@ -30,53 +29,57 @@ struct AddURLView: View {
                     }
                 }
             }
-            .navigationTitle(Text("Add Tweet URL"))
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(
-                leading: Button("Cancel") {
-                    presentationMode.wrappedValue.dismiss()
-                },
-                trailing: Button("Save") {
-                    if selectedCategory.name == "" {
-                        viewModel.alertItem = AlertContext.noCategory
-                        showingAlert = true
-                    } else {
-                        viewModel.fetchTweet(url: newEntry) { result in
-                            switch result {
-                            case .success(let tweet):
-                                
-                                DataStoreManger.shared.fetchCategories { (result) in
-                                    if case .success = result {
-                                        DataStoreManger.shared.createTweet(
-                                            tweet: tweet,
-                                            category: selectedCategory)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("Add Tweet URL").bold()
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("Save") {
+                        if selectedCategory.name == "" {
+                            viewModel.alertItem = AlertContext.noCategory
+                            showingAlert = true
+                            
+                        } else {
+                            viewModel.fetchTweet(url: newEntry) { result in
+                                switch result {
+                                case .success(let tweet):
+                                    DataStoreManger.shared.fetchCategories { (result) in
+                                        if case .success = result {
+                                            DataStoreManger.shared.createTweet(
+                                                tweet: tweet,
+                                                category: selectedCategory)
+                                        }
+                                        presentationMode.wrappedValue.dismiss()
+                                        
                                     }
-                                    presentationMode.wrappedValue.dismiss()
+                                case .failure:
+                                    viewModel.alertItem = AlertContext.badURL
                                 }
-                                
-                            case .failure:
-                                viewModel.alertItem = AlertContext.badURL
                             }
                         }
                     }
-                })
-        }
-        .onAppear {
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button("Cancel") {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+            }
+        }.onAppear {
             if let firstCategory = categories.first {
                 selectedCategory = firstCategory
             }
-
+            
             DispatchQueue.main.async {
                 newEntry = pasteBoard.string ?? ""
             }
-        }
-        .onDisappear {
+        }.onDisappear {
             selectedCategory.name = ""
         }
         .alert(item: $viewModel.alertItem) { alertItem in
             Alert(title: Text(alertItem.title),
                   message: Text(alertItem.message),
-                  dismissButton: alertItem.dismissButon) 
+                  dismissButton: alertItem.dismissButon)
         }
     }
 }
