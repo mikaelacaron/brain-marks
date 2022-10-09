@@ -34,6 +34,7 @@
 		FF6DCBF22623530400EC366F /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */; };
 		FFBD2094269E7D090015131F /* AddURLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBD2093269E7D090015131F /* AddURLViewModel.swift */; };
 		FFC4CA7726867B4C00427C81 /* BMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC4CA7626867B4C00427C81 /* BMButton.swift */; };
+		FFC8D1FB28F28F1B00B50489 /* TelemetryClient in Frameworks */ = {isa = PBXBuildFile; productRef = FFC8D1FA28F28F1B00B50489 /* TelemetryClient */; };
 		FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB1096263E31D300544309 /* ReturnedTweet.swift */; };
 		FFCB1099263E3E2D00544309 /* CategorySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCB1098263E3E2D00544309 /* CategorySheetView.swift */; };
 		FFEB1B5826A9F9C300682C37 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB1B5726A9F9C300682C37 /* Alert.swift */; };
@@ -114,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF59902F2622C1CE004DF328 /* AWSDataStorePlugin in Frameworks */,
+				FFC8D1FB28F28F1B00B50489 /* TelemetryClient in Frameworks */,
 				FF59902D2622C1CE004DF328 /* AWSAPIPlugin in Frameworks */,
 				FF59902B2622C1CE004DF328 /* Amplify in Frameworks */,
 			);
@@ -335,6 +337,7 @@
 				FF59902A2622C1CE004DF328 /* Amplify */,
 				FF59902C2622C1CE004DF328 /* AWSAPIPlugin */,
 				FF59902E2622C1CE004DF328 /* AWSDataStorePlugin */,
+				FFC8D1FA28F28F1B00B50489 /* TelemetryClient */,
 			);
 			productName = "brain-marks";
 			productReference = FFEBBB3626223F75000F475F /* brain-marks.app */;
@@ -409,6 +412,7 @@
 			mainGroup = FFEBBB2D26223F75000F475F;
 			packageReferences = (
 				FF5990292622C1CD004DF328 /* XCRemoteSwiftPackageReference "amplify-ios" */,
+				FFC8D1F928F28F1B00B50489 /* XCRemoteSwiftPackageReference "SwiftClient" */,
 			);
 			productRefGroup = FFEBBB3726223F75000F475F /* Products */;
 			projectDirPath = "";
@@ -833,6 +837,14 @@
 				minimumVersion = 1.8.0;
 			};
 		};
+		FFC8D1F928F28F1B00B50489 /* XCRemoteSwiftPackageReference "SwiftClient" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TelemetryDeck/SwiftClient";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -850,6 +862,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF5990292622C1CD004DF328 /* XCRemoteSwiftPackageReference "amplify-ios" */;
 			productName = AWSDataStorePlugin;
+		};
+		FFC8D1FA28F28F1B00B50489 /* TelemetryClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFC8D1F928F28F1B00B50489 /* XCRemoteSwiftPackageReference "SwiftClient" */;
+			productName = TelemetryClient;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
