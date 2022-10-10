@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import OSLog
 
 struct AppIconListView: View {
     
-    @EnvironmentObject var appIconSettings: AppIconSettings
+    @ObservedObject var appIconSettings: AppIconSettings
     
     var body: some View {
         Form {
@@ -35,7 +36,7 @@ struct AppIconListView: View {
                 let selectedIcon = appIconSettings.icons[newIndex].iconName
                 UIApplication.shared.setAlternateIconName(selectedIcon) { error in
                     if let error = error {
-                        print(error.localizedDescription)
+                        Logger.appIcon.error("\(error.localizedDescription)")
                     }
                 }
             }
@@ -50,15 +51,17 @@ struct IconRow: View {
     
     var body: some View {
         HStack(alignment: .center) {
-            Image(uiImage: icon.image ?? UIImage())
-                .resizable()
-                .frame(width: 60, height: 60)
-                .cornerRadius(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(.black, lineWidth: 1)
-                )
-                .padding(.trailing)
+            if let image = icon.image {
+                Image(uiImage: image)
+                    .resizable()
+                    .frame(width: 60, height: 60)
+                    .cornerRadius(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(.black, lineWidth: 1)
+                    )
+                    .padding(.trailing)
+            }
             Text(icon.displayName)
         }
     }
@@ -66,7 +69,7 @@ struct IconRow: View {
 
 struct AppIconListView_Previews: PreviewProvider {
     static var previews: some View {
-        AppIconListView()
+        AppIconListView(appIconSettings: AppIconSettings())
             .environmentObject(AppIconSettings())
     }
 }

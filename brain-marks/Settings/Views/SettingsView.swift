@@ -20,20 +20,6 @@ struct SettingsView<ViewModel: InfoViewModel>: View {
             VStack {
                 Form {
                     
-                    Section(header: Text("Appearance")) {
-                        NavigationLink {
-                            AppIconListView()
-                                .environmentObject(appIconSettings)
-                        } label: {
-                            HStack {
-                                Text("App Icon")
-                                Spacer()
-                                Text(appIconSettings.currentIconName ?? "Default")
-                                    .foregroundColor(.secondary)
-                            }
-                        }
-                    }
-                    
                     Section(header: Text("About")) {
                         Text(infoViewModel.infoText)
                     }
@@ -48,6 +34,20 @@ struct SettingsView<ViewModel: InfoViewModel>: View {
                             HStack {
                                 Image(systemName: "person.3.fill")
                                 Text("ListOfContributors")
+                            }
+                        }
+                    }
+                    
+                    Section(header: Text("Appearance")) {
+                        NavigationLink {
+                            AppIconListView(appIconSettings: appIconSettings)
+                                .environmentObject(appIconSettings)
+                        } label: {
+                            HStack {
+                                Text("App Icon")
+                                Spacer()
+                                Text(appIconSettings.currentIconName ?? "Default")
+                                    .foregroundColor(.secondary)
                             }
                         }
                     }

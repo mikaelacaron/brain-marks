@@ -15,4 +15,5 @@ extension Logger {
     static let dataStore = Logger(subsystem: subsystem, category: "DataStore")
     static let amplify = Logger(subsystem: subsystem, category: "Amplify")
     static let network = Logger(subsystem: subsystem, category: "Networking")
+    static let appIcon = Logger(subsystem: subsystem, category: "appIcon")
 }
