@@ -43,8 +43,8 @@
 
 // SettingsView
 "Settings" = "Einstellungen";
-"BrainMarksIsOpenSource..." = "Brain-marks ist ein open source Projekt! Es wurde wärend dem \"Big Brain Hackathon\" erstellt, und wärend dem \"Hacktoberfest\" 2021 wurde es von verschiedenen Personen weiterentwickelt.";
-"IfYouWantToContribute" = "Falls du auch einen Beitrag zu brain-marks leisten möchtest, besuch das GitHub Repo für weitere Informationen. Unten findest du eine Liste aller, die bei diesem Projekt mitgewirkt haben. \nDein Name könnte dort stehen!";
+"BrainMarksIsOpenSource" = "Brain Marks ist ein Open-Source-Projekt! Es wurde während des Big Brain Hackathons entwickelt und wurde für das Hacktoberfest als Open-Source-Projekt weitergeführt.\nDu kannst deine gespeicherten Tweets kategorisieren.";
+"IfYouWantToContribute" = "Falls du auch einen Beitrag zu brain-marks leisten möchtest, besuch das GitHub Repo für weitere Informationen. Unten findest du eine Liste aller Personen, die bei diesem Projekt mitgewirkt haben.\nDein Name könnte dort stehen!";
 "ListOfContributors" = "Liste aller Mitwirkenden";
 "Links" = "Links";
 "ReportABug" = "Melde einen Fehler";

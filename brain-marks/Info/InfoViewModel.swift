@@ -40,7 +40,7 @@ class DefaultInfoViewModel: InfoViewModel {
     }
     
     var infoText: LocalizedStringKey {
-        return "BrainMarksIsOpenSource..."
+        return "BrainMarksIsOpenSource"
     }
     
     var openSourceRemark: LocalizedStringKey {

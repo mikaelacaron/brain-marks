@@ -25,6 +25,7 @@
 		45B4427428EF5EA300FB0B27 /* 15 Xcode.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4426428EF5EA300FB0B27 /* 15 Xcode.png */; };
 		45B4427528EF5EA300FB0B27 /* 14 Watermelon.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4426528EF5EA300FB0B27 /* 14 Watermelon.png */; };
 		45B4427728EF601600FB0B27 /* AppIconListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4427628EF601600FB0B27 /* AppIconListView.swift */; };
+		5F118BE728EC0BE9003E15F2 /* Logger+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F118BE628EC0BE9003E15F2 /* Logger+Ext.swift */; };
 		684E2F2D3FCC4D36AC68E57D /* AWSCategory+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551BA45F30D640118D2F0CE2 /* AWSCategory+Schema.swift */; };
 		75C999F627518708000B0FF8 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C999F527518708000B0FF8 /* Media.swift */; };
 		75C999F8275504FE000B0FF8 /* TweetPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C999F7275504FE000B0FF8 /* TweetPhotosView.swift */; };
@@ -115,6 +116,7 @@
 		45B4426528EF5EA300FB0B27 /* 14 Watermelon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "14 Watermelon.png"; sourceTree = "<group>"; };
 		45B4427628EF601600FB0B27 /* AppIconListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconListView.swift; sourceTree = "<group>"; };
 		551BA45F30D640118D2F0CE2 /* AWSCategory+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "AWSCategory+Schema.swift"; path = "amplify/generated/models/AWSCategory+Schema.swift"; sourceTree = "<group>"; };
+		5F118BE628EC0BE9003E15F2 /* Logger+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Ext.swift"; sourceTree = "<group>"; };
 		63D0518628EF45A382F08352 /* AWSCategory.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AWSCategory.swift; path = amplify/generated/models/AWSCategory.swift; sourceTree = "<group>"; };
 		75C999F527518708000B0FF8 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		75C999F7275504FE000B0FF8 /* TweetPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetPhotosView.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				D3F7C2EA27173EAC00DB87D9 /* String+Ext.swift */,
+				5F118BE628EC0BE9003E15F2 /* Logger+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				A224A9E62622BCED00AC12AF /* TweetCard.swift in Sources */,
 				FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */,
 				DBF50B55272467CF000D8B25 /* SettingsView.swift in Sources */,
+				5F118BE728EC0BE9003E15F2 /* Logger+Ext.swift in Sources */,
 				FF21986F269FE57D00FFB406 /* AsyncImage.swift in Sources */,
 				D3D5E0E5271C811E00752DCD /* InfoViewModel.swift in Sources */,
 				FFEB1B5826A9F9C300682C37 /* Alert.swift in Sources */,
