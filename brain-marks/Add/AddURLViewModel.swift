@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import os.log
 
 enum HttpError: Error {
     case badResponse
@@ -22,7 +23,7 @@ final class AddURLViewModel: ObservableObject {
 
         if let response = response as? HTTPURLResponse {
             guard (200 ... 299) ~= response.statusCode else {
-                print("❌ Status code is \(response.statusCode)")
+                Logger.network.error("❌ Status code is \(response.statusCode)")
                 throw HttpError.badResponse
             }
 
