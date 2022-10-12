@@ -29,7 +29,7 @@ final class AddURLViewModel: ObservableObject {
 
             do {
                 let result = try JSONDecoder().decode(Response.self, from: data)
-                return self.createTweet(result)
+                return createTweet(result)
             } catch {
                 throw HttpError.cantDecode
             }
