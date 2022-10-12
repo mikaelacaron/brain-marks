@@ -169,7 +169,10 @@ struct TimeStampView: View {
 
 struct TweetCard_Previews: PreviewProvider {
     static var previews: some View {
-        TweetCard(tweet: AWSTweet(id: "123", tweetID: "234", text: "Tweet ext here"))
-            .previewLayout(PreviewLayout.sizeThatFits)
+        Group {
+            TweetCard(tweet: AWSTweet.exampleAWSTweets[0])
+            TweetCard(tweet: AWSTweet.exampleAWSTweets[2])
+        }
+        .previewLayout(PreviewLayout.sizeThatFits)
     }
 }
