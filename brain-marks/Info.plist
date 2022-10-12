@@ -8,6 +8,149 @@
 	<string>Brain Marks</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+			<key>Beach</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>4 Beach</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Dark</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>1 Dark</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Halloween</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>2 Halloween</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Halloween Black</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>3 Halloween Black</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Instagram</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>5 Instagram</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Instagram Black</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>6 Instagram Black</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Miami Vice</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>7 Miami Vice</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Rainbow</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>8 Rainbow</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Rainbow Alt</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>11 Rainbow Alt</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Rainbow Black</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>9 Rainbow Black</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Rainbow White</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>10 Rainbow White</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Sunset</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>13 Sunset</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Watermelon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>14 Watermelon</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+			<key>Xcode</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>15 Xcode</string>
+				</array>
+				<key>UIPrerenderedIcon</key>
+				<false/>
+			</dict>
+		</dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string>Default</string>
+			</array>
+			<key>CFBundleIconName</key>
+			<string>Default</string>
+			<key>UIPrerenderedIcon</key>
+			<false/>
+		</dict>
+	</dict>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
