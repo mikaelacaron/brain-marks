@@ -41,7 +41,6 @@ struct SettingsView<ViewModel: InfoViewModel>: View {
                     Section(header: Text("Appearance")) {
                         NavigationLink {
                             AppIconListView(appIconSettings: appIconSettings)
-                                .environmentObject(appIconSettings)
                         } label: {
                             HStack {
                                 Text("App Icon")
