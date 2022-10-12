@@ -40,9 +40,10 @@ struct AddURLView: View {
                             showingAlert = true
                             
                         } else {
-                            viewModel.fetchTweet(url: newEntry) { result in
-                                switch result {
-                                case .success(let tweet):
+                            Task(priority: .userInitiated) {
+                                do {
+                                    let tweet = try await viewModel.fetchTweet(url: newEntry)
+                                    
                                     DataStoreManger.shared.fetchCategories { (result) in
                                         if case .success = result {
                                             DataStoreManger.shared.createTweet(
@@ -50,10 +51,9 @@ struct AddURLView: View {
                                                 category: selectedCategory)
                                         }
                                         presentationMode.wrappedValue.dismiss()
-                                        
                                     }
-                                case .failure:
-                                    viewModel.alertItem = AlertContext.badURL
+                                } catch {
+                                   viewModel.alertItem = AlertContext.badURL
                                 }
                             }
                         }
@@ -69,7 +69,7 @@ struct AddURLView: View {
             if let firstCategory = categories.first {
                 selectedCategory = firstCategory
             }
-            
+
             DispatchQueue.main.async {
                 newEntry = pasteBoard.string ?? ""
             }
