@@ -12,7 +12,7 @@ struct TweetCard: View {
     @State var tweet: AWSTweet
     
     var body: some View {
-
+        
         VStack(alignment: .leading) {
             TweetHeaderView(tweet: tweet)
             
@@ -46,13 +46,14 @@ struct TweetHeaderView: View {
 struct TweetBodyView: View {
     let tweetBody: String
     var body: some View {
-        Text(tweetBody)
+        TextHighlightingHashtags(tweetBody)
             .font(.body)
             .lineSpacing(8.0)
             .padding(EdgeInsets(top: 0, leading: 18, bottom: 18, trailing: 18))
             .fixedSize(horizontal: false, vertical: true)
     }
 }
+
 
 struct TweetFooterView: View {
     var body: some View {
@@ -77,9 +78,9 @@ struct UserIconView: View {
                        placeholder: {
                 Image(systemName: "person.fill").accentColor(Color(UIColor.label))
             })
-                .aspectRatio(contentMode: .fit)
-                .frame(width: size, height: size)
-                .clipShape(Circle())
+            .aspectRatio(contentMode: .fit)
+            .frame(width: size, height: size)
+            .clipShape(Circle())
         }
     }
 }
@@ -98,11 +99,11 @@ struct UserInfoView: View {
                         .font(.headline)
                         .fontWeight(.semibold)
                     if userVerified {
-                            Image("verified")
-                                .resizable()
-                                .frame(width: 14,
-                                       height: 14,
-                                       alignment: .center)
+                        Image("verified")
+                            .resizable()
+                            .frame(width: 14,
+                                   height: 14,
+                                   alignment: .center)
                     }
                 }
                 Text("@\(authorUsername)")
@@ -167,11 +168,53 @@ struct TimeStampView: View {
     }
 }
 
+private extension TweetBodyView {
+    
+    func TextHighlightingHashtags(_ tweet: String) -> Text {
+        
+        guard tweet.contains("#") else { return Text(tweet) }
+        
+        let words = tweet.split(separator: " ")
+        var output = Text("")
+        
+        for word in words {
+            if word.contains("#") {
+                //Force unwrap safe because of "contains" check
+                let hashtagIndex = word.firstIndex(of: "#")!
+                
+                //Using prefix and suffix to only highlight the part of a word after the #
+                let prefixString = word.prefix(upTo: hashtagIndex)
+                let hashtagText = Text(word.suffix(from:    hashtagIndex)).foregroundColor(Color("twitter"))
+                
+                //Check if # is at the beginning of a string
+                if prefixString == "" {
+                    
+                    output = output + Text(" ") + hashtagText
+                    
+                //Check if # is at the beginning of a word preceded by blank lines
+                } else if prefixString.contains("\n"){
+                    
+                    output = output + Text(" ") + Text(prefixString) + hashtagText
+                //if # is not at the beginning of a word do not highlight
+                } else {
+                    output = output + Text(" ") + Text(String(word))
+                }
+            //if word does not contain # do not highlight
+            } else {
+                output = output + Text(" ") + Text(String(word))
+            }
+        }
+        return output
+    }
+}
+
 struct TweetCard_Previews: PreviewProvider {
     static var previews: some View {
         Group {
+            TweetCard(tweet: AWSTweet.exampleAWSTweets[4])
             TweetCard(tweet: AWSTweet.exampleAWSTweets[0])
-            TweetCard(tweet: AWSTweet.exampleAWSTweets[2])
+            TweetCard(tweet: AWSTweet.exampleAWSTweets[1])
+            TweetCard(tweet: AWSTweet.exampleAWSTweets[3])
         }
         .previewLayout(PreviewLayout.sizeThatFits)
     }
