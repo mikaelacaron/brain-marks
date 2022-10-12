@@ -42,7 +42,7 @@ struct AddURLView: View {
                         } else {
                             Task(priority: .userInitiated) {
                                 do {
-                                    let tweet = try await self.viewModel.fetchTweet(url: newEntry)
+                                    let tweet = try await viewModel.fetchTweet(url: newEntry)
                                     
                                     DataStoreManger.shared.fetchCategories { (result) in
                                         if case .success = result {
