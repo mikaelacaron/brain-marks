@@ -53,7 +53,7 @@ struct AddURLView: View {
                                         presentationMode.wrappedValue.dismiss()
                                     }
                                 } catch {
-                                    self.viewModel.alertItem = AlertContext.badURL
+                                   viewModel.alertItem = AlertContext.badURL
                                 }
                             }
                         }
