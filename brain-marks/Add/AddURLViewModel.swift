@@ -17,47 +17,24 @@ enum HttpError: Error {
 final class AddURLViewModel: ObservableObject {
     
     @Published var alertItem: AlertItem?
-    
-    func fetchTweet(url: String, completion: @escaping (Result<ReturnedTweet, Error>) -> Void) {
-        do {
-            let request = try createRequest(with: url)
-            
-            let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
-                
-                guard error == nil else {
-                    completion(.failure(error!))
-                    return
-                }
-                
-                if let response = response as? HTTPURLResponse {
-                    guard (200 ... 299) ~= response.statusCode else {
-                        completion(.failure(HttpError.badResponse))
-                        Logger.network.error("❌ Status code is \(response.statusCode)")
-                        return
-                    }
-                    
-                    guard let data = data else {
-                        completion(.failure(error!))
-                        return
-                    }
-                    
-                    do {
-                        let result = try JSONDecoder().decode(Response.self, from: data)
-                        
-                        guard let tweetToSave = self?.createTweet(result) else {
-                            completion(.failure(HttpError.cantDecode))
-                            return
-                        }
-                        
-                        completion(.success(tweetToSave))
-                    } catch {
-                        completion(.failure(error))
-                    }
-                }
+
+    func fetchTweet(url: String) async throws -> ReturnedTweet {
+        let (data, response) = try await URLSession.shared.data(for: createRequest(with: url))
+
+        if let response = response as? HTTPURLResponse {
+            guard (200 ... 299) ~= response.statusCode else {
+                Logger.network.error("❌ Status code is \(response.statusCode)")
+                throw HttpError.badResponse
             }
-            task.resume()
-        } catch {
-            completion(.failure(HttpError.badURL))
+
+            do {
+                let result = try JSONDecoder().decode(Response.self, from: data)
+                return createTweet(result)
+            } catch {
+                throw HttpError.cantDecode
+            }
+        } else {
+            throw HttpError.badResponse
         }
     }
     
