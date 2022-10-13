@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		20636BDDDBEF4EAE9CCE9D9E /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */; };
+		2A7C408128EFCC3600F73DF5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7C408028EFCC3600F73DF5 /* WidgetKit.framework */; };
+		2A7C408328EFCC3600F73DF5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7C408228EFCC3600F73DF5 /* SwiftUI.framework */; };
+		2A7C408628EFCC3600F73DF5 /* BrainMarksCreateCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7C408528EFCC3600F73DF5 /* BrainMarksCreateCategory.swift */; };
+		2A7C408828EFCC3700F73DF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C408728EFCC3700F73DF5 /* Assets.xcassets */; };
+		2A7C408C28EFCC3700F73DF5 /* BrainMarksCreateCategoryExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2A7C407E28EFCC3600F73DF5 /* BrainMarksCreateCategoryExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		45B4425428EF5AC800FB0B27 /* AppIconSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4425328EF5AC800FB0B27 /* AppIconSettings.swift */; };
 		45B4426628EF5EA300FB0B27 /* 8 Rainbow.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425628EF5EA300FB0B27 /* 8 Rainbow.png */; };
 		45B4426828EF5EA300FB0B27 /* 4 Beach.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425828EF5EA300FB0B27 /* 4 Beach.png */; };
@@ -78,6 +83,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2A7C408A28EFCC3700F73DF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFEBBB2E26223F75000F475F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A7C407D28EFCC3600F73DF5;
+			remoteInfo = BrainMarksCreateCategoryExtension;
+		};
 		FFEBBB4826223F7F000F475F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FFEBBB2E26223F75000F475F /* Project object */;
@@ -94,10 +106,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2A7C408D28EFCC3700F73DF5 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2A7C408C28EFCC3700F73DF5 /* BrainMarksCreateCategoryExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0AA54EDF3B34443CA9D530E5 /* AWSTweet.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AWSTweet.swift; path = amplify/generated/models/AWSTweet.swift; sourceTree = "<group>"; };
 		14F5BDE61EAA4A2DB9030734 /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
 		1E886624D4EE4F64B9160A75 /* amplifytools.xcconfig */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.xcconfig; path = amplifytools.xcconfig; sourceTree = "<group>"; };
+		2A7C407E28EFCC3600F73DF5 /* BrainMarksCreateCategoryExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BrainMarksCreateCategoryExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A7C408028EFCC3600F73DF5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		2A7C408228EFCC3600F73DF5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		2A7C408528EFCC3600F73DF5 /* BrainMarksCreateCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainMarksCreateCategory.swift; sourceTree = "<group>"; };
+		2A7C408728EFCC3700F73DF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A7C408928EFCC3700F73DF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45B4425328EF5AC800FB0B27 /* AppIconSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSettings.swift; sourceTree = "<group>"; };
 		45B4425628EF5EA300FB0B27 /* 8 Rainbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "8 Rainbow.png"; sourceTree = "<group>"; };
 		45B4425828EF5EA300FB0B27 /* 4 Beach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4 Beach.png"; sourceTree = "<group>"; };
@@ -172,6 +204,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2A7C407B28EFCC3600F73DF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A7C408328EFCC3600F73DF5 /* SwiftUI.framework in Frameworks */,
+				2A7C408128EFCC3600F73DF5 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFEBBB3326223F75000F475F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -199,6 +240,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A7C407F28EFCC3600F73DF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A7C408028EFCC3600F73DF5 /* WidgetKit.framework */,
+				2A7C408228EFCC3600F73DF5 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A7C408428EFCC3600F73DF5 /* BrainMarksCreateCategory */ = {
+			isa = PBXGroup;
+			children = (
+				2A7C408528EFCC3600F73DF5 /* BrainMarksCreateCategory.swift */,
+				2A7C408728EFCC3700F73DF5 /* Assets.xcassets */,
+				2A7C408928EFCC3700F73DF5 /* Info.plist */,
+			);
+			path = BrainMarksCreateCategory;
+			sourceTree = "<group>";
+		};
 		45B4425528EF5E8000FB0B27 /* Icon Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +450,8 @@
 				FFEBBB3826223F75000F475F /* brain-marks */,
 				FFEBBB4A26223F7F000F475F /* brain-marksTests */,
 				FFEBBB5526223F7F000F475F /* brain-marksUITests */,
+				2A7C408428EFCC3600F73DF5 /* BrainMarksCreateCategory */,
+				2A7C407F28EFCC3600F73DF5 /* Frameworks */,
 				FFEBBB3726223F75000F475F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -400,6 +462,7 @@
 				FFEBBB3626223F75000F475F /* brain-marks.app */,
 				FFEBBB4726223F7F000F475F /* brain-marksTests.xctest */,
 				FFEBBB5226223F7F000F475F /* brain-marksUITests.xctest */,
+				2A7C407E28EFCC3600F73DF5 /* BrainMarksCreateCategoryExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -459,6 +522,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2A7C407D28EFCC3600F73DF5 /* BrainMarksCreateCategoryExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A7C409028EFCC3700F73DF5 /* Build configuration list for PBXNativeTarget "BrainMarksCreateCategoryExtension" */;
+			buildPhases = (
+				2A7C407A28EFCC3600F73DF5 /* Sources */,
+				2A7C407B28EFCC3600F73DF5 /* Frameworks */,
+				2A7C407C28EFCC3600F73DF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrainMarksCreateCategoryExtension;
+			productName = BrainMarksCreateCategoryExtension;
+			productReference = 2A7C407E28EFCC3600F73DF5 /* BrainMarksCreateCategoryExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FFEBBB3526223F75000F475F /* brain-marks */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFEBBB5B26223F7F000F475F /* Build configuration list for PBXNativeTarget "brain-marks" */;
@@ -467,10 +547,12 @@
 				FFEBBB3326223F75000F475F /* Frameworks */,
 				FFEBBB3426223F75000F475F /* Resources */,
 				FFEBBB802622755F000F475F /* ShellScript */,
+				2A7C408D28EFCC3700F73DF5 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2A7C408B28EFCC3700F73DF5 /* PBXTargetDependency */,
 			);
 			name = "brain-marks";
 			packageProductDependencies = (
@@ -524,9 +606,12 @@
 		FFEBBB2E26223F75000F475F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					2A7C407D28EFCC3600F73DF5 = {
+						CreatedOnToolsVersion = 14.0;
+					};
 					FFEBBB3526223F75000F475F = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -561,11 +646,20 @@
 				FFEBBB3526223F75000F475F /* brain-marks */,
 				FFEBBB4626223F7F000F475F /* brain-marksTests */,
 				FFEBBB5126223F7F000F475F /* brain-marksUITests */,
+				2A7C407D28EFCC3600F73DF5 /* BrainMarksCreateCategoryExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2A7C407C28EFCC3600F73DF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A7C408828EFCC3700F73DF5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFEBBB3426223F75000F475F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -632,6 +726,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2A7C407A28EFCC3600F73DF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A7C408628EFCC3600F73DF5 /* BrainMarksCreateCategory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FFEBBB3226223F75000F475F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -700,6 +802,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2A7C408B28EFCC3700F73DF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A7C407D28EFCC3600F73DF5 /* BrainMarksCreateCategoryExtension */;
+			targetProxy = 2A7C408A28EFCC3700F73DF5 /* PBXContainerItemProxy */;
+		};
 		FFEBBB4926223F7F000F475F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FFEBBB3526223F75000F475F /* brain-marks */;
@@ -733,6 +840,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2A7C408E28EFCC3700F73DF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y535846H6P;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BrainMarksCreateCategory/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BrainMarksCreateCategory;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarks.BrainMarksCreateCategory;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2A7C408F28EFCC3700F73DF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y535846H6P;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BrainMarksCreateCategory/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BrainMarksCreateCategory;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarks.BrainMarksCreateCategory;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FFEBBB5926223F7F000F475F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -856,6 +1021,7 @@
 		FFEBBB5C26223F7F000F475F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -879,6 +1045,7 @@
 		FFEBBB5D26223F7F000F475F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -987,6 +1154,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2A7C409028EFCC3700F73DF5 /* Build configuration list for PBXNativeTarget "BrainMarksCreateCategoryExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A7C408E28EFCC3700F73DF5 /* Debug */,
+				2A7C408F28EFCC3700F73DF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FFEBBB3126223F75000F475F /* Build configuration list for PBXProject "brain-marks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
