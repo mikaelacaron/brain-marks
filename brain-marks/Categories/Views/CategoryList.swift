@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import os.log
 
 enum CategoryState {
     case edit
@@ -54,7 +55,7 @@ struct CategoryList: View {
                                 case .success(let newEditCategory):
                                     editCategory = newEditCategory
                                 case .failure(let error):
-                                    print("❌ Error setting editCategory: \(error)")
+                                    Logger.dataStore.error("❌ Error setting editCategory: \(error)")
                                 }
                             }
                         }
