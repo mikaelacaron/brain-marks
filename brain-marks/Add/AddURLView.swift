@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TelemetryClient
 import UIKit
 
 struct AddURLView: View {
@@ -46,6 +47,7 @@ struct AddURLView: View {
                                             tweet: tweet,
                                             category: selectedCategory)
                                     }
+                                    TelemetryManager.send(TelemetrySignals.addTweet)
                                     presentationMode.wrappedValue.dismiss()
                                 }
                                 

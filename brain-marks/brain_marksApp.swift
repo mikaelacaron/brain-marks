@@ -18,7 +18,7 @@ struct brain_marksApp: App {
         
         let configuration = TelemetryManagerConfiguration(appID: Secrets.telemetryAppID)
         TelemetryManager.initialize(with: configuration)
-        TelemetryManager.send("appLaunchedRegularly")
+        TelemetryManager.send(TelemetrySignals.appLaunchedRegularly)
     }
     
     var body: some Scene {
