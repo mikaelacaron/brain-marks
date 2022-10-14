@@ -18,7 +18,7 @@ This app has always been open source! It began with the [Big Brain Hackathon](ht
 
 * Follow [CONTRIBUTING.md](https://github.com/mikaelacaron/brain-marks/blob/dev/CONTRIBUTING.md#getting-started) to setup the project.
 * Once you complete an issue: Open your forked repo in your browser and create a PR to the `dev` branch of this repository
-> Be sure to squash your commits into one single commit, how to do that shown [here]([here](https://www.internalpointers.com/post/squash-commits-into-one-git))
+> Be sure to squash your commits into one single commit, how to do that shown [here](https://www.internalpointers.com/post/squash-commits-into-one-git)
 
 # Contributing
 To start contributing, review [CONTRIBUTING.md](https://github.com/mikaelacaron/brain-marks/blob/dev/CONTRIBUTING.md). New contributors are always welcome to support this project. Issues labeled `good-first-issue` are great for beginners.

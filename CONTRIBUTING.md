@@ -31,7 +31,7 @@ This is a deployed app on the [Apple App Store](https://apps.apple.com/us/app/br
 `git checkout -b issueNumber-feature-name`
 
 * When your feature/fix is complete open a pull request, PR, from your feature branch to the `dev` branch
-  * Be sure to squash your commits into one single commit, how to do that shown [here]([here](https://www.internalpointers.com/post/squash-commits-into-one-git))
+  * Be sure to squash your commits into one single commit, how to do that shown [here](https://www.internalpointers.com/post/squash-commits-into-one-git)
 
 * More information for beginners not familiar with git can be found [here](https://hacktoberfest.com/participation/#beginner-resources).
 
