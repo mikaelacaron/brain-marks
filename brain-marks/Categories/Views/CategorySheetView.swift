@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TelemetryClient
 
 struct CategorySheetView: View {
     
@@ -56,6 +57,7 @@ struct CategorySheetView: View {
                                 DataStoreManger.shared.createCategory(
                                     category: AWSCategory(name: category,
                                                           imageName: "folder"))
+                                TelemetryManager.send(TelemetrySignals.addCategory)
                             case .edit:
                                 guard editCategory != nil else {
                                     return

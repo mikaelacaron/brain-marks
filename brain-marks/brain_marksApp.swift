@@ -8,12 +8,17 @@
 import Amplify
 import AWSDataStorePlugin
 import SwiftUI
+import TelemetryClient
 
 @main
 struct brain_marksApp: App {
     
     init() {
         configureAmplify()
+        
+        let configuration = TelemetryManagerConfiguration(appID: Secrets.telemetryAppID)
+        TelemetryManager.initialize(with: configuration)
+        TelemetryManager.send(TelemetrySignals.appLaunchedRegularly)
     }
     
     var body: some Scene {
