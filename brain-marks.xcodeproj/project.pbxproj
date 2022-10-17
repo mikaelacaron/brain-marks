@@ -177,6 +177,7 @@
 		DBF50B51272467CF000D8B25 /* ContributorsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributorsListView.swift; sourceTree = "<group>"; };
 		DBF50B52272467CF000D8B25 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DBF50B53272467CF000D8B25 /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		DC36F1F728FD9DA000A6F0B9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = amplifyconfiguration.json; sourceTree = "<group>"; };
 		FF21986E269FE57D00FFB406 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		FF36B660262357F9007A6D7F /* AWSCategory+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AWSCategory+Extension.swift"; sourceTree = "<group>"; };
@@ -647,6 +648,7 @@
 				de,
 				fr,
 				id,
+				es,
 			);
 			mainGroup = FFEBBB2D26223F75000F475F;
 			packageReferences = (
@@ -840,6 +842,7 @@
 				DB8D63FA2767B83B0065A429 /* en */,
 				D3CD6EE028E92BD700F5EC76 /* fr */,
 				A17404B028F8F9D000D292D4 /* id */,
+				DC36F1F728FD9DA000A6F0B9 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
