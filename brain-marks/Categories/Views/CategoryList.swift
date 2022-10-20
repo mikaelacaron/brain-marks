@@ -100,8 +100,13 @@ struct CategoryList: View {
           guard let action = url.host else {
             return
           }
-          if action == "addCategory" {
+          switch action {
+          case "addCategory":
             showingCategorySheet = true
+          case "addTweet":
+            showAddURLView = true
+          default:
+            return
           }
         }
     }
