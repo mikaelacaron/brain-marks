@@ -55,7 +55,49 @@ struct BrainMarksCreateCategoryEntryView : View {
    }
 }
 
+struct BrainMarksAddURLView : View {
+    var entry: Provider.Entry
+
+    var body: some View {
+
+      ZStack {
+        Image("littleLogo")
+          .resizable()
+          .scaledToFill()
+          .opacity(0.1)
+        Image(systemName: "plus.circle")
+          .font(.title)
+      }
+      .widgetURL(URL(string: "brainmarks://addTweet"))
+   }
+}
+
 @main
+struct BrainMarksWidgetBundle: WidgetBundle {
+  @WidgetBundleBuilder
+  var body: some Widget {
+    BrainMarksCreateCategory()
+    BrainMarksAddURL()
+    // more widgets can go here
+  }
+}
+
+struct BrainMarksAddURL: Widget {
+    let kind: String = "BrainMarksAddURL"
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(
+          kind: kind,
+          provider: Provider()
+        ) { entry in
+          BrainMarksAddURLView(entry: entry)
+        }
+        .configurationDisplayName("Add Tweet")
+        .description("Quickly add a Tweet to Brain Marks")
+        .supportedFamilies([.systemSmall])
+    }
+}
+
 struct BrainMarksCreateCategory: Widget {
     let kind: String = "BrainMarksCreateCategory"
 
