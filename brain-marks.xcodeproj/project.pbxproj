@@ -13,6 +13,7 @@
 		2A7C408628EFCC3600F73DF5 /* BrainMarksWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7C408528EFCC3600F73DF5 /* BrainMarksWidgets.swift */; };
 		2A7C408828EFCC3700F73DF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C408728EFCC3700F73DF5 /* Assets.xcassets */; };
 		2A7C408C28EFCC3700F73DF5 /* BrainMarksWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2A7C407E28EFCC3600F73DF5 /* BrainMarksWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2AC055622908408D00F2919F /* WhatsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC055612908408D00F2919F /* WhatsNewView.swift */; };
 		45B4425428EF5AC800FB0B27 /* AppIconSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4425328EF5AC800FB0B27 /* AppIconSettings.swift */; };
 		45B4426628EF5EA300FB0B27 /* 8 Rainbow.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425628EF5EA300FB0B27 /* 8 Rainbow.png */; };
 		45B4426828EF5EA300FB0B27 /* 4 Beach.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425828EF5EA300FB0B27 /* 4 Beach.png */; };
@@ -131,6 +132,7 @@
 		2A7C408528EFCC3600F73DF5 /* BrainMarksWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainMarksWidgets.swift; sourceTree = "<group>"; };
 		2A7C408728EFCC3700F73DF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A7C408928EFCC3700F73DF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AC055612908408D00F2919F /* WhatsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewView.swift; sourceTree = "<group>"; };
 		45B4425328EF5AC800FB0B27 /* AppIconSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSettings.swift; sourceTree = "<group>"; };
 		45B4425628EF5EA300FB0B27 /* 8 Rainbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "8 Rainbow.png"; sourceTree = "<group>"; };
 		45B4425828EF5EA300FB0B27 /* 4 Beach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4 Beach.png"; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 				DBF50B51272467CF000D8B25 /* ContributorsListView.swift */,
 				DB64F8A627270A9B00361E86 /* ContributorProfileView.swift */,
 				45B4427628EF601600FB0B27 /* AppIconListView.swift */,
+				2AC055612908408D00F2919F /* WhatsNewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -778,6 +781,7 @@
 				FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */,
 				CA80832580B84CB3A2D5F629 /* AmplifyModels.swift in Sources */,
 				DBF50B56272467CF000D8B25 /* SettingsViewModel.swift in Sources */,
+				2AC055622908408D00F2919F /* WhatsNewView.swift in Sources */,
 				75C999F627518708000B0FF8 /* Media.swift in Sources */,
 				C0DAFC52B24C456EAE5AEF21 /* AWSCategory.swift in Sources */,
 				684E2F2D3FCC4D36AC68E57D /* AWSCategory+Schema.swift in Sources */,
