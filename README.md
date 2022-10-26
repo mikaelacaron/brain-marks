@@ -1,4 +1,3 @@
-UPDATE TO README
 [![brain-marks-promo](https://user-images.githubusercontent.com/22946902/135545890-6afb5e3f-4b04-4957-81b7-364f9f229080.PNG)](https://apps.apple.com/us/app/brain-marks/id1577423925)
 
 # Brain Marks
