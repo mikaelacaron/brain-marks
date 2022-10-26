@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		20636BDDDBEF4EAE9CCE9D9E /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */; };
+		2A2128092909CAA300E280E6 /* WhatsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2128082909CAA300E280E6 /* WhatsNewView.swift */; };
 		2A7C408128EFCC3600F73DF5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7C408028EFCC3600F73DF5 /* WidgetKit.framework */; };
 		2A7C408328EFCC3600F73DF5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7C408228EFCC3600F73DF5 /* SwiftUI.framework */; };
 		2A7C408628EFCC3600F73DF5 /* BrainMarksWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7C408528EFCC3600F73DF5 /* BrainMarksWidgets.swift */; };
 		2A7C408828EFCC3700F73DF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C408728EFCC3700F73DF5 /* Assets.xcassets */; };
 		2A7C408C28EFCC3700F73DF5 /* BrainMarksWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2A7C407E28EFCC3600F73DF5 /* BrainMarksWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2AD712632908BD9400D3E744 /* whatsnew.md in Resources */ = {isa = PBXBuildFile; fileRef = 2AD712622908BD9400D3E744 /* whatsnew.md */; };
 		45B4425428EF5AC800FB0B27 /* AppIconSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4425328EF5AC800FB0B27 /* AppIconSettings.swift */; };
 		45B4426628EF5EA300FB0B27 /* 8 Rainbow.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425628EF5EA300FB0B27 /* 8 Rainbow.png */; };
 		45B4426828EF5EA300FB0B27 /* 4 Beach.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425828EF5EA300FB0B27 /* 4 Beach.png */; };
@@ -125,12 +127,14 @@
 		0AA54EDF3B34443CA9D530E5 /* AWSTweet.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AWSTweet.swift; path = amplify/generated/models/AWSTweet.swift; sourceTree = "<group>"; };
 		14F5BDE61EAA4A2DB9030734 /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
 		1E886624D4EE4F64B9160A75 /* amplifytools.xcconfig */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.xcconfig; path = amplifytools.xcconfig; sourceTree = "<group>"; };
+		2A2128082909CAA300E280E6 /* WhatsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewView.swift; sourceTree = "<group>"; };
 		2A7C407E28EFCC3600F73DF5 /* BrainMarksWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BrainMarksWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7C408028EFCC3600F73DF5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		2A7C408228EFCC3600F73DF5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		2A7C408528EFCC3600F73DF5 /* BrainMarksWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainMarksWidgets.swift; sourceTree = "<group>"; };
 		2A7C408728EFCC3700F73DF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A7C408928EFCC3700F73DF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AD712622908BD9400D3E744 /* whatsnew.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; fileEncoding = 4; path = whatsnew.md; sourceTree = "<group>"; };
 		45B4425328EF5AC800FB0B27 /* AppIconSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSettings.swift; sourceTree = "<group>"; };
 		45B4425628EF5EA300FB0B27 /* 8 Rainbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "8 Rainbow.png"; sourceTree = "<group>"; };
 		45B4425828EF5EA300FB0B27 /* 4 Beach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4 Beach.png"; sourceTree = "<group>"; };
@@ -372,6 +376,8 @@
 		DBF50B58272467F0000D8B25 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2A2128082909CAA300E280E6 /* WhatsNewView.swift */,
+				2AD712622908BD9400D3E744 /* whatsnew.md */,
 				DBF50B52272467CF000D8B25 /* SettingsView.swift */,
 				DBF50B51272467CF000D8B25 /* ContributorsListView.swift */,
 				DB64F8A627270A9B00361E86 /* ContributorProfileView.swift */,
@@ -690,6 +696,7 @@
 				45B4426A28EF5EA300FB0B27 /* 2 Halloween.png in Resources */,
 				20636BDDDBEF4EAE9CCE9D9E /* amplifyconfiguration.json in Resources */,
 				45B4426928EF5EA300FB0B27 /* 5 Instagram.png in Resources */,
+				2AD712632908BD9400D3E744 /* whatsnew.md in Resources */,
 				45B4426628EF5EA300FB0B27 /* 8 Rainbow.png in Resources */,
 				45B4427428EF5EA300FB0B27 /* 15 Xcode.png in Resources */,
 				45B4426828EF5EA300FB0B27 /* 4 Beach.png in Resources */,
@@ -778,6 +785,7 @@
 				FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */,
 				CA80832580B84CB3A2D5F629 /* AmplifyModels.swift in Sources */,
 				DBF50B56272467CF000D8B25 /* SettingsViewModel.swift in Sources */,
+				2A2128092909CAA300E280E6 /* WhatsNewView.swift in Sources */,
 				75C999F627518708000B0FF8 /* Media.swift in Sources */,
 				C0DAFC52B24C456EAE5AEF21 /* AWSCategory.swift in Sources */,
 				684E2F2D3FCC4D36AC68E57D /* AWSCategory+Schema.swift in Sources */,
@@ -1047,7 +1055,7 @@
 				DEVELOPMENT_TEAM = Y535846H6P;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "brain-marks/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1071,7 +1079,7 @@
 				DEVELOPMENT_TEAM = Y535846H6P;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "brain-marks/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

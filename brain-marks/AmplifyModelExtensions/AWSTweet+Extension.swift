@@ -81,4 +81,3 @@ extension AWSTweet {
             userVerified: false)
     ]
 }
-

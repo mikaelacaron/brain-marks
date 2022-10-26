@@ -37,7 +37,15 @@ struct SettingsView<ViewModel: InfoViewModel>: View {
                             }
                         }
                     }
-                    
+                    Section(header: Text("Updates")) {
+                                          NavigationLink {
+                                            WhatsNewView(viewModel: viewModel)
+                                          } label: {
+                                              HStack {
+                                                  Text("What's New")
+                                              }
+                                          }
+                                      }
                     Section(header: Text("Appearance")) {
                         NavigationLink {
                             AppIconListView(appIconSettings: appIconSettings)
