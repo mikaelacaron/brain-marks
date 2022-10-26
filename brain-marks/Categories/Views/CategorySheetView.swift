@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CategorySheetView: View {
-    
+    @Binding var activeTab: Int
     @Binding var editCategory: AWSCategory?
     @Binding var categorySheetState: CategoryState
     @ObservedObject var parentVM: CategoryListViewModel
@@ -49,6 +49,7 @@ struct CategorySheetView: View {
                                     category: AWSCategory(name: category,
                                                           imageName: viewModel.thumbnail))
                                 }
+                                activeTab = 0
                             case .edit:
                                 guard editCategory != nil else {
                                     return
@@ -75,6 +76,7 @@ struct CategorySheetView: View {
                 }
             }
         }
+
     }
     
     @ViewBuilder private func textEntryView() -> some View {
@@ -176,13 +178,13 @@ struct NewCategorySheetView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             CategorySheetView(
-                editCategory: .constant(AWSCategory(id: "1",
+              activeTab: .constant(0), editCategory: .constant(AWSCategory(id: "1",
                                                     name: "CategoryName",
                                                     imageName: "swift")),
                 categorySheetState: .constant(.new), parentVM: CategoryListViewModel())
                 .preferredColorScheme(.light)
             CategorySheetView(
-                editCategory: .constant(AWSCategory(id: "1",
+              activeTab: .constant(0), editCategory: .constant(AWSCategory(id: "1",
                                                     name: "CategoryName",
                                                     imageName: "swift")),
                 categorySheetState: .constant(.new), parentVM: CategoryListViewModel())

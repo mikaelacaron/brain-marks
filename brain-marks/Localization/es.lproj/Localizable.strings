@@ -1,0 +1,58 @@
+/* 
+  Localizable.strings
+  brain-marks
+
+  Created by Joel Sereno 10/17/2022
+  
+*/
+
+// TabView
+"Tweets" = "Tweets";
+"Settings" = "Configuración";
+
+// CategoryViews
+"Categories" = "Categorías";
+"CategoriesAreEmpty" = "Las categorías están vacías,";
+"PleaseAddNewCategories" = "Por favor agregue nuevas categorías haciendo clic en";
+"YouHaventCreatedCategories" = "¡No has creado ninguna categoría!";
+"Edit" = "Editar";
+"Done" = "Hecho";
+"AllCategoriesWillBeDeleted" = "Todas las categorías y todos los tweets serán eliminados";
+"EnterCategoryName" = "Introduzca el nombre de la nueva categoría";
+"Cancel" = "Cancelar";
+"NewCategory" = "Nueva Categoría";
+"EditCategory" = "Editar Categoría";
+"Create" = "Crear";
+"Delete" = "Borrar";
+
+// TweetViews
+"9:58 PM・9/5/20・" = "21:58・5/9/20・";
+"TwitterForIphone" = "Twitter para iPhone";
+"Likes" = "Gustos";
+"NoSavedTweets" = "No hay tweets guardados!";
+"EnteredLinkIsNotValid" = "El enlace que ingresaste no es válido.";
+"UhOh" = "Oh, oh!";
+"YouMustSelectCategory" = "Deba seleccionar una categoría";
+
+// AddURLView
+"EnterCopiedURL" = "Introduzca la URL copiada";
+"Category" = "Categoría";
+"Save" = "Guardar";
+"AddTweetURL" = "Añadir URL de tweet";
+
+// SettingsView
+"Settings" = "Configuración";
+"BrainMarksIsOpenSource" = "¡Brain Marks es un proyecto de código abierto! Fue creado durante el Big Brain Hackathon y ha seguido siendo de código abierto para Hacktoberfest.\nPuede clasificar sus tweets guardados.";
+"IfYouWantToContribute" = "¡Puedes contribuir a este proyecto!\nEste proyecto es de código abierto en GitHub. Visite el siguiente enlace para contribuir. Tenemos una lista de todos los contribuyentes, ¡su nombre podría estar allí!";
+"ListOfContributors" = "Lista de Colaboradores";
+"Links" = "Enlaces";
+"ReportABug" = "Reportar un error";
+"GitHubRepo" = "GitHub Repositorio";
+"ThanksForUsing" = "Gracias por usar";
+"Version" = "Versión";
+"About" = "Acerca de";
+"Contributions" = "Contribuciones";
+"Appearance" = "Apariencia";
+
+// ContributorListView
+"Contributors" = "Colaboradores";

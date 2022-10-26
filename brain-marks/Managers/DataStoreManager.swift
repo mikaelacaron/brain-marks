@@ -91,7 +91,7 @@ class DataStoreManger {
                     case .success(let savedCategory):
                         Logger.dataStore.debug("✅ Updated Category: \(savedCategory.name)")
                     case .failure(let error):
-                        Logger.dataStore.error("❌ Failed to update category \(updatedCategory.name) because: \(error)")
+                        Logger.dataStore.error("❌ Failed category update \(updatedCategory.name) - \(error)")
                     }
                 }
             case .failure(let error):

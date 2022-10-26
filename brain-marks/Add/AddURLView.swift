@@ -31,7 +31,7 @@ struct AddURLView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("Add Tweet URL").bold()
+                    Text("AddTweetURL").bold()
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {

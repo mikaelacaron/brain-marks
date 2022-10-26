@@ -1,0 +1,55 @@
+/* 
+  Localizable.strings
+  brain-marks
+
+  Created by Alfin Syahruddin on 14.10.22. 
+  
+*/
+
+// TabView
+"Tweets" = "Tweet";
+"Settings" = "Pengaturan";
+
+// CategoryViews
+"Categories" = "Kategori";
+"CategoriesAreEmpty" = "Kategori kosong,";
+"PleaseAddNewCategories" = "Silakan tambahkan kategori baru dengan mengklik";
+"YouHaventCreatedCategories" = "Anda belum membuat kategori apa pun!";
+"Edit" = "Edit";
+"Done" = "Selesai";
+"AllCategoriesWillBeDeleted" = "Kategori dan semua tweet akan dihapus";
+"EnterCategoryName" = "Masukkan nama kategori baru";
+"Cancel" = "Batal";
+"NewCategory" = "Kategori baru";
+"EditCategory" = "Edit kategori";
+"Create" = "Buat";
+"Delete" = "Hapus";
+
+// TweetViews
+"9:58 PM・9/5/20・" = "21:58・9/5/20・";
+"TwitterForIphone" = "Twitter untuk iPhone";
+"Likes" = "Suka";
+"NoSavedTweets" = "Tidak ada tweet yang disimpan!";
+"EnteredLinkIsNotValid" = "Tautan yang Anda masukkan tidak valid.";
+"UhOh" = "Uh Oh!";
+"YouMustSelectCategory" = "Anda harus memilih kategori";
+
+// AddURLView
+"EnterCopiedURL" = "Masukkan URL yang disalin";
+"Category" = "Kategori";
+"Save" = "Simpan";
+"AddTweetURL" = "Tambahkan URL Tweet";
+
+// SettingsView
+"Settings" = "Pengaturan";
+"BrainMarksIsOpenSource" = "Brain Marks adalah proyek open source! Dibuat selama hackathon Big Brain dan terus bersumber terbuka untuk hacktoberfest.\nAnda dapat mengkategorikan tweet yang Anda simpan.";
+"IfYouWantToContribute" = "Anda dapat berkontribusi pada proyek ini! Proyek ini adalah open source di GitHub. Kunjungi tautan di bawah ini untuk berkontribusi. Kami memiliki daftar semua kontributor, nama Anda bisa ada di sana!";
+"ListOfContributors" = "Daftar kontributor";
+"Links" = "Tautan";
+"ReportABug" = "Laporkan bug";
+"GitHubRepo" = "Repositori GitHub";
+"ThanksForUsing" = "Terima kasih telah menggunakan";
+"Version" = "Versi";
+
+// ContributorListView
+"Contributors" = "Kontributor";

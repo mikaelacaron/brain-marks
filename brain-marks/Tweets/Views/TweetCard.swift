@@ -46,7 +46,7 @@ struct TweetHeaderView: View {
 struct TweetBodyView: View {
     let tweetBody: String
     var body: some View {
-        Text(tweetBody)
+        TextHighlightingHashtags(tweetBody)
             .font(.body)
             .lineSpacing(8.0)
             .padding(EdgeInsets(top: 0, leading: 18, bottom: 18, trailing: 18))
@@ -167,9 +167,73 @@ struct TimeStampView: View {
     }
 }
 
+// swiftlint:disable shorthand_operator
+private extension TweetBodyView {
+    
+    /// Use this Text View to highlight and #s in tweets following Twitter's hashtag rules.
+    /// Only alphanumeric characters directly after a # symbol will be highlighted.
+    /// Any other symbols before or after a # will not be highlighted.
+    /// - Parameter tweet: The string to have occurances of hashtags highlighted.
+    /// - Returns: A text view where words preceeded by "#" are highlighted.
+    func TextHighlightingHashtags(_ tweet: String) -> Text {
+        
+        guard tweet.contains("#") else { return Text(tweet) }
+        
+        var output = Text("")
+        let words = tweet.split(separator: " ")
+        
+        for word in words {
+            if let hashtagIndex = word.firstIndex(of: "#") {
+                
+                // Avoid highlighting the first part of a word preceeding a #
+                let prefixString = word.prefix(upTo: hashtagIndex)
+                output = output + Text(" ") + Text(prefixString)
+                
+                let hashtagIndexPlusOne = word.index(hashtagIndex,
+                                                     offsetBy: 1)
+                let hashtagPlusSuffixString = word.suffix(
+                    from: hashtagIndexPlusOne)
+                
+                if let suffixIndex = hashtagPlusSuffixString.firstIndex(
+                    where: {!$0.isNumber && !$0.isLetter}) {
+                    // If the # word is followed by non-alphanumeric symbols do not highlight the symbols
+                    let hashtagString = hashtagPlusSuffixString.prefix(
+                        upTo: suffixIndex)
+                    
+                    if hashtagString.count < 1 {
+                        // If # is on its own or followed by symbols do not highlight.
+                        output = output + Text("#")
+                    } else {
+                        let hashtagText = Text("#" + hashtagString)
+                            .foregroundColor(Color("twitter"))
+                        output = output + hashtagText
+                    }
+                    
+                    let suffixString = hashtagPlusSuffixString[suffixIndex...]
+                    output = output + Text(suffixString)
+                    
+                } else {
+                    // If there are no symbols at the end of a string highlight the whole string after the #
+                    output = output + Text("#" + hashtagPlusSuffixString).foregroundColor(Color("twitter"))
+                }
+            } else {
+                // If word does not contain # do not highlight
+                output = output + Text(" ") + Text(String(word))
+            }
+        }
+        return output
+    }
+}
+
 struct TweetCard_Previews: PreviewProvider {
     static var previews: some View {
-        TweetCard(tweet: AWSTweet(id: "123", tweetID: "234", text: "Tweet ext here"))
-            .previewLayout(PreviewLayout.sizeThatFits)
+        Group {
+            TweetCard(tweet: AWSTweet.exampleAWSTweets[0])
+            TweetCard(tweet: AWSTweet.exampleAWSTweets[1])
+            TweetCard(tweet: AWSTweet.exampleAWSTweets[2])
+            TweetCard(tweet: AWSTweet.exampleAWSTweets[3])
+            TweetCard(tweet: AWSTweet.exampleAWSTweets[4])
+        }
+        .previewLayout(PreviewLayout.sizeThatFits)
     }
 }
