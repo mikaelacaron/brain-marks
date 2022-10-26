@@ -105,12 +105,7 @@ struct CategorySheetView: View {
     }
     
     let columnStyle = [GridItem(), GridItem(), GridItem(), GridItem()]
-    let  categorySFSymbols = ["folder", "book", "music.note",
-                              "list.bullet", "gamecontroller", "brain.head.profile",
-                              "star", "hands.clap", "bookmark",
-                              "dollarsign.circle", "shippingbox", "laptopcomputer",
-                              "chart.bar", "gift", "suit.heart", "pin",
-                              "headphones", "moon", "crown", "person"]
+    let  categorySFSymbols = SFSymbol.initialSFSymbols + SFSymbol.NO_DECORATORS
     
     @ViewBuilder private func thumbnailGridView() -> some View {
         switch categorySheetState {
@@ -126,16 +121,16 @@ struct CategorySheetView: View {
             LazyVGrid(columns: columnStyle) {
                 ForEach(categorySFSymbols, id: \.self) { sfSymbol in
                     Button {
-                        viewModel.selectThumbnail(sfSymbol)
+                        viewModel.selectThumbnail(sfSymbol.name)
                         self.categoryThumbnail = viewModel.thumbnail
                     } label: {
-                        Image(systemName: sfSymbol)
-                            .foregroundColor(viewModel.thumbnail == sfSymbol
+                        Image(systemName: sfSymbol.name)
+                            .foregroundColor(viewModel.thumbnail == sfSymbol.name
                                              ? Color.primary
                                              : Color.blue
                             )
                             .padding()
-                            .background(viewModel.thumbnail == sfSymbol
+                            .background(viewModel.thumbnail == sfSymbol.name
                                         ? Color.blue.opacity(0.4)
                                         : .clear)
                             .cornerRadius(10)
@@ -150,17 +145,17 @@ struct CategorySheetView: View {
             LazyVGrid(columns: columnStyle) {
                 ForEach(categorySFSymbols, id: \.self) { sfSymbol in
                     Button {
-                        categoryThumbnail = sfSymbol
-                        editCategory?.imageName = sfSymbol
+                        categoryThumbnail = sfSymbol.name
+                        editCategory?.imageName = sfSymbol.name
                         
                     } label: {
-                        Image(systemName: sfSymbol)
-                            .foregroundColor(categoryThumbnail == sfSymbol
+                        Image(systemName: sfSymbol.name)
+                            .foregroundColor(categoryThumbnail == sfSymbol.name
                                              ? Color.primary
                                              : Color.blue
                             )
                             .padding()
-                            .background(categoryThumbnail == sfSymbol
+                            .background(categoryThumbnail == sfSymbol.name
                                         ? Color.blue.opacity(0.4)
                                         : .clear)
                             .cornerRadius(10)
