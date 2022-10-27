@@ -29,6 +29,8 @@ class AppIconSettings: ObservableObject {
         sortIcons()
     }
     
+    /// To fetch the app icons
+    /// Refer to `CFBundleIcons` for app icons details
     private func fetchAppIcons() {
         if let bundleIcons = Bundle.main.object(forInfoDictionaryKey: "CFBundleIcons") as? [String: Any] {
             if let primaryIcon = bundleIcons["CFBundlePrimaryIcon"] as? [String: Any],

@@ -6,8 +6,11 @@
 //
 
 import Foundation
-
+/// An extension to `String` to add `formattimestamp`, `removingUrls` functionality
 extension String {
+    
+    /// To format the timestamp
+    /// - Returns: A `String` with date formatted as specified data format
     func formatTimestamp() -> String {
                 
         let inputFormatter = ISO8601DateFormatter()
@@ -29,7 +32,9 @@ extension String {
             return self
         }
     }
-
+    
+    /// To remove urls by replacing matched types
+    /// - Returns: A `String` with replaced matches of detector
     func removingUrls() -> String {
         let types = NSTextCheckingResult.CheckingType.link.rawValue
         guard let detector = try? NSDataDetector(types: types) else {

@@ -14,7 +14,7 @@ struct User: Codable {
     let profileImageURL: String
     let verified: Bool
 }
-
+/// An extension to `User` to add `CodingKeys` property
 extension User {
     enum CodingKeys: String, CodingKey {
         case id, name, username, verified

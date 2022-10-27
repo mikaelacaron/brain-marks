@@ -6,13 +6,22 @@
 //
 
 import Foundation
-
+/// An `Identifiable`   extension to `AWSTweet`
 extension AWSTweet: Identifiable {}
+
+/// An extention of `AWSTweet` as `Hashable` with added functionality of `hash` and  comparable `==` equatable.
 extension AWSTweet: Hashable {
+    /// To check whether two `AWSTweet` are equal
+    /// - Parameters:
+    ///   - lhs: It is an `AWSTweet`
+    ///   - rhs: It is an `AWSTweet`
+    /// - Returns: Bool value (true when lhs and rhs are equal or false)
     public static func == (lhs: AWSTweet, rhs: AWSTweet) -> Bool {
         return lhs.id == rhs.id
     }
     
+    /// To hash combine `hasher` with`id`
+    /// - Parameter hasher: An  `inout` parameter of Hasher type, hashed combined with `id`
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

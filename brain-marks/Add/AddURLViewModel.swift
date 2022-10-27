@@ -23,7 +23,10 @@ final class AddURLViewModel: ObservableObject {
     init(requestBuilder: RequestBuildable = RequestBuilder()) {
         self.requestBuilder = requestBuilder
     }
-
+    
+    /// To fetch the tweet from user twitter account
+    /// - Parameter url: It is an String parameter which is used to create url request.
+    /// - Returns: `ReturnedTweet` or throws HttpError.badResponse or HttpError.cantDecode
     func fetchTweet(url: String) async throws -> ReturnedTweet {
         let (data, response) = try await URLSession.shared.data(for: requestBuilder.createRequest(with: url))
 
@@ -44,6 +47,9 @@ final class AddURLViewModel: ObservableObject {
         }
     }
     
+    /// To create URL
+    /// - Parameter url: It is a `String` parameter used to create valid URL containing `twitter.com`.
+    /// - Returns: URL with added required fields or throws HttpError.badURL exception
     private func createURL(url: String) throws -> URL {
 
         guard url.contains("twitter.com") else {
@@ -71,6 +77,9 @@ final class AddURLViewModel: ObservableObject {
         return completeURL
     }
     
+    /// To create tweets
+    /// - Parameter result: It is a HTTP Response object used to create `ReturnedTweet` object
+    /// - Returns: `ReturnedTweet` with  fields like authorName, authorUsername, userVerified, profileImageURL, photoURL and media.
     private func createTweet (_ result: Response) -> ReturnedTweet {
         let user = result.includes.users.first
         

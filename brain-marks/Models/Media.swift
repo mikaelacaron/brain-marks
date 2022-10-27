@@ -12,7 +12,7 @@ struct Media: Codable {
     let type: String
     let url: String
 }
-
+/// An extension to `Media` adding `CodingKeys` property
 extension Media {
     enum CodingKeys: String, CodingKey {
         case id = "media_key"

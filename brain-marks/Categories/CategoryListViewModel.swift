@@ -19,6 +19,7 @@ final class CategoryListViewModel: ObservableObject {
         getCategoryOrder()
     }
     
+    /// To get the categories from `DataStoreManager`
     func getCategories() {
         categories = []
         DataStoreManger.shared.fetchCategories { result in
@@ -33,6 +34,8 @@ final class CategoryListViewModel: ObservableObject {
         }
     }
     
+    /// To delete the category with specified `offsets`
+    /// - Parameter offsets: It is an `IndexSet` type parameter used to delete category from each offset in `DataStoreManager`
     func deleteCategory(at offsets: IndexSet) {
         for offset in offsets {
             let category = categories[offset]
@@ -41,6 +44,9 @@ final class CategoryListViewModel: ObservableObject {
         categories.remove(atOffsets: offsets)
     }
     
+    /// To sort the categories
+    /// - Parameter categories: It is a list of `AWSCategory` ordered by `id`
+    /// - Returns: A list of `AWSCategory`
     func sortCategories(_ categories: [AWSCategory]) -> [AWSCategory] {
         // Match Arrays order the the one stored in UserDefaults
         var orderedCategories = [AWSCategory]()
@@ -66,6 +72,8 @@ final class CategoryListViewModel: ObservableObject {
         return orderedCategories
     }
     
+    /// To set the category order and save
+    /// - Parameter categories: A list of `AWSCategory`to be ordered
     func setCategoryOrder(with categories: [AWSCategory]) {
         categoryOrder = [String]()
         for category in categories {
@@ -74,10 +82,12 @@ final class CategoryListViewModel: ObservableObject {
         saveCategoryOrder()
     }
     
+    /// To save the category order in `UserDefaults`
     func saveCategoryOrder() {
         UserDefaults.standard.set(categoryOrder, forKey: "categoryOrder")
     }
     
+    /// To get the category order from `UserDefaults`
     func getCategoryOrder() {
         categoryOrder = (UserDefaults.standard.array(forKey: "categoryOrder")) as? [String] ?? [String]()
     }

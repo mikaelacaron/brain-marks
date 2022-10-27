@@ -67,6 +67,7 @@ class ImageLoader: ObservableObject {
         cancel()
     }
     
+    /// To load the image
     func load() {
         guard !isLoading else { return }
         
@@ -87,18 +88,23 @@ class ImageLoader: ObservableObject {
             .sink { [weak self] in self?.image = $0 }
     }
     
+    /// To cancel the image loading
     func cancel() {
         cancellable?.cancel()
     }
     
+    /// To set `isLoading` on start
     private func onStart() {
         isLoading = true
     }
     
+    /// To reset `isLoading` on finish
     private func onFinish() {
         isLoading = false
     }
     
+    /// To cache the image
+    /// - Parameter image: An `UIImage` to be cached
     private func cache(_ image: UIImage?) {
         image.map { cache?[url] = $0 }
     }
@@ -126,7 +132,7 @@ struct TemporaryImageCache: ImageCache {
 struct ImageCacheKey: EnvironmentKey {
     static let defaultValue: ImageCache = TemporaryImageCache()
 }
-
+/// An extension to `EnvironmentValues` to add `imageCache` property
 extension EnvironmentValues {
     var imageCache: ImageCache {
         get { self[ImageCacheKey.self] }
