@@ -35,8 +35,9 @@ final class AddURLViewModel: ObservableObject {
 
             do {
                 let result = try JSONDecoder().decode(Response.self, from: data)
-                return createTweet(result)
+                return await createTweet(result)
             } catch {
+                debugPrint(error)
                 throw HttpError.cantDecode
             }
         } else {
@@ -71,7 +72,22 @@ final class AddURLViewModel: ObservableObject {
         return completeURL
     }
     
-    private func createTweet (_ result: Response) -> ReturnedTweet {
+    private func getQuoteTweetLink(fromTweetText text: String) -> URL? {
+        do {
+            let regex = try NSRegularExpression(pattern: #"http(?:s)?:\/\/t\.co\/([a-zA-Z0-9_]+)"#)
+            guard let linkMatch = regex.firstMatch(in: text, range: NSRange(location: 0, length: text.utf16.count)) else {
+                return nil
+            }
+            let linkString = (text as NSString).substring(with: linkMatch.range)
+            return URL(string: linkString)
+        } catch {
+            assertionFailure(error.localizedDescription)
+            return nil
+        }
+       
+    }
+    
+    private func createTweet (_ result: Response) async -> ReturnedTweet {
         let user = result.includes.users.first
         
         let authorName = user?.name ?? ""
@@ -88,16 +104,40 @@ final class AddURLViewModel: ObservableObject {
             }
         }
         
-        let tweetToSave = ReturnedTweet(
-            id: result.data[0].id,
-            text: result.data[0].text,
-            timeStamp: result.data[0].created_at,
-            authorName: authorName,
-            authorUsername: authorUsername,
-            profileImageURL: profileImageURL,
-            userVerified: userVerified,
-            photosUrl: photoUrl)
+        lazy var plainTweet: ReturnedTweet = {
+            ReturnedTweet(
+                id: result.data[0].id,
+                text: result.data[0].text,
+                timeStamp: result.data[0].created_at,
+                authorName: authorName,
+                authorUsername: authorUsername,
+                profileImageURL: profileImageURL,
+                userVerified: userVerified,
+                photosUrl: photoUrl,
+                quoteTweet: nil
+            )
+        }()
         
-        return tweetToSave
+        guard let quoteTweetURL = getQuoteTweetLink(fromTweetText: result.data[0].text) else {
+            return plainTweet
+        }
+        
+        do {
+            let quoteTweet = try await fetchTweet(url: quoteTweetURL.absoluteString)
+            return ReturnedTweet(
+                id: result.data[0].id,
+                text: result.data[0].text,
+                timeStamp: result.data[0].created_at,
+                authorName: authorName,
+                authorUsername: authorUsername,
+                profileImageURL: profileImageURL,
+                userVerified: userVerified,
+                photosUrl: photoUrl,
+                quoteTweet: quoteTweet
+            )
+        } catch {
+            debugPrint(error.localizedDescription)
+            return plainTweet
+        }
     }
 }
