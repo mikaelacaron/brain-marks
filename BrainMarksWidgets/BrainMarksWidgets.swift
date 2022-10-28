@@ -8,7 +8,7 @@
 import WidgetKit
 import SwiftUI
 
-struct Provider: TimelineProvider {
+struct Provider: TimelineProvider, IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
       SimpleEntry(date: Date())
     }
@@ -72,12 +72,28 @@ struct BrainMarksAddURLView : View {
    }
 }
 
+struct BrainMarksLockScreenEntryView : View {
+  var entry: Provider.Entry
+
+  var body: some View {
+      ZStack {
+        Circle().fill(Color.accentColor).opacity(0.75)
+//        Image(systemName: "gamecontroller")
+        Image(systemName: "\(entry.configuration.category.imageName)")
+          .font(.largeTitle)
+      }
+      // will need to pass which category to open as a URL parameter
+      .widgetURL(URL(string: "brainmarks://openCategory?entry.configuration.category"))
+  }
+}
+
 @main
 struct BrainMarksWidgetBundle: WidgetBundle {
   @WidgetBundleBuilder
   var body: some Widget {
     BrainMarksCreateCategory()
     BrainMarksAddURL()
+    BrainMarksLockScreenWidget()
     // more widgets can go here
   }
 }
@@ -118,4 +134,23 @@ struct BrainMarksCreateCategory_Previews: PreviewProvider {
       BrainMarksCreateCategoryEntryView(entry: SimpleEntry(date: Date()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
+}
+struct BrainMarksLockScreenWidget: Widget {
+    let kind: String = "BrainMarksLockScreen"
+
+    var body: some WidgetConfiguration {
+      IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+              BrainMarksLockScreenEntryView(entry: entry)
+        }
+        .configurationDisplayName("View Category")
+        .description("Quickly access a Brain Marks category")
+        .supportedFamilies([.accessoryCircular])
+    }
+}
+
+struct BrainMarksLockScreenWidget_Previews: PreviewProvider {
+  static var previews: some View {
+    BrainMarksLockScreenEntryView(entry: SimpleEntry(date: Date()))
+      .previewContext(WidgetPreviewContext(family: .accessoryCircular))
+  }
 }
