@@ -124,6 +124,7 @@
 /* Begin PBXFileReference section */
 		0AA54EDF3B34443CA9D530E5 /* AWSTweet.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AWSTweet.swift; path = amplify/generated/models/AWSTweet.swift; sourceTree = "<group>"; };
 		14F5BDE61EAA4A2DB9030734 /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
+		18971238290DB3AF00D1D425 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1E886624D4EE4F64B9160A75 /* amplifytools.xcconfig */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.xcconfig; path = amplifytools.xcconfig; sourceTree = "<group>"; };
 		2A7C407E28EFCC3600F73DF5 /* BrainMarksWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BrainMarksWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7C408028EFCC3600F73DF5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -649,6 +650,7 @@
 				fr,
 				id,
 				es,
+				hi,
 			);
 			mainGroup = FFEBBB2D26223F75000F475F;
 			packageReferences = (
@@ -843,6 +845,7 @@
 				D3CD6EE028E92BD700F5EC76 /* fr */,
 				A17404B028F8F9D000D292D4 /* id */,
 				DC36F1F728FD9DA000A6F0B9 /* es */,
+				18971238290DB3AF00D1D425 /* hi */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

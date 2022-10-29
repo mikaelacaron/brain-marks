@@ -1,0 +1,55 @@
+/*
+  Localizable.strings
+  brain-marks
+
+  Created by AC Richter on 13.12.21.
+  
+*/
+
+// TabView
+"Tweets" = "ट्वीट्स";
+"Settings" = "सेटिंग";
+
+// CategoryViews
+"Categories" = "श्रेणियाँ";
+"CategoriesAreEmpty" = "श्रेणियां खाली हैं, ";
+"PleaseAddNewCategories" = "कृपया क्लिक करके नई श्रेणियां जोड़ें";
+"YouHaventCreatedCategories" = "आपने कोई श्रेणी नहीं बनाई है!";
+"Edit" = "Edit";
+"Done" = "Done";
+"AllCategoriesWillBeDeleted" = "श्रेणी और सभी ट्वीट हटा दिए जाएंगे।";
+"EnterCategoryName" = "नई श्रेणी का नाम दर्ज करें";
+"Cancel" = "Cancel";
+"NewCategory" = "नई श्रेणी";
+"EditCategory" = "Edit Category";
+"Create" = "सृजन करना";
+"Delete" = "हटाएं";
+
+// TweetViews
+"9:58 PM・9/5/20・" = "9:58 PM・9/5/20・";
+"TwitterForIphone" = "iPhone के लिए ट्विटर";
+"Likes" = "Likes";
+"NoSavedTweets" = "कोई ट्वीट सहेजा नहीं गया!";
+"EnteredLinkIsNotValid" = "आपके द्वारा दर्ज किया गया लिंक मान्य नहीं है।";
+"UhOh" = "Uh oh!";
+"YouMustSelectCategory" = "आपको एक श्रेणी का चयन करना होगा";
+
+// AddURLView
+"EnterCopiedURL" = "कॉपी किया हुआ URL डालें";
+"Category" = "श्रेणी";
+"Save" = "सेव करे";
+"AddTweetURL" = "ट्वीट URL जोड़ें";
+
+// SettingsView
+"Settings" = "सेटिंग्स";
+"BrainMarksIsOpenSource" = "ब्रेन मार्क्स एक open source प्रोजेक्ट है!! यह बिग ब्रेन हैकथॉन के दौरान बनाया गया था और हैकटेबरफेस्ट के लिए open source बना हुआ है। \n आप अपने सहेजे गए ट्वीट्स को categorize कर सकते हैं।.";
+"IfYouWantToContribute" = "आप इस प्रोजेक्ट में अपना योगदान दे सकते हैं! \n यह प्रोजेक्ट GitHub पर open source है। योगदान करने के लिए नीचे दिए गए लिंक पर जाएं। हमारे पास सभी योगदानकर्ताओं की एक सूची है, आपका नाम हो सकता है!";
+"ListOfContributors" = "योगदानकर्ताओं की सूची";
+"Links" = "लिंक";
+"ReportABug" = " बग रिपोर्ट करें";
+"GitHubRepo" = "GitHub रिपोजिटरी";
+"ThanksForUsing" = "Thank you for using";
+"Version" = "संस्करण";
+
+// ContributorListView
+"Contributors" = "योगदानकर्ताओं";
