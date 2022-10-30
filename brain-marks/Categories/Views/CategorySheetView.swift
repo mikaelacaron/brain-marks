@@ -105,7 +105,6 @@ struct CategorySheetView: View {
     }
     
     let columnStyle = [GridItem(), GridItem(), GridItem(), GridItem()]
-    let  categorySFSymbols = SFSymbol.initialSFSymbols + SFSymbol.NO_DECORATORS
     
     @ViewBuilder private func thumbnailGridView() -> some View {
         switch categorySheetState {
@@ -119,7 +118,7 @@ struct CategorySheetView: View {
     @ViewBuilder private func newCategoryThumbnailGridView() -> some View {
         ScrollView {
             LazyVGrid(columns: columnStyle) {
-                ForEach(categorySFSymbols, id: \.self) { sfSymbol in
+                ForEach(SFSymbol.categorySelects, id: \.self) { sfSymbol in
                     Button {
                         viewModel.selectThumbnail(sfSymbol.name)
                         self.categoryThumbnail = viewModel.thumbnail
@@ -143,7 +142,7 @@ struct CategorySheetView: View {
     @ViewBuilder private func editCategoryThumbnailGridView() -> some View {
         ScrollView {
             LazyVGrid(columns: columnStyle) {
-                ForEach(categorySFSymbols, id: \.self) { sfSymbol in
+                ForEach(SFSymbol.categorySelects, id: \.self) { sfSymbol in
                     Button {
                         categoryThumbnail = sfSymbol.name
                         editCategory?.imageName = sfSymbol.name

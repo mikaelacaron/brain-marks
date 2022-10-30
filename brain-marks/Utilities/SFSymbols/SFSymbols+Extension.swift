@@ -15,6 +15,7 @@ extension SFSymbol {
         .filter {!$0.name.hasSuffix("circle")}
         .filter {!$0.name.hasSuffix("square")}
         .filter { !$0.name.contains("badge")}
+
     static let initialSFSymbols = [SFSymbol._folder,
                                    SFSymbol._book,
                                    SFSymbol._musicnote,
@@ -32,4 +33,16 @@ extension SFSymbol {
                                    SFSymbol._moon,
                                    SFSymbol._crown,
                                    SFSymbol._person]
+
+    /// SFSymbols that returns a specifc set of SFSymbols at the beginning W
+    static var categorySelects: [SFSymbol] {
+        let notInclude = Self.NO_DECORATORS.filter { symbol in
+            var foundMatch = true
+            for initSymbol in Self.initialSFSymbols where initSymbol == symbol {
+                foundMatch = false
+            }
+            return foundMatch
+        }
+        return Self.initialSFSymbols + notInclude
+    }
 }
