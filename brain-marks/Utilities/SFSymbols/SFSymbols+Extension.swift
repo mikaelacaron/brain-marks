@@ -11,7 +11,8 @@ extension SFSymbol {
     var name: String { return rawValue }
 
     static let ALL_ICONS = Self.allCases
-    static let NO_DECORATORS = Self.allCases.filter {!$0.name.hasSuffix("fill")}
+    static let NO_DECORATORS = Self.allCases
+        .filter {!$0.name.hasSuffix("fill")}
         .filter {!$0.name.hasSuffix("circle")}
         .filter {!$0.name.hasSuffix("square")}
         .filter { !$0.name.contains("badge")}
