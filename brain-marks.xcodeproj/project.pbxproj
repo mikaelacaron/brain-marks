@@ -13,6 +13,8 @@
 		2A7C408628EFCC3600F73DF5 /* BrainMarksWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7C408528EFCC3600F73DF5 /* BrainMarksWidgets.swift */; };
 		2A7C408828EFCC3700F73DF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C408728EFCC3700F73DF5 /* Assets.xcassets */; };
 		2A7C408C28EFCC3700F73DF5 /* BrainMarksWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2A7C407E28EFCC3600F73DF5 /* BrainMarksWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2AA58B622912E6A900BF551D /* AWSCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D0518628EF45A382F08352 /* AWSCategory.swift */; };
+		2AA58B632912E6D300BF551D /* AWSTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA54EDF3B34443CA9D530E5 /* AWSTweet.swift */; };
 		45B4425428EF5AC800FB0B27 /* AppIconSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4425328EF5AC800FB0B27 /* AppIconSettings.swift */; };
 		45B4426628EF5EA300FB0B27 /* 8 Rainbow.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425628EF5EA300FB0B27 /* 8 Rainbow.png */; };
 		45B4426828EF5EA300FB0B27 /* 4 Beach.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425828EF5EA300FB0B27 /* 4 Beach.png */; };
@@ -132,6 +134,7 @@
 		2A7C408528EFCC3600F73DF5 /* BrainMarksWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainMarksWidgets.swift; sourceTree = "<group>"; };
 		2A7C408728EFCC3700F73DF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A7C408928EFCC3700F73DF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AE728C32912DB6900785853 /* brain-marks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "brain-marks.entitlements"; sourceTree = "<group>"; };
 		45B4425328EF5AC800FB0B27 /* AppIconSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSettings.swift; sourceTree = "<group>"; };
 		45B4425628EF5EA300FB0B27 /* 8 Rainbow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "8 Rainbow.png"; sourceTree = "<group>"; };
 		45B4425828EF5EA300FB0B27 /* 4 Beach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4 Beach.png"; sourceTree = "<group>"; };
@@ -485,6 +488,7 @@
 		FFEBBB3826223F75000F475F /* brain-marks */ = {
 			isa = PBXGroup;
 			children = (
+				2AE728C32912DB6900785853 /* brain-marks.entitlements */,
 				FF3942FF262E847000A3623B /* Add */,
 				FF39430E262E863000A3623B /* AmplifyModelExtensions */,
 				FF39432A262FD05700A3623B /* Categories */,
@@ -747,7 +751,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AA58B632912E6D300BF551D /* AWSTweet.swift in Sources */,
 				2A7C408628EFCC3600F73DF5 /* BrainMarksWidgets.swift in Sources */,
+				2AA58B622912E6A900BF551D /* AWSCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,7 +874,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y535846H6P;
+				DEVELOPMENT_TEAM = N76WE33BQK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BrainMarksWidgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BrainMarksWidgets;
@@ -880,7 +886,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarks.BrainMarksWidgets;
+				PRODUCT_BUNDLE_IDENTIFIER = com.suzgupta.brainmarks.BrainMarksWidgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -897,7 +903,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y535846H6P;
+				DEVELOPMENT_TEAM = N76WE33BQK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BrainMarksWidgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = BrainMarksWidgets;
@@ -909,7 +915,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarks.BrainMarksWidgets;
+				PRODUCT_BUNDLE_IDENTIFIER = com.suzgupta.brainmarks.BrainMarksWidgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1044,9 +1050,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "brain-marks/brain-marks.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"brain-marks/Preview Content\"";
-				DEVELOPMENT_TEAM = Y535846H6P;
+				DEVELOPMENT_TEAM = N76WE33BQK;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "brain-marks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1055,7 +1062,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.suzgupta.brainmarks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1068,9 +1075,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "brain-marks/brain-marks.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"brain-marks/Preview Content\"";
-				DEVELOPMENT_TEAM = Y535846H6P;
+				DEVELOPMENT_TEAM = N76WE33BQK;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "brain-marks/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -1079,7 +1087,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarks;
+				PRODUCT_BUNDLE_IDENTIFIER = com.suzgupta.brainmarks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1093,7 +1101,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y535846H6P;
+				DEVELOPMENT_TEAM = N76WE33BQK;
 				INFOPLIST_FILE = "brain-marksTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1101,7 +1109,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mikaelacaron.brain-marksTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.suzgupta.brain-marksTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1115,7 +1123,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y535846H6P;
+				DEVELOPMENT_TEAM = N76WE33BQK;
 				INFOPLIST_FILE = "brain-marksTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1123,7 +1131,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mikaelacaron.brain-marksTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.suzgupta.brain-marksTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1136,14 +1144,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y535846H6P;
+				DEVELOPMENT_TEAM = N76WE33BQK;
 				INFOPLIST_FILE = "brain-marksUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mikaelacaron.brain-marksUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.suzgupta.brain-marksUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1156,14 +1164,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y535846H6P;
+				DEVELOPMENT_TEAM = N76WE33BQK;
 				INFOPLIST_FILE = "brain-marksUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.mikaelacaron.brain-marksUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.suzgupta.brain-marksUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -35,7 +35,22 @@ struct Provider: TimelineProvider {
 }
 
 struct SimpleEntry: TimelineEntry {
-    let date: Date
+  let date: Date
+  func readContainer() {
+    guard let URL = FileManager.default.containerURL(
+      forSecurityApplicationGroupIdentifier: "group.com.suzgupta.brainmarks"
+    ) else {
+      return
+    }
+    let decoder = JSONDecoder()
+    if let codeData = try? Data(contentsOf: URL) {
+      do {
+        contents = try decoder.decode([AWSCategory].self, from: codeData)
+      } catch {
+        print("Error: Can't decode contents")
+      }
+    }
+  }
 }
 
 struct BrainMarksCreateCategoryEntryView : View {

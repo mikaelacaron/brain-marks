@@ -18,6 +18,27 @@ final class CategoryListViewModel: ObservableObject {
     init() {
         getCategoryOrder()
     }
+
+  func writeToContainer() {
+    guard let URL = FileManager.default.containerURL(
+      forSecurityApplicationGroupIdentifier: "group.com.suzgupta.brainmarks"
+    ) else {
+      return
+    }
+    let widgetContents = categories
+    let archiveURL = URL
+      .appendingPathComponent("categories.json")
+    print(">>> \(archiveURL)")
+    let encoder = JSONEncoder()
+    if let dataToSave = try? encoder.encode(widgetContents) {
+      do {
+        try dataToSave.write(to: archiveURL)
+      } catch {
+        print("Error: Can't write contents")
+        return
+      }
+    }
+  }
     
     func getCategories() {
         categories = []
@@ -26,7 +47,9 @@ final class CategoryListViewModel: ObservableObject {
             case .success(let categories):
                 DispatchQueue.main.async {
                     self.categories = self.sortCategories(categories)
+                    self.writeToContainer()
                 }
+
             case .failure(let error):
                 Logger.dataStore.error("Error fetching categories: \(error)")
             }
