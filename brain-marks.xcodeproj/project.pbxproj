@@ -8,13 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		20636BDDDBEF4EAE9CCE9D9E /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */; };
-		2A2B5DE8290F49180066D29A /* LockScreenWidgetIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B5DE7290F49180066D29A /* LockScreenWidgetIntents.intentdefinition */; };
-		2A2B5DE9290F49180066D29A /* LockScreenWidgetIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B5DE7290F49180066D29A /* LockScreenWidgetIntents.intentdefinition */; };
-		2A2B5DF0290F4BEF0066D29A /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A2B5DEF290F4BEF0066D29A /* Intents.framework */; };
-		2A2B5DF3290F4BEF0066D29A /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B5DF2290F4BEF0066D29A /* IntentHandler.swift */; };
-		2A2B5DF7290F4BEF0066D29A /* BrainMarksIntents.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2A2B5DEE290F4BEF0066D29A /* BrainMarksIntents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2A2B5DFB290F4C490066D29A /* LockScreenWidgetIntents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B5DE7290F49180066D29A /* LockScreenWidgetIntents.intentdefinition */; };
-		2A2B5DFC290F510C0066D29A /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B5DF2290F4BEF0066D29A /* IntentHandler.swift */; };
 		2A7C408128EFCC3600F73DF5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7C408028EFCC3600F73DF5 /* WidgetKit.framework */; };
 		2A7C408328EFCC3600F73DF5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7C408228EFCC3600F73DF5 /* SwiftUI.framework */; };
 		2A7C408628EFCC3600F73DF5 /* BrainMarksWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7C408528EFCC3600F73DF5 /* BrainMarksWidgets.swift */; };
@@ -91,13 +84,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2A2B5DF5290F4BEF0066D29A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FFEBBB2E26223F75000F475F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2A2B5DED290F4BEF0066D29A;
-			remoteInfo = BrainMarksIntents;
-		};
 		2A7C408A28EFCC3700F73DF5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FFEBBB2E26223F75000F475F /* Project object */;
@@ -128,7 +114,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				2A2B5DF7290F4BEF0066D29A /* BrainMarksIntents.appex in Embed Foundation Extensions */,
 				2A7C408C28EFCC3700F73DF5 /* BrainMarksWidgetsExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -140,11 +125,7 @@
 		0AA54EDF3B34443CA9D530E5 /* AWSTweet.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AWSTweet.swift; path = amplify/generated/models/AWSTweet.swift; sourceTree = "<group>"; };
 		14F5BDE61EAA4A2DB9030734 /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
 		1E886624D4EE4F64B9160A75 /* amplifytools.xcconfig */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.xcconfig; path = amplifytools.xcconfig; sourceTree = "<group>"; };
-		2A2B5DE7290F49180066D29A /* LockScreenWidgetIntents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = LockScreenWidgetIntents.intentdefinition; sourceTree = "<group>"; };
-		2A2B5DEE290F4BEF0066D29A /* BrainMarksIntents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BrainMarksIntents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2B5DEF290F4BEF0066D29A /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
-		2A2B5DF2290F4BEF0066D29A /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
-		2A2B5DF4290F4BEF0066D29A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A7C407E28EFCC3600F73DF5 /* BrainMarksWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BrainMarksWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7C408028EFCC3600F73DF5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		2A7C408228EFCC3600F73DF5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -228,14 +209,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2A2B5DEB290F4BEF0066D29A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2A2B5DF0290F4BEF0066D29A /* Intents.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2A7C407B28EFCC3600F73DF5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,15 +245,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2A2B5DF1290F4BEF0066D29A /* BrainMarksIntents */ = {
-			isa = PBXGroup;
-			children = (
-				2A2B5DF2290F4BEF0066D29A /* IntentHandler.swift */,
-				2A2B5DF4290F4BEF0066D29A /* Info.plist */,
-			);
-			path = BrainMarksIntents;
-			sourceTree = "<group>";
-		};
 		2A7C407F28EFCC3600F73DF5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,7 +261,6 @@
 				2A7C408528EFCC3600F73DF5 /* BrainMarksWidgets.swift */,
 				2A7C408728EFCC3700F73DF5 /* Assets.xcassets */,
 				2A7C408928EFCC3700F73DF5 /* Info.plist */,
-				2A2B5DE7290F49180066D29A /* LockScreenWidgetIntents.intentdefinition */,
 			);
 			path = BrainMarksWidgets;
 			sourceTree = "<group>";
@@ -503,7 +466,6 @@
 				FFEBBB4A26223F7F000F475F /* brain-marksTests */,
 				FFEBBB5526223F7F000F475F /* brain-marksUITests */,
 				2A7C408428EFCC3600F73DF5 /* BrainMarksWidgets */,
-				2A2B5DF1290F4BEF0066D29A /* BrainMarksIntents */,
 				2A7C407F28EFCC3600F73DF5 /* Frameworks */,
 				FFEBBB3726223F75000F475F /* Products */,
 			);
@@ -516,7 +478,6 @@
 				FFEBBB4726223F7F000F475F /* brain-marksTests.xctest */,
 				FFEBBB5226223F7F000F475F /* brain-marksUITests.xctest */,
 				2A7C407E28EFCC3600F73DF5 /* BrainMarksWidgetsExtension.appex */,
-				2A2B5DEE290F4BEF0066D29A /* BrainMarksIntents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -576,23 +537,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2A2B5DED290F4BEF0066D29A /* BrainMarksIntents */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2A2B5DF8290F4BEF0066D29A /* Build configuration list for PBXNativeTarget "BrainMarksIntents" */;
-			buildPhases = (
-				2A2B5DEA290F4BEF0066D29A /* Sources */,
-				2A2B5DEB290F4BEF0066D29A /* Frameworks */,
-				2A2B5DEC290F4BEF0066D29A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = BrainMarksIntents;
-			productName = BrainMarksIntents;
-			productReference = 2A2B5DEE290F4BEF0066D29A /* BrainMarksIntents.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		2A7C407D28EFCC3600F73DF5 /* BrainMarksWidgetsExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A7C409028EFCC3700F73DF5 /* Build configuration list for PBXNativeTarget "BrainMarksWidgetsExtension" */;
@@ -624,7 +568,6 @@
 			);
 			dependencies = (
 				2A7C408B28EFCC3700F73DF5 /* PBXTargetDependency */,
-				2A2B5DF6290F4BEF0066D29A /* PBXTargetDependency */,
 			);
 			name = "brain-marks";
 			packageProductDependencies = (
@@ -681,9 +624,6 @@
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					2A2B5DED290F4BEF0066D29A = {
-						CreatedOnToolsVersion = 14.0;
-					};
 					2A7C407D28EFCC3600F73DF5 = {
 						CreatedOnToolsVersion = 14.0;
 					};
@@ -724,19 +664,11 @@
 				FFEBBB4626223F7F000F475F /* brain-marksTests */,
 				FFEBBB5126223F7F000F475F /* brain-marksUITests */,
 				2A7C407D28EFCC3600F73DF5 /* BrainMarksWidgetsExtension */,
-				2A2B5DED290F4BEF0066D29A /* BrainMarksIntents */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2A2B5DEC290F4BEF0066D29A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2A7C407C28EFCC3600F73DF5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -811,22 +743,11 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2A2B5DEA290F4BEF0066D29A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2A2B5DF3290F4BEF0066D29A /* IntentHandler.swift in Sources */,
-				2A2B5DFB290F4C490066D29A /* LockScreenWidgetIntents.intentdefinition in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2A7C407A28EFCC3600F73DF5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2A7C408628EFCC3600F73DF5 /* BrainMarksWidgets.swift in Sources */,
-				2A2B5DFC290F510C0066D29A /* IntentHandler.swift in Sources */,
-				2A2B5DE9290F49180066D29A /* LockScreenWidgetIntents.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -877,7 +798,6 @@
 				DB64F8A727270A9B00361E86 /* ContributorProfileView.swift in Sources */,
 				FF39431B262FCF4E00A3623B /* Includes.swift in Sources */,
 				91739DEB2622D2A7000F982A /* AddURLView.swift in Sources */,
-				2A2B5DE8290F49180066D29A /* LockScreenWidgetIntents.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -900,11 +820,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2A2B5DF6290F4BEF0066D29A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2A2B5DED290F4BEF0066D29A /* BrainMarksIntents */;
-			targetProxy = 2A2B5DF5290F4BEF0066D29A /* PBXContainerItemProxy */;
-		};
 		2A7C408B28EFCC3700F73DF5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2A7C407D28EFCC3600F73DF5 /* BrainMarksWidgetsExtension */;
@@ -945,60 +860,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2A2B5DF9290F4BEF0066D29A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y535846H6P;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BrainMarksIntents/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = BrainMarksIntents;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarks.BrainMarksIntents;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		2A2B5DFA290F4BEF0066D29A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y535846H6P;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BrainMarksIntents/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = BrainMarksIntents;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mikaelacaron.brainmarks.BrainMarksIntents;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		2A7C408E28EFCC3700F73DF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1313,15 +1174,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2A2B5DF8290F4BEF0066D29A /* Build configuration list for PBXNativeTarget "BrainMarksIntents" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2A2B5DF9290F4BEF0066D29A /* Debug */,
-				2A2B5DFA290F4BEF0066D29A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2A7C409028EFCC3700F73DF5 /* Build configuration list for PBXNativeTarget "BrainMarksWidgetsExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

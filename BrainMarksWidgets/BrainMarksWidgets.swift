@@ -8,7 +8,7 @@
 import WidgetKit
 import SwiftUI
 
-struct Provider: TimelineProvider, IntentTimelineProvider {
+struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
       SimpleEntry(date: Date())
     }
@@ -78,12 +78,11 @@ struct BrainMarksLockScreenEntryView : View {
   var body: some View {
       ZStack {
         Circle().fill(Color.accentColor).opacity(0.75)
-//        Image(systemName: "gamecontroller")
-        Image(systemName: "\(entry.configuration.category.imageName)")
+        Image(systemName: "gamecontroller")
           .font(.largeTitle)
       }
       // will need to pass which category to open as a URL parameter
-      .widgetURL(URL(string: "brainmarks://openCategory?entry.configuration.category"))
+      .widgetURL(URL(string: "brainmarks://openCategory"))
   }
 }
 
@@ -139,7 +138,7 @@ struct BrainMarksLockScreenWidget: Widget {
     let kind: String = "BrainMarksLockScreen"
 
     var body: some WidgetConfiguration {
-      IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+      StaticConfiguration(kind: kind, provider: Provider()) { entry in
               BrainMarksLockScreenEntryView(entry: entry)
         }
         .configurationDisplayName("View Category")
