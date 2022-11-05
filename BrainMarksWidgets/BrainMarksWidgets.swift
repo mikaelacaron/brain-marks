@@ -45,7 +45,8 @@ struct SimpleEntry: TimelineEntry {
     let decoder = JSONDecoder()
     if let codeData = try? Data(contentsOf: URL) {
       do {
-        contents = try decoder.decode([AWSCategory].self, from: codeData)
+        let contents = try decoder.decode([LocalCategory].self, from: codeData)
+        print(contents)
       } catch {
         print("Error: Can't decode contents")
       }
@@ -57,7 +58,7 @@ struct BrainMarksCreateCategoryEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-      
+
       ZStack {
         Image("littleLogo")
           .resizable()

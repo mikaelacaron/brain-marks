@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		20636BDDDBEF4EAE9CCE9D9E /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */; };
+		2A41044B29156A4F00EFB98B /* LocalCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A41044A29156A4F00EFB98B /* LocalCategoryModel.swift */; };
+		2A41044C29156A4F00EFB98B /* LocalCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A41044A29156A4F00EFB98B /* LocalCategoryModel.swift */; };
+		2A41044E29156BB600EFB98B /* LocalTweetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A41044D29156BB600EFB98B /* LocalTweetModel.swift */; };
+		2A41044F29156BB600EFB98B /* LocalTweetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A41044D29156BB600EFB98B /* LocalTweetModel.swift */; };
 		2A7C408128EFCC3600F73DF5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7C408028EFCC3600F73DF5 /* WidgetKit.framework */; };
 		2A7C408328EFCC3600F73DF5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7C408228EFCC3600F73DF5 /* SwiftUI.framework */; };
 		2A7C408628EFCC3600F73DF5 /* BrainMarksWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7C408528EFCC3600F73DF5 /* BrainMarksWidgets.swift */; };
 		2A7C408828EFCC3700F73DF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C408728EFCC3700F73DF5 /* Assets.xcassets */; };
 		2A7C408C28EFCC3700F73DF5 /* BrainMarksWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2A7C407E28EFCC3600F73DF5 /* BrainMarksWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2AA58B622912E6A900BF551D /* AWSCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D0518628EF45A382F08352 /* AWSCategory.swift */; };
-		2AA58B632912E6D300BF551D /* AWSTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA54EDF3B34443CA9D530E5 /* AWSTweet.swift */; };
 		45B4425428EF5AC800FB0B27 /* AppIconSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4425328EF5AC800FB0B27 /* AppIconSettings.swift */; };
 		45B4426628EF5EA300FB0B27 /* 8 Rainbow.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425628EF5EA300FB0B27 /* 8 Rainbow.png */; };
 		45B4426828EF5EA300FB0B27 /* 4 Beach.png in Resources */ = {isa = PBXBuildFile; fileRef = 45B4425828EF5EA300FB0B27 /* 4 Beach.png */; };
@@ -128,6 +130,8 @@
 		14F5BDE61EAA4A2DB9030734 /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
 		1E886624D4EE4F64B9160A75 /* amplifytools.xcconfig */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.xcconfig; path = amplifytools.xcconfig; sourceTree = "<group>"; };
 		2A2B5DEF290F4BEF0066D29A /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		2A41044A29156A4F00EFB98B /* LocalCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCategoryModel.swift; sourceTree = SOURCE_ROOT; };
+		2A41044D29156BB600EFB98B /* LocalTweetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTweetModel.swift; sourceTree = "<group>"; };
 		2A7C407E28EFCC3600F73DF5 /* BrainMarksWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BrainMarksWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7C408028EFCC3600F73DF5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		2A7C408228EFCC3600F73DF5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -414,6 +418,8 @@
 		FF39432A262FD05700A3623B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				2A41044A29156A4F00EFB98B /* LocalCategoryModel.swift */,
+				2A41044D29156BB600EFB98B /* LocalTweetModel.swift */,
 				FF39432C262FD07D00A3623B /* Views */,
 				FF6DCBF12623530400EC366F /* CategoryListViewModel.swift */,
 				940E3C61272648310038D6AC /* CategorySheetViewModel.swift */,
@@ -751,9 +757,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AA58B632912E6D300BF551D /* AWSTweet.swift in Sources */,
+				2A41044C29156A4F00EFB98B /* LocalCategoryModel.swift in Sources */,
 				2A7C408628EFCC3600F73DF5 /* BrainMarksWidgets.swift in Sources */,
-				2AA58B622912E6A900BF551D /* AWSCategory.swift in Sources */,
+				2A41044F29156BB600EFB98B /* LocalTweetModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,6 +776,7 @@
 				FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */,
 				DBF50B55272467CF000D8B25 /* SettingsView.swift in Sources */,
 				5F118BE728EC0BE9003E15F2 /* Logger+Ext.swift in Sources */,
+				2A41044B29156A4F00EFB98B /* LocalCategoryModel.swift in Sources */,
 				FF21986F269FE57D00FFB406 /* AsyncImage.swift in Sources */,
 				D3D5E0E5271C811E00752DCD /* InfoViewModel.swift in Sources */,
 				FFEB1B5826A9F9C300682C37 /* Alert.swift in Sources */,
@@ -779,6 +786,7 @@
 				DB64F8A52726BD5D00361E86 /* Contributor.swift in Sources */,
 				A2F449912622829D00725FEA /* CategoryList.swift in Sources */,
 				896E0E3B28EEE03E009994F4 /* RequestBuilder.swift in Sources */,
+				2A41044E29156BB600EFB98B /* LocalTweetModel.swift in Sources */,
 				A2F4498C2622802B00725FEA /* CategoryRow.swift in Sources */,
 				FF5990692622DD61004DF328 /* DataStoreManager.swift in Sources */,
 				FFCB1099263E3E2D00544309 /* CategorySheetView.swift in Sources */,
