@@ -46,7 +46,9 @@ class SettingsViewModel: ObservableObject {
                 
                 let data = try JSONDecoder().decode([Contributor].self, from: urlData!)
                 
-                self.contributors = data
+                DispatchQueue.main.async {
+                    self.contributors = data
+                }
                 
             } catch {
                 Logger.network.error("\(error)")
