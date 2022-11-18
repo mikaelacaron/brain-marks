@@ -130,6 +130,7 @@
 		14F5BDE61EAA4A2DB9030734 /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
 		1E886624D4EE4F64B9160A75 /* amplifytools.xcconfig */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.xcconfig; path = amplifytools.xcconfig; sourceTree = "<group>"; };
 		2A2B5DEF290F4BEF0066D29A /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		2A2DD2BB2926FCAD00FB71C9 /* BrainMarksWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BrainMarksWidgetsExtension.entitlements; sourceTree = "<group>"; };
 		2A41044A29156A4F00EFB98B /* LocalCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCategoryModel.swift; sourceTree = SOURCE_ROOT; };
 		2A41044D29156BB600EFB98B /* LocalTweetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTweetModel.swift; sourceTree = "<group>"; };
 		2A7C407E28EFCC3600F73DF5 /* BrainMarksWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BrainMarksWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -469,6 +470,7 @@
 		FFEBBB2D26223F75000F475F = {
 			isa = PBXGroup;
 			children = (
+				2A2DD2BB2926FCAD00FB71C9 /* BrainMarksWidgetsExtension.entitlements */,
 				6940242370A54E53B82BF75C /* AmplifyModels */,
 				6D7FDBA2D37342B39C7F1C69 /* AmplifyConfig */,
 				FFEBBB3826223F75000F475F /* brain-marks */,
@@ -880,6 +882,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = BrainMarksWidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N76WE33BQK;
@@ -909,6 +912,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = BrainMarksWidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = N76WE33BQK;

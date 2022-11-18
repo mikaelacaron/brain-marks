@@ -7,6 +7,7 @@
 
 import WidgetKit
 import SwiftUI
+import Intents
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
@@ -19,6 +20,7 @@ struct Provider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+
         var entries: [SimpleEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
@@ -43,7 +45,7 @@ struct SimpleEntry: TimelineEntry {
       return
     }
     let decoder = JSONDecoder()
-    if let codeData = try? Data(contentsOf: URL) {
+    if let codeData = try? Data(contentsOf: URL.appendingPathComponent("categories.json")) {
       do {
         let contents = try decoder.decode([LocalCategory].self, from: codeData)
         print(contents)
@@ -96,6 +98,10 @@ struct BrainMarksLockScreenEntryView : View {
         Circle().fill(Color.accentColor).opacity(0.75)
         Image(systemName: "gamecontroller")
           .font(.largeTitle)
+      }
+      .onAppear() {
+        let entry = SimpleEntry(date: Date())
+        entry.readContainer()
       }
       // will need to pass which category to open as a URL parameter
       .widgetURL(URL(string: "brainmarks://openCategory"))
