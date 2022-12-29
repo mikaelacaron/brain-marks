@@ -12,6 +12,9 @@
 		6961687B2949756D00D68070 /* BrainMarks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 696168792949756D00D68070 /* BrainMarks.xcdatamodeld */; };
 		6961687D2949759E00D68070 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6961687C2949759E00D68070 /* CoreDataManager.swift */; };
 		6961687F294976A600D68070 /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6961687E294976A600D68070 /* StorageProvider.swift */; };
+		696168812949856100D68070 /* StoreageProvider+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696168802949856100D68070 /* StoreageProvider+Category.swift */; };
+		69616883294988E700D68070 /* StorageProvider+Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69616882294988E700D68070 /* StorageProvider+Tweet.swift */; };
+		6961688629498D0600D68070 /* MigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6961688529498D0600D68070 /* MigrationService.swift */; };
 		91739DEB2622D2A7000F982A /* AddURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91739DEA2622D2A7000F982A /* AddURLView.swift */; };
 		91C8958926228D1500689196 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C8958826228D1500689196 /* Tweet.swift */; };
 		9C9314E5631F4C39AA06BF35 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = DA7D79B731BC4ECFAAE8E817 /* awsconfiguration.json */; };
@@ -78,6 +81,9 @@
 		6961687A2949756D00D68070 /* BrainMarks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BrainMarks.xcdatamodel; sourceTree = "<group>"; };
 		6961687C2949759E00D68070 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		6961687E294976A600D68070 /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
+		696168802949856100D68070 /* StoreageProvider+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoreageProvider+Category.swift"; sourceTree = "<group>"; };
+		69616882294988E700D68070 /* StorageProvider+Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageProvider+Tweet.swift"; sourceTree = "<group>"; };
+		6961688529498D0600D68070 /* MigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationService.swift; sourceTree = "<group>"; };
 		91739DEA2622D2A7000F982A /* AddURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddURLView.swift; sourceTree = "<group>"; };
 		91C8958826228D1500689196 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		A205CD412622A3EB00517DB5 /* TweetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetList.swift; sourceTree = "<group>"; };
@@ -166,8 +172,18 @@
 			children = (
 				696168792949756D00D68070 /* BrainMarks.xcdatamodeld */,
 				6961687E294976A600D68070 /* StorageProvider.swift */,
+				69616882294988E700D68070 /* StorageProvider+Tweet.swift */,
+				696168802949856100D68070 /* StoreageProvider+Category.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		6961688429498CF100D68070 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6961688529498D0600D68070 /* MigrationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		6D7FDBA2D37342B39C7F1C69 /* AmplifyConfig */ = {
@@ -297,6 +313,7 @@
 				FF39430E262E863000A3623B /* AmplifyModelExtensions */,
 				69616871294973F500D68070 /* CoreData */,
 				FF39430C262E860E00A3623B /* Managers */,
+				6961688429498CF100D68070 /* Services */,
 				91C8958726228CF600689196 /* Models */,
 				FF39432A262FD05700A3623B /* Categories */,
 				FF39432D262FD0AD00A3623B /* Tweets */,
@@ -509,6 +526,7 @@
 				6961687B2949756D00D68070 /* BrainMarks.xcdatamodeld in Sources */,
 				FFCB1097263E31D400544309 /* ReturnedTweet.swift in Sources */,
 				FFC4CA7726867B4C00427C81 /* BMButton.swift in Sources */,
+				69616883294988E700D68070 /* StorageProvider+Tweet.swift in Sources */,
 				FF21986F269FE57D00FFB406 /* AsyncImage.swift in Sources */,
 				FFEB1B5826A9F9C300682C37 /* Alert.swift in Sources */,
 				FF36B6712623678D007A6D7F /* AWSTweet+Extension.swift in Sources */,
@@ -516,6 +534,7 @@
 				A2F449912622829D00725FEA /* CategoryList.swift in Sources */,
 				A2F4498C2622802B00725FEA /* CategoryRow.swift in Sources */,
 				FF5990692622DD61004DF328 /* DataStoreManager.swift in Sources */,
+				6961688629498D0600D68070 /* MigrationService.swift in Sources */,
 				6961687D2949759E00D68070 /* CoreDataManager.swift in Sources */,
 				FFCB1099263E3E2D00544309 /* CategorySheetView.swift in Sources */,
 				FF394316262FCF3900A3623B /* User.swift in Sources */,
@@ -527,6 +546,7 @@
 				CF16AFB9BE3F401E98C85114 /* AWSTweet.swift in Sources */,
 				FF36B661262357F9007A6D7F /* AWSCategory+Extension.swift in Sources */,
 				FFD5152E28F9FAA500665625 /* TelemetrySignals.swift in Sources */,
+				696168812949856100D68070 /* StoreageProvider+Category.swift in Sources */,
 				FF36B66C26235FE6007A6D7F /* TweetListViewModel.swift in Sources */,
 				C4392E80BFE640DAA2625F9D /* AWSTweet+Schema.swift in Sources */,
 				A205CD422622A3EB00517DB5 /* TweetList.swift in Sources */,

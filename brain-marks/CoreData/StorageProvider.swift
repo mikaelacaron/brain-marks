@@ -10,17 +10,21 @@ import CoreData
 import TelemetryClient
 
 class StorageProvider {
-    let persistentContainer: NSPersistentContainer
+    static var persistentContainer: NSPersistentContainer {
+        let container = NSPersistentContainer(name: "BrainMarks")
 
-    init() {
-        persistentContainer = NSPersistentContainer(name: "BrainMarks")
-
-        persistentContainer.loadPersistentStores { description, error in
+        container.loadPersistentStores { description, error in
             if let error = error {
                 TelemetryManager.send(TelemetrySignals.errorCoreDataLoad)
                 fatalError("Core Data store failed to load with error: \(error)")
             }
             print("Loaded Core Data \(description)")
         }
+
+        return container
+    }
+
+    var context: NSManagedObjectContext {
+        return Self.persistentContainer.viewContext
     }
 }

@@ -8,15 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    let migrationService: MigrationService
+    let storageProvider: StorageProvider
+
     @State private var showAddSheet = false
+
+    init(storageProvider: StorageProvider) {
+        self.migrationService = MigrationService(managedObjectContext: storageProvider.context)
+        self.storageProvider = storageProvider
+    }
 
     var body: some View {
         CategoryList()
+            .onAppear {
+                migrationService.performMigration()
+            }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(storageProvider: StorageProvider())
     }
 }
