@@ -28,7 +28,7 @@ struct TweetList: View {
                 }
             }
             .onAppear {
-//                viewModel.fetchTweets(category: category)
+                viewModel.setTweets(tweets: category.tweets ?? NSSet())
             }
     }
     
@@ -49,10 +49,13 @@ struct TweetList: View {
     
     var tweets: some View {
         List {
-            ForEach(viewModel.tweets) { tweet in
+            ForEach(viewModel.tweets, id: \.id!) { tweet in
                 TweetCard(tweet: tweet)
                     .onTapGesture {
-                        viewModel.openTwitter(tweetID: tweet.tweetID, authorUsername: tweet.authorUsername!)
+                        viewModel.openTwitter(
+                            tweetID: tweet.tweetID ?? "no tweet id",
+                            authorUsername: tweet.authorUsername!
+                        )
                     }
             }
             .onDelete { offsets in

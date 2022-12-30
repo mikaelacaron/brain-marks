@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TweetCard: View {
     
-    @State var tweet: AWSTweet
+    @State var tweet: TweetEntity
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -22,7 +22,7 @@ struct TweetCard: View {
 
 struct TweetHeaderView: View {
     
-    let tweet: AWSTweet
+    let tweet: TweetEntity
     
     var body: some View {
         HStack {
