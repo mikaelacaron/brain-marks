@@ -10,18 +10,15 @@ import Foundation
 
 /// Controls the migration from Amplify to CoreData
 class MigrationService {
-    /// Need to get category from Amplify
-    /// Store Category inside CD
-    /// Loop through category and get tweets
-    /// Store tweet in CD and associate to proper category
+    private let storageProvider = StorageProvider.shared
     private var awsCategories: [AWSCategory] = []
 
     private let amplifyDataStore = DataStoreManger.shared
 
     private var managedObjectContext: NSManagedObjectContext
 
-    init(managedObjectContext: NSManagedObjectContext) {
-        self.managedObjectContext = managedObjectContext
+    init() {
+        self.managedObjectContext = storageProvider.context
     }
 
     func performMigration() {
@@ -38,12 +35,21 @@ class MigrationService {
                 }
             }
             do {
-            try managedObjectContext.save()
+                try managedObjectContext.save()
             } catch {
                 print("❌ MigrationService.performMigration() Error: \(error)")
             }
         }
+        UserDefaults.standard.set(true, forKey: "migrationToCoreDataRan")
+    }
 
+    public func checkIfMigrationShouldRun() -> Bool {
+        let migrationToCoreDataRan = UserDefaults.standard.bool(forKey: "migrationToCoreDataRan")
+
+        if storageProvider.getAllCategories().isEmpty && !migrationToCoreDataRan {
+            return true
+        }
+        return false
     }
 
     private func getCategories() {
@@ -52,7 +58,7 @@ class MigrationService {
             case .success(let categories):
                 self.awsCategories = categories
             case .failure(let error):
-                print("MigrationService.getCategories(): Error: \(error)")
+                print("❌ MigrationService.getCategories(): Error: \(error)")
             }
         })
     }

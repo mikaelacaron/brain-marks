@@ -12,7 +12,9 @@ import TelemetryClient
 
 @main
 struct brain_marksApp: App {
-    
+    @AppStorage("migrationToCoreDataRan")
+    private var migrationToCoreDataRan: Bool = false
+
     init() {
         configureAmplify()
         
@@ -21,11 +23,9 @@ struct brain_marksApp: App {
         TelemetryManager.send(TelemetrySignals.appLaunchedRegularly)
     }
 
-    let storageProvider = StorageProvider.shared
-
     var body: some Scene {
         WindowGroup {
-            ContentView(storageProvider: storageProvider)
+            ContentView()
         }
     }
     
