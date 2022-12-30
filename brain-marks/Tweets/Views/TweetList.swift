@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TweetList: View {
     
-    let category: AWSCategory
+    let category: CategoryEntity
     
     @StateObject var viewModel = TweetListViewModel()
     
@@ -23,12 +23,12 @@ struct TweetList: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 25, height: 25)
-                        Text(category.name)
+                        Text(category.name ?? "No name")
                     }
                 }
             }
             .onAppear {
-                viewModel.fetchTweets(category: category)
+//                viewModel.fetchTweets(category: category)
             }
     }
     

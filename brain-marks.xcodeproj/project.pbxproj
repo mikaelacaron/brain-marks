@@ -10,7 +10,6 @@
 		20636BDDDBEF4EAE9CCE9D9E /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = ECA1CF04DB754255822691F2 /* amplifyconfiguration.json */; };
 		684E2F2D3FCC4D36AC68E57D /* AWSCategory+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551BA45F30D640118D2F0CE2 /* AWSCategory+Schema.swift */; };
 		6961687B2949756D00D68070 /* BrainMarks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 696168792949756D00D68070 /* BrainMarks.xcdatamodeld */; };
-		6961687D2949759E00D68070 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6961687C2949759E00D68070 /* CoreDataManager.swift */; };
 		6961687F294976A600D68070 /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6961687E294976A600D68070 /* StorageProvider.swift */; };
 		696168812949856100D68070 /* StoreageProvider+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696168802949856100D68070 /* StoreageProvider+Category.swift */; };
 		69616883294988E700D68070 /* StorageProvider+Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69616882294988E700D68070 /* StorageProvider+Tweet.swift */; };
@@ -79,7 +78,6 @@
 		551BA45F30D640118D2F0CE2 /* AWSCategory+Schema.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "AWSCategory+Schema.swift"; path = "amplify/generated/models/AWSCategory+Schema.swift"; sourceTree = "<group>"; };
 		63D0518628EF45A382F08352 /* AWSCategory.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AWSCategory.swift; path = amplify/generated/models/AWSCategory.swift; sourceTree = "<group>"; };
 		6961687A2949756D00D68070 /* BrainMarks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BrainMarks.xcdatamodel; sourceTree = "<group>"; };
-		6961687C2949759E00D68070 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		6961687E294976A600D68070 /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
 		696168802949856100D68070 /* StoreageProvider+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoreageProvider+Category.swift"; sourceTree = "<group>"; };
 		69616882294988E700D68070 /* StorageProvider+Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageProvider+Tweet.swift"; sourceTree = "<group>"; };
@@ -224,7 +222,6 @@
 			children = (
 				FF5990682622DD61004DF328 /* DataStoreManager.swift */,
 				FF554148282E9609002AEBED /* JSONDataManager.swift */,
-				6961687C2949759E00D68070 /* CoreDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -535,7 +532,6 @@
 				A2F4498C2622802B00725FEA /* CategoryRow.swift in Sources */,
 				FF5990692622DD61004DF328 /* DataStoreManager.swift in Sources */,
 				6961688629498D0600D68070 /* MigrationService.swift in Sources */,
-				6961687D2949759E00D68070 /* CoreDataManager.swift in Sources */,
 				FFCB1099263E3E2D00544309 /* CategorySheetView.swift in Sources */,
 				FF394316262FCF3900A3623B /* User.swift in Sources */,
 				FFEBBB3A26223F75000F475F /* brain_marksApp.swift in Sources */,

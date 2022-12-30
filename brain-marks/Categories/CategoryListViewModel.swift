@@ -8,28 +8,20 @@
 import SwiftUI
 
 final class CategoryListViewModel: ObservableObject {
-    
-    @Published var categories = [AWSCategory]()
+
+    let storageProvider: StorageProvider
+
+    @Published var categories = [CategoryEntity]()
+
+    init(inMemory: Bool = false) {
+        storageProvider = inMemory ? StorageProvider.preview : StorageProvider.shared
+    }
     
     func getCategories() {
-        categories = []
-        DataStoreManger.shared.fetchCategories { result in
-            switch result {
-            case .success(let categories):
-                DispatchQueue.main.async {
-                    self.categories = categories
-                }
-            case .failure(let error):
-                print("Error fetching categories: \(error)")
-            }
-        }
+        categories = storageProvider.getAllCategories()
     }
     
     func deleteCategory(at offsets: IndexSet) {
-        for offset in offsets {
-            let category = categories[offset]
-            DataStoreManger.shared.deleteCategory(category: category)
-        }
         categories.remove(atOffsets: offsets)
     }
     

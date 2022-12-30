@@ -17,7 +17,7 @@ class MigrationService {
     private var awsCategories: [AWSCategory] = []
 
     private let amplifyDataStore = DataStoreManger.shared
-    private let coreDataStore = CoreDataManager.shared
+
     private var managedObjectContext: NSManagedObjectContext
 
     init(managedObjectContext: NSManagedObjectContext) {

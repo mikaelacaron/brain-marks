@@ -10,9 +10,33 @@ import CoreData
 import TelemetryClient
 
 class StorageProvider {
-    static var persistentContainer: NSPersistentContainer {
-        let container = NSPersistentContainer(name: "BrainMarks")
 
+    static let shared = StorageProvider()
+
+    let container: NSPersistentContainer
+
+    static var preview: StorageProvider = {
+        let controller = StorageProvider(inMemory: true)
+        for num in 0..<10 {
+            let category = CategoryEntity(context: controller.context)
+            category.name = "Category \(num)"
+            category.id = UUID()
+            category.dateCreated = Date()
+            category.dateModified = Date()
+        }
+        return controller
+    }()
+
+    init(inMemory: Bool = false) {
+        container = NSPersistentContainer(name: "BrainMarks")
+
+        if inMemory {
+            if #available(iOS 16.0, *) {
+                container.persistentStoreDescriptions.first?.url = URL(filePath: "/dev/null")
+            } else {
+                container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
+            }
+        }
         container.loadPersistentStores { description, error in
             if let error = error {
                 TelemetryManager.send(TelemetrySignals.errorCoreDataLoad)
@@ -20,11 +44,9 @@ class StorageProvider {
             }
             print("Loaded Core Data \(description)")
         }
-
-        return container
     }
 
     var context: NSManagedObjectContext {
-        return Self.persistentContainer.viewContext
+        return container.viewContext
     }
 }

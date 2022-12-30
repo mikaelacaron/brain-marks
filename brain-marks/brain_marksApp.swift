@@ -20,8 +20,9 @@ struct brain_marksApp: App {
         TelemetryManager.initialize(with: configuration)
         TelemetryManager.send(TelemetrySignals.appLaunchedRegularly)
     }
-    let storageProvider = StorageProvider()
-    
+
+    let storageProvider = StorageProvider.shared
+
     var body: some Scene {
         WindowGroup {
             ContentView(storageProvider: storageProvider)

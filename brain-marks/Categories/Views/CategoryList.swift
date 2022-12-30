@@ -51,7 +51,7 @@ struct CategoryList: View {
                             Image(systemName:"plus.circle")
                         }
                         .sheet(isPresented: $showAddURLView) {
-                            AddURLView(categories: viewModel.categories)
+//                            AddURLView(categories: viewModel.categories)
                         }
                     }
                 }
@@ -66,12 +66,6 @@ struct CategoryList: View {
     @ViewBuilder
     var categoryList: some View {
         categories
-        // removing for now, this makes the UI "flash" when updating a category
-//        if viewModel.categories.isEmpty {
-//            emptyListView
-//        } else {
-//            categories
-//        }
     }
     
     var emptyListView: some View {
@@ -82,13 +76,13 @@ struct CategoryList: View {
     
     var categories: some View {
         List {
-            ForEach(viewModel.categories) { category in
+            ForEach(viewModel.categories, id: \.id) { category in
                 NavigationLink(destination: TweetList(category: category)) {
                     CategoryRow(category: category)
                 }
                 .contextMenu {
                     Button {
-                        editCategory = category
+//                        editCategory = category
                         categorySheetState = .edit
                         showingCategorySheet.toggle()
                     } label: {
