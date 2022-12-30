@@ -13,7 +13,6 @@ enum CategoryState {
 }
 
 struct CategoryList: View {
-    
     @State private var categorySheetState: CategoryState = .new
     @State private var editCategory: AWSCategory?
     @State private var indexSetToDelete: IndexSet?
@@ -22,7 +21,7 @@ struct CategoryList: View {
     @State private var showingDeleteActionSheet = false
     
     @StateObject var viewModel = CategoryListViewModel()
-    
+
     var body: some View {
         NavigationView {
             categoryList

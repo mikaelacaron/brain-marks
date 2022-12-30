@@ -13,8 +13,23 @@ final class CategoryListViewModel: ObservableObject {
 
     @Published var categories = [CategoryEntity]()
 
-    init(inMemory: Bool = false) {
-        storageProvider = inMemory ? StorageProvider.preview : StorageProvider.shared
+    init() {
+        /// Using a compiler statement here to determine where the code is being ran.
+        /// A compiler statement was chosen so that it doesn't interfere with run time
+        /// in production.
+        ///
+        /// If it's being ran in the canvas (preview) then we want to use the preview container
+        /// If it's being ran not in the canvas, then we want to use the CoreData file for existing data.
+        #if DEBUG
+        // Checks if the code is running in the cancas (preview)
+        if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
+            storageProvider = .preview
+        } else {
+            storageProvider = .shared
+        }
+        #else
+        storageProvider = .shared
+        #endif
     }
     
     func getCategories() {
