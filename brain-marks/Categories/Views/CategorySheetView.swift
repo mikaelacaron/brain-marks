@@ -17,6 +17,8 @@ struct CategorySheetView: View {
     
     @State private var category = ""
     @State private var title = ""
+
+    private let storageProvider = StorageProvider.shared
     
     var body: some View {
         NavigationView {
@@ -54,10 +56,7 @@ struct CategorySheetView: View {
                             
                             switch categorySheetState {
                             case .new:
-                                DataStoreManger.shared.createCategory(
-                                    category: AWSCategory(name: category,
-                                                          imageName: "folder"))
-                                TelemetryManager.send(TelemetrySignals.addCategory)
+                                addNewCategory()
                             case .edit:
                                 guard editCategory != nil else {
                                     return
@@ -85,6 +84,22 @@ struct CategorySheetView: View {
                 case .edit: title = "Edit Category"
                 }
             }
+        }
+    }
+
+    func addNewCategory() {
+        let newCategory = CategoryEntity(context: storageProvider.context)
+        newCategory.id = UUID()
+        newCategory.dateCreated = Date()
+        newCategory.dateModified = Date()
+        newCategory.name = category
+        newCategory.imageName = "folder"
+
+        do {
+            try storageProvider.context.save()
+            TelemetryManager.send(TelemetrySignals.addCategory)
+        } catch {
+            print("❌ CategorySheetView.addNewCategory: \(error)")
         }
     }
 }
