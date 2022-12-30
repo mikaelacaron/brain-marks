@@ -37,6 +37,17 @@ final class CategoryListViewModel: ObservableObject {
     }
     
     func deleteCategory(at offsets: IndexSet) {
+        for _ in offsets {
+            offsets.sorted(by: >).forEach { index in
+                let category = categories[index]
+                storageProvider.context.delete(category)
+                do {
+                    try storageProvider.context.save()
+                } catch {
+                    print("❌ CategoryListViewModel.deleteCategory(at:) Error \(error)")
+                }
+            }
+        }
         categories.remove(atOffsets: offsets)
     }
     
