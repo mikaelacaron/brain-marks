@@ -23,6 +23,14 @@ class StorageProvider {
             category.id = UUID()
             category.dateCreated = Date()
             category.dateModified = Date()
+            for tweetNum in 0..<5 {
+                let tweet = TweetEntity(context: controller.context)
+                tweet.id = UUID()
+                tweet.dateCreated = Date()
+                tweet.authorName = "heyjaywilson"
+                tweet.text = "this is a sample tweet \(tweetNum)"
+                category.addToTweets(tweet)
+            }
         }
         return controller
     }()
