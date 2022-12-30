@@ -8,6 +8,7 @@
 import SwiftUI
 
 final class TweetListViewModel: ObservableObject {
+    private let storageProvider = StorageProvider.shared
     
     @Published var tweets = [TweetEntity]()
 
@@ -21,7 +22,12 @@ final class TweetListViewModel: ObservableObject {
         for _ in offsets {
             offsets.sorted(by: >).forEach { index in
                 let tweet = tweets[index]
-                DataStoreManger.shared.deleteTweet(tweet)
+                storageProvider.context.delete(tweet)
+                do {
+                    try storageProvider.context.save()
+                } catch {
+                    print("❌ TweetListViewModel.deleteTweet(at:) Error \(error)")
+                }
             }
         }
         tweets.remove(atOffsets: offsets)
