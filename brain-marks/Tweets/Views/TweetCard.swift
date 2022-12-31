@@ -14,7 +14,7 @@ struct TweetCard: View {
     var body: some View {
         VStack(alignment: .leading) {
             TweetHeaderView(tweet: tweet)
-            TweetBodyView(tweetBody: tweet.text ?? "help")
+            TweetBodyView(tweetBody: tweet.text ?? "")
 //            TweetFooterView()
         }
     }
