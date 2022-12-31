@@ -11,7 +11,7 @@ final class CategoryListViewModel: ObservableObject {
 
     let storageProvider: StorageProvider
 
-    @Published var categories = [CategoryEntity]()
+    @Published var categories: [CategoryEntity]
 
     init() {
         /// Using a compiler statement here to determine where the code is being ran.
@@ -30,6 +30,7 @@ final class CategoryListViewModel: ObservableObject {
         #else
         storageProvider = .shared
         #endif
+        categories = []
     }
     
     func getCategories() {
@@ -48,10 +49,8 @@ final class CategoryListViewModel: ObservableObject {
                 }
             }
         }
-        categories.remove(atOffsets: offsets)
-    }
-    
-    func editCategoryName(category: AWSCategory, newName: String) {
-        DataStoreManger.shared.editCategory(category: category, newName: newName)
+        withAnimation {
+            categories.remove(atOffsets: offsets)
+        }
     }
 }

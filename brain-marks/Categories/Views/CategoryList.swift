@@ -14,13 +14,13 @@ enum CategoryState {
 
 struct CategoryList: View {
     @State private var categorySheetState: CategoryState = .new
-    @State private var editCategory: AWSCategory?
+    @State private var editCategory: CategoryEntity?
     @State private var indexSetToDelete: IndexSet?
     @State private var showAddURLView = false
     @State private var showingCategorySheet = false
     @State private var showingDeleteActionSheet = false
     
-    @StateObject var viewModel = CategoryListViewModel()
+    @StateObject private var viewModel = CategoryListViewModel()
 
     var body: some View {
         NavigationView {
@@ -75,13 +75,16 @@ struct CategoryList: View {
     
     var categories: some View {
         List {
-            ForEach(viewModel.categories, id: \.id) { category in
+            ForEach(viewModel.categories, id: \.self) { category in
                 NavigationLink(destination: TweetList(category: category)) {
-                    CategoryRow(category: category)
+                    CategoryRow(
+                        categoryName: category.name ?? "",
+                        categoryImage: category.imageName ?? "folder"
+                    )
                 }
                 .contextMenu {
                     Button {
-//                        editCategory = category
+                        editCategory = category
                         categorySheetState = .edit
                         showingCategorySheet.toggle()
                     } label: {

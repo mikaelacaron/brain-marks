@@ -21,6 +21,7 @@ extension StorageProvider {
 
     func getAllCategories() -> [CategoryEntity] {
         let fetchRequest: NSFetchRequest<CategoryEntity> = CategoryEntity.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "dateModified", ascending: false)]
 
         do {
             return try context.fetch(fetchRequest)

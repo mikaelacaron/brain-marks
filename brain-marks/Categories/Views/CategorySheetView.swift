@@ -10,7 +10,7 @@ import TelemetryClient
 
 struct CategorySheetView: View {
     
-    @Binding var editCategory: AWSCategory?
+    @Binding var editCategory: CategoryEntity?
     @Binding var categorySheetState: CategoryState
     
     @Environment(\.presentationMode) var presentationMode
@@ -23,7 +23,6 @@ struct CategorySheetView: View {
     var body: some View {
         NavigationView {
             VStack {
-                
                 switch categorySheetState {
                 case .new: TextField("Enter name of new category",
                                      text: $category)
@@ -50,21 +49,13 @@ struct CategorySheetView: View {
                     }
                     
                     Button {
-                        presentationMode.wrappedValue.dismiss()
-                        
                         if !category.isEmpty {
                             
                             switch categorySheetState {
                             case .new:
                                 addNewCategory()
                             case .edit:
-                                guard editCategory != nil else {
-                                    return
-                                }
-                                
-                                DataStoreManger.shared.editCategory(
-                                    category: editCategory!,
-                                    newName: category)
+                                performEdit()
                             }
                         }
                     } label: {
@@ -98,8 +89,24 @@ struct CategorySheetView: View {
         do {
             try storageProvider.context.save()
             TelemetryManager.send(TelemetrySignals.addCategory)
+            presentationMode.wrappedValue.dismiss()
         } catch {
             print("❌ CategorySheetView.addNewCategory: \(error)")
+        }
+    }
+
+    func performEdit() {
+        guard let editCategory else {
+            return
+        }
+        editCategory.dateModified = Date()
+        editCategory.name = category
+
+        do {
+            try storageProvider.context.save()
+            presentationMode.wrappedValue.dismiss()
+        } catch {
+            print("❌ CategorySheetView.performEdit() error: \(error)")
         }
     }
 }
@@ -107,9 +114,10 @@ struct CategorySheetView: View {
 struct NewCategorySheetView_Previews: PreviewProvider {
     static var previews: some View {
         CategorySheetView(
-            editCategory: .constant(AWSCategory(id: "1",
-                                                name: "CategoryName",
-                                                imageName: "swift")),
-            categorySheetState: .constant(.new))
+            editCategory: .constant(
+                StorageProvider.preview.getAllCategories()[1]
+            ),
+            categorySheetState: .constant(.edit)
+        )
     }
 }
