@@ -51,7 +51,11 @@ struct AddURLView: View {
                                 tweetEntity.profileImageURL = tweet.profileImageURL
                                 tweetEntity.text = tweet.text
                                 tweetEntity.tweetID = tweet.id
+
+                                // Category edits
                                 selectedCategory.addToTweets(tweetEntity)
+                                selectedCategory.dateModified = Date()
+
                                 do {
                                     try storageProvider.context.save()
                                     TelemetryManager.send(TelemetrySignals.addTweet)
@@ -69,9 +73,6 @@ struct AddURLView: View {
             DispatchQueue.main.async {
                 newEntry = pasteBoard.string ?? ""
             }
-        }
-        .onDisappear {
-            selectedCategory.name = ""
         }
         .alert(item: $viewModel.alertItem) { alertItem in
             Alert(title: Text(alertItem.title),

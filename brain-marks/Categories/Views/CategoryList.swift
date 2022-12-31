@@ -51,6 +51,9 @@ struct CategoryList: View {
                         }
                         .sheet(isPresented: $showAddURLView) {
                             AddURLView(categories: viewModel.categories)
+                                .onDisappear {
+                                    viewModel.getCategories()
+                                }
                         }
                     }
                 }

@@ -16,6 +16,7 @@ final class TweetListViewModel: ObservableObject {
         for tweet in tweets {
             self.tweets.append(tweet as! TweetEntity)
         }
+        self.tweets.sort { $0.dateCreated ?? Date() > $1.dateCreated ?? Date() }
     }
     
     func deleteTweet(at offsets: IndexSet) {
