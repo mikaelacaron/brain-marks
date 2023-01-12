@@ -12,7 +12,7 @@
 
 // CategoryViews
 "Categories" = "分类";
-"CategoriesAreEmpty" = "分类为空";
+"CategoriesAreEmpty" = "分类为空，";
 "PleaseAddNewCategories" = "请单击添加新的分类";
 "YouHaventCreatedCategories" = "您还没有创建任何分类！";
 "Edit" = "编辑";
