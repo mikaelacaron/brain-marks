@@ -1,0 +1,55 @@
+/* 
+  Localizable.strings
+  brain-marks
+  to Chinese, Simple
+  Created by Le0zh0u on 13.01.23.
+  
+*/
+
+// TabView
+"Tweets" = "推文";
+"Settings" = "设置";
+
+// CategoryViews
+"Categories" = "分类";
+"CategoriesAreEmpty" = "分类为空";
+"PleaseAddNewCategories" = "请单击添加新的分类";
+"YouHaventCreatedCategories" = "您还没有创建任何分类！";
+"Edit" = "编辑";
+"Done" = "完成";
+"AllCategoriesWillBeDeleted" = "所有分类和推文将被删除";
+"EnterCategoryName" = "输入新分类的名称";
+"Cancel" = "取消";
+"NewCategory" = "新建分类";
+"EditCategory" = "编辑分类";
+"Create" = "创建";
+"Delete" = "删除";
+
+// TweetViews
+"9:58 PM・9/5/20・" = "9:58 PM・9/5/20・";
+"TwitterForIphone" = "iPhone 版推特";
+"Likes" = "喜欢";
+"NoSavedTweets" = "没有保存任何推文！";
+"EnteredLinkIsNotValid" = "您输入的链接是无效的。";
+"UhOh" = "哎呀!";
+"YouMustSelectCategory" = "您必须选择一个分类";
+
+// AddURLView
+"EnterCopiedURL" = "输入已复制的URL";
+"Category" = "分类";
+"Save" = "保存";
+"AddTweetURL" = "添加推文地址";
+
+// SettingsView
+"Settings" = "设置";
+"BrainMarksIsOpenSource" = "Brain Marks 是一个开源项目！它是在 Big Brain 黑客马拉松期间创建的，并且继续为 Hacktoberfest 开源。\n您可以对您保存的推文进行分类。";
+"IfYouWantToContribute" = "您可以为此项目做贡献！\n此项目在 GitHub 上是开源的。请访问下面的链接来贡献。我们有一份所有贡献者的名单，您的名字可能会在那里！";
+"ListOfContributors" = "贡献者名单";
+"Links" = "链接";
+"ReportABug" = "报告错误";
+"GitHubRepo" = "GitHub 仓库";
+"ThanksForUsing" = "感谢您的使用";
+"Version" = "版本";
+
+// ContributorListView
+"Contributors" = "贡献者";

@@ -155,6 +155,7 @@
 		75C999F7275504FE000B0FF8 /* TweetPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetPhotosView.swift; sourceTree = "<group>"; };
 		896E0E3A28EEE03E009994F4 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		896E0E3D28EEE4C0009994F4 /* RequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderTests.swift; sourceTree = "<group>"; };
+		909CEF9D29706FF900709C28 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		91739DEA2622D2A7000F982A /* AddURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddURLView.swift; sourceTree = "<group>"; };
 		91C8958826228D1500689196 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		940E3C61272648310038D6AC /* CategorySheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySheetViewModel.swift; sourceTree = "<group>"; };
@@ -649,6 +650,7 @@
 				fr,
 				id,
 				es,
+				"zh-Hans",
 			);
 			mainGroup = FFEBBB2D26223F75000F475F;
 			packageReferences = (
@@ -843,6 +845,7 @@
 				D3CD6EE028E92BD700F5EC76 /* fr */,
 				A17404B028F8F9D000D292D4 /* id */,
 				DC36F1F728FD9DA000A6F0B9 /* es */,
+				909CEF9D29706FF900709C28 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
