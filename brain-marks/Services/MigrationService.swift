@@ -22,11 +22,19 @@ final class MigrationService {
     }
 
     func performMigration() {
-        /// 1. Fetch categories
-        getCategories()
-        /// 2. Go through each category and get tweets
+        amplifyDataStore.fetchCategories(completion: { result in
+        switch result {
+            case .success(let categories):
+                self.awsCategories = categories
+                self.addToCoreData()
+            case .failure(let error):
+                print("❌ MigrationService.getCategories(): Error: \(error)")
+            }
+        })
+    }
+
+    private func addToCoreData() {
         for awsCategory in awsCategories {
-            /// 3. Add category to core data
             let categoryToAdd = convertAmplifyCategoryToCoreDataCategory(category: awsCategory)
             amplifyDataStore.fetchSavedTweets(for: awsCategory) { awsTweets in
                 for tweet in awsTweets ?? [] {
@@ -43,6 +51,7 @@ final class MigrationService {
         UserDefaults.standard.set(true, forKey: "migrationToCoreDataRan")
     }
 
+
     func checkIfMigrationShouldRun() -> Bool {
         let migrationToCoreDataRan = UserDefaults.standard.bool(forKey: "migrationToCoreDataRan")
 
@@ -53,14 +62,7 @@ final class MigrationService {
     }
 
     private func getCategories() {
-        amplifyDataStore.fetchCategories(completion: { result in
-            switch result {
-            case .success(let categories):
-                self.awsCategories = categories
-            case .failure(let error):
-                print("❌ MigrationService.getCategories(): Error: \(error)")
-            }
-        })
+
     }
 
     private func convertAmplifyCategoryToCoreDataCategory(category: AWSCategory) -> CategoryEntity {
