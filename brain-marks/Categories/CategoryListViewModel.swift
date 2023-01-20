@@ -21,7 +21,7 @@ final class CategoryListViewModel: ObservableObject {
         /// If it's being ran in the canvas (preview) then we want to use the preview container
         /// If it's being ran not in the canvas, then we want to use the CoreData file for existing data.
         #if DEBUG
-        // Checks if the code is running in the cancas (preview)
+        // Checks if the code is running in the canvas (preview)
         if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" {
             storageProvider = .preview
         } else {
