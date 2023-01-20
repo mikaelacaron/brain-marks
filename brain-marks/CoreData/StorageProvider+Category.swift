@@ -1,5 +1,5 @@
 //
-//  StoreageProvider+Category.swift
+//  StorageProvider+Category.swift
 //  brain-marks
 //
 //  Created by Jay on 12/13/22.
@@ -26,7 +26,7 @@ extension StorageProvider {
         do {
             return try context.fetch(fetchRequest)
         } catch {
-            print("StorageProvider.getAllCategories(:): Error \(error)")
+            print("❌ StorageProvider.getAllCategories(:): Error \(error)")
             return []
         }
     }

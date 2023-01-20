@@ -21,4 +21,7 @@ enum TelemetrySignals {
 
     /// Core Data failed to load
     static let errorCoreDataLoad = "errorCoreDataLoad"
+
+    /// Migration performed
+    static let migrationFromAmplifyToCDPerformed = "migrationFromAmplifyToCDPerformed"
 }

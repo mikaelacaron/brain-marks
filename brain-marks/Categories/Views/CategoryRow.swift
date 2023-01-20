@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct CategoryRow: View {
-    let categoryName: String
-    let categoryImage: String
+    let category: CategoryEntity
 
     var body: some View {
         HStack {
-            Image(systemName: categoryImage)
+            Image(systemName: category.imageName ?? "folder")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 40, height: 40)
-            Text(categoryName)
+            Text(category.name ?? "Category name not found")
             Spacer()
         }
     }
@@ -25,15 +24,11 @@ struct CategoryRow: View {
 
 struct CategoryRow_Previews: PreviewProvider {
     static var previews: some View {
+        let context = StorageProvider.preview
+        let items = context.getAllCategories()
         Group {
-            CategoryRow(
-                categoryName: "iOS Tips and Tricks",
-                categoryImage: "folder"
-            )
-            CategoryRow(
-                categoryName: "macOS Tips and Tricks",
-                categoryImage: "swift"
-            )
+            CategoryRow(category: items.first!)
+            CategoryRow(category: items.first!)
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }

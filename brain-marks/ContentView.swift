@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import TelemetryClient
 
 struct ContentView: View {
-    let migrationService: MigrationService = MigrationService()
+    let migrationService = MigrationService()
 
     @State private var showAddSheet = false
 
@@ -17,6 +18,7 @@ struct ContentView: View {
             .onAppear {
                 if migrationService.checkIfMigrationShouldRun() {
                     migrationService.performMigration()
+                    TelemetryManager.send(TelemetrySignals.migrationFromAmplifyToCDPerformed)
                 }
             }
     }

@@ -11,7 +11,7 @@
 		684E2F2D3FCC4D36AC68E57D /* AWSCategory+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551BA45F30D640118D2F0CE2 /* AWSCategory+Schema.swift */; };
 		6961687B2949756D00D68070 /* BrainMarks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 696168792949756D00D68070 /* BrainMarks.xcdatamodeld */; };
 		6961687F294976A600D68070 /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6961687E294976A600D68070 /* StorageProvider.swift */; };
-		696168812949856100D68070 /* StoreageProvider+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696168802949856100D68070 /* StoreageProvider+Category.swift */; };
+		696168812949856100D68070 /* StorageProvider+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696168802949856100D68070 /* StorageProvider+Category.swift */; };
 		69616883294988E700D68070 /* StorageProvider+Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69616882294988E700D68070 /* StorageProvider+Tweet.swift */; };
 		6961688629498D0600D68070 /* MigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6961688529498D0600D68070 /* MigrationService.swift */; };
 		91739DEB2622D2A7000F982A /* AddURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91739DEA2622D2A7000F982A /* AddURLView.swift */; };
@@ -79,7 +79,7 @@
 		63D0518628EF45A382F08352 /* AWSCategory.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AWSCategory.swift; path = amplify/generated/models/AWSCategory.swift; sourceTree = "<group>"; };
 		6961687A2949756D00D68070 /* BrainMarks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BrainMarks.xcdatamodel; sourceTree = "<group>"; };
 		6961687E294976A600D68070 /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
-		696168802949856100D68070 /* StoreageProvider+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoreageProvider+Category.swift"; sourceTree = "<group>"; };
+		696168802949856100D68070 /* StorageProvider+Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageProvider+Category.swift"; sourceTree = "<group>"; };
 		69616882294988E700D68070 /* StorageProvider+Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageProvider+Tweet.swift"; sourceTree = "<group>"; };
 		6961688529498D0600D68070 /* MigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationService.swift; sourceTree = "<group>"; };
 		91739DEA2622D2A7000F982A /* AddURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddURLView.swift; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 				696168792949756D00D68070 /* BrainMarks.xcdatamodeld */,
 				6961687E294976A600D68070 /* StorageProvider.swift */,
 				69616882294988E700D68070 /* StorageProvider+Tweet.swift */,
-				696168802949856100D68070 /* StoreageProvider+Category.swift */,
+				696168802949856100D68070 /* StorageProvider+Category.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -542,7 +542,7 @@
 				CF16AFB9BE3F401E98C85114 /* AWSTweet.swift in Sources */,
 				FF36B661262357F9007A6D7F /* AWSCategory+Extension.swift in Sources */,
 				FFD5152E28F9FAA500665625 /* TelemetrySignals.swift in Sources */,
-				696168812949856100D68070 /* StoreageProvider+Category.swift in Sources */,
+				696168812949856100D68070 /* StorageProvider+Category.swift in Sources */,
 				FF36B66C26235FE6007A6D7F /* TweetListViewModel.swift in Sources */,
 				C4392E80BFE640DAA2625F9D /* AWSTweet+Schema.swift in Sources */,
 				A205CD422622A3EB00517DB5 /* TweetList.swift in Sources */,

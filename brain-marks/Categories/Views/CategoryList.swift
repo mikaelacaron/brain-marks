@@ -80,10 +80,7 @@ struct CategoryList: View {
         List {
             ForEach(viewModel.categories, id: \.self) { category in
                 NavigationLink(destination: TweetList(category: category)) {
-                    CategoryRow(
-                        categoryName: category.name ?? "",
-                        categoryImage: category.imageName ?? "folder"
-                    )
+                    CategoryRow(category: category)
                 }
                 .contextMenu {
                     Button {

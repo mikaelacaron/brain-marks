@@ -9,7 +9,7 @@ import CoreData
 import Foundation
 
 /// Controls the migration from Amplify to CoreData
-class MigrationService {
+final class MigrationService {
     private let storageProvider = StorageProvider.shared
     private var awsCategories: [AWSCategory] = []
 
@@ -27,10 +27,10 @@ class MigrationService {
         /// 2. Go through each category and get tweets
         for awsCategory in awsCategories {
             /// 3. Add category to core data
-            let categoryToAdd = makeCategoryCoreDataCompatible(category: awsCategory)
+            let categoryToAdd = convertAmplifyCategoryToCoreDataCategory(category: awsCategory)
             amplifyDataStore.fetchSavedTweets(for: awsCategory) { awsTweets in
                 for tweet in awsTweets ?? [] {
-                    let tweetToAdd = self.makeTweetCoreDataCompatible(tweet: tweet)
+                    let tweetToAdd = self.convertAmplifyTweetToCoreDataTweet(tweet: tweet)
                     categoryToAdd.addToTweets(tweetToAdd)
                 }
             }
@@ -43,7 +43,7 @@ class MigrationService {
         UserDefaults.standard.set(true, forKey: "migrationToCoreDataRan")
     }
 
-    public func checkIfMigrationShouldRun() -> Bool {
+    func checkIfMigrationShouldRun() -> Bool {
         let migrationToCoreDataRan = UserDefaults.standard.bool(forKey: "migrationToCoreDataRan")
 
         if storageProvider.getAllCategories().isEmpty && !migrationToCoreDataRan {
@@ -63,7 +63,7 @@ class MigrationService {
         })
     }
 
-    private func makeCategoryCoreDataCompatible(category: AWSCategory) -> CategoryEntity {
+    private func convertAmplifyCategoryToCoreDataCategory(category: AWSCategory) -> CategoryEntity {
         let tweetCat = CategoryEntity(context: managedObjectContext)
         tweetCat.amplifyID = category.id
         tweetCat.id = UUID()
@@ -75,7 +75,7 @@ class MigrationService {
         return tweetCat
     }
 
-    private func makeTweetCoreDataCompatible(tweet: AWSTweet) -> TweetEntity {
+    private func convertAmplifyTweetToCoreDataTweet(tweet: AWSTweet) -> TweetEntity {
         let tweetEntity = TweetEntity(context: managedObjectContext)
         tweetEntity.id = UUID(uuidString: tweet.id)
         tweetEntity.tweetID = tweet.tweetID

@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 import TelemetryClient
 
-class StorageProvider {
+final class StorageProvider {
 
     static let shared = StorageProvider()
 
@@ -35,7 +35,7 @@ class StorageProvider {
         return controller
     }()
 
-    init(inMemory: Bool = false) {
+    private init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "BrainMarks")
 
         if inMemory {
