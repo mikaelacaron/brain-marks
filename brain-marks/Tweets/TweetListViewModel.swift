@@ -8,22 +8,27 @@
 import SwiftUI
 
 final class TweetListViewModel: ObservableObject {
+    private let storageProvider = StorageProvider.shared
     
-    @Published var tweets = [AWSTweet]()
-    
-    func fetchTweets(category: AWSCategory) {
-        DataStoreManger.shared.fetchSavedTweets(for: category) { tweets in
-            if let tweets = tweets {
-                self.tweets = tweets
-            }
+    @Published var tweets = [TweetEntity]()
+
+    func setTweets(tweets: NSSet) {
+        for tweet in tweets {
+            self.tweets.append(tweet as! TweetEntity)
         }
+        self.tweets.sort { $0.dateCreated ?? Date() > $1.dateCreated ?? Date() }
     }
     
     func deleteTweet(at offsets: IndexSet) {
         for _ in offsets {
             offsets.sorted(by: >).forEach { index in
                 let tweet = tweets[index]
-                DataStoreManger.shared.deleteTweet(tweet)
+                storageProvider.context.delete(tweet)
+                do {
+                    try storageProvider.context.save()
+                } catch {
+                    print("❌ TweetListViewModel.deleteTweet(at:) Error \(error)")
+                }
             }
         }
         tweets.remove(atOffsets: offsets)

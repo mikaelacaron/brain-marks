@@ -13,16 +13,15 @@ enum CategoryState {
 }
 
 struct CategoryList: View {
-    
     @State private var categorySheetState: CategoryState = .new
-    @State private var editCategory: AWSCategory?
+    @State private var editCategory: CategoryEntity?
     @State private var indexSetToDelete: IndexSet?
     @State private var showAddURLView = false
     @State private var showingCategorySheet = false
     @State private var showingDeleteActionSheet = false
     
-    @StateObject var viewModel = CategoryListViewModel()
-    
+    @StateObject private var viewModel = CategoryListViewModel()
+
     var body: some View {
         NavigationView {
             categoryList
@@ -52,6 +51,9 @@ struct CategoryList: View {
                         }
                         .sheet(isPresented: $showAddURLView) {
                             AddURLView(categories: viewModel.categories)
+                                .onDisappear {
+                                    viewModel.getCategories()
+                                }
                         }
                     }
                 }
@@ -66,12 +68,6 @@ struct CategoryList: View {
     @ViewBuilder
     var categoryList: some View {
         categories
-        // removing for now, this makes the UI "flash" when updating a category
-//        if viewModel.categories.isEmpty {
-//            emptyListView
-//        } else {
-//            categories
-//        }
     }
     
     var emptyListView: some View {
@@ -82,7 +78,7 @@ struct CategoryList: View {
     
     var categories: some View {
         List {
-            ForEach(viewModel.categories) { category in
+            ForEach(viewModel.categories, id: \.self) { category in
                 NavigationLink(destination: TweetList(category: category)) {
                     CategoryRow(category: category)
                 }

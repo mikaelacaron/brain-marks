@@ -18,4 +18,10 @@ enum TelemetrySignals {
     
     /// The user added a new tweet.
     static let addTweet = "addTweet"
+
+    /// Core Data failed to load
+    static let errorCoreDataLoad = "errorCoreDataLoad"
+
+    /// Migration performed
+    static let migrationFromAmplifyToCDPerformed = "migrationFromAmplifyToCDPerformed"
 }

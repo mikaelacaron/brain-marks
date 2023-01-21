@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CategoryRow: View {
-    let category: AWSCategory
+    let category: CategoryEntity
 
     var body: some View {
         HStack {
@@ -16,7 +16,7 @@ struct CategoryRow: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 40, height: 40)
-            Text(category.name)
+            Text(category.name ?? "Category name not found")
             Spacer()
         }
     }
@@ -24,9 +24,11 @@ struct CategoryRow: View {
 
 struct CategoryRow_Previews: PreviewProvider {
     static var previews: some View {
+        let context = StorageProvider.preview
+        let items = context.getAllCategories()
         Group {
-            CategoryRow(category: AWSCategory(id: "234", name: "SwiftUI", imageName: "swift"))
-            CategoryRow(category: AWSCategory(id: "987", name: "BigBrainHacks", imageName: "laptopcomputer"))
+            CategoryRow(category: items.first!)
+            CategoryRow(category: items.first!)
         }
         .previewLayout(.fixed(width: 300, height: 70))
     }
