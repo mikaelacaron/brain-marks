@@ -4,6 +4,9 @@
 
 This app has always been open source! It began with the [Big Brain Hackathon](https://bigbrainhacks.com) and now during [Hacktoberfest](https://hacktoberfest.digitalocean.com). It is available for free on the [App Store](https://apps.apple.com/us/app/brain-marks/id1577423925). This app uses the [Twitter API](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api) (v2 where possible) and [AWS Amplify DataStore](https://docs.amplify.aws/start/q/integration/ios/) (soon to be removed).
 
+
+**Sadly due to [Twitter API changes](https://twitter.com/mikaela__caron/status/1621513256337805314?s=61&t=qApWO_A42TJZ0V-Z2oIjmQ), this app will no longer be open for contributions. Thank you to everyone who took the time to contribute!**
+
 # Getting Started
 * You will need an API key from the [Twitter API](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api)
 * If your feature/change requires changing the model you will need to know [AWS Amplify DataStore](https://docs.amplify.aws/start/q/integration/ios/) - soon to be deprecated
