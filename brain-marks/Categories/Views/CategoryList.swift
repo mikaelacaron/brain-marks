@@ -105,6 +105,9 @@ struct CategoryList: View {
             showingCategorySheet = true
           case "addTweet":
             showAddURLView = true
+          case "openCategory":
+            print("Test implementation displays TweetList for first saved category")
+            TweetList(category: viewModel.categories.first!)
           default:
             return
           }

@@ -7,6 +7,7 @@
 
 import WidgetKit
 import SwiftUI
+import Intents
 
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
@@ -19,6 +20,7 @@ struct Provider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+
         var entries: [SimpleEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
@@ -35,14 +37,30 @@ struct Provider: TimelineProvider {
 }
 
 struct SimpleEntry: TimelineEntry {
-    let date: Date
+  let date: Date
+  func readContainer() {
+    guard let URL = FileManager.default.containerURL(
+      forSecurityApplicationGroupIdentifier: "group.com.suzgupta.brainmarks"
+    ) else {
+      return
+    }
+    let decoder = JSONDecoder()
+    if let codeData = try? Data(contentsOf: URL.appendingPathComponent("categories.json")) {
+      do {
+        let contents = try decoder.decode([LocalCategory].self, from: codeData)
+        print(contents)
+      } catch {
+        print("Error: Can't decode contents")
+      }
+    }
+  }
 }
 
 struct BrainMarksCreateCategoryEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-      
+
       ZStack {
         Image("littleLogo")
           .resizable()
@@ -72,12 +90,31 @@ struct BrainMarksAddURLView : View {
    }
 }
 
+struct BrainMarksLockScreenEntryView : View {
+  var entry: Provider.Entry
+
+  var body: some View {
+      ZStack {
+        Circle().fill(Color.accentColor).opacity(0.75)
+        Image(systemName: "gamecontroller")
+          .font(.largeTitle)
+      }
+      .onAppear() {
+        let entry = SimpleEntry(date: Date())
+        entry.readContainer()
+      }
+      // will need to pass which category to open as a URL parameter
+      .widgetURL(URL(string: "brainmarks://openCategory"))
+  }
+}
+
 @main
 struct BrainMarksWidgetBundle: WidgetBundle {
   @WidgetBundleBuilder
   var body: some Widget {
     BrainMarksCreateCategory()
     BrainMarksAddURL()
+    BrainMarksLockScreenWidget()
     // more widgets can go here
   }
 }
@@ -118,4 +155,23 @@ struct BrainMarksCreateCategory_Previews: PreviewProvider {
       BrainMarksCreateCategoryEntryView(entry: SimpleEntry(date: Date()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
+}
+struct BrainMarksLockScreenWidget: Widget {
+    let kind: String = "BrainMarksLockScreen"
+
+    var body: some WidgetConfiguration {
+      StaticConfiguration(kind: kind, provider: Provider()) { entry in
+              BrainMarksLockScreenEntryView(entry: entry)
+        }
+        .configurationDisplayName("View Category")
+        .description("Quickly access a Brain Marks category")
+        .supportedFamilies([.accessoryCircular])
+    }
+}
+
+struct BrainMarksLockScreenWidget_Previews: PreviewProvider {
+  static var previews: some View {
+    BrainMarksLockScreenEntryView(entry: SimpleEntry(date: Date()))
+      .previewContext(WidgetPreviewContext(family: .accessoryCircular))
+  }
 }
