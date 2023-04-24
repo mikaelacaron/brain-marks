@@ -133,21 +133,21 @@ struct InteractionsView: View {
         HStack {
             HStack(spacing: 4) {
                 Text("501K")
-                    .font(.system(size: 16, weight: .semibold, design: .default))
+                    .font(.callout.weight(.semibold))
                 Text("Retweets")
                     .font(.callout)
                     .foregroundColor(.secondary)
             }
             HStack(spacing: 4) {
                 Text("9,847")
-                    .font(.system(size: 16, weight: .semibold, design: .default))
+                    .font(.callout.weight(.semibold))
                 Text("Quote Tweets")
                     .font(.callout)
                     .foregroundColor(.secondary)
             }
             HStack(spacing: 4) {
                 Text("1M")
-                    .font(.system(size: 16, weight: .semibold, design: .default))
+                    .font(.callout.weight(.semibold))
                 Text("Likes")
                     .font(.callout)
                     .foregroundColor(.secondary)
