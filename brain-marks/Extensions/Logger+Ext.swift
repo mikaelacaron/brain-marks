@@ -7,7 +7,7 @@
 
 import Foundation
 import os.log
-
+/// An extension to `Logger` to add `subsystem`,`dataStore`,`amplify`,`network` and `appIcon` properties.
 extension Logger {
     private static var subsystem = Bundle.main.bundleIdentifier!
     

@@ -10,6 +10,8 @@ import SwiftUI
 final class CategorySheetViewModel: ObservableObject {
     @Published var thumbnail: String = "folder"
     
+    /// To select the thumbnail in `CategorySheetView`
+    /// - Parameter thumbnail: A `String` parameter used to set the `thumbnail`
     func selectThumbnail(_ thumbnail: String) {
         withAnimation {
             self.thumbnail = thumbnail

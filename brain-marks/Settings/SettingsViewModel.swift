@@ -29,6 +29,8 @@ class SettingsViewModel: ObservableObject {
         "vcapilladeveloper"
     ]
     
+    /// To get the list of contributors from the brain-mark github repository
+    /// Refer `https://api.github.com/repos/mikaelacaron/brain-marks/contributors` for brain-marks contributors list
     func getContributors() {
         
         guard let url = URL(string: "https://api.github.com/repos/mikaelacaron/brain-marks/contributors") else { return }

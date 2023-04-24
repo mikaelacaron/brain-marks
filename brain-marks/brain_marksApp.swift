@@ -23,6 +23,7 @@ struct brain_marksApp: App {
         }
     }
     
+    /// To configure the amplify framework
     func configureAmplify() {
         let dataStorePlugin = AWSDataStorePlugin(modelRegistration: AmplifyModels())
         

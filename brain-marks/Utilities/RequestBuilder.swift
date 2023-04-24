@@ -33,7 +33,12 @@ extension RequestBuilder: RequestBuildable {
 }
 
 // MARK: - Private methods
+
 private extension RequestBuilder {
+    
+    /// to create `URL` with given `url` string
+    /// - Parameter url: A `String` parameter used to create `URL`
+    /// - Returns: `URL` or throw `HttpError.badURL` exception
     func createURL(url: String) throws -> URL {
         guard url.contains("twitter.com") else {
             throw HttpError.badURL

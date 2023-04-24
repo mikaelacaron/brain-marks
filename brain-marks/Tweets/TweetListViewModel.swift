@@ -11,6 +11,8 @@ final class TweetListViewModel: ObservableObject {
     
     @Published var tweets = [AWSTweet]()
     
+    /// To fetch the tweets from `DataStoreManager`
+    /// - Parameter category: An `AWSCategory` category to fetch tweets.
     func fetchTweets(category: AWSCategory) {
         DataStoreManger.shared.fetchSavedTweets(for: category) { tweets in
             if let tweets = tweets {
@@ -19,6 +21,8 @@ final class TweetListViewModel: ObservableObject {
         }
     }
     
+    /// To delete tweet
+    /// - Parameter offsets: An `IndexSet` specifying the offsets to delete from `DataStoreManager`
     func deleteTweet(at offsets: IndexSet) {
         for _ in offsets {
             offsets.sorted(by: >).forEach { index in
