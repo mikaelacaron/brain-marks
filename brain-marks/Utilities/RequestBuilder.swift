@@ -46,7 +46,7 @@ private extension RequestBuilder {
         components.path = "/2/tweets"
         components.queryItems = [
             URLQueryItem(name: "ids", value: id),
-            URLQueryItem(name: "expansions", value: "author_id,attachments.media_keys"),
+            URLQueryItem(name: "expansions", value: "author_id,attachments.media_keys,referenced_tweets.id"),
             URLQueryItem(name: "tweet.fields", value: "created_at"),
             URLQueryItem(name: "user.fields", value: "profile_image_url,verified"),
             URLQueryItem(name: "media.fields", value: "preview_image_url,public_metrics,type,url")

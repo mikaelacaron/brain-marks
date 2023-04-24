@@ -9,6 +9,7 @@ type AWSTweet @model {
     photosURL: [String]
     category: AWSCategory @connection(name: "CategorizedTweet")
     userVerified: Boolean
+    quoteTweet: AWSTweet @belongsTo
 }
 
 type AWSCategory @model {

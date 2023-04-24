@@ -34,7 +34,7 @@ extension AWSTweet {
       .field(aWSTweet.authorUsername, is: .optional, ofType: .string),
       .field(aWSTweet.profileImageURL, is: .optional, ofType: .string),
       .field(aWSTweet.photosURL, is: .optional, ofType: .embeddedCollection(of: String.self)),
-      .belongsTo(aWSTweet.category, is: .optional, ofType: AWSCategory.self, targetName: "awsTweetCategoryId"),
+      .belongsTo(aWSTweet.category, is: .optional, ofType: AWSCategory.self, targetName: "aWSTweetCategoryId"),
       .field(aWSTweet.userVerified, is: .optional, ofType: .bool)
     )
     }

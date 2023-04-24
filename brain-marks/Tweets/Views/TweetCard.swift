@@ -20,6 +20,7 @@ struct TweetCard: View {
                 TweetBodyView(tweetBody: tweet.text!.removingUrls())
             }
             TweetPhotosView(width: 60, maxWidth: 400, photosURL: tweet.photosURL ?? [String]())
+            
             if let timeStamp = tweet.timeStamp {
                 TimeStampView(timeStamp: timeStamp)
             }
