@@ -1,6 +1,6 @@
 [![brain-marks-promo](https://user-images.githubusercontent.com/22946902/135545890-6afb5e3f-4b04-4957-81b7-364f9f229080.PNG)](https://apps.apple.com/us/app/brain-marks/id1577423925)
 
-# Brain Marks
+# Brain Marks [NOT ACTIVE]
 
 This app has always been open source! It began with the [Big Brain Hackathon](https://bigbrainhacks.com) and now during [Hacktoberfest](https://hacktoberfest.digitalocean.com). It is available for free on the [App Store](https://apps.apple.com/us/app/brain-marks/id1577423925). This app uses the [Twitter API](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api) (v2 where possible) and [AWS Amplify DataStore](https://docs.amplify.aws/start/q/integration/ios/) (soon to be removed).
 
