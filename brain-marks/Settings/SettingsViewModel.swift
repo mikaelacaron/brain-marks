@@ -56,4 +56,28 @@ class SettingsViewModel: ObservableObject {
         }
         .resume()
     }
+
+  func getStringFromBundle() -> String {
+    if let filepath = Bundle.main.path(forResource: "whatsnew", ofType: "md") {
+        do {
+            let string = try String(contentsOfFile: filepath)
+            return string
+        } catch {
+            print("string could not be loaded")
+        }
+    } else {
+        print("whatsnew.md not found in app bundle")
+    }
+    return ""
+  }
+
+  func createAttributedString(plainString: String) -> AttributedString {
+    do {
+      let newString = try AttributedString(markdown: plainString, options: AttributedString.MarkdownParsingOptions(interpretedSyntax: .inlineOnlyPreservingWhitespace))
+        return newString
+    } catch {
+        print("Error creating AttributedString: \(error)")
+    }
+    return ""
+  }
 }
